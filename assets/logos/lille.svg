@@ -1,0 +1,19 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="lilRed" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D71920"/><stop offset="100%" stop-color="#9b0e13"/>
+    </linearGradient>
+  </defs>
+  <!-- Pentagonal crest -->
+  <polygon points="50,6 88,26 80,82 50,96 20,82 12,26" fill="url(#lilRed)" stroke="#11224D" stroke-width="4"/>
+  <!-- Flemish mastiff head in white -->
+  <path d="M50 34 C42 34 35 38 32 46 C30 52 33 60 38 65 C44 70 50 74 50 74 C50 74 56 70 62 65 C67 60 70 52 68 46 C65 38 58 34 50 34 Z" fill="#FFFFFF"/>
+  <circle cx="44" cy="48" r="2.5" fill="#11224D"/>
+  <circle cx="56" cy="48" r="2.5" fill="#11224D"/>
+  <polygon points="50,56 46,60 54,60" fill="#11224D"/>
+  <!-- Fleur-de-lis top -->
+  <path d="M50 16 C48 20 46 24 50 28 C54 24 52 20 50 16 Z" fill="#FFFFFF"/>
+  <path d="M43 23 C46 24 48 27 48 28 C45 28 42 27 43 23 Z" fill="#FFFFFF"/>
+  <path d="M57 23 C54 24 52 27 52 28 C55 28 58 27 57 23 Z" fill="#FFFFFF"/>
+  <text x="50" y="88" font-family="Arial, sans-serif" font-weight="900" font-size="11" fill="#FFFFFF" text-anchor="middle">LOSC</text>
+</svg>

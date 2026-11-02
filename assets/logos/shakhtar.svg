@@ -1,0 +1,18 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shkFlame" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F36F21"/><stop offset="100%" stop-color="#b84605"/>
+    </linearGradient>
+  </defs>
+  <path d="M50 6 C78 6 86 16 86 46 C86 76 50 94 50 94 C50 94 14 76 14 46 C14 16 22 6 50 6 Z" fill="#000000" stroke="#F36F21" stroke-width="3"/>
+  <!-- Orange flame crown -->
+  <path d="M22 28 Q35 12 50 24 Q65 12 78 28 Q84 46 84 50 Q66 42 50 42 Q34 42 16 50 Q16 46 22 28 Z" fill="url(#shkFlame)"/>
+  <!-- Crossed hammers in white -->
+  <g stroke="#FFFFFF" stroke-width="3" stroke-linecap="round">
+    <line x1="38" y1="52" x2="62" y2="72"/>
+    <line x1="62" y1="52" x2="38" y2="72"/>
+  </g>
+  <rect x="34" y="49" width="8" height="5" fill="#FFFFFF"/>
+  <rect x="58" y="49" width="8" height="5" fill="#FFFFFF"/>
+  <text x="50" y="86" font-family="Arial, sans-serif" font-weight="bold" font-size="9" fill="#F36F21" text-anchor="middle">1936</text>
+</svg>

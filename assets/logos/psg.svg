@@ -1,0 +1,23 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Navy circle with red and white rings -->
+  <circle cx="50" cy="50" r="47" fill="#004170" stroke="#DA291C" stroke-width="3"/>
+  <circle cx="50" cy="50" r="42" fill="#FFFFFF"/>
+  <circle cx="50" cy="50" r="40" fill="#004170"/>
+  <!-- Central white circle with Eiffel tower -->
+  <circle cx="50" cy="50" r="26" fill="#FFFFFF"/>
+  <!-- Eiffel Tower in Red -->
+  <g fill="#DA291C">
+    <!-- Top spire -->
+    <rect x="48.5" y="27" width="3" height="12"/>
+    <!-- Middle tower -->
+    <path d="M46 39 L54 39 L56 50 L44 50 Z"/>
+    <!-- Arch base -->
+    <path d="M43 50 L37 68 L43 68 C45 61 55 61 57 68 L63 68 L57 50 Z"/>
+  </g>
+  <!-- Golden Fleur de lis underneath -->
+  <path d="M50 58 C48 61 46 64 50 67 C54 64 52 61 50 58 Z" fill="#FFD700"/>
+  <!-- PARIS lettering -->
+  <text x="50" y="21" font-family="Arial, sans-serif" font-weight="900" font-size="8" fill="#FFFFFF" text-anchor="middle">PARIS</text>
+  <!-- SAINT-GERMAIN -->
+  <text x="50" y="87" font-family="Arial, sans-serif" font-weight="900" font-size="6" fill="#FFFFFF" text-anchor="middle">SAINT-GERMAIN</text>
+</svg>

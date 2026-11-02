@@ -1,0 +1,23 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gsRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C8102E"/><stop offset="100%" stop-color="#8a071d"/>
+    </linearGradient>
+    <linearGradient id="gsGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDB913"/><stop offset="100%" stop-color="#d49204"/>
+    </linearGradient>
+  </defs>
+  <!-- Shield/Oval -->
+  <ellipse cx="50" cy="53" rx="42" ry="43" fill="#111827" stroke="url(#gsGold)" stroke-width="3"/>
+  <ellipse cx="50" cy="53" rx="38" ry="39" fill="url(#gsRed)"/>
+  <!-- Intertwined G and S -->
+  <path d="M48 28 C34 28 26 38 26 53 C26 68 35 78 48 78 C57 78 64 73 67 66 L57 66 C54 70 51 72 48 72 C39 72 34 64 34 53 C34 42 39 34 48 34 C54 34 58 37 60 41 L68 37 C64 31 57 28 48 28 Z" fill="url(#gsGold)"/>
+  <path d="M52 38 C45 38 42 42 42 47 C42 56 62 53 62 64 C62 70 56 74 48 74 C41 74 36 70 34 66 L29 70 C33 77 40 80 48 80 C59 80 68 74 68 64 C68 53 48 55 48 46 C48 43 51 42 55 42 C60 42 63 45 65 48 L69 44 C66 40 60 38 52 38 Z" fill="#FFFFFF"/>
+  <!-- Stars -->
+  <g fill="#FDB913">
+    <polygon points="32,15 34,20 39,20 35,23 37,28 32,25 27,28 29,23 25,20 30,20"/>
+    <polygon points="44,12 46,17 51,17 47,20 49,25 44,22 39,25 41,20 37,17 42,17"/>
+    <polygon points="56,12 58,17 63,17 59,20 61,25 56,22 51,25 53,20 49,17 54,17"/>
+    <polygon points="68,15 70,20 75,20 71,23 73,28 68,25 63,28 65,23 61,20 66,20"/>
+  </g>
+</svg>

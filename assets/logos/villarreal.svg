@@ -1,0 +1,21 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shield with Crown -->
+  <path d="M50 18 C78 18 82 26 82 56 C82 78 50 94 50 94 C50 94 18 78 18 56 C18 26 22 18 50 18 Z" fill="#FFE600" stroke="#00519E" stroke-width="3"/>
+  <!-- Senyera stripes in center shield -->
+  <g clip-path="url(#vilInner)">
+    <clipPath id="vilInner">
+      <path d="M50 36 C66 36 70 42 70 60 C70 74 50 84 50 84 C50 84 30 74 30 60 C30 42 34 36 50 36 Z"/>
+    </clipPath>
+    <rect x="30" y="36" width="40" height="50" fill="#FFE600"/>
+    <rect x="36" y="36" width="4" height="50" fill="#D71920"/>
+    <rect x="44" y="36" width="4" height="50" fill="#D71920"/>
+    <rect x="52" y="36" width="4" height="50" fill="#D71920"/>
+    <rect x="60" y="36" width="4" height="50" fill="#D71920"/>
+  </g>
+  <path d="M50 36 C66 36 70 42 70 60 C70 74 50 84 50 84 C50 84 30 74 30 60 C30 42 34 36 50 36 Z" fill="none" stroke="#00519E" stroke-width="2"/>
+  <!-- Crown on top -->
+  <polygon points="34,18 38,10 50,15 62,10 66,18" fill="#FFE600" stroke="#D71920" stroke-width="1.5"/>
+  <circle cx="38" cy="10" r="2" fill="#D71920"/>
+  <circle cx="50" cy="15" r="2" fill="#00519E"/>
+  <circle cx="62" cy="10" r="2" fill="#D71920"/>
+</svg>

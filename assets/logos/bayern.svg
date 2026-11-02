@@ -1,0 +1,22 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="47" fill="#DC052D" stroke="#0066B2" stroke-width="2"/>
+  <circle cx="50" cy="50" r="43" fill="#FFFFFF"/>
+  <circle cx="50" cy="50" r="40" fill="#DC052D"/>
+  <!-- Ring text space -->
+  <circle cx="50" cy="50" r="26" fill="#FFFFFF"/>
+  <circle cx="50" cy="50" r="24" fill="#0066B2"/>
+  <!-- Bavarian Diamonds Clip -->
+  <clipPath id="bayernClip">
+    <circle cx="50" cy="50" r="23"/>
+  </clipPath>
+  <g clip-path="url(#bayernClip)" fill="#FFFFFF">
+    <polygon points="40,28 48,36 40,44 32,36"/>
+    <polygon points="56,28 64,36 56,44 48,36"/>
+    <polygon points="48,44 56,52 48,60 40,52"/>
+    <polygon points="64,44 72,52 64,60 56,52"/>
+    <polygon points="40,60 48,68 40,76 32,68"/>
+    <polygon points="56,60 64,68 56,76 48,68"/>
+  </g>
+  <text x="50" y="20" font-family="Arial, sans-serif" font-weight="900" font-size="7.5" fill="#FFFFFF" text-anchor="middle">FC BAYERN</text>
+  <text x="50" y="86" font-family="Arial, sans-serif" font-weight="900" font-size="7.5" fill="#FFFFFF" text-anchor="middle">MÜNCHEN</text>
+</svg>

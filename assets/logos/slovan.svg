@@ -1,0 +1,10 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sky blue & navy shield with gold star -->
+  <path d="M50 8 C78 8 84 16 84 50 C84 76 50 94 50 94 C50 94 16 76 16 50 C16 16 22 8 50 8 Z" fill="#2D82C8" stroke="#FFFFFF" stroke-width="3"/>
+  <path d="M50 14 C74 14 78 20 78 50 C78 72 50 88 50 88 C50 88 22 72 22 50 C22 20 26 14 50 14 Z" fill="#0D2E5C"/>
+  <!-- Gold star on top -->
+  <polygon points="50,18 53,25 60,25 55,30 57,37 50,33 43,37 45,30 40,25 47,25" fill="#FFD700"/>
+  <!-- White stylized S -->
+  <path d="M56 38 C46 38 40 43 40 50 C40 59 60 56 60 67 C60 74 53 77 47 77 C39 77 34 72 33 66 L39 64 C40 68 43 71 47 71 C51 71 54 69 54 66 C54 58 34 60 34 49 C34 42 41 33 56 33 C62 33 66 36 68 40 L62 43 C61 40 59 38 56 38 Z" fill="#FFFFFF"/>
+  <text x="50" y="85" font-family="Arial, sans-serif" font-weight="900" font-size="7" fill="#FFFFFF" text-anchor="middle">SLOVAN</text>
+</svg>

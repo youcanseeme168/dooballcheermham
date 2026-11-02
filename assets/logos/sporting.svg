@@ -1,0 +1,23 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="scpGreen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#008057"/><stop offset="100%" stop-color="#005035"/>
+    </linearGradient>
+  </defs>
+  <path d="M50 8 C80 8 84 20 84 52 C84 78 50 94 50 94 C50 94 16 78 16 52 C16 20 20 8 50 8 Z" fill="url(#scpGreen)" stroke="#FFD700" stroke-width="3"/>
+  <!-- Horizontal white stripes -->
+  <path d="M17 38 L83 38 L83 45 L17 45 Z" fill="#FFFFFF"/>
+  <path d="M18 53 L82 53 L82 60 L18 60 Z" fill="#FFFFFF"/>
+  <!-- Golden Lion Rampant -->
+  <g fill="#FFD700" stroke="#B8860B" stroke-width="0.5">
+    <circle cx="50" cy="46" r="6"/>
+    <path d="M48 50 C44 54 44 64 48 70 L52 70 C56 64 54 54 50 50 Z"/>
+    <path d="M52 52 C60 50 63 46 64 42 L61 41 C59 44 56 46 51 49 Z"/>
+    <path d="M46 54 C39 52 36 48 35 44 L38 43 C40 46 43 48 47 51 Z"/>
+    <path d="M48 68 C42 72 38 76 36 80 L39 81 C42 78 45 74 49 71 Z"/>
+    <path d="M52 68 C58 72 62 76 64 80 L61 81 C58 78 55 74 51 71 Z"/>
+  </g>
+  <!-- SCP letters -->
+  <rect x="28" y="16" width="44" height="13" rx="3" fill="#005035" stroke="#FFD700" stroke-width="1"/>
+  <text x="50" y="26" font-family="Arial, sans-serif" font-weight="900" font-size="10" fill="#FFD700" text-anchor="middle">SPORTING</text>
+</svg>
