@@ -2217,7 +2217,7 @@ const UCL_DATA = {
               "statusText": "รอเช็กฟิต (Doubtful)",
               "badge": "yellow",
               "detail": "มีอาการตึงกล้ามเนื้อต้นขาหลังเกมลีกล่าสุด ต้องรอเช็กความฟิต",
-              "image": "assets/players/onana.png"
+              "image": "assets/players/amadou_onana.png"
             },
             {
               "name": "Boubacar Kamara",
@@ -2449,7 +2449,8 @@ const UCL_DATA = {
               "role": "ผู้รักษาประตูจอมหนึบ",
               "stat": "เซฟจังหวะสำคัญช่วยทีมในพรีเมียร์ลีก",
               "value": "35M€",
-              "isStar": false
+              "isStar": false,
+              "image": "assets/players/andre_onana.png"
             }
           ],
           "injuredPlayers": [
@@ -2839,8 +2840,7 @@ const UCL_DATA = {
               "role": "ปีกดาวรุ่งความเร็วสูง",
               "stat": "ดาวรุ่งมูลค่าสูงสุดของสโมสร สปีดจัดจ้าน",
               "value": "3.5M€",
-              "isStar": false,
-              "image": "assets/players/marcelli.png"
+              "isStar": false
             }
           ],
           "injuredPlayers": [
@@ -2928,3 +2928,639 @@ const UCL_SVGS = {
 if (typeof module !== "undefined" && module.exports) {
   module.exports = { UCL_DATA, UCL_SVGS };
 }
+
+/* 🇩🇰 DANISH SUPERLIGA (3F SUPERLIGA) - SEPARATE LEAGUE CATEGORY */
+const DANISH_SUPERLIGA_DATA = {
+  "leagueName": "Danish Superliga (3F Superliga)",
+  "country": "Denmark",
+  "season": "2024/25 - 2026/27",
+  "currentMatchday": "Matchday 16 of 32",
+  "description": "ลีกสูงสุดของประเทศเดนมาร์ก ข้อมูลตารางคะแนน สถิติ วิเคราะห์ความพร้อม และทีเด็ดเอไอแยกหมวดหมู่พิเศษ",
+  "standings": [
+    {
+      "rank": 1,
+      "team": "FC Midtjylland",
+      "shortName": "Midtjylland",
+      "mp": 15,
+      "w": 9,
+      "d": 3,
+      "l": 3,
+      "gf": 29,
+      "ga": 18,
+      "gd": 11,
+      "pts": 30,
+      "form": [
+        "W",
+        "W",
+        "L",
+        "W",
+        "D"
+      ],
+      "status": "championship"
+    },
+    {
+      "rank": 2,
+      "team": "FC Copenhagen",
+      "shortName": "Copenhagen",
+      "mp": 15,
+      "w": 8,
+      "d": 5,
+      "l": 2,
+      "gf": 28,
+      "ga": 16,
+      "gd": 12,
+      "pts": 29,
+      "form": [
+        "W",
+        "D",
+        "W",
+        "W",
+        "D"
+      ],
+      "status": "championship"
+    },
+    {
+      "rank": 3,
+      "team": "AGF Aarhus",
+      "shortName": "AGF",
+      "mp": 15,
+      "w": 7,
+      "d": 6,
+      "l": 2,
+      "gf": 30,
+      "ga": 17,
+      "gd": 13,
+      "pts": 27,
+      "form": [
+        "D",
+        "W",
+        "W",
+        "D",
+        "W"
+      ],
+      "status": "championship"
+    },
+    {
+      "rank": 4,
+      "team": "Brøndby IF",
+      "shortName": "Brøndby",
+      "mp": 15,
+      "w": 7,
+      "d": 4,
+      "l": 4,
+      "gf": 31,
+      "ga": 21,
+      "gd": 10,
+      "pts": 25,
+      "form": [
+        "W",
+        "L",
+        "W",
+        "D",
+        "W"
+      ],
+      "status": "championship"
+    },
+    {
+      "rank": 5,
+      "team": "Randers FC",
+      "shortName": "Randers",
+      "mp": 15,
+      "w": 6,
+      "d": 6,
+      "l": 3,
+      "gf": 26,
+      "ga": 19,
+      "gd": 7,
+      "pts": 24,
+      "form": [
+        "W",
+        "W",
+        "D",
+        "W",
+        "D"
+      ],
+      "status": "championship"
+    },
+    {
+      "rank": 6,
+      "team": "Silkeborg IF",
+      "shortName": "Silkeborg",
+      "mp": 15,
+      "w": 6,
+      "d": 5,
+      "l": 4,
+      "gf": 29,
+      "ga": 23,
+      "gd": 6,
+      "pts": 23,
+      "form": [
+        "D",
+        "D",
+        "D",
+        "W",
+        "L"
+      ],
+      "status": "championship"
+    },
+    {
+      "rank": 7,
+      "team": "FC Nordsjælland",
+      "shortName": "Nordsjælland",
+      "mp": 15,
+      "w": 6,
+      "d": 4,
+      "l": 5,
+      "gf": 29,
+      "ga": 28,
+      "gd": 1,
+      "pts": 22,
+      "form": [
+        "L",
+        "W",
+        "D",
+        "L",
+        "W"
+      ],
+      "status": "qualifying"
+    },
+    {
+      "rank": 8,
+      "team": "Viborg FF",
+      "shortName": "Viborg",
+      "mp": 15,
+      "w": 5,
+      "d": 5,
+      "l": 5,
+      "gf": 27,
+      "ga": 27,
+      "gd": 0,
+      "pts": 20,
+      "form": [
+        "W",
+        "L",
+        "D",
+        "W",
+        "L"
+      ],
+      "status": "qualifying"
+    },
+    {
+      "rank": 9,
+      "team": "Aalborg BK (AaB)",
+      "shortName": "Aalborg",
+      "mp": 15,
+      "w": 4,
+      "d": 4,
+      "l": 7,
+      "gf": 18,
+      "ga": 31,
+      "gd": -13,
+      "pts": 16,
+      "form": [
+        "L",
+        "D",
+        "L",
+        "D",
+        "L"
+      ],
+      "status": "qualifying"
+    },
+    {
+      "rank": 10,
+      "team": "Sønderjyske",
+      "shortName": "Sønderjyske",
+      "mp": 15,
+      "w": 3,
+      "d": 3,
+      "l": 9,
+      "gf": 19,
+      "ga": 35,
+      "gd": -16,
+      "pts": 12,
+      "form": [
+        "L",
+        "L",
+        "W",
+        "L",
+        "L"
+      ],
+      "status": "relegation"
+    },
+    {
+      "rank": 11,
+      "team": "Lyngby Boldklub",
+      "shortName": "Lyngby",
+      "mp": 15,
+      "w": 1,
+      "d": 7,
+      "l": 7,
+      "gf": 11,
+      "ga": 21,
+      "gd": -10,
+      "pts": 10,
+      "form": [
+        "D",
+        "D",
+        "L",
+        "D",
+        "L"
+      ],
+      "status": "relegation"
+    },
+    {
+      "rank": 12,
+      "team": "Vejle Boldklub",
+      "shortName": "Vejle",
+      "mp": 15,
+      "w": 1,
+      "d": 3,
+      "l": 11,
+      "gf": 16,
+      "ga": 36,
+      "gd": -20,
+      "pts": 6,
+      "form": [
+        "D",
+        "W",
+        "L",
+        "L",
+        "L"
+      ],
+      "status": "relegation"
+    }
+  ],
+  "topScorers": [
+    {
+      "name": "Patrick Mortensen",
+      "team": "AGF Aarhus",
+      "goals": 10,
+      "assists": 2,
+      "matches": 15
+    },
+    {
+      "name": "Mathias Kvistgaarden",
+      "team": "Brøndby IF",
+      "goals": 10,
+      "assists": 4,
+      "matches": 14
+    },
+    {
+      "name": "Franculino Djú",
+      "team": "FC Midtjylland",
+      "goals": 9,
+      "assists": 3,
+      "matches": 15
+    },
+    {
+      "name": "Simen Nordli",
+      "team": "Randers FC",
+      "goals": 8,
+      "assists": 5,
+      "matches": 15
+    },
+    {
+      "name": "Tonni Adamsen",
+      "team": "Silkeborg IF",
+      "goals": 8,
+      "assists": 2,
+      "matches": 15
+    },
+    {
+      "name": "Yuito Suzuki",
+      "team": "Brøndby IF",
+      "goals": 6,
+      "assists": 4,
+      "matches": 13
+    }
+  ],
+  "matches": [
+    {
+      "id": 101,
+      "matchTitle": "FC Copenhagen พบ Brøndby IF (Copenhagen Derby)",
+      "kickoff": "วันอาทิตย์ที่ 8 พฤศจิกายน 2026 เวลา 20:00 น. (ตามเวลาประเทศไทย)",
+      "stadium": "Parken Stadium (โคเปนเฮเกน, ความจุ 38,065 ที่นั่ง)",
+      "homeTeam": {
+        "id": "copenhagen",
+        "name": "FC Copenhagen",
+        "thaiName": "เอฟซี โคเปนเฮเกน",
+        "rank": 2
+      },
+      "awayTeam": {
+        "id": "brondby",
+        "name": "Brøndby IF",
+        "thaiName": "บรอนด์บี้ ไอเอฟ",
+        "rank": 4
+      },
+      "coachHome": "Jacob Neestrup",
+      "coachAway": "Jesper Sørensen",
+      "predictedScore": "2–1 หรือ 1–1",
+      "bestPicks": [
+        {
+          "market": "Over 2.5 ประตู",
+          "odds": "@ 1.68",
+          "confidence": "85%"
+        },
+        {
+          "market": "Both Teams To Score (BTTS - Yes)",
+          "odds": "@ 1.62",
+          "confidence": "82%"
+        }
+      ],
+      "probabilities": {
+        "home": 46,
+        "draw": 28,
+        "away": 26
+      },
+      "analysisText": "ดาร์บี้แมตช์ที่ดุเดือดที่สุดในสแกนดิเนเวีย 'New Firm Derby' โคเปนเฮเกนไร้พ่ายในบ้าน 7 นัดติด เกมรุกเฉียบขาดจากการนำทัพของ Viktor Claesson และ Mohamed Elyounoussi ด้านบรอนด์บี้กำลังมั่นใจ ยิงได้ 31 ลูกมากที่สุดในลีกผ่าน Mathias Kvistgaarden และ Yuito Suzuki สถิติพบกัน 5 นัดหลังสุดเกิดสกอร์สูงและทั้งสองทีมยิงได้ถึง 4 นัด",
+      "homeInjuries": [
+        {
+          "name": "Roony Bardghji",
+          "pos": "FW",
+          "status": "Out",
+          "statusText": "พักฟื้น (Out)",
+          "detail": "ฟื้นฟูสภาพร่างกายหลังผ่าตัดเอ็นไขว้หน้าเข่า (ACL)"
+        },
+        {
+          "name": "Birger Meling",
+          "pos": "DF",
+          "status": "Out",
+          "statusText": "บาดเจ็บ (Out)",
+          "detail": "บาดเจ็บกล้ามเนื้อแฮมสตริง"
+        },
+        {
+          "name": "Nicolai Boilesen",
+          "pos": "DF",
+          "status": "Out",
+          "statusText": "บาดเจ็บ (Out)",
+          "detail": "มีปัญหาการบาดเจ็บหัวเข่าเรื้อรัง"
+        }
+      ],
+      "awayInjuries": [
+        {
+          "name": "Nicolai Vallys",
+          "pos": "MF",
+          "status": "Doubtful",
+          "statusText": "รอเช็กฟิต (Doubtful)",
+          "detail": "บาดเจ็บกล้ามเนื้อต้นขา รอทดสอบความฟิต"
+        },
+        {
+          "name": "Kevin Mensah",
+          "pos": "DF",
+          "status": "Out",
+          "statusText": "บาดเจ็บ (Out)",
+          "detail": "บาดเจ็บหัวเข่า พักรักษาตัว"
+        }
+      ]
+    },
+    {
+      "id": 102,
+      "matchTitle": "FC Midtjylland พบ AGF Aarhus (ศึกชิงจ่าฝูงลีก)",
+      "kickoff": "วันจันทร์ที่ 9 พฤศจิกายน 2026 เวลา 01:00 น. (ตามเวลาประเทศไทย)",
+      "stadium": "MCH Arena (เฮอร์นิ่ง, ความจุ 11,432 ที่นั่ง)",
+      "homeTeam": {
+        "id": "fcm",
+        "name": "FC Midtjylland",
+        "thaiName": "เอฟซี มิดทิลแลนด์",
+        "rank": 1
+      },
+      "awayTeam": {
+        "id": "agf",
+        "name": "AGF Aarhus",
+        "thaiName": "เอจีเอฟ อาร์ฮุส",
+        "rank": 3
+      },
+      "coachHome": "Thomas Thomasberg",
+      "coachAway": "Uwe Rösler",
+      "predictedScore": "2–0 หรือ 2–1",
+      "bestPicks": [
+        {
+          "market": "FC Midtjylland ชนะ (1)",
+          "odds": "@ 1.75",
+          "confidence": "84%"
+        },
+        {
+          "market": "Midtjylland Over 1.5 ประตู",
+          "odds": "@ 1.72",
+          "confidence": "80%"
+        }
+      ],
+      "probabilities": {
+        "home": 54,
+        "draw": 26,
+        "away": 20
+      },
+      "analysisText": "การโคจรมาพบกันของสองทีมหัวตาราง มิดทิลแลนด์จ่าฝูงฟอร์มใน MCH Arena ดุดันมาก ชนะ 6 จาก 7 นัดเหย้า Franculino Djú ฟอร์มฮอตยิงไป 9 ประตู ทางฝั่ง AGF ของ Uwe Rösler แม้จะเหนียวแน่นและมี Patrick Mortensen นำดาวซัลโว 10 ประตู แต่เกมเยือนเจอมิดทิลแลนด์ 4 นัดหลังแพ้ไปถึง 3 นัด",
+      "homeInjuries": [
+        {
+          "name": "Marrony",
+          "pos": "FW",
+          "status": "Out",
+          "statusText": "พักยาว (Out)",
+          "detail": "ผ่าตัดเอ็นหัวเข่า พักฟื้นระยะยาว"
+        },
+        {
+          "name": "Paulinho",
+          "pos": "DF",
+          "status": "Suspended",
+          "statusText": "ติดโทษแบน (Suspended)",
+          "detail": "สะสมใบเหลืองครบโควตา พักแข้ง 1 นัด"
+        }
+      ],
+      "awayInjuries": [
+        {
+          "name": "Michael Akoto",
+          "pos": "DF",
+          "status": "Out",
+          "statusText": "บาดเจ็บ (Out)",
+          "detail": "บาดเจ็บข้อเท้าจากการซ้อม"
+        },
+        {
+          "name": "Kevin Yakob",
+          "pos": "MF",
+          "status": "Out",
+          "statusText": "พักยาว (Out)",
+          "detail": "ผ่าตัดเอ็นไขว้หน้าเข่า อยู่ระหว่างกายภาพ"
+        }
+      ]
+    },
+    {
+      "id": 103,
+      "matchTitle": "FC Nordsjælland พบ Silkeborg IF (ศึกบอลสายเกมรุก)",
+      "kickoff": "วันอาทิตย์ที่ 8 พฤศจิกายน 2026 เวลา 22:00 น. (ตามเวลาประเทศไทย)",
+      "stadium": "Right to Dream Park (ฟารุม, ความจุ 10,300 ที่นั่ง)",
+      "homeTeam": {
+        "id": "fcn",
+        "name": "FC Nordsjælland",
+        "thaiName": "เอฟซี นอร์ดเยลแลนด์",
+        "rank": 7
+      },
+      "awayTeam": {
+        "id": "silkeborg",
+        "name": "Silkeborg IF",
+        "thaiName": "ซิลเคบอร์ก",
+        "rank": 6
+      },
+      "coachHome": "Jens Fønsskov Olsen",
+      "coachAway": "Kent Nielsen",
+      "predictedScore": "2–2 หรือ 3–2",
+      "bestPicks": [
+        {
+          "market": "Over 2.5 ประตู",
+          "odds": "@ 1.55",
+          "confidence": "88%"
+        },
+        {
+          "market": "Both Teams To Score (BTTS - Yes)",
+          "odds": "@ 1.50",
+          "confidence": "86%"
+        }
+      ],
+      "probabilities": {
+        "home": 42,
+        "draw": 27,
+        "away": 31
+      },
+      "analysisText": "สองทีมที่เล่นบอลเปิดหน้าแลกมากที่สุดในเดนมาร์ก นอร์ดเยลแลนด์ยิง 29 เสีย 28 ประตู ส่วนซิลเคบอร์กยิง 29 เสีย 23 ประตู สนามหญ้าเทียมของ Right to Dream Park เอื้อต่อการต่อบอลเร็ว การเจอกัน 6 นัดหลังสุด สกอร์รวมเกิน 2.5 ประตูทุกนัด!",
+      "homeInjuries": [
+        {
+          "name": "Diallo Sanoussy",
+          "pos": "FW",
+          "status": "Out",
+          "statusText": "บาดเจ็บ (Out)",
+          "detail": "บาดเจ็บกล้ามเนื้อต้นขา"
+        },
+        {
+          "name": "Kian Hansen",
+          "pos": "DF",
+          "status": "Doubtful",
+          "statusText": "รอเช็กฟิต (Doubtful)",
+          "detail": "ปัญหากล้ามเนื้อน่อง"
+        }
+      ],
+      "awayInjuries": [
+        {
+          "name": "Alexander Busch",
+          "pos": "DF",
+          "status": "Out",
+          "statusText": "บาดเจ็บ (Out)",
+          "detail": "มีปัญหาการบาดเจ็บกระดูกขา"
+        }
+      ]
+    },
+    {
+      "id": 104,
+      "matchTitle": "Randers FC พบ Viborg FF",
+      "kickoff": "วันอาทิตย์ที่ 8 พฤศจิกายน 2026 เวลา 20:00 น. (ตามเวลาประเทศไทย)",
+      "stadium": "Cepheus Park Randers (แรนเดอร์ส, ความจุ 10,300 ที่นั่ง)",
+      "homeTeam": {
+        "id": "randers",
+        "name": "Randers FC",
+        "thaiName": "แรนเดอร์ส เอฟซี",
+        "rank": 5
+      },
+      "awayTeam": {
+        "id": "viborg",
+        "name": "Viborg FF",
+        "thaiName": "วีบอร์ก",
+        "rank": 8
+      },
+      "coachHome": "Rasmus Bertelsen",
+      "coachAway": "Jakob Poulsen",
+      "predictedScore": "2–1 หรือ 1–1",
+      "bestPicks": [
+        {
+          "market": "Double Chance 1X (แรนเดอร์ส ไม่แพ้)",
+          "odds": "@ 1.30",
+          "confidence": "85%"
+        },
+        {
+          "market": "Randers FC ชนะ (1)",
+          "odds": "@ 2.05",
+          "confidence": "70%"
+        }
+      ],
+      "probabilities": {
+        "home": 48,
+        "draw": 27,
+        "away": 25
+      },
+      "analysisText": "แรนเดอร์ส ฟอร์มกำลังขึ้นหม้อ ไม่แพ้ใครมา 5 นัดติด Simen Nordli ยิง 8 จ่าย 5 เป็นแกนหลักขับเคลื่อนเกม วีบอร์กผลงานนอกบ้านยังเอาแน่เอานอนไม่ได้ เสียประตูนอกบ้านเฉลี่ย 1.8 ลูกต่อนัด",
+      "homeInjuries": [
+        {
+          "name": "Edgar Babayan",
+          "pos": "FW",
+          "status": "Out",
+          "statusText": "บาดเจ็บ (Out)",
+          "detail": "บาดเจ็บกล้ามเนื้อแฮมสตริง"
+        }
+      ],
+      "awayInjuries": [
+        {
+          "name": "Zan Zaletel",
+          "pos": "DF",
+          "status": "Out",
+          "statusText": "บาดเจ็บ (Out)",
+          "detail": "ผ่าตัดข้อเท้า พักฟื้น"
+        }
+      ]
+    },
+    {
+      "id": 105,
+      "matchTitle": "Aalborg BK พบ Vejle Boldklub",
+      "kickoff": "วันอาทิตย์ที่ 8 พฤศจิกายน 2026 เวลา 22:00 น. (ตามเวลาประเทศไทย)",
+      "stadium": "Aalborg Portland Park (อัลบอร์ก, ความจุ 13,997 ที่นั่ง)",
+      "homeTeam": {
+        "id": "aab",
+        "name": "Aalborg BK",
+        "thaiName": "อัลบอร์ก บีเค",
+        "rank": 9
+      },
+      "awayTeam": {
+        "id": "vejle",
+        "name": "Vejle Boldklub",
+        "thaiName": "ไวเล บอลด์คลับ",
+        "rank": 12
+      },
+      "coachHome": "Menno van Dam",
+      "coachAway": "Mihai Teja",
+      "predictedScore": "2–0 หรือ 2–1",
+      "bestPicks": [
+        {
+          "market": "Aalborg BK ชนะ (1)",
+          "odds": "@ 1.85",
+          "confidence": "80%"
+        },
+        {
+          "market": "Under 3.5 ประตู",
+          "odds": "@ 1.40",
+          "confidence": "82%"
+        }
+      ],
+      "probabilities": {
+        "home": 51,
+        "draw": 26,
+        "away": 23
+      },
+      "analysisText": "ศึกหนีโซนท้ายตาราง ไวเล จมบ๊วยแพ้ไปถึง 11 นัดจาก 15 เกม เสียไปถึง 36 ลูก (แย่ที่สุดในลีก) อัลบอร์ก แม้ฟอร์มจะแกว่งแต่การได้เล่นในบ้านต่อหน้าแฟนบอลเกือบหมื่นสี่ และการเจอทีมบ๊วย ถือเป็นโอกาสทองในการเก็บ 3 แต้มเต็ม",
+      "homeInjuries": [
+        {
+          "name": "Sebastian Otoa",
+          "pos": "DF",
+          "status": "Doubtful",
+          "statusText": "รอเช็กฟิต (Doubtful)",
+          "detail": "มีอาการตึงกล้ามเนื้อต้นขา"
+        }
+      ],
+      "awayInjuries": [
+        {
+          "name": "Thomas Gundelund",
+          "pos": "DF",
+          "status": "Out",
+          "statusText": "บาดเจ็บ (Out)",
+          "detail": "บาดเจ็บกล้ามเนื้อฉีกขาด"
+        }
+      ]
+    }
+  ]
+};

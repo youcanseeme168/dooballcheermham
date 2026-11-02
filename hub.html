@@ -961,6 +961,38 @@
             </tbody>
           </table>
         </div>
+
+        <!-- Danish Superliga Table -->
+        <div class="standings-wrap" style="grid-column: 1 / -1; border-color: rgba(239,68,68,0.3);">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+            <div style="display:flex;align-items:center;gap:0.5rem;">
+              <span style="font-size:1.3rem;">🇩🇰</span>
+              <h3 style="font-size:1.15rem;font-weight:800;color:#fff;">Danish Superliga (3F Superliga) 2024/25–2026/27</h3>
+            </div>
+            <span class="league-badge" style="color:#ef4444;border-color:rgba(239,68,68,0.3);">Matchday 16 • 12 ทีมครบ</span>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="standings-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>สโมสร</th>
+                  <th>แข่ง</th>
+                  <th>ชนะ</th>
+                  <th>เสมอ</th>
+                  <th>แพ้</th>
+                  <th>+/-</th>
+                  <th>แต้ม</th>
+                  <th>ฟอร์ม</th>
+                </tr>
+              </thead>
+              <tbody id="danish-standings-body">
+                <!-- Rendered by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -992,6 +1024,30 @@
     // High-quality Verified Mock Data (Current 2026/27 Reality)
     const FIXTURES_DATA = [
       {
+        id: 'fx_dk1',
+        league: 'Danish Superliga',
+        date: 'อาทิตย์ที่ 8 พ.ย. 2026 • 20:00 น.',
+        stadium: 'Parken Stadium, โคเปนเฮเกน',
+        home: { name: 'FC Copenhagen', logo: 'assets/logos/ucl.png' },
+        away: { name: 'Brøndby IF', logo: 'assets/logos/ucl.png' },
+        predScore: '2 – 1 หรือ 1 – 1',
+        winProb: '46% / 28% / 26%',
+        keyFactor: 'ดาร์บี้แมตช์แห่งเดนมาร์ก โคเปนเฮเกนในบ้านไร้พ่าย 7 นัดติด บรอนด์บี้ยิงประตูสูงสุดในลีก 31 ลูก',
+        recommend: 'สกอร์สูง Over 2.5 (@ 1.68) หรือ BTTS - Yes'
+      },
+      {
+        id: 'fx_dk2',
+        league: 'Danish Superliga',
+        date: 'จันทร์ที่ 9 พ.ย. 2026 • 01:00 น.',
+        stadium: 'MCH Arena, เฮอร์นิ่ง',
+        home: { name: 'FC Midtjylland', logo: 'assets/logos/ucl.png' },
+        away: { name: 'AGF Aarhus', logo: 'assets/logos/ucl.png' },
+        predScore: '2 – 0 หรือ 2 – 1',
+        winProb: '54% / 26% / 20%',
+        keyFactor: 'ศึกชิงจ่าฝูงลีกเดนมาร์ก มิดทิลแลนด์เล่นในบ้านชนะ 6 จาก 7 นัด Franculino Djú ฟอร์มฮอตยิงไป 9 ประตู',
+        recommend: 'มิดทิลแลนด์ ชนะ (@ 1.75)'
+      },
+      {
         id: 'fx1',
         league: 'UEFA Champions League',
         date: 'พุธที่ 4 พ.ย. 2026 • 03:00 น.',
@@ -1000,7 +1056,7 @@
         away: { name: 'AS Roma', logo: 'assets/logos/roma.png' },
         predScore: '1 – 2 หรือ 2 – 2',
         winProb: '30% / 28% / 42%',
-        keyFactor: 'แมนฯ ยูไนเต็ด วิกฤตไร้ชัย 9 นัดติดต่อกัน ขาด Yoro, Ugarte, Šeško ขณะที่ โรม่า ไร้พ่ายในลีก 17 นัดติด',
+        keyFactor: 'แมนฯ ยูไนเต็ด วิกฤตไร้ชัย 9 นัดติดต่อกัน ขาด Yoro, Shaw, Maguire, Mainoo ขณะที่ โรม่า ไร้พ่ายในลีก 17 นัดติด',
         recommend: 'รอง AS Roma (X2) หรือ สกอร์สูง Over 2.5'
       },
       {
@@ -1089,6 +1145,30 @@
 
     const INJURIES_DATA = [
       {
+        player: 'Roony Bardghji',
+        team: 'FC Copenhagen (เดนมาร์ก)',
+        pos: 'FW (ปีกขวาตัวความหวัง)',
+        injury: 'เอ็นไขว้หน้าเข่าฉีกขาด (ACL) ฟื้นฟูร่างกาย',
+        expectedReturn: 'กำลังเคาะสนิมเรียกฟิต',
+        status: 'Out'
+      },
+      {
+        player: 'Nicolai Vallys',
+        team: 'Brøndby IF (เดนมาร์ก)',
+        pos: 'MF (มิดฟิลด์ตัวรุก)',
+        injury: 'บาดเจ็บกล้ามเนื้อต้นขา',
+        expectedReturn: 'รอทดสอบความฟิต (Doubtful)',
+        status: 'Doubtful'
+      },
+      {
+        player: 'Marrony',
+        team: 'FC Midtjylland (เดนมาร์ก)',
+        pos: 'FW (กองหน้า)',
+        injury: 'ผ่าตัดเอ็นหัวเข่า พักฟื้นระยะยาว',
+        expectedReturn: 'พักฟื้นต่อเนื่อง',
+        status: 'Out'
+      },
+      {
         player: 'Manuel Ugarte',
         team: 'Manchester United',
         pos: 'กองกลางตัวรับ (CDM)',
@@ -1172,6 +1252,46 @@
     }
 
     // Render Standings
+    
+    const STANDINGS_DANISH = [
+      { rank: 1, team: 'FC Midtjylland', played: 15, w: 9, d: 3, l: 3, gd: '+11', pts: 30, form: ['W','W','L','W','D'] },
+      { rank: 2, team: 'FC Copenhagen', played: 15, w: 8, d: 5, l: 2, gd: '+12', pts: 29, form: ['W','D','W','W','D'] },
+      { rank: 3, team: 'AGF Aarhus', played: 15, w: 7, d: 6, l: 2, gd: '+13', pts: 27, form: ['D','W','W','D','W'] },
+      { rank: 4, team: 'Brøndby IF', played: 15, w: 7, d: 4, l: 4, gd: '+10', pts: 25, form: ['W','L','W','D','W'] },
+      { rank: 5, team: 'Randers FC', played: 15, w: 6, d: 6, l: 3, gd: '+7', pts: 24, form: ['W','W','D','W','D'] },
+      { rank: 6, team: 'Silkeborg IF', played: 15, w: 6, d: 5, l: 4, gd: '+6', pts: 23, form: ['D','D','D','W','L'] },
+      { rank: 7, team: 'FC Nordsjælland', played: 15, w: 6, d: 4, l: 5, gd: '+1', pts: 22, form: ['L','W','D','L','W'] },
+      { rank: 8, team: 'Viborg FF', played: 15, w: 5, d: 5, l: 5, gd: '0', pts: 20, form: ['W','L','D','W','L'] },
+      { rank: 9, team: 'Aalborg BK', played: 15, w: 4, d: 4, l: 7, gd: '-13', pts: 16, form: ['L','D','L','D','L'] },
+      { rank: 10, team: 'Sønderjyske', played: 15, w: 3, d: 3, l: 9, gd: '-16', pts: 12, form: ['L','L','W','L','L'] },
+      { rank: 11, team: 'Lyngby Boldklub', played: 15, w: 1, d: 7, l: 7, gd: '-10', pts: 10, form: ['D','D','L','D','L'] },
+      { rank: 12, team: 'Vejle Boldklub', played: 15, w: 1, d: 3, l: 11, gd: '-20', pts: 6, form: ['D','W','L','L','L'] }
+    ];
+
+    function renderDanishStandingsInHub() {
+      const tbody = document.getElementById('danish-standings-body');
+      if (!tbody) return;
+      tbody.innerHTML = STANDINGS_DANISH.map(s => {
+        const formDots = s.form.map(f => {
+          const cls = f === 'W' ? 'form-w' : (f === 'D' ? 'form-d' : 'form-l');
+          return `<span class="form-dot ${cls}">${f}</span>`;
+        }).join('');
+        return `
+          <tr style="border-left:${s.rank <= 6 ? '3px solid #10b981' : '3px solid #64748b'};">
+            <td style="font-weight:800;color:${s.rank <= 6 ? 'var(--accent-ucl)' : 'var(--text-dim)'};">${s.rank}</td>
+            <td><strong style="color:#fff;">${s.team}</strong></td>
+            <td>${s.played}</td>
+            <td>${s.w}</td>
+            <td>${s.d}</td>
+            <td>${s.l}</td>
+            <td style="color:${s.gd.startsWith('+') ? '#10b981' : (s.gd.startsWith('-') ? '#ef4444' : '#fff')};">${s.gd}</td>
+            <td><strong style="color:var(--accent-gold);">${s.pts}</strong></td>
+            <td>${formDots}</td>
+          </tr>
+        `;
+      }).join('');
+    }
+
     function renderStandings() {
       const eplBody = document.getElementById('epl-standings-body');
       eplBody.innerHTML = STANDINGS_PREMIER_LEAGUE.map(s => `

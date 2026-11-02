@@ -72,6 +72,31 @@
     </div>
   </nav>
 
+  <!-- Top League Category Switcher Bar (UCL vs Danish Superliga) -->
+  <div class="league-switcher-container">
+    <div class="container league-switcher-inner">
+      <div class="league-switcher-title"><i class="ri-apps-2-line"></i> หมวดหมู่การแข่งขัน:</div>
+      <div class="league-switcher-buttons">
+        <button id="cat-btn-ucl" class="league-tab-btn active" onclick="switchLeagueCategory('ucl')">
+          <span class="league-tab-icon">🏆</span>
+          <span class="league-tab-label">UEFA Champions League</span>
+          <span class="league-tab-badge">9 คู่บิ๊กแมตช์</span>
+        </button>
+        <button id="cat-btn-superliga" class="league-tab-btn" onclick="switchLeagueCategory('superliga')">
+          <span class="league-tab-icon">🇩🇰</span>
+          <span class="league-tab-label">Danish Superliga</span>
+          <span class="league-tab-badge badge-red">เดนิช ซูเปอร์ลีกา</span>
+        </button>
+        <a href="hub.html" class="league-tab-btn hub-shortcut-tab">
+          <span class="league-tab-icon"><i class="ri-flashlight-line"></i></span>
+          <span class="league-tab-label">Live Multi-Hub</span>
+          <span class="league-tab-badge badge-gold">สดทุกมิติ</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
   <!-- Main View Container: Overview View -->
   <main id="overview-view">
 
@@ -331,6 +356,12 @@
   </footer>
 
   <!-- Scripts -->
+  
+  <!-- Danish Superliga Dedicated View (Separated Category) -->
+  <main id="danish-view" style="display:none;">
+    <div id="danish-content-container"></div>
+  </main>
+
   <script src="data.js"></script>
   <script src="script.js"></script>
 </body>
