@@ -1990,7 +1990,7 @@ const UCL_DATA = {
         "raw": "Goals Scored / Conceded: ใน UCL 3 นัดแรก Barcelona ยิง 11 เสีย 6 ประตู (เฉลี่ยยิง 3.67 เสีย 2.0 ประตู/นัด) ส่วน Aston Villa ยิง 12 เสียเพียง 3 ประตู (เฉลี่ยยิง 4.0 เสีย 1.0 ประตู/นัด)เรตติ้งและสถิติแนวโน้มสุดขั้ว: Aston Villa มีคะแนนเฉลี่ยทีมใน UCL จาก Sofascore สูงถึง 7.95 ซึ่งสูงกว่า Barcelona ที่ได้ 7.72 สถิติการทำประตูของคู่นี้สูงเป็นประวัติการณ์:18 นัดหลังสุดในรอบลีกเฟสของ Barcelona มีประตูรวมเฉลี่ยสูงถึง 5.06 ประตูต่อนัด!Barcelona เก็บคลีนชีตใน UCL ไม่ได้เลย 18 นัดติดต่อกัน และเสียประตูแรกก่อนถึง 9 จาก 12 นัดหลังสุดใน UCL!10 นัดหลังสุดใน UCL ของ Aston Villa มีประตูรวมเฉลี่ยสูงถึง 4.30 ประตูต่อนัด!4 จาก 5 นัดเยือนหลังสุดของ Aston Villa มีใบเหลืองรวม 6 ใบขึ้นไป"
       },
       "squadReadiness": {
-        "raw": "FC Barcelona: กุนซือ Hansi Flick ประสบปัญหาผู้เล่นแนวรับบาดเจ็บหลายราย ได้แก่ Andreas Christensen (เจ็บเอ็นร้อยหวาย), Eric García (เจ็บแฮมสตริง), Andreas Christensen (เจ็บกล้ามเนื้อ), Ferran Torres (เจ็บแฮมสตริง) รวมถึงตัวรุกอย่าง Dani Olmo (กล้ามเนื้อต้นขาด้านในฉีกขาด) และ Marc-André ter Stegen (ผ่าตัดเอ็นสะบ้า) และ Marc Bernal (ACL) ส่วนแนวรุกนำโดย Lamine Yamal (มูลค่าตลาด 220 ล้านยูโร) และฟูลแบ็กตัวสร้างสรรค์เกมอย่าง Alejandro BaldeAston Villa: กุนซือ Unai Emery จะไม่มี Amadou Onana (รอเช็กฟิต), Tyrone Mings, Boubacar Kamara และ Matty Cash (ไม่มีชื่อลงทะเบียน) โดยมีดาวเด่นมูลค่าสูงสุดอย่าง Ollie Watkins (65 ล้านยูโร) เป็นแกนหลัก"
+        "raw": "FC Barcelona: กุนซือ Hansi Flick ประสบปัญหาผู้เล่นแนวรับบาดเจ็บหลายราย ได้แก่ Jules Koundé (เจ็บข้อเท้าซ้ายแพลง), Andreas Christensen (เจ็บเอ็นร้อยหวาย), Eric García (เจ็บแฮมสตริง), Ferran Torres (เจ็บแฮมสตริง) รวมถึงตัวรุกอย่าง Dani Olmo (กล้ามเนื้อต้นขาด้านในฉีกขาด) และสองแข้งพักยาวอย่าง Marc-André ter Stegen (ผ่าตัดเอ็นสะบ้า) และ Marc Bernal (ACL) ส่วนแนวรุกพร้อมรบนำโดย Lamine Yamal, Robert Lewandowski, Raphinha และ PedriAston Villa: กุนซือ Unai Emery ต้องรอเช็กฟิต Amadou Onana ที่มีอาการตึงกล้ามเนื้อต้นขา รวมถึง Tyrone Mings, Boubacar Kamara และ Matty Cash ที่อยู่ระหว่างเรียกฟิต ส่วน Ross Barkley บาดเจ็บกล้ามเนื้อชวดลงสนาม โดยมี Ollie Watkins และ Morgan Rogers นำทัพ"
       },
       "tacticsAnalysis": {
         "raw": "FC Barcelona (กุนซือ Hansi Flick): ใช้ระบบดันแนวรับขึ้นสูง (High Line) และเปิดเกมรุกเต็มสูบผ่าน Lamine Yamal และ Balde จุดแข็งคือเกมรุกในบ้านที่ยิงกระจาย (เพิ่งกด Alavés 6-1) แต่การขาดทั้ง Koundé, Christensen และ Eric García ทำให้จังหวะรับมือเกมสวนกลับและลูกตั้งเตะเปราะบางมาก (ไม่คลีนชีตใน UCL 18 นัดติด)Aston Villa (กุนซือ Unai Emery): เชี่ยวชาญการเล่นเกมโต้กลับเร็วและการโจมตีพื้นที่หลังแนวรับคู่แข่ง แม้ในพรีเมียร์ลีกจะเสียไปถึง 13 ประตูจาก 9 นัด แต่ใน UCL เล่นได้อย่างมีประสิทธิภาพสูงมาก"
@@ -2102,13 +2102,13 @@ const UCL_DATA = {
               "image": "assets/players/de_jong.png"
             },
             {
-              "name": "Jules Koundé",
-              "pos": "DF",
-              "role": "แบ็กขวาตัวหลัก",
-              "stat": "ฟอร์มแกร่งทั้งเกมรับและเกมรุก",
-              "value": "55M€",
+              "name": "Pedri",
+              "pos": "MF",
+              "role": "จอมทัพเพลย์เมกเกอร์หัวใจแดนกลาง",
+              "stat": "คุมจังหวะและจ่ายบอลคิลเลอร์พาสแม่นยำ 91%",
+              "value": "80M€",
               "isStar": false,
-              "image": "assets/players/kounde.png"
+              "image": "assets/players/pedri.png"
             }
           ],
           "injuredPlayers": [
@@ -2153,12 +2153,21 @@ const UCL_DATA = {
               "detail": "บาดเจ็บกล้ามเนื้อต้นขาด้านหลัง (แฮมสตริง)"
             },
             {
-              "name": "Ronald Araújo",
+              "name": "Jules Koundé",
               "pos": "DF",
               "status": "Out",
-              "statusText": "พักฟื้น (Out)",
+              "statusText": "บาดเจ็บ (Out)",
               "badge": "red",
-              "detail": "อยู่ในช่วงฟื้นฟูสภาพร่างกายหลังผ่าตัดแฮมสตริง"
+              "detail": "บาดเจ็บข้อเท้าซ้ายแพลง พลาดลงสนาม",
+              "image": "assets/players/kounde.png"
+            },
+            {
+              "name": "Dani Olmo",
+              "pos": "MF",
+              "status": "Out",
+              "statusText": "บาดเจ็บ (Out)",
+              "badge": "red",
+              "detail": "บาดเจ็บกล้ามเนื้อต้นขาด้านใน/แอดดักเตอร์ฉีกขาด"
             }
           ]
         },
