@@ -297,12 +297,23 @@
 
         <!-- Interactive Summary Table -->
         <div id="summary-table-section">
-          <div class="section-header" style="margin-bottom:1.2rem;">
+          <div class="section-header" style="margin-bottom:1.2rem;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;">
             <div class="section-title-group">
-              <h3 style="font-size:1.4rem;font-weight:800;color:#fff;">
-                <i class="ri-table-line" style="color:var(--accent-ucl);"></i> ตารางสรุปทุกคู่ (วันพุธที่ 4 พฤศจิกายน 2026)
+              <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.35rem;">
+                <span class="badge badge-ucl" style="font-size:0.75rem;padding:0.25rem 0.65rem;">
+                  <i class="ri-shield-star-line"></i> MATCHDAY 4 · UCL SUMMARY
+                </span>
+                <span style="font-size:0.8rem;color:var(--text-dim);">อัปเดตข้อมูลสด</span>
+              </div>
+              <h3 style="font-size:1.45rem;font-weight:900;color:#fff;letter-spacing:-0.01em;">
+                <i class="ri-table-line" style="color:var(--accent-ucl);"></i> ตารางสรุปการวิเคราะห์ 9 คู่ (วันพุธที่ 4 พฤศจิกายน 2026)
               </h3>
-              <p>รวมสกอร์คาดการณ์ ตลาดเด่น ความน่าจะเป็น 1X2 และคะแนนความน่าเชื่อถือ</p>
+              <p style="margin:0;color:var(--text-dim);font-size:0.88rem;">เปรียบเทียบสถิติ สกอร์คาดการณ์ ตลาดทำเงิน ความน่าจะเป็น 1X2 และคะแนนความแม่นยำ</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.5rem;">
+              <span class="badge badge-gold" style="font-size:0.75rem;padding:0.35rem 0.75rem;">
+                <i class="ri-checkbox-circle-fill"></i> คัดกรอง 9/9 คู่สมบูรณ์
+              </span>
             </div>
           </div>
 
@@ -310,14 +321,14 @@
             <table class="summary-table">
               <thead>
                 <tr>
-                  <th>#</th>
-                  <th>คู่แข่งขัน (เวลาไทย)</th>
-                  <th>สกอร์คาดการณ์</th>
-                  <th>ตลาดที่น่าสนใจที่สุด (คัดกรองแล้ว)</th>
-                  <th>ความน่าจะเป็น 1X2</th>
-                  <th>ความน่าเชื่อถือ</th>
-                  <th>ระดับความเสี่ยง</th>
-                  <th>ดูบทวิเคราะห์</th>
+                  <th style="width:52px;text-align:center;">#</th>
+                  <th style="min-width:270px;"><i class="ri-football-line"></i> คู่แข่งขัน & เวลาเตะ</th>
+                  <th style="min-width:135px;text-align:center;"><i class="ri-sparkling-fill"></i> สกอร์คาดการณ์</th>
+                  <th style="min-width:260px;"><i class="ri-focus-3-line"></i> ตลาดน่าสนใจ (คัดกรอง)</th>
+                  <th style="min-width:170px;text-align:center;"><i class="ri-pie-chart-2-line"></i> ความน่าจะเป็น 1X2</th>
+                  <th style="min-width:115px;text-align:center;"><i class="ri-shield-star-line"></i> ความแม่นยำ</th>
+                  <th style="min-width:115px;text-align:center;"><i class="ri-alarm-warning-line"></i> ระดับความเสี่ยง</th>
+                  <th style="min-width:105px;text-align:center;"><i class="ri-file-list-3-line"></i> วิเคราะห์เต็ม</th>
                 </tr>
               </thead>
               <tbody id="summary-table-body">
@@ -330,7 +341,6 @@
             * หมายเหตุ: การวิเคราะห์ทั้งหมดเป็นการประเมินความน่าจะเป็นและเปรียบเทียบความคุ้มค่าเชิงสถิติจากข้อมูลจริงที่มีอยู่ก่อนการแข่งขัน ไม่สามารถรับประกันผลการแข่งขันได้
           </p>
         </div>
-
       </div>
     </section>
 

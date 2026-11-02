@@ -188,47 +188,176 @@
     renderSummaryTable(ov.summaryTable);
   }
 
-  // Render Table
+  // Helper to parse picks string into clean title & odds
+  function formatPickItem(pickStr) {
+    if (!pickStr) return { title: '', odds: '' };
+    let clean = pickStr.replace(/^\d+\.\s*/, '').trim();
+    let odds = '';
+    const atMatch = clean.match(/\((@?\s*[\d\.\+\/\-]+)\)/);
+    if (atMatch) {
+      odds = atMatch[1].replace('@', '').trim();
+      clean = clean.replace(atMatch[0], '').trim();
+    } else if (clean.includes('(เชิงวิเคราะห์)')) {
+      odds = 'วิเคราะห์';
+      clean = clean.replace('(เชิงวิเคราะห์)', '').trim();
+    }
+    return { title: clean, odds };
+  }
+
+  // Render High-End Modern Summary Table
   function renderSummaryTable(rows) {
     const tbody = document.getElementById('summary-table-body');
     if (!tbody || !rows) return;
 
     tbody.innerHTML = rows.map(r => {
-      let riskBadgeClass = 'badge-gray';
-      if (r.risk.includes('ต่ำ')) riskBadgeClass = 'badge-green';
-      else if (r.risk.includes('ปานกลาง')) riskBadgeClass = 'badge-gold';
-      else if (r.risk.includes('สูง')) riskBadgeClass = 'badge-red';
+      // Find match in UCL_DATA for official logos and metadata
+      const m = (typeof UCL_DATA !== 'undefined' && UCL_DATA.matches)
+        ? UCL_DATA.matches.find(item => item.id === r.id)
+        : null;
+
+      // Parse 1X2 Probabilities (e.g. "43% / 26% / 31%")
+      let pHome = 33, pDraw = 33, pAway = 34;
+      if (r.prob1X2) {
+        const parts = r.prob1X2.split('/').map(s => parseInt(s.replace(/[^0-9]/g, ''), 10));
+        if (parts.length >= 3 && !isNaN(parts[0]) && !isNaN(parts[1]) && !isNaN(parts[2])) {
+          pHome = parts[0];
+          pDraw = parts[1];
+          pAway = parts[2];
+        }
+      }
+
+      // Confidence score & color
+      let confScore = r.confidenceScore || parseInt(r.confidence, 10) || 85;
+      let confColor = '#00f0ff';
+      if (confScore >= 87) confColor = '#10b981';
+      else if (confScore >= 84) confColor = '#00f0ff';
+      else confColor = '#f59e0b';
+
+      // Risk badge styling
+      let riskHtml = '';
+      if (r.risk.includes('ต่ำ')) {
+        riskHtml = `
+          <div class="summary-risk-badge risk-low">
+            <i class="ri-shield-check-fill"></i>
+            <span>เสี่ยงต่ำ</span>
+          </div>
+        `;
+      } else if (r.risk.includes('สูง')) {
+        riskHtml = `
+          <div class="summary-risk-badge risk-high">
+            <i class="ri-alert-fill"></i>
+            <span>เสี่ยงสูง</span>
+          </div>
+        `;
+      } else {
+        riskHtml = `
+          <div class="summary-risk-badge risk-med">
+            <i class="ri-scales-3-line"></i>
+            <span>ปานกลาง</span>
+          </div>
+        `;
+      }
+      if (r.risk.includes('BTTS')) {
+        riskHtml += `<div class="risk-sub-note">เฉพาะ BTTS</div>`;
+      }
+
+      // Format Picks list into sleek chips
+      const picksHtml = (r.bestPicks || []).map(p => {
+        const parsed = formatPickItem(p);
+        return `
+          <div class="summary-pick-chip">
+            <span class="pick-chip-icon"><i class="ri-checkbox-circle-fill"></i></span>
+            <span class="pick-chip-text" title="${parsed.title}">${parsed.title}</span>
+            ${parsed.odds ? `<span class="pick-chip-odds">${parsed.odds.startsWith('@') ? parsed.odds : '@ ' + parsed.odds}</span>` : ''}
+          </div>
+        `;
+      }).join('');
+
+      // Teams markup with official crest logos
+      let matchDisplayHtml = '';
+      if (m && m.homeTeam && m.awayTeam) {
+        matchDisplayHtml = `
+          <div class="summary-fixture-row">
+            <div class="summary-fixture-teams">
+              <div class="summary-team-side home">
+                <span class="summary-team-title">${m.homeTeam.name}</span>
+                <span class="summary-team-logo-wrap">${getTeamLogo(m.homeTeam.id, m.homeTeam.name)}</span>
+              </div>
+              <span class="summary-fixture-vs">VS</span>
+              <div class="summary-team-side away">
+                <span class="summary-team-logo-wrap">${getTeamLogo(m.awayTeam.id, m.awayTeam.name)}</span>
+                <span class="summary-team-title">${m.awayTeam.name}</span>
+              </div>
+            </div>
+            <div class="summary-fixture-sub">
+              <span class="summary-time-pill"><i class="ri-time-line"></i> ${m.kickoffSlot || r.time} น.</span>
+              ${(m.isNeutralGround || r.isNeutral) ? '<span class="summary-neutral-pill"><i class="ri-map-pin-2-line"></i> สนามกลาง</span>' : ''}
+            </div>
+          </div>
+        `;
+      } else {
+        const cleanMatchName = r.match.replace(/\\bwu\\b/gi, 'vs').replace(/\\s+พบ\\s+/g, ' vs ');
+        matchDisplayHtml = `
+          <div class="summary-fixture-row">
+            <div style="font-weight:700;color:#fff;font-size:0.92rem;">${cleanMatchName}</div>
+            <div class="summary-fixture-sub">
+              <span class="summary-time-pill"><i class="ri-time-line"></i> ${r.time} น.</span>
+            </div>
+          </div>
+        `;
+      }
 
       return `
-        <tr>
-          <td style="font-family:var(--font-mono);font-weight:bold;color:var(--accent-ucl);">${r.id}</td>
-          <td>
-            <div class="table-match-name">
-              <span>${r.match}</span>
-              ${r.isNeutral ? '<span class="badge badge-ucl" style="font-size:0.68rem;padding:0.15rem 0.4rem;">สนามกลาง</span>' : ''}
-            </div>
-            <div style="font-size:0.75rem;color:var(--text-dim);margin-top:0.15rem;">เตะ ${r.time} น.</div>
+        <tr class="summary-row" onclick="window.location.hash='#match-${r.id}'">
+          <td class="summary-col-id">
+            <span class="summary-id-badge">#${r.id}</span>
           </td>
-          <td>
-            <span class="badge badge-gold" style="font-family:var(--font-mono);font-size:0.84rem;">${r.predictedScore}</span>
+          <td class="summary-col-match">
+            ${matchDisplayHtml}
           </td>
-          <td>
-            <div class="table-picks-list">
-              ${r.bestPicks.map(p => `<span class="table-pick-item"><i class="ri-check-line"></i> ${p}</span>`).join('')}
+          <td class="summary-col-score">
+            <div class="summary-score-capsule">
+              <i class="ri-football-fill score-ball-icon"></i>
+              <span class="score-digits">${r.predictedScore}</span>
             </div>
           </td>
-          <td style="font-family:var(--font-mono);font-weight:600;font-size:0.82rem;white-space:nowrap;">
-            ${r.prob1X2}
+          <td class="summary-col-picks">
+            <div class="summary-picks-wrapper">
+              ${picksHtml}
+            </div>
           </td>
-          <td>
-            <span style="font-family:var(--font-mono);font-weight:bold;color:var(--accent-ucl);">${r.confidence}</span>
+          <td class="summary-col-prob">
+            <div class="summary-prob-widget">
+              <div class="summary-prob-bar">
+                <div class="prob-seg prob-seg-home" style="width:${pHome}%;" title="เจ้าบ้านชนะ ${pHome}%"></div>
+                <div class="prob-seg prob-seg-draw" style="width:${pDraw}%;" title="เสมอ ${pDraw}%"></div>
+                <div class="prob-seg prob-seg-away" style="width:${pAway}%;" title="ทีมเยือนชนะ ${pAway}%"></div>
+              </div>
+              <div class="summary-prob-labels">
+                <span class="lbl-home"><strong>1</strong> ${pHome}%</span>
+                <span class="lbl-draw"><strong>X</strong> ${pDraw}%</span>
+                <span class="lbl-away"><strong>2</strong> ${pAway}%</span>
+              </div>
+            </div>
           </td>
-          <td>
-            <span class="badge ${riskBadgeClass}">${r.risk}</span>
+          <td class="summary-col-conf">
+            <div class="summary-conf-widget">
+              <div class="summary-conf-top">
+                <span class="conf-digit" style="color:${confColor};">${confScore}</span>
+                <span class="conf-unit">/100</span>
+              </div>
+              <div class="summary-conf-track">
+                <div class="summary-conf-fill" style="width:${confScore}%;background:${confColor};box-shadow:0 0 8px ${confColor}66;"></div>
+              </div>
+            </div>
           </td>
-          <td>
-            <button class="table-btn-action" onclick="window.location.hash='#match-${r.id}'">
-              อ่านบทวิเคราะห์ <i class="ri-arrow-right-line"></i>
+          <td class="summary-col-risk">
+            ${riskHtml}
+          </td>
+          <td class="summary-col-action">
+            <button class="summary-view-btn" onclick="event.stopPropagation(); window.location.hash='#match-${r.id}';">
+              <span>วิเคราะห์</span>
+              <i class="ri-arrow-right-line"></i>
             </button>
           </td>
         </tr>
