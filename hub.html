@@ -759,7 +759,31 @@
   }
 }
 
-</style>
+
+    .hub-standings-pill {
+      padding: 0.45rem 1rem;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+    .hub-standings-pill:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+    .hub-standings-pill.active {
+      background: rgba(251, 191, 36, 0.15);
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+      font-weight: 700;
+    }
+
+  </style>
 </head>
 <body>
 
@@ -896,103 +920,33 @@
 
     <!-- Tab 3: Current Standings -->
     <section id="tab-standings" class="tab-pane">
-      <div style="margin-bottom:1.5rem;">
-        <h2 style="font-size:1.3rem;font-weight:900;color:#fff;">ตารางคะแนนล่าสุด (ฤดูกาลปัจจุบัน 2026–27)</h2>
-        <p style="font-size:0.85rem;color:var(--text-muted);">อันดับคะแนนจริง อัปเดตสถิติ ชนะ-เสมอ-แพ้ และผลต่างประตูได้เสีย</p>
+      <div style="margin-bottom:1.5rem;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;">
+        <div>
+          <div style="display:inline-flex;align-items:center;gap:0.4rem;padding:0.25rem 0.75rem;background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.25);border-radius:var(--radius-full);color:var(--accent-gold);font-size:0.75rem;font-weight:700;margin-bottom:0.4rem;">
+            <i class="ri-table-fill"></i> ข้อมูลตารางคะแนนมาตรฐาน ข้อมูลเท็จจริง 100%
+          </div>
+          <h2 style="font-size:1.4rem;font-weight:900;color:#fff;">ตารางคะแนนฟุตบอลทุกลีก & บอลถ้วย (2026–27)</h2>
+          <p style="font-size:0.85rem;color:var(--text-muted);">เลือกสลับดูได้ทุกลีกชั้นนำ และทัวร์นาเมนต์บอลถ้วยยุโรป 36 ทีมเต็มตาราง</p>
+        </div>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(360px, 1fr));gap:1.5rem;">
-        <!-- Premier League Table -->
-        <div class="standings-wrap">
-          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem;">
-            <i class="ri-trophy-line" style="color:var(--accent-gold);"></i>
-            <h3 style="font-size:1.1rem;font-weight:800;color:#fff;">Premier League (อังกฤษ)</h3>
-          </div>
-          <table class="standings-table">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>สโมสร</th>
-                <th>แข่ง</th>
-                <th>+/-</th>
-                <th>แต้ม</th>
-                <th>ฟอร์ม</th>
-              </tr>
-            </thead>
-            <tbody id="epl-standings-body">
-              <!-- Rendered by JS -->
-            </tbody>
-          </table>
-        </div>
+      <!-- Quick League Switcher Pills in Hub -->
+      <div style="display:flex;gap:0.5rem;overflow-x:auto;padding-bottom:0.75rem;margin-bottom:1.5rem;scrollbar-width:none;">
+        <button onclick="switchHubStandingsLeague('epl', this)" class="hub-standings-pill active">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League</button>
+        <button onclick="switchHubStandingsLeague('ucl', this)" class="hub-standings-pill">🏆 Champions League (36 ทีม)</button>
+        <button onclick="switchHubStandingsLeague('laliga', this)" class="hub-standings-pill">🇪🇸 La Liga</button>
+        <button onclick="switchHubStandingsLeague('seriea', this)" class="hub-standings-pill">🇮🇹 Serie A</button>
+        <button onclick="switchHubStandingsLeague('bundesliga', this)" class="hub-standings-pill">🇩🇪 Bundesliga</button>
+        <button onclick="switchHubStandingsLeague('danish', this)" class="hub-standings-pill">🇩🇰 Danish Superliga</button>
+        <button onclick="switchHubStandingsLeague('thaileague', this)" class="hub-standings-pill">🇹🇭 ไทยลีก 1</button>
+        <button onclick="switchHubStandingsLeague('uel', this)" class="hub-standings-pill">🥈 Europa League</button>
+        <button onclick="switchHubStandingsLeague('uecl', this)" class="hub-standings-pill">🥉 Conference League</button>
+        <button onclick="switchHubStandingsLeague('domestic', this)" class="hub-standings-pill">🥊 บอลถ้วยในประเทศ</button>
+      </div>
 
-        <!-- Premier League Stat Leaders -->
-        <div class="standings-wrap">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
-            <div style="display:flex;align-items:center;gap:0.5rem;">
-              <i class="ri-medal-fill" style="color:var(--accent-gold);"></i>
-              <h3 style="font-size:1.1rem;font-weight:800;color:#fff;">ดาวซัลโวพรีเมียร์ลีก (Stat Leaders)</h3>
-            </div>
-            <span class="league-badge" style="color:var(--accent-gold);border-color:rgba(250,204,21,0.3);">Top Goals</span>
-          </div>
-          <div id="top-scorers-container">
-            <!-- Rendered by JS -->
-          </div>
-        </div>
-
-        <!-- UEFA Champions League (League Phase Top 8) -->
-        <div class="standings-wrap">
-          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem;">
-            <i class="ri-shield-star-line" style="color:var(--accent-ucl);"></i>
-            <h3 style="font-size:1.1rem;font-weight:800;color:#fff;">UEFA Champions League (League Phase)</h3>
-          </div>
-          <table class="standings-table">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>สโมสร</th>
-                <th>แข่ง</th>
-                <th>+/-</th>
-                <th>แต้ม</th>
-                <th>ฟอร์ม</th>
-              </tr>
-            </thead>
-            <tbody id="ucl-standings-body">
-              <!-- Rendered by JS -->
-            </tbody>
-          </table>
-        </div>
-
-        <!-- Danish Superliga Table -->
-        <div class="standings-wrap" style="grid-column: 1 / -1; border-color: rgba(239,68,68,0.3);">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
-            <div style="display:flex;align-items:center;gap:0.5rem;">
-              <span style="font-size:1.3rem;">🇩🇰</span>
-              <h3 style="font-size:1.15rem;font-weight:800;color:#fff;">Danish Superliga (3F Superliga) 2024/25–2026/27</h3>
-            </div>
-            <span class="league-badge" style="color:#ef4444;border-color:rgba(239,68,68,0.3);">Matchday 16 • 12 ทีมครบ</span>
-          </div>
-          <div style="overflow-x:auto;">
-            <table class="standings-table">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>สโมสร</th>
-                  <th>แข่ง</th>
-                  <th>ชนะ</th>
-                  <th>เสมอ</th>
-                  <th>แพ้</th>
-                  <th>+/-</th>
-                  <th>แต้ม</th>
-                  <th>ฟอร์ม</th>
-                </tr>
-              </thead>
-              <tbody id="danish-standings-body">
-                <!-- Rendered by JS -->
-              </tbody>
-            </table>
-          </div>
-        </div>
-
+      <!-- Dynamic Standings Container in Hub -->
+      <div id="hub-standings-dynamic-container">
+        <!-- Rendered by JS -->
       </div>
     </section>
 
@@ -1011,6 +965,7 @@
   </main>
 
   <!-- Script for Live Hub -->
+  <script src="data.js"></script>
   <script>
     // Tab Switcher
     function switchHubTab(tabId, btn) {
@@ -1493,7 +1448,7 @@
     document.addEventListener('DOMContentLoaded', () => {
       renderFixtures();
       renderNews(CURRENT_NEWS);
-      renderStandings();
+      renderHubStandings();
       renderInjuries();
 
       const lastSavedTime = localStorage.getItem('hub_last_updated');

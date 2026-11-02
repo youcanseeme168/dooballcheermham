@@ -1357,9 +1357,338 @@ function renderMatchDetail(matchId) {
     `;
   }
 
+  
+  // ==========================================================================
+  // ALL LEAGUES & CUPS STANDINGS VIEW IMPLEMENTATION (100% REAL DATA)
+  // ==========================================================================
+  state.activeStandingsKey = state.activeStandingsKey || 'epl';
+  state.standingsSearch = state.standingsSearch || '';
+
+  window.switchStandingsLeague = function(key) {
+    state.activeStandingsKey = key;
+    state.standingsSearch = '';
+    renderStandingsView();
+  };
+
+  window.filterStandings = function(val) {
+    state.standingsSearch = (val || '').toLowerCase().trim();
+    const tbody = document.getElementById('standings-table-body');
+    if (!tbody) return;
+
+    const dataObj = getActiveStandingsData();
+    if (!dataObj || !dataObj.table) return;
+
+    const filtered = dataObj.table.filter(item => {
+      const q = state.standingsSearch;
+      if (!q) return true;
+      const name = (item.team || '').toLowerCase();
+      const thai = (item.thaiName || '').toLowerCase();
+      return name.includes(q) || thai.includes(q);
+    });
+
+    tbody.innerHTML = renderStandingsRows(filtered, dataObj);
+  };
+
+  function getActiveStandingsData() {
+    if (typeof ALL_STANDINGS_DATA === 'undefined') return null;
+    const key = state.activeStandingsKey;
+    if (ALL_STANDINGS_DATA.leagues && ALL_STANDINGS_DATA.leagues[key]) {
+      return ALL_STANDINGS_DATA.leagues[key];
+    }
+    if (ALL_STANDINGS_DATA.cups && ALL_STANDINGS_DATA.cups[key]) {
+      return ALL_STANDINGS_DATA.cups[key];
+    }
+    return ALL_STANDINGS_DATA.leagues.epl;
+  }
+
+  function getZoneBadge(zone) {
+    if (!zone) return '';
+    if (zone === 'ucl' || zone === 'direct16' || zone === 'champ' || zone === 'acl') {
+      return 'border-left: 4px solid #10b981; background: rgba(16, 185, 129, 0.05);';
+    }
+    if (zone === 'playoff' || zone === 'acl2') {
+      return 'border-left: 4px solid #00f0ff; background: rgba(0, 240, 255, 0.05);';
+    }
+    if (zone === 'uel') {
+      return 'border-left: 4px solid #f59e0b; background: rgba(245, 158, 11, 0.05);';
+    }
+    if (zone === 'uecl') {
+      return 'border-left: 4px solid #06b6d4; background: rgba(6, 182, 212, 0.05);';
+    }
+    if (zone === 'relegation' || zone === 'eliminated') {
+      return 'border-left: 4px solid #ef4444; background: rgba(239, 68, 68, 0.05);';
+    }
+    return '';
+  }
+
+  function renderStandingsRows(rows, dataObj) {
+    if (!rows || rows.length === 0) {
+      return `<tr><td colspan="11" style="text-align:center;padding:2.5rem;color:var(--text-dim);">ไม่พบสโมสรที่ตรงกับคำค้นหา</td></tr>`;
+    }
+
+    return rows.map((s, idx) => {
+      const zoneStyle = getZoneBadge(s.zone);
+      const formDots = (s.form || []).map(f => {
+        let color = '#6b7280';
+        let label = 'D';
+        if (f === 'W') { color = '#10b981'; label = 'W'; }
+        else if (f === 'L') { color = '#ef4444'; label = 'L'; }
+        return `<span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:4px;font-size:0.7rem;font-weight:700;color:#fff;background:${color};">${label}</span>`;
+      }).join(' ');
+
+      return `
+        <tr style="${zoneStyle}border-bottom:1px solid rgba(255,255,255,0.05);transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background=''">
+          <td style="padding:0.75rem 0.6rem;text-align:center;font-weight:800;color:var(--accent-gold);">${s.rank}</td>
+          <td style="padding:0.75rem 0.6rem;">
+            <div style="display:flex;align-items:center;gap:0.6rem;">
+              <div style="font-weight:700;color:#fff;font-size:0.95rem;">${s.team}</div>
+              ${s.thaiName && s.thaiName !== s.team ? `<span style="font-size:0.75rem;color:var(--text-dim);">(${s.thaiName})</span>` : ''}
+              ${s.country ? `<span style="font-size:0.68rem;padding:0.1rem 0.35rem;border-radius:3px;background:rgba(255,255,255,0.1);color:var(--text-dim);">${s.country}</span>` : ''}
+            </div>
+          </td>
+          <td style="padding:0.75rem 0.5rem;text-align:center;font-weight:600;">${s.played}</td>
+          <td style="padding:0.75rem 0.5rem;text-align:center;color:#10b981;">${s.w}</td>
+          <td style="padding:0.75rem 0.5rem;text-align:center;color:#9ca3af;">${s.d}</td>
+          <td style="padding:0.75rem 0.5rem;text-align:center;color:#ef4444;">${s.l}</td>
+          <td style="padding:0.75rem 0.5rem;text-align:center;color:var(--text-dim);">${s.gf}</td>
+          <td style="padding:0.75rem 0.5rem;text-align:center;color:var(--text-dim);">${s.ga}</td>
+          <td style="padding:0.75rem 0.5rem;text-align:center;font-weight:700;color:${String(s.gd).startsWith('+') ? '#10b981' : (String(s.gd).startsWith('-') ? '#ef4444' : '#fff')};">${s.gd}</td>
+          <td style="padding:0.75rem 0.6rem;text-align:center;font-weight:800;font-size:1.05rem;color:var(--accent-gold);">${s.pts}</td>
+          <td style="padding:0.75rem 0.6rem;text-align:center;">
+            <div style="display:flex;align-items:center;justify-content:center;gap:3px;">
+              ${formDots}
+            </div>
+          </td>
+        </tr>
+      `;
+    }).join('');
+  }
+
+  function renderStandingsView() {
+    const container = document.getElementById('standings-content-container');
+    if (!container) return;
+
+    if (typeof ALL_STANDINGS_DATA === 'undefined') {
+      container.innerHTML = '<div style="padding:3rem;text-align:center;color:#fff;">กำลังโหลดข้อมูลตารางคะแนน...</div>';
+      return;
+    }
+
+    const currentKey = state.activeStandingsKey || 'epl';
+    const isDomestic = currentKey === 'domestic';
+    const dataObj = getActiveStandingsData();
+
+    // League / Cup selector pills
+    const tabs = [
+      { key: 'epl', label: '🏴󠁧󠁢󠁥󠁮󠁧󠁿 พรีเมียร์ลีก', type: 'league' },
+      { key: 'ucl', label: '🏆 แชมเปียนส์ลีก (36 ทีม)', type: 'cup' },
+      { key: 'laliga', label: '🇪🇸 ลาลีกา', type: 'league' },
+      { key: 'seriea', label: '🇮🇹 เซเรียอา', type: 'league' },
+      { key: 'bundesliga', label: '🇩🇪 บุนเดสลีกา', type: 'league' },
+      { key: 'danish', label: '🇩🇰 เดนิช ซูเปอร์ลีกา', type: 'league' },
+      { key: 'thaileague', label: '🇹🇭 ไทยลีก 1', type: 'league' },
+      { key: 'uel', label: '🥈 ยูโรปาลีก (36 ทีม)', type: 'cup' },
+      { key: 'uecl', label: '🥉 คอนเฟอเรนซ์ลีก', type: 'cup' },
+      { key: 'domestic', label: '🥊 บอลถ้วยในประเทศ', type: 'cup' }
+    ];
+
+    const pillsHtml = tabs.map(t => {
+      const active = t.key === currentKey;
+      const border = active ? 'border-color:var(--accent-gold);background:rgba(251,191,36,0.15);color:var(--accent-gold);font-weight:700;' : 'background:rgba(255,255,255,0.05);color:var(--text-dim);border-color:transparent;';
+      return `
+        <button onclick="switchStandingsLeague('${t.key}')" class="tab-btn" style="padding:0.55rem 1.1rem;border-radius:var(--radius-full);border:1px solid;font-size:0.86rem;cursor:pointer;white-space:nowrap;transition:all 0.2s;${border}">
+          ${t.label}
+        </button>
+      `;
+    }).join('');
+
+    let mainContentHtml = '';
+
+    if (isDomestic) {
+      // Domestic Cup View
+      const domData = ALL_STANDINGS_DATA.cups.domestic;
+      const tourneys = domData.tournaments || [];
+
+      mainContentHtml = `
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:1.5rem;margin-top:1.5rem;">
+          ${tourneys.map(trn => `
+            <div style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:1.4rem;">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.8rem;">
+                <div>
+                  <h3 style="font-size:1.15rem;font-weight:800;color:#fff;">${trn.thaiName || trn.name}</h3>
+                  <span style="font-size:0.8rem;color:var(--accent-gold);">${trn.country} • ${trn.round}</span>
+                </div>
+                <span class="badge badge-ucl">${trn.status}</span>
+              </div>
+
+              ${trn.recentResults ? `
+                <div style="margin-top:0.8rem;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius-md);padding:0.8rem;">
+                  <div style="font-size:0.75rem;color:var(--text-dim);margin-bottom:0.3rem;"><i class="ri-history-line"></i> ผลการแข่งขันล่าสุด:</div>
+                  <div style="font-size:0.88rem;color:#fff;line-height:1.4;">${trn.recentResults}</div>
+                </div>
+              ` : ''}
+
+              ${trn.matches && trn.matches.length > 0 ? `
+                <div style="margin-top:1rem;">
+                  <div style="font-size:0.8rem;font-weight:700;color:#fff;margin-bottom:0.5rem;"><i class="ri-calendar-event-line"></i> โปรแกรมประกบคู่แข่งขัน:</div>
+                  <div style="display:flex;flex-direction:column;gap:0.5rem;">
+                    ${trn.matches.map(m => `
+                      <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.05);border-radius:var(--radius-sm);padding:0.6rem 0.8rem;">
+                        <span style="font-weight:700;color:#fff;font-size:0.88rem;">${m.home} vs ${m.away}</span>
+                        <span style="font-size:0.75rem;color:var(--accent-cyan);">${m.date}</span>
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+              ` : ''}
+
+              ${trn.notes ? `
+                <div style="margin-top:0.8rem;font-size:0.82rem;color:var(--text-dim);font-style:italic;">
+                  ℹ️ ${trn.notes}
+                </div>
+              ` : ''}
+            </div>
+          `).join('')}
+        </div>
+      `;
+    } else if (dataObj && dataObj.table) {
+      // Standard League or 36-team Cup Table
+      const filtered = dataObj.table.filter(item => {
+        const q = state.standingsSearch;
+        if (!q) return true;
+        const name = (item.team || '').toLowerCase();
+        const thai = (item.thaiName || '').toLowerCase();
+        return name.includes(q) || thai.includes(q);
+      });
+
+      // Zones Legend
+      let zonesLegend = '';
+      if (dataObj.zones) {
+        zonesLegend = Object.entries(dataObj.zones).map(([k, desc]) => {
+          let dotColor = '#6b7280';
+          if (k === 'ucl' || k === 'direct16' || k === 'champ' || k === 'acl') dotColor = '#10b981';
+          else if (k === 'playoff' || k === 'acl2') dotColor = '#00f0ff';
+          else if (k === 'uel') dotColor = '#f59e0b';
+          else if (k === 'uecl') dotColor = '#06b6d4';
+          else if (k === 'relegation' || k === 'eliminated') dotColor = '#ef4444';
+          return `
+            <div style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.75rem;color:var(--text-dim);margin-right:1rem;margin-top:0.4rem;">
+              <span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:${dotColor};"></span>
+              <span>${desc}</span>
+            </div>
+          `;
+        }).join('');
+      }
+
+      // Top Scorers Block
+      let scorersHtml = '';
+      if (dataObj.topScorers && dataObj.topScorers.length > 0) {
+        scorersHtml = `
+          <div style="margin-top:2rem;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:1.4rem;">
+            <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem;">
+              <i class="ri-fire-fill" style="color:var(--accent-gold);font-size:1.3rem;"></i>
+              <h3 style="font-size:1.15rem;font-weight:800;color:#fff;">ดาวซัลโวสูงสุด (Top Scorers) • ${dataObj.thaiName || dataObj.name}</h3>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:0.8rem;">
+              ${dataObj.topScorers.map((sc, i) => `
+                <div style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius-md);padding:0.75rem 1rem;">
+                  <div>
+                    <div style="font-weight:800;color:#fff;font-size:0.92rem;">#${i+1} ${sc.name}</div>
+                    <div style="font-size:0.78rem;color:var(--text-dim);">${sc.team}</div>
+                  </div>
+                  <div style="font-size:1.25rem;font-weight:800;color:var(--accent-gold);">${sc.goals} <span style="font-size:0.75rem;color:var(--text-dim);font-weight:400;">ประตู</span></div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }
+
+      mainContentHtml = `
+        <div style="margin-top:1.5rem;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;">
+          <div style="padding:1.2rem 1.4rem;border-bottom:1px solid var(--border-subtle);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+            <div>
+              <div style="display:flex;align-items:center;gap:0.6rem;">
+                <span style="font-size:1.6rem;">${dataObj.flag || dataObj.badge || '🏆'}</span>
+                <div>
+                  <h3 style="font-size:1.3rem;font-weight:800;color:#fff;">${dataObj.name}</h3>
+                  <div style="font-size:0.82rem;color:var(--accent-gold);">${dataObj.thaiName || ''} • ฤดูกาล ${dataObj.season} (${dataObj.matchday}) • ${dataObj.totalTeams} ทีม</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Search box -->
+            <div style="position:relative;width:260px;">
+              <i class="ri-search-line" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text-dim);"></i>
+              <input type="text" placeholder="ค้นหาชื่อทีม..." oninput="window.filterStandings(this.value)" value="${state.standingsSearch || ''}" style="width:100%;padding:0.45rem 0.8rem 0.45rem 2.2rem;border-radius:var(--radius-full);background:rgba(0,0,0,0.3);border:1px solid var(--border-light);color:#fff;font-size:0.85rem;outline:none;">
+            </div>
+          </div>
+
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;font-size:0.88rem;white-space:nowrap;">
+              <thead>
+                <tr style="background:rgba(255,255,255,0.03);border-bottom:1px solid var(--border-subtle);color:var(--text-dim);font-size:0.8rem;text-transform:uppercase;">
+                  <th style="padding:0.8rem 0.6rem;text-align:center;width:40px;">#</th>
+                  <th style="padding:0.8rem 0.6rem;text-align:left;">สโมสร</th>
+                  <th style="padding:0.8rem 0.5rem;text-align:center;width:50px;">แข่ง</th>
+                  <th style="padding:0.8rem 0.5rem;text-align:center;width:45px;">ชนะ</th>
+                  <th style="padding:0.8rem 0.5rem;text-align:center;width:45px;">เสมอ</th>
+                  <th style="padding:0.8rem 0.5rem;text-align:center;width:45px;">แพ้</th>
+                  <th style="padding:0.8rem 0.5rem;text-align:center;width:50px;">ได้</th>
+                  <th style="padding:0.8rem 0.5rem;text-align:center;width:50px;">เสีย</th>
+                  <th style="padding:0.8rem 0.5rem;text-align:center;width:55px;">+/-</th>
+                  <th style="padding:0.8rem 0.6rem;text-align:center;width:60px;">แต้ม</th>
+                  <th style="padding:0.8rem 0.6rem;text-align:center;width:130px;">ฟอร์ม 5 นัด</th>
+                </tr>
+              </thead>
+              <tbody id="standings-table-body">
+                ${renderStandingsRows(filtered, dataObj)}
+              </tbody>
+            </table>
+          </div>
+
+          ${zonesLegend ? `
+            <div style="padding:1rem 1.4rem;background:rgba(0,0,0,0.2);border-top:1px solid var(--border-subtle);display:flex;flex-wrap:wrap;align-items:center;">
+              <span style="font-size:0.8rem;font-weight:700;color:#fff;margin-right:1rem;">ความหมายแถบสี:</span>
+              ${zonesLegend}
+            </div>
+          ` : ''}
+        </div>
+
+        ${scorersHtml}
+      `;
+    }
+
+    container.innerHTML = `
+      <div class="container" style="padding-top:2.5rem;padding-bottom:5rem;">
+        <!-- Header -->
+        <div style="margin-bottom:2rem;text-align:center;">
+          <div style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.35rem 1rem;background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.25);border-radius:var(--radius-full);color:var(--accent-gold);font-size:0.85rem;font-weight:700;margin-bottom:0.75rem;">
+            <i class="ri-table-fill"></i> ศูนย์รวมตารางคะแนนมาตรฐาน ข้อมูลเท็จจริง 100%
+          </div>
+          <h1 style="font-size:2.2rem;font-weight:900;color:#fff;margin-bottom:0.5rem;line-height:1.2;">
+            ตารางคะแนนฟุตบอลทุกลีก & บอลถ้วย ฤดูกาล 2026–27
+          </h1>
+          <p style="font-size:0.95rem;color:var(--text-dim);max-width:750px;margin:0 auto;">
+            รวบรวมอันดับคะแนนจริง สถิติประตูได้-เสีย ฟอร์มการเล่นล่าสุด และโซนโควต้า ยูฟ่า แชมเปียนส์ลีก / ยูโรปาลีก / หนีตกชั้น ทั้ง 5 ลีกใหญ่, ซูเปอร์ลีกา เดนมาร์ก, ไทยลีก 1 และบอลถ้วยยุโรป 36 ทีมเต็มตาราง
+          </p>
+        </div>
+
+        <!-- League / Cup Tabs -->
+        <div style="display:flex;gap:0.5rem;overflow-x:auto;padding-bottom:0.6rem;margin-bottom:1rem;justify-content:flex-start;scrollbar-width:none;">
+          ${pillsHtml}
+        </div>
+
+        <!-- Main Dynamic Table or Cup Content -->
+        ${mainContentHtml}
+      </div>
+    `;
+  }
+
   window.switchLeagueCategory = function(cat) {
     if (cat === 'superliga') {
       window.location.hash = '#superliga';
+    } else if (cat === 'standings') {
+      window.location.hash = '#standings';
     } else {
       window.location.hash = '#overview';
     }
@@ -1370,8 +1699,29 @@ function renderMatchDetail(matchId) {
 
     const catBtnUcl = document.getElementById('cat-btn-ucl');
     const catBtnSuperliga = document.getElementById('cat-btn-superliga');
+    const catBtnStandings = document.getElementById('cat-btn-standings');
     const danishView = document.getElementById('danish-view');
+    const standingsView = document.getElementById('standings-view');
 
+        // Route: Standings Category View (All Leagues & Cups)
+    if (hash === '#standings' || hash.startsWith('#standings')) {
+      state.currentView = 'standings';
+      overviewView.style.display = 'none';
+      detailView.style.display = 'none';
+      if (danishView) danishView.style.display = 'none';
+      if (standingsView) {
+        standingsView.style.display = 'block';
+        renderStandingsView();
+      }
+      if (catBtnUcl) catBtnUcl.classList.remove('active');
+      if (catBtnSuperliga) catBtnSuperliga.classList.remove('active');
+      if (catBtnStandings) catBtnStandings.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (standingsView) standingsView.style.display = 'none';
+    if (catBtnStandings) catBtnStandings.classList.remove('active');
     // Route: Danish Superliga View
     if (hash === '#superliga' || hash.startsWith('#superliga')) {
       state.currentView = 'danish';
