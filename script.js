@@ -1120,3 +1120,111 @@ function renderMatchDetail(matchId) {
     init();
   }
 })();
+
+  // =========================================================================
+  // Live GMT+7 Clock & First Match Kickoff Countdown with Dynamic Color States
+  // =========================================================================
+  let simulatedHoursRemaining = null; // null = real time calculation
+
+  function simulateCountdown(hours, btn) {
+    simulatedHoursRemaining = hours;
+    document.querySelectorAll('.sim-btn').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+    updateLiveClockAndCountdown();
+  }
+
+  function updateLiveClockAndCountdown() {
+    const banner = document.getElementById('ucl-live-countdown-banner');
+    const clockDigits = document.getElementById('clock-gmt7-digits');
+    const clockDate = document.getElementById('clock-gmt7-date');
+    const timerDigits = document.getElementById('countdown-timer-digits');
+    const statusPill = document.getElementById('countdown-status-pill');
+    const statusText = document.getElementById('countdown-status-text');
+
+    if (!banner || !timerDigits) return;
+
+    // Current Time in GMT+7
+    const now = new Date();
+    // Convert to GMT+7 timestamp
+    const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000);
+    const gmt7Time = new Date(utcTime + (3600000 * 7));
+
+    // Update Live Clock Display
+    const h = String(gmt7Time.getHours()).padStart(2, '0');
+    const m = String(gmt7Time.getMinutes()).padStart(2, '0');
+    const s = String(gmt7Time.getSeconds()).padStart(2, '0');
+    if (clockDigits) clockDigits.textContent = `${h}:${m}:${s} น.`;
+
+    const thaiDays = ['วันอาทิตย์', 'วันจันทร์', 'วันอังคาร', 'วันพุธ', 'วันพฤหัสบดี', 'วันศุกร์', 'วันเสาร์'];
+    const thaiMonths = ['ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.', 'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.'];
+    if (clockDate) {
+      clockDate.textContent = `${thaiDays[gmt7Time.getDay()]}ที่ ${gmt7Time.getDate()} ${thaiMonths[gmt7Time.getMonth()]} 2026`;
+    }
+
+    // Target Kickoff: Wednesday 4 Nov 2026 00:45:00 GMT+7
+    // Year 2026, Month 10 (November is 10), Day 4, 00:45:00
+    const targetKickoffGMT7 = new Date(Date.UTC(2026, 10, 3, 17, 45, 0)); // 17:45 UTC = 00:45 GMT+7
+
+    let diffMs;
+    if (simulatedHoursRemaining !== null) {
+      diffMs = simulatedHoursRemaining * 3600 * 1000;
+    } else {
+      diffMs = targetKickoffGMT7.getTime() - now.getTime();
+    }
+
+    const totalHoursRemaining = diffMs / (1000 * 3600);
+
+    // Remove old state classes
+    banner.classList.remove('countdown-state-normal', 'countdown-state-warning', 'countdown-state-danger', 'countdown-state-live');
+    if (statusPill) statusPill.className = 'countdown-pill-badge';
+
+    if (totalHoursRemaining <= 0) {
+      // Live In Play
+      banner.classList.add('countdown-state-live');
+      timerDigits.textContent = '00:00:00 (เริ่มเตะแล้ว!)';
+      if (statusPill) {
+        statusPill.classList.add('badge-green');
+        statusText.textContent = '🔥 LIVE IN PLAY (กำลังเตะสด!)';
+      }
+    } else {
+      // Calculate remaining days, hours, minutes, seconds
+      const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diffMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+      const secs = Math.floor((diffMs % (1000 * 60)) / 1000);
+
+      const daysStr = days > 0 ? `${days} วัน ` : '';
+      const hrsStr = `${String(hours).padStart(2, '0')} ชม. `;
+      const minsStr = `${String(mins).padStart(2, '0')} นาที `;
+      const secsStr = `${String(secs).padStart(2, '0')} วินาที`;
+      timerDigits.textContent = `${daysStr}${hrsStr}${minsStr}${secsStr}`;
+
+      // Color rules:
+      // <= 6 hours -> Danger Red Pulse
+      // <= 12 hours -> Warning Gold
+      // > 12 hours -> Normal Cyan
+      if (totalHoursRemaining <= 6) {
+        banner.classList.add('countdown-state-danger');
+        if (statusPill) {
+          statusPill.classList.add('badge-red');
+          statusText.textContent = `🔴 ด่วนมาก! (เหลืออีก ${totalHoursRemaining.toFixed(1)} ชม.)`;
+        }
+      } else if (totalHoursRemaining <= 12) {
+        banner.classList.add('countdown-state-warning');
+        if (statusPill) {
+          statusPill.classList.add('badge-gold');
+          statusText.textContent = `🟡 เตือน (เหลืออีก ${totalHoursRemaining.toFixed(1)} ชม.)`;
+        }
+      } else {
+        banner.classList.add('countdown-state-normal');
+        if (statusPill) {
+          statusPill.classList.add('badge-cyan');
+          statusText.textContent = `🟢 ปกติ (เหลืออีก ${totalHoursRemaining.toFixed(1)} ชม.)`;
+        }
+      }
+    }
+  }
+
+  // Ticking every 1 second
+  setInterval(updateLiveClockAndCountdown, 1000);
+  document.addEventListener('DOMContentLoaded', updateLiveClockAndCountdown);

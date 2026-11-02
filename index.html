@@ -84,7 +84,46 @@
           <span>UEFA CHAMPIONS LEAGUE 2026–27 • LEAGUE PHASE (MATCHDAY 4 OF 8)</span>
         </div>
 
-        <h1 class="hero-title">
+        
+
+    <!-- Live Time GMT+7 & First Match Kickoff Countdown -->
+    <div id="ucl-live-countdown-banner" class="live-countdown-banner countdown-state-normal">
+      <div class="countdown-clock-item">
+        <div class="countdown-label">
+          <i class="ri-time-line"></i> เวลาไทยปัจจุบัน (GMT+7)
+        </div>
+        <div id="clock-gmt7-digits" class="countdown-digits">--:--:-- น.</div>
+        <div style="font-size:0.75rem;color:var(--text-muted);" id="clock-gmt7-date">วันจันทร์ที่ 2 พฤศจิกายน 2026</div>
+      </div>
+
+      <div class="countdown-divider"></div>
+
+      <div class="countdown-clock-item" style="flex-grow:1;min-width:240px;">
+        <div class="countdown-label">
+          <i class="ri-football-line" style="color:var(--accent-gold);"></i> เตะคู่แรก: พุธที่ 4 พ.ย. 00:45 น. (UCL League Phase)
+        </div>
+        <div style="display:flex;align-items:baseline;gap:0.75rem;flex-wrap:wrap;">
+          <div id="countdown-timer-digits" class="countdown-digits">คำนวณเวลา...</div>
+          <span id="countdown-status-pill" class="countdown-pill-badge badge-cyan">
+            <span class="pill-dot"></span> <span id="countdown-status-text">ปกติ (> 12 ชม.)</span>
+          </span>
+        </div>
+        <div style="font-size:0.75rem;color:var(--text-muted);">
+          คู่เปิดสนาม: <strong>Galatasaray พบ VfB Stuttgart</strong> & <strong>Shakhtar พบ Sporting</strong>
+        </div>
+      </div>
+
+      <!-- Quick Color Simulator Buttons -->
+      <div class="countdown-sim-group">
+        <span style="font-size:0.7rem;color:var(--text-dim);font-weight:700;">ทดสอบสี:</span>
+        <button class="sim-btn" onclick="simulateCountdown(null, this)" title="กลับสู่เวลาจริง">เวลาจริง</button>
+        <button class="sim-btn" onclick="simulateCountdown(10, this)" title="จำลองเหลือ 10 ชม. (เหลือง)">10 ชม. (เหลือง)</button>
+        <button class="sim-btn" onclick="simulateCountdown(4, this)" title="จำลองเหลือ 4 ชม. (แดง)">4 ชม. (แดง)</button>
+        <button class="sim-btn" onclick="simulateCountdown(0, this)" title="จำลองเริ่มเตะแล้ว (เขียว)">เตะสด (เขียว)</button>
+      </div>
+    </div>
+
+<h1 class="hero-title">
           AI ไอปันยาอ่อน <span class="highlight-gold">วิเคราะห์บอล</span>
         </h1>
 

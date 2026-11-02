@@ -594,7 +594,172 @@
         padding: 0.35rem 0.75rem;
       }
     }
-  </style>
+  
+/* ==========================================================================
+   Live Time GMT+7 & First Match Kickoff Countdown Banner
+   ========================================================================== */
+.live-countdown-banner {
+  background: linear-gradient(135deg, rgba(8, 14, 28, 0.95) 0%, rgba(3, 7, 18, 0.98) 100%);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.4rem;
+  margin: 1.5rem auto 1.8rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  border: 1.5px solid var(--border-light);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.countdown-divider {
+  width: 1px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Color States: >12h Cyan, 6-12h Gold, <6h Red, Live Green */
+.countdown-state-normal {
+  border-color: rgba(0, 240, 255, 0.4) !important;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.12), 0 8px 25px rgba(0, 0, 0, 0.5) !important;
+}
+
+.countdown-state-normal #countdown-timer-digits {
+  color: #00f0ff !important;
+  text-shadow: 0 0 12px rgba(0, 240, 255, 0.4);
+}
+
+.countdown-state-warning {
+  border-color: rgba(250, 204, 21, 0.6) !important;
+  box-shadow: 0 0 25px rgba(250, 204, 21, 0.25), 0 8px 25px rgba(0, 0, 0, 0.5) !important;
+  background: linear-gradient(135deg, rgba(28, 22, 6, 0.95) 0%, rgba(8, 6, 2, 0.98) 100%) !important;
+}
+
+.countdown-state-warning #countdown-timer-digits {
+  color: #facc15 !important;
+  text-shadow: 0 0 15px rgba(250, 204, 21, 0.5);
+}
+
+.countdown-state-danger {
+  border-color: rgba(239, 68, 68, 0.75) !important;
+  box-shadow: 0 0 30px rgba(239, 68, 68, 0.35), 0 8px 25px rgba(0, 0, 0, 0.5) !important;
+  background: linear-gradient(135deg, rgba(32, 8, 12, 0.95) 0%, rgba(10, 3, 5, 0.98) 100%) !important;
+  animation: countdownDangerPulse 1.6s infinite ease-in-out;
+}
+
+.countdown-state-danger #countdown-timer-digits {
+  color: #f87171 !important;
+  text-shadow: 0 0 18px rgba(239, 68, 68, 0.6);
+}
+
+.countdown-state-live {
+  border-color: rgba(16, 185, 129, 0.7) !important;
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.3), 0 8px 25px rgba(0, 0, 0, 0.5) !important;
+  background: linear-gradient(135deg, rgba(6, 24, 16, 0.95) 0%, rgba(3, 10, 6, 0.98) 100%) !important;
+}
+
+.countdown-state-live #countdown-timer-digits {
+  color: #34d399 !important;
+  text-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+}
+
+@keyframes countdownDangerPulse {
+  0% { border-color: rgba(239, 68, 68, 0.5); box-shadow: 0 0 18px rgba(239, 68, 68, 0.2); }
+  50% { border-color: rgba(239, 68, 68, 0.95); box-shadow: 0 0 35px rgba(239, 68, 68, 0.55); }
+  100% { border-color: rgba(239, 68, 68, 0.5); box-shadow: 0 0 18px rgba(239, 68, 68, 0.2); }
+}
+
+.countdown-clock-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.countdown-label {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  font-weight: 700;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.countdown-digits {
+  font-size: 1.45rem;
+  font-weight: 900;
+  font-family: var(--font-mono);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.countdown-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-full);
+}
+
+.badge-cyan { background: rgba(0, 240, 255, 0.12); color: #00f0ff; border: 1px solid rgba(0, 240, 255, 0.3); }
+.badge-gold { background: rgba(250, 204, 21, 0.12); color: #facc15; border: 1px solid rgba(250, 204, 21, 0.3); }
+.badge-red { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); }
+.badge-green { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); }
+
+.pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.countdown-sim-group {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.sim-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.sim-btn:hover, .sim-btn.active {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border-color: #fff;
+}
+
+@media (max-width: 768px) {
+  .live-countdown-banner {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+    gap: 0.85rem;
+  }
+  .countdown-divider {
+    display: none;
+  }
+  .countdown-digits {
+    font-size: 1.25rem;
+  }
+}
+
+</style>
 </head>
 <body>
 
@@ -637,6 +802,45 @@
 
   <!-- Main Container -->
   <main class="container">
+
+    <!-- Live Time GMT+7 & First Match Kickoff Countdown -->
+    <div id="ucl-live-countdown-banner" class="live-countdown-banner countdown-state-normal">
+      <div class="countdown-clock-item">
+        <div class="countdown-label">
+          <i class="ri-time-line"></i> เวลาไทยปัจจุบัน (GMT+7)
+        </div>
+        <div id="clock-gmt7-digits" class="countdown-digits">--:--:-- น.</div>
+        <div style="font-size:0.75rem;color:var(--text-muted);" id="clock-gmt7-date">วันจันทร์ที่ 2 พฤศจิกายน 2026</div>
+      </div>
+
+      <div class="countdown-divider"></div>
+
+      <div class="countdown-clock-item" style="flex-grow:1;min-width:240px;">
+        <div class="countdown-label">
+          <i class="ri-football-line" style="color:var(--accent-gold);"></i> เตะคู่แรก: พุธที่ 4 พ.ย. 00:45 น. (UCL League Phase)
+        </div>
+        <div style="display:flex;align-items:baseline;gap:0.75rem;flex-wrap:wrap;">
+          <div id="countdown-timer-digits" class="countdown-digits">คำนวณเวลา...</div>
+          <span id="countdown-status-pill" class="countdown-pill-badge badge-cyan">
+            <span class="pill-dot"></span> <span id="countdown-status-text">ปกติ (> 12 ชม.)</span>
+          </span>
+        </div>
+        <div style="font-size:0.75rem;color:var(--text-muted);">
+          คู่เปิดสนาม: <strong>Galatasaray พบ VfB Stuttgart</strong> & <strong>Shakhtar พบ Sporting</strong>
+        </div>
+      </div>
+
+      <!-- Quick Color Simulator Buttons -->
+      <div class="countdown-sim-group">
+        <span style="font-size:0.7rem;color:var(--text-dim);font-weight:700;">ทดสอบสี:</span>
+        <button class="sim-btn" onclick="simulateCountdown(null, this)" title="กลับสู่เวลาจริง">เวลาจริง</button>
+        <button class="sim-btn" onclick="simulateCountdown(10, this)" title="จำลองเหลือ 10 ชม. (เหลือง)">10 ชม. (เหลือง)</button>
+        <button class="sim-btn" onclick="simulateCountdown(4, this)" title="จำลองเหลือ 4 ชม. (แดง)">4 ชม. (แดง)</button>
+        <button class="sim-btn" onclick="simulateCountdown(0, this)" title="จำลองเริ่มเตะแล้ว (เขียว)">เตะสด (เขียว)</button>
+      </div>
+    </div>
+
+
 
     <!-- Segmented Tab Bar -->
     <div class="hub-tabs">
@@ -719,6 +923,20 @@
               <!-- Rendered by JS -->
             </tbody>
           </table>
+        </div>
+
+        <!-- Premier League Stat Leaders -->
+        <div class="standings-wrap">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+            <div style="display:flex;align-items:center;gap:0.5rem;">
+              <i class="ri-medal-fill" style="color:var(--accent-gold);"></i>
+              <h3 style="font-size:1.1rem;font-weight:800;color:#fff;">ดาวซัลโวพรีเมียร์ลีก (Stat Leaders)</h3>
+            </div>
+            <span class="league-badge" style="color:var(--accent-gold);border-color:rgba(250,204,21,0.3);">Top Goals</span>
+          </div>
+          <div id="top-scorers-container">
+            <!-- Rendered by JS -->
+          </div>
         </div>
 
         <!-- UEFA Champions League (League Phase Top 8) -->
@@ -836,13 +1054,26 @@
     ];
 
     const STANDINGS_PREMIER_LEAGUE = [
-      { rank: 1, team: 'Manchester City', played: 10, gd: '+16', pts: 26, form: ['W','W','W','D','W'] },
-      { rank: 2, team: 'Liverpool', played: 10, gd: '+14', pts: 25, form: ['W','W','D','W','W'] },
-      { rank: 3, team: 'Arsenal', played: 10, gd: '+11', pts: 22, form: ['W','D','W','W','D'] },
-      { rank: 4, team: 'Chelsea', played: 10, gd: '+8', pts: 19, form: ['W','W','L','W','D'] },
-      { rank: 5, team: 'Aston Villa', played: 10, gd: '+6', pts: 18, form: ['W','L','W','W','D'] },
-      { rank: 6, team: 'Tottenham Hotspur', played: 10, gd: '+5', pts: 17, form: ['L','W','W','L','W'] },
-      { rank: 17, team: 'Manchester United', played: 10, gd: '-6', pts: 8, form: ['L','L','D','L','L'] }
+      { rank: 1, team: 'Arsenal', played: 9, w: 8, d: 0, l: 1, gf: 14, ga: 5, gd: '+9', pts: 24, form: ['L','W','W','W','W'] },
+      { rank: 2, team: 'Manchester City', played: 9, w: 7, d: 0, l: 2, gf: 20, ga: 10, gd: '+10', pts: 21, form: ['W','W','W','L','W'] },
+      { rank: 3, team: 'Brighton & Hove Albion', played: 9, w: 6, d: 1, l: 2, gf: 24, ga: 7, gd: '+17', pts: 19, form: ['W','W','W','W','L'] },
+      { rank: 4, team: 'Chelsea', played: 9, w: 5, d: 1, l: 3, gf: 19, ga: 15, gd: '+4', pts: 16, form: ['L','W','W','L','W'] },
+      { rank: 5, team: 'Liverpool', played: 9, w: 4, d: 3, l: 2, gf: 11, ga: 9, gd: '+2', pts: 15, form: ['W','W','D','D','L'] },
+      { rank: 6, team: 'Brentford', played: 9, w: 3, d: 5, l: 1, gf: 16, ga: 9, gd: '+7', pts: 14, form: ['D','W','L','D','D'] },
+      { rank: 7, team: 'Bournemouth', played: 9, w: 3, d: 3, l: 3, gf: 14, ga: 13, gd: '+1', pts: 12, form: ['L','L','D','W','W'] },
+      { rank: 8, team: 'Tottenham Hotspur', played: 9, w: 3, d: 3, l: 3, gf: 10, ga: 10, gd: '0', pts: 12, form: ['L','D','D','W','W'] },
+      { rank: 9, team: 'Aston Villa', played: 9, w: 3, d: 3, l: 3, gf: 10, ga: 13, gd: '-3', pts: 12, form: ['D','W','W','L','D'] },
+      { rank: 10, team: 'Hull City', played: 9, w: 2, d: 5, l: 2, gf: 11, ga: 10, gd: '+1', pts: 11, form: ['D','L','W','W','D'] },
+      { rank: 11, team: 'Leeds United', played: 9, w: 2, d: 5, l: 2, gf: 9, ga: 8, gd: '+1', pts: 11, form: ['D','D','D','W','L'] },
+      { rank: 12, team: 'Newcastle United', played: 8, w: 3, d: 2, l: 3, gf: 12, ga: 14, gd: '-2', pts: 11, form: ['W','D','L','L','W'] },
+      { rank: 13, team: 'Ipswich Town', played: 9, w: 3, d: 2, l: 4, gf: 14, ga: 18, gd: '-4', pts: 11, form: ['W','W','L','D','D'] },
+      { rank: 17, team: 'Manchester United', played: 9, w: 2, d: 2, l: 5, gf: 8, ga: 14, gd: '-6', pts: 8, form: ['L','L','D','L','L'] }
+    ];
+
+    const TOP_SCORERS_EPL = [
+      { name: 'Erling Haaland', team: 'Man City', goals: 9, rank: 1 },
+      { name: 'Alexander Isak', team: 'Liverpool', goals: 6, rank: 2 },
+      { name: 'João Pedro', team: 'Chelsea', goals: 5, rank: 3 }
     ];
 
     const STANDINGS_UCL = [
@@ -957,6 +1188,22 @@
           </td>
         </tr>
       `).join('');
+
+      const scorersContainer = document.getElementById('top-scorers-container');
+      if (scorersContainer && typeof TOP_SCORERS_EPL !== 'undefined') {
+        scorersContainer.innerHTML = TOP_SCORERS_EPL.map(sc => `
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:0.75rem 0.9rem;background:rgba(5,8,17,0.6);border:1px solid rgba(255,255,255,0.05);border-radius:var(--radius-sm);margin-bottom:0.65rem;">
+            <div style="display:flex;align-items:center;gap:0.75rem;">
+              <span style="font-size:1.1rem;font-weight:900;color:var(--accent-gold);font-family:var(--font-mono);width:20px;">#${sc.rank}</span>
+              <div>
+                <div style="font-weight:800;color:#fff;font-size:0.95rem;">${sc.name}</div>
+                <div style="font-size:0.75rem;color:var(--text-muted);">${sc.team}</div>
+              </div>
+            </div>
+            <span style="font-size:1.15rem;font-weight:900;color:var(--accent-ucl);font-family:var(--font-mono);">${sc.goals} <small style="font-size:0.75rem;color:var(--text-dim);">ประตู</small></span>
+          </div>
+        `).join('');
+      }
 
       const uclBody = document.getElementById('ucl-standings-body');
       uclBody.innerHTML = STANDINGS_UCL.map(s => `
@@ -1141,6 +1388,115 @@
         document.getElementById('last-updated-time').textContent = 'อัปเดตล่าสุด: ' + now.toLocaleTimeString('th-TH');
       }
     });
-  </script>
+  
+  // =========================================================================
+  // Live GMT+7 Clock & First Match Kickoff Countdown with Dynamic Color States
+  // =========================================================================
+  let simulatedHoursRemaining = null; // null = real time calculation
+
+  function simulateCountdown(hours, btn) {
+    simulatedHoursRemaining = hours;
+    document.querySelectorAll('.sim-btn').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+    updateLiveClockAndCountdown();
+  }
+
+  function updateLiveClockAndCountdown() {
+    const banner = document.getElementById('ucl-live-countdown-banner');
+    const clockDigits = document.getElementById('clock-gmt7-digits');
+    const clockDate = document.getElementById('clock-gmt7-date');
+    const timerDigits = document.getElementById('countdown-timer-digits');
+    const statusPill = document.getElementById('countdown-status-pill');
+    const statusText = document.getElementById('countdown-status-text');
+
+    if (!banner || !timerDigits) return;
+
+    // Current Time in GMT+7
+    const now = new Date();
+    // Convert to GMT+7 timestamp
+    const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000);
+    const gmt7Time = new Date(utcTime + (3600000 * 7));
+
+    // Update Live Clock Display
+    const h = String(gmt7Time.getHours()).padStart(2, '0');
+    const m = String(gmt7Time.getMinutes()).padStart(2, '0');
+    const s = String(gmt7Time.getSeconds()).padStart(2, '0');
+    if (clockDigits) clockDigits.textContent = `${h}:${m}:${s} น.`;
+
+    const thaiDays = ['วันอาทิตย์', 'วันจันทร์', 'วันอังคาร', 'วันพุธ', 'วันพฤหัสบดี', 'วันศุกร์', 'วันเสาร์'];
+    const thaiMonths = ['ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.', 'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.'];
+    if (clockDate) {
+      clockDate.textContent = `${thaiDays[gmt7Time.getDay()]}ที่ ${gmt7Time.getDate()} ${thaiMonths[gmt7Time.getMonth()]} 2026`;
+    }
+
+    // Target Kickoff: Wednesday 4 Nov 2026 00:45:00 GMT+7
+    // Year 2026, Month 10 (November is 10), Day 4, 00:45:00
+    const targetKickoffGMT7 = new Date(Date.UTC(2026, 10, 3, 17, 45, 0)); // 17:45 UTC = 00:45 GMT+7
+
+    let diffMs;
+    if (simulatedHoursRemaining !== null) {
+      diffMs = simulatedHoursRemaining * 3600 * 1000;
+    } else {
+      diffMs = targetKickoffGMT7.getTime() - now.getTime();
+    }
+
+    const totalHoursRemaining = diffMs / (1000 * 3600);
+
+    // Remove old state classes
+    banner.classList.remove('countdown-state-normal', 'countdown-state-warning', 'countdown-state-danger', 'countdown-state-live');
+    if (statusPill) statusPill.className = 'countdown-pill-badge';
+
+    if (totalHoursRemaining <= 0) {
+      // Live In Play
+      banner.classList.add('countdown-state-live');
+      timerDigits.textContent = '00:00:00 (เริ่มเตะแล้ว!)';
+      if (statusPill) {
+        statusPill.classList.add('badge-green');
+        statusText.textContent = '🔥 LIVE IN PLAY (กำลังเตะสด!)';
+      }
+    } else {
+      // Calculate remaining days, hours, minutes, seconds
+      const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diffMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+      const secs = Math.floor((diffMs % (1000 * 60)) / 1000);
+
+      const daysStr = days > 0 ? `${days} วัน ` : '';
+      const hrsStr = `${String(hours).padStart(2, '0')} ชม. `;
+      const minsStr = `${String(mins).padStart(2, '0')} นาที `;
+      const secsStr = `${String(secs).padStart(2, '0')} วินาที`;
+      timerDigits.textContent = `${daysStr}${hrsStr}${minsStr}${secsStr}`;
+
+      // Color rules:
+      // <= 6 hours -> Danger Red Pulse
+      // <= 12 hours -> Warning Gold
+      // > 12 hours -> Normal Cyan
+      if (totalHoursRemaining <= 6) {
+        banner.classList.add('countdown-state-danger');
+        if (statusPill) {
+          statusPill.classList.add('badge-red');
+          statusText.textContent = `🔴 ด่วนมาก! (เหลืออีก ${totalHoursRemaining.toFixed(1)} ชม.)`;
+        }
+      } else if (totalHoursRemaining <= 12) {
+        banner.classList.add('countdown-state-warning');
+        if (statusPill) {
+          statusPill.classList.add('badge-gold');
+          statusText.textContent = `🟡 เตือน (เหลืออีก ${totalHoursRemaining.toFixed(1)} ชม.)`;
+        }
+      } else {
+        banner.classList.add('countdown-state-normal');
+        if (statusPill) {
+          statusPill.classList.add('badge-cyan');
+          statusText.textContent = `🟢 ปกติ (เหลืออีก ${totalHoursRemaining.toFixed(1)} ชม.)`;
+        }
+      }
+    }
+  }
+
+  // Ticking every 1 second
+  setInterval(updateLiveClockAndCountdown, 1000);
+  document.addEventListener('DOMContentLoaded', updateLiveClockAndCountdown);
+
+</script>
 </body>
 </html>
