@@ -252,7 +252,7 @@
         const awayName = m.awayTeam.name.toLowerCase();
         const homeThai = m.homeTeam.thaiName.toLowerCase();
         const awayThai = m.awayTeam.thaiName.toLowerCase();
-        const stadium = m.stadium.toLowerCase();
+        const stadium = typeof m.stadium === 'object' ? `${m.stadium.name} ${m.stadium.thaiName} ${m.stadium.city}`.toLowerCase() : (m.stadium || '').toLowerCase();
         const title = m.matchTitle.toLowerCase();
         if (!homeName.includes(q) && !awayName.includes(q) && !homeThai.includes(q) && !awayThai.includes(q) && !stadium.includes(q) && !title.includes(q)) {
           return false;
@@ -319,7 +319,7 @@
             <!-- Stadium & Score Pred -->
             <div class="card-context-bar">
               <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:180px;">
-                <i class="ri-map-pin-line"></i> ${m.stadium.split('(')[0].trim()}
+                <i class="ri-map-pin-line"></i> ${typeof m.stadium === 'object' ? (m.stadium.thaiName || m.stadium.name) : (m.stadium || '').split('(')[0].trim()}
               </span>
               <span class="score-pred-badge">
                 <i class="ri-football-line"></i> คาด: ${m.scorePrediction.prediction.split(' ')[0]}
