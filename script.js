@@ -428,19 +428,27 @@
       return 'badge-status-noelig';
     }
 
-    // Render player row
+    // Render player row (Sofascore style with real face photos)
     function renderPlayerRow(p, teamId) {
+      const photoHtml = p.image
+        ? `<img src="${p.image}" class="injury-player-photo-img" alt="${p.name}" onerror="this.onerror=null; this.src='assets/logos/${teamId}.png';">`
+        : `<span class="pos-fallback">${p.pos}</span>`;
+
       return `
         <div class="injury-player-row">
           <div class="injury-player-left">
-            <div class="injury-player-avatar">${p.pos}</div>
+            <div class="injury-player-avatar-wrap">
+              ${photoHtml}
+              ${p.status === 'Out' ? '<span class="avatar-status-dot dot-out"></span>' : ''}
+              ${p.status === 'Suspended' ? '<span class="avatar-status-dot dot-suspended"></span>' : ''}
+            </div>
             <div class="injury-player-info">
               <div class="injury-player-name">${p.name}</div>
-              <div class="injury-player-pos-detail">${p.detail}</div>
+              <div class="injury-player-pos-detail">${p.detail || p.role || ''}</div>
             </div>
           </div>
           <span class="injury-player-badge ${getBadgeClass(p.status)}">
-            ${p.statusText}
+            ${p.statusText || p.stat || ''}
           </span>
         </div>
       `;
@@ -547,7 +555,134 @@
   }
 
   // Render Match Detail View
-  function renderMatchDetail(matchId) {
+  
+  // Render Stadium Showcase Card
+  function renderStadiumCard(m) {
+    const stad = m.stadium;
+    if (!stad || typeof stad === 'string') return '';
+    const bgImg = stad.image || `assets/stadiums/match${m.id}.jpg`;
+    return `
+      <div class="stadium-showcase-card">
+        <div class="stadium-backdrop" style="background-image: url('${bgImg}');">
+          <div class="stadium-badge-top">
+            <i class="ri-map-pin-2-fill"></i> ${stad.countryFlag || '🏟️'} ${stad.city}, ${stad.country}
+          </div>
+        </div>
+        <div class="stadium-content">
+          <div class="stadium-title-row">
+            <div>
+              <div class="stadium-name-thai"><i class="ri-government-line" style="color:var(--accent-gold);"></i> ${stad.thaiName}</div>
+              <div class="stadium-name-en">${stad.name}</div>
+            </div>
+            <div class="stadium-location-pill">
+              <i class="ri-user-voice-line"></i> ความจุ ${stad.capacity}
+            </div>
+          </div>
+          <div class="stadium-specs-grid">
+            <div class="stadium-spec-item">
+              <div class="stadium-spec-label"><i class="ri-football-line"></i> พื้นผิวสนาม</div>
+              <div class="stadium-spec-value">${stad.surface}</div>
+            </div>
+            <div class="stadium-spec-item">
+              <div class="stadium-spec-label"><i class="ri-temp-cold-line"></i> สภาพอากาศ</div>
+              <div class="stadium-spec-value">${stad.climate}</div>
+            </div>
+            <div class="stadium-spec-item">
+              <div class="stadium-spec-label"><i class="ri-sound-module-line"></i> ระดับเสียงเชียร์</div>
+              <div class="stadium-spec-value" style="font-size:0.9rem;color:var(--accent-gold);">ดังกึกก้อง (High Pressure)</div>
+            </div>
+          </div>
+          <div class="stadium-atmosphere-box">
+            <strong style="color:var(--accent-gold);"><i class="ri-fire-line"></i> บรรยากาศ & จุดที่ต้องระวัง:</strong> ${stad.atmosphere}
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  // Render Star Duel Matchup Card
+  function renderStarDuelCard(m) {
+    const duel = m.keyDuel;
+    if (!duel) return '';
+    const h = duel.homeStar;
+    const a = duel.awayStar;
+    return `
+      <div class="star-duel-card">
+        <div class="star-duel-header">
+          <div class="pillar-title" style="font-size:1.05rem;display:flex;align-items:center;gap:0.5rem;">
+            <i class="ri-flashlight-fill" style="color:var(--accent-gold);"></i> การ์ดดวลแข้งคีย์แมนฟอร์มฮอต (Star vs Star Matchup)
+          </div>
+          <span class="badge badge-ucl">คีย์แมนตัดสินเกม</span>
+        </div>
+        <div class="star-duel-grid">
+          <!-- Home Star -->
+          <div class="star-player-side">
+            <div class="star-photo-wrap">
+              <img src="${h.image}" class="star-photo-img" alt="${h.name}" onerror="this.onerror=null; this.src='assets/logos/${m.homeTeam.id}.png';">
+            </div>
+            <div class="star-player-name">${h.thaiName}</div>
+            <div class="star-player-sub">${h.name} (#${h.number || ''} • ${h.pos})</div>
+            <div class="star-form-tag">${h.formTag}</div>
+            <div class="star-player-stat">${h.stat}</div>
+            <div class="star-player-val">มูลค่าประเมิน: <strong style="color:#fff;">${h.value}</strong></div>
+          </div>
+
+          <!-- Center VS -->
+          <div class="star-duel-center-vs">
+            <div class="star-vs-badge">VS</div>
+            <span style="font-size:0.75rem;color:var(--text-dim);font-weight:700;">DUEL</span>
+          </div>
+
+          <!-- Away Star -->
+          <div class="star-player-side">
+            <div class="star-photo-wrap">
+              <img src="${a.image}" class="star-photo-img" alt="${a.name}" onerror="this.onerror=null; this.src='assets/logos/${m.awayTeam.id}.png';">
+            </div>
+            <div class="star-player-name">${a.thaiName}</div>
+            <div class="star-player-sub">${a.name} (#${a.number || ''} • ${a.pos})</div>
+            <div class="star-form-tag">${a.formTag}</div>
+            <div class="star-player-stat">${a.stat}</div>
+            <div class="star-player-val">มูลค่าประเมิน: <strong style="color:#fff;">${a.value}</strong></div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  // Render 1-Minute Quick Verdict Card
+  function renderQuickVerdictCard(m) {
+    const v = m.quickVerdict;
+    if (!v) return '';
+    return `
+      <div class="quick-verdict-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:0.5rem;">
+          <div style="font-size:1.05rem;font-weight:900;color:#fff;display:flex;align-items:center;gap:0.5rem;">
+            <i class="ri-timer-flash-line" style="color:var(--accent-ucl);font-size:1.25rem;"></i> บทสรุปย่อ 1 นาที (Quick Verdict & Key Factors)
+          </div>
+          <span class="badge badge-gold" style="font-size:0.75rem;"><i class="ri-shield-check-line"></i> สรุปชี้ชัด</span>
+        </div>
+        <div class="quick-verdict-grid">
+          <div class="quick-verdict-item">
+            <div class="quick-verdict-label label-pick"><i class="ri-focus-3-line"></i> 1. ตลาดน่าเล่น & สกอร์คาดการณ์</div>
+            <div class="quick-verdict-text">
+              <strong style="color:var(--accent-ucl);font-size:0.95rem;display:block;margin-bottom:0.35rem;">${v.pick}</strong>
+              <span style="color:var(--accent-gold);font-weight:700;">สกอร์คาดการณ์: ${v.score}</span>
+            </div>
+          </div>
+          <div class="quick-verdict-item">
+            <div class="quick-verdict-label label-key"><i class="ri-key-2-line"></i> 2. จุดตัดสำคัญ / แท็กติกชี้ขาด</div>
+            <div class="quick-verdict-text">${v.keyPoint}</div>
+          </div>
+          <div class="quick-verdict-item">
+            <div class="quick-verdict-label label-trap"><i class="ri-alert-line"></i> 3. กับดักราคา & ข้อควรระวัง</div>
+            <div class="quick-verdict-text">${v.trapAlert}</div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+function renderMatchDetail(matchId) {
     const m = UCL_DATA.matches.find(item => item.id === matchId);
     if (!m) return;
 
@@ -619,7 +754,7 @@
           <div class="detail-hero-meta-grid">
             <div class="detail-meta-item">
               <strong>สนามแข่งขัน</strong>
-              <span>${m.stadium}</span>
+              <span>${typeof m.stadium === 'object' ? m.stadium.thaiName + ' (' + m.stadium.city + ')' : m.stadium}</span>
             </div>
             <div class="detail-meta-item">
               <strong>โปรแกรมและเวลาพัก</strong>
@@ -631,6 +766,15 @@
             </div>
           </div>
         </div>
+
+        <!-- 1-Minute Quick Verdict Card -->
+        ${renderQuickVerdictCard(m)}
+
+        <!-- Stadium Showcase Card -->
+        ${renderStadiumCard(m)}
+
+        <!-- Star vs Star Duel Card -->
+        ${renderStarDuelCard(m)}
 
         <!-- Pillar Navigation Tabs -->
         <div class="pillar-tabs">

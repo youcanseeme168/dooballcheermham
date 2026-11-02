@@ -186,7 +186,18 @@ const UCL_DATA = {
       },
       "tournamentRound": "UEFA Champions League 2026–27 รอบ League Phase (Matchday 4 of 8)",
       "matchDateTime": "วันพุธที่ 4 พฤศจิกายน 2026 เวลา 00:45 น. (ตามเวลาประเทศไทย) หรือวันอังคารที่ 3 พฤศจิกายน 2026 เวลา 20:45 น. ตามเวลาท้องถิ่นตุรกี",
-      "stadium": "Ali Sami Yen Sports Complex RAMS Park (อิสตันบูล, ตุรกี) ความจุประมาณ 52,000–53,978 ที่นั่ง",
+      "stadium": {
+        "name": "RAMS Park (Ali Sami Yen)",
+        "thaiName": "แรมส์ พาร์ค (อาลี ซามี เยน)",
+        "city": "Istanbul",
+        "country": "Turkey",
+        "countryFlag": "🇹🇷",
+        "capacity": "52,280 ที่นั่ง",
+        "surface": "หญ้าจริง (Natural Grass)",
+        "climate": "อากาศเย็น 14°C ลมกระโชก",
+        "atmosphere": "สังเวียน 'Welcome to Hell' อันเลื่องชื่อ เสียงเชียร์ระดับทะลุ 130 เดซิเบล กดดันคู่แข่งจนตั้งกระบวนไม่ติด",
+        "image": "assets/stadiums/match1.jpg"
+      },
       "standings": "Galatasaray: อันดับ 23 แข่ง 3 นัด ชนะ 1 เสมอ 0 แพ้ 2 ยิงได้ 6 เสีย 9 ประตู (ผลต่าง -3) มี 3 คะแนน และนำเป็นจ่าฝูงศึก Turkish Süper LigVfB Stuttgart: อันดับ 6 แข่ง 3 นัด ชนะ 2 เสมอ 1 แพ้ 0 ยิงได้ 7 เสีย 2 ประตู (ผลต่าง +5) มี 7 คะแนน",
       "scheduleAndRest": "Galatasaray ลงเล่นเกมลีกเมื่อวันศุกร์ (ชนะ Konyaspor 4-0) ได้พักประมาณ 3 วันเต็ม ขณะที่ Stuttgart ลงเล่นวันเสาร์ (ชนะ Bayer Leverkusen 4-2) มีเวลาพักน้อยกว่าประมาณ 1 วัน",
       "pitchAndWeather": "แข่งขันที่สนาม RAMS Park ซึ่งเป็นหนึ่งในสนามที่มีบรรยากาศกดดันทีมเยือนสูงที่สุดในยุโรป (ไม่มีข้อมูลพยากรณ์อากาศระบุในแหล่งข้อมูล)",
@@ -283,7 +294,8 @@ const UCL_DATA = {
               "role": "กองหน้าตัวเป้า",
               "stat": "ยิง 5 ประตูหลังสุดใน UCL ช่วงครึ่งหลัง",
               "value": "65M€",
-              "isStar": true
+              "isStar": true,
+              "image": "assets/players/osimhen.png"
             }
           ],
           "injuredPlayers": [
@@ -346,7 +358,8 @@ const UCL_DATA = {
               "role": "กองหน้าดาวซัลโว",
               "stat": "ยิงไปแล้ว 4 ประตูใน UCL ฤดูกาลนี้",
               "value": "28M€",
-              "isStar": true
+              "isStar": true,
+              "image": "assets/players/demirovic.png"
             },
             {
               "name": "Chris Führich",
@@ -372,7 +385,8 @@ const UCL_DATA = {
               "status": "Out",
               "statusText": "ยืนยันพักแข้ง (Out)",
               "badge": "red",
-              "detail": "เจ็บกล้ามเนื้อต้นขาด้านใน (Adductor) - มูลค่าสูงสุดของทีม 45M€"
+              "detail": "เจ็บกล้ามเนื้อต้นขาด้านใน (Adductor) - มูลค่าสูงสุดของทีม 45M€",
+              "image": "assets/players/stiller.png"
             },
             {
               "name": "Josha Vagnoman",
@@ -380,7 +394,8 @@ const UCL_DATA = {
               "status": "Out",
               "statusText": "ยืนยันพักแข้ง (Out)",
               "badge": "red",
-              "detail": "บาดเจ็บกล้ามเนื้อแฮมสตริง"
+              "detail": "บาดเจ็บกล้ามเนื้อแฮมสตริง",
+              "image": "assets/players/vagnoman.png"
             },
             {
               "name": "Leo Sauer",
@@ -396,7 +411,8 @@ const UCL_DATA = {
               "status": "Out",
               "statusText": "บาดเจ็บ & ไม่มีชื่อ",
               "badge": "red",
-              "detail": "เจ็บแฮมสตริง / ไม่มีชื่อลงทะเบียน"
+              "detail": "เจ็บแฮมสตริง / ไม่มีชื่อลงทะเบียน",
+              "image": "assets/players/zagadou.png"
             },
             {
               "name": "Justin Diehl",
@@ -424,6 +440,34 @@ const UCL_DATA = {
             }
           ]
         }
+      },
+      "keyDuel": {
+        "homeStar": {
+          "name": "Victor Osimhen",
+          "thaiName": "วิกเตอร์ โอซิมเฮน",
+          "number": 45,
+          "pos": "FW / กองหน้าตัวเป้า",
+          "image": "assets/players/osimhen.png",
+          "formTag": "🔥 ดาวยิงฟอร์มฮอตระดับโลก",
+          "stat": "ซัดไปแล้ว 5 ประตูในลีก และมีส่วนร่วมกับประตูในยุโรปอย่างต่อเนื่อง พลังกระโดดและสปีดทำลายล้าง",
+          "value": "75M€"
+        },
+        "awayStar": {
+          "name": "Ermedin Demirović",
+          "thaiName": "เอร์เมดิน เดมิโรวิช",
+          "number": 9,
+          "pos": "FW / หัวหอกม้าขาว",
+          "image": "assets/players/demirovic.png",
+          "formTag": "⚽ จอมสังหารฟุตบอลยุโรป",
+          "stat": "ทำไปแล้ว 4 ประตูใน UCL ซีซั่นนี้ จบสกอร์เฉียบคมในกรอบเขตโทษ เรตติ้งเฉลี่ยสูงถึง 7.6",
+          "value": "28M€"
+        }
+      },
+      "quickVerdict": {
+        "pick": "สกอร์สูง Over 2.5 (@ 1.43) และ ทั้งสองทีมยิงได้ BTTS (@ 1.38)",
+        "score": "2–1 หรือ 2–2",
+        "keyPoint": "กาลาตาซารายในบ้านเปิดเกมรุกแลกหมัดแหลก แต่หลังมีรอยรั่ว ขณะที่สตุ๊ตการ์ทขาด อังเจโล่ สติลเลอร์ คุมกลาง ทำให้ตัดเกมยากแต่เกมรุกยังจัดจ้าน",
+        "trapAlert": "ราคาต่อ กาลาตาซาราย ค่อนข้างตึง ม้าขาวสตุ๊ตการ์ทยังมีเกมโต้กลับที่อันตราย การเล่นหน้าสกอร์สูงชัวร์กว่า"
       }
     },
     {
@@ -456,7 +500,18 @@ const UCL_DATA = {
       },
       "tournamentRound": "UEFA Champions League 2026–27 รอบ League Phase (Matchday 4 of 8)",
       "matchDateTime": "วันพุธที่ 4 พฤศจิกายน 2026 เวลา 00:45 น. (ตามเวลาประเทศไทย) หรือวันอังคารที่ 3 พฤศจิกายน 2026 เวลา 17:45 น. ตามเวลาท้องถิ่นลอนดอน",
-      "stadium": "Stamford Bridge (ลอนดอน, สหราชอาณาจักร) — Shakhtar Donetsk ลงเล่นในฐานะเจ้าบ้านที่สนามกลาง (Adopted Home) ในกรุงลอนดอน ทำให้ตัดความได้เปรียบเรื่องสภาพแวดล้อมในยูเครนออกไป",
+      "stadium": {
+        "name": "Volksparkstadion (สนามกลาง)",
+        "thaiName": "โฟล์กสพาร์คสตาดิโอน (สนามกลาง ฮัมบูร์ก)",
+        "city": "Hamburg",
+        "country": "Germany (สนามกลาง)",
+        "countryFlag": "🇩🇪",
+        "capacity": "57,000 ที่นั่ง",
+        "surface": "หญ้าจริง (Natural Grass)",
+        "climate": "อากาศหนาวจัด 7°C สนามกลาง",
+        "atmosphere": "ชัคตาร์ใช้รังเหย้าชั่วคราวในเยอรมนี ทำให้เสียเปรียบเรื่องบรรยากาศกองเชียร์เจ้าบ้านแท้จริง",
+        "image": "assets/stadiums/match2.jpg"
+      },
       "standings": "Shakhtar Donetsk: อันดับ 17 แข่ง 3 นัด ชนะ 1 เสมอ 1 แพ้ 1 ยิงได้ 4 เสีย 3 ประตู (ผลต่าง +1) มี 4 คะแนนSporting CP: อันดับ 12 แข่ง 3 นัด ชนะ 2 เสมอ 0 แพ้ 1 ยิงได้ 7 เสีย 4 ประตู (ผลต่าง +3) มี 6 คะแนน",
       "scheduleAndRest": "ไม่มีข้อมูลวันแข่งเกมลีกสุดสัปดาห์ระบุโดยตรงในแหล่งข้อมูล",
       "pitchAndWeather": "แข่งขันที่สนาม Stamford Bridge กรุงลอนดอน (ไม่มีข้อมูลสภาพอากาศระบุในแหล่งข้อมูล)",
@@ -563,7 +618,8 @@ const UCL_DATA = {
               "status": "Out",
               "statusText": "พักยาว (Out)",
               "badge": "red",
-              "detail": "ผ่าตัดกระดูกเท้า จากเกมพบ Inter"
+              "detail": "ผ่าตัดกระดูกเท้า จากเกมพบ Inter",
+              "image": "assets/players/pedrinho.png"
             },
             {
               "name": "Eguinaldo",
@@ -616,7 +672,8 @@ const UCL_DATA = {
               "role": "วิงแบ็กจอมบุก",
               "stat": "3 แอสซิสต์จาก 2 นัดหลังสุด",
               "value": "22M€",
-              "isStar": true
+              "isStar": true,
+              "image": "assets/players/fresneda.png"
             },
             {
               "name": "Gonçalo Inácio",
@@ -646,6 +703,34 @@ const UCL_DATA = {
             }
           ]
         }
+      },
+      "keyDuel": {
+        "homeStar": {
+          "name": "Georgiy Sudakov",
+          "thaiName": "จอร์จี้ ซูดาคอฟ",
+          "number": 10,
+          "pos": "MF / จอมทัพยูเครน",
+          "image": "assets/players/sudakov.png",
+          "formTag": "🧠 มันสมองของชัคตาร์",
+          "stat": "สร้างสรรค์โอกาสยิงเฉลี่ย 3.2 ครั้งต่อเกม จ่ายบอลคิลเลอร์พาสแม่นยำ เรตติ้ง 7.8",
+          "value": "35M€"
+        },
+        "awayStar": {
+          "name": "Viktor Gyökeres",
+          "thaiName": "วิกเตอร์ เกียวเคเรส",
+          "number": 9,
+          "pos": "FW / กองหน้าเครื่องจักรสังหาร",
+          "image": "assets/players/gyokeres.png",
+          "formTag": "🤖 เครื่องจักรถล่มประตู",
+          "stat": "สถิติยิงถล่มทลายในลีกและยุโรป สปีดและความแข็งแกร่งทำลายแนวรับคู่แข่งขาดวิ่น",
+          "value": "70M€"
+        }
+      },
+      "quickVerdict": {
+        "pick": "สปอร์ติ้ง ลิสบอน ชนะ (@ 1.97) หรือ Double Chance X2 (@ 1.32)",
+        "score": "1–2 หรือ 0–1",
+        "keyPoint": "ชัคตาร์เตะสนามกลางขาดแรงเชียร์ ขณะที่ สปอร์ติ้ง ฟอร์มดุจัดจ้าน เกียวเคเรส ค้ำหน้าพร้อมป่วนทุกจังหวะ",
+        "trapAlert": "ราคาสปอร์ติ้งเกือบ 2.00 คุ้มค่าที่สุดสำหรับทีมเยือนที่มีคุณภาพเกมรุกเหนือชั้นกว่าชัดเจน"
       }
     },
     {
@@ -678,7 +763,18 @@ const UCL_DATA = {
       },
       "tournamentRound": "UEFA Champions League 2026–27 รอบ League Phase (Matchday 4 of 8)",
       "matchDateTime": "วันพุธที่ 4 พฤศจิกายน 2026 เวลา 03:00 น. (ตามเวลาประเทศไทย) หรือวันอังคารที่ 3 พฤศจิกายน 2026 เวลา 21:00 น. ตามเวลาท้องถิ่นเนเธอร์แลนด์",
-      "stadium": "Feyenoord Stadium (De Kuip) เมืองร็อตเตอร์ดัม ประเทศเนเธอร์แลนด์ ความจุ 47,500 ที่นั่ง",
+      "stadium": {
+        "name": "De Kuip (Stadion Feijenoord)",
+        "thaiName": "เดอ ไกป์ (เฟเยนูร์ด สเตเดี้ยม)",
+        "city": "Rotterdam",
+        "country": "Netherlands",
+        "countryFlag": "🇳🇱",
+        "capacity": "51,117 ที่นั่ง",
+        "surface": "หญ้าจริง (Natural Grass)",
+        "climate": "หนาวชื้น 9°C ลมทะเลเหนือ",
+        "atmosphere": "อ่างกระทะเหล็กเดอไกป์ นรกของทีมเยือน เสียงเชียร์เร้าอารมณ์สั่นสะเทือนอัฒจันทร์",
+        "image": "assets/stadiums/match3.jpg"
+      },
       "standings": "Feyenoord: อันดับ 26 แข่ง 3 นัด ชนะ 1 เสมอ 0 แพ้ 2 ยิงได้ 4 เสีย 8 ประตู (ผลต่าง -4) มี 3 คะแนน และเป็นจ่าฝูง EredivisieInter Milan: อันดับ 20 ร่วม (หรือ 21) แข่ง 3 นัด ชนะ 1 เสมอ 0 แพ้ 2 ยิงได้ 5 เสีย 6 ประตู (ผลต่าง -1) มี 3 คะแนน และนำเป็นจ่าฝูงร่วมในศึก Serie A",
       "scheduleAndRest": "ทั้งสองทีมลงแข่งเกมลีกเมื่อวันเสาร์ที่ 31 ตุลาคม 2026 (Feyenoord เสมอ Fortuna Sittard 1-1 / Inter แพ้ AC Milan 1-3) มีเวลาพัก 2 วันเต็มเท่ากัน",
       "pitchAndWeather": "สนาม De Kuip เป็นหนึ่งในสนามที่สร้างแรงกดดันให้ทีมเยือนสูงมาก โดยชัยชนะทั้ง 3 นัดในยุโรปของ Feyenoord จาก 13 เกมหลังสุดเกิดขึ้นที่สนามแห่งนี้ทั้งหมด",
@@ -854,7 +950,8 @@ const UCL_DATA = {
               "role": "ห้องเครื่องตัวกลั่น",
               "stat": "หัวใจแดนกลางและคุมเกมรับ-รุก",
               "value": "80M€",
-              "isStar": true
+              "isStar": true,
+              "image": "assets/players/barella.png"
             },
             {
               "name": "Hakan Çalhanoğlu",
@@ -880,7 +977,8 @@ const UCL_DATA = {
               "status": "Out",
               "statusText": "กัปตันทีม (Out)",
               "badge": "red",
-              "detail": "ดาวยิงตัวเก่ง เจ็บกล้ามเนื้อแฮมสตริง"
+              "detail": "ดาวยิงตัวเก่ง เจ็บกล้ามเนื้อแฮมสตริง",
+              "image": "assets/players/lautaro.png"
             },
             {
               "name": "Benjamin Pavard",
@@ -916,6 +1014,34 @@ const UCL_DATA = {
             }
           ]
         }
+      },
+      "keyDuel": {
+        "homeStar": {
+          "name": "Santiago Giménez",
+          "thaiName": "ซานติอาโก้ คิเมเนซ",
+          "number": 29,
+          "pos": "FW / ดาวยิงเม็กซิกัน",
+          "image": "assets/players/gimenez.png",
+          "formTag": "🎯 จอมสังหารหน้าปากประตู",
+          "stat": "ยิงไป 6 ประตูจาก 8 นัดหลังสุด ปฏิกิริยาในกรอบเขตโทษรวดเร็ว หาช่องยิงได้ทุกมุม",
+          "value": "40M€"
+        },
+        "awayStar": {
+          "name": "Lautaro Martínez",
+          "thaiName": "เลาตาโร่ มาร์ติเนซ",
+          "number": 10,
+          "pos": "FW / กัปตันงูใหญ่",
+          "image": "assets/players/lautaro.png",
+          "formTag": "🐂 เอล โตโร่ ดาวยิงเวิลด์คลาส",
+          "stat": "ความเฉียบคมเกมยุโรประดับหัวแถว ครองบอลเหนียวแน่นและประสานงานกับ ตูราม อันตรายสุดๆ",
+          "value": "110M€"
+        }
+      },
+      "quickVerdict": {
+        "pick": "สกอร์สูง Over 2.5 (@ 1.41) และ ทั้งสองทีมยิงได้ BTTS (@ 1.43)",
+        "score": "1–2",
+        "keyPoint": "ทั้งคู่ขาดกองหลังตัวหลักหลายคน เฟเยนูร์ดในบ้านไม่เคยกลัวใคร ส่วนอินเตอร์เกมสวนกลับแม่นยำ โอกาสแลกกันยิงสูงมาก",
+        "trapAlert": "ราคาต่อของอินเตอร์ไม่ควรเสี่ยงวาง เพราะเดอไกป์เล่นยากมาก ให้หันมาจับตลาดสกอร์สูงที่มั่นคงกว่า"
       }
     },
     {
@@ -948,7 +1074,18 @@ const UCL_DATA = {
       },
       "tournamentRound": "UEFA Champions League 2026–27 รอบ League Phase (Matchday 4 of 8)",
       "matchDateTime": "วันพุธที่ 4 พฤศจิกายน 2026 เวลา 03:00 น. (ตามเวลาประเทศไทย) หรือวันอังคารที่ 3 พฤศจิกายน 2026 เวลา 21:00 น. ตามเวลาท้องถิ่นนอร์เวย์",
-      "stadium": "Aspmyra Stadion (เมืองโบโด, ประเทศนอร์เวย์) ความจุ 8,270 ที่นั่ง",
+      "stadium": {
+        "name": "Aspmyra Stadion",
+        "thaiName": "อัสป์มีรา สตาดิโอน (รังเหย้าขั้วโลกเหนือ)",
+        "city": "Bodø",
+        "country": "Norway",
+        "countryFlag": "🇳🇴",
+        "capacity": "8,270 ที่นั่ง",
+        "surface": "หญ้าเทียม (Artificial Turf)",
+        "climate": "หนาวจัดใกล้ 0°C ลมพายุขั้วโลก",
+        "atmosphere": "สนามหญ้าเทียมขั้วโลกเหนือที่สร้างฝันร้ายให้ทีมยักษ์ใหญ่ยุโรปมานักต่อนัก บอลพุ่งเร็วและอากาศยะเยือก",
+        "image": "assets/stadiums/match4.jpg"
+      },
       "standings": "Bodø/Glimt: อันดับ 28 แข่ง 3 นัด ชนะ 1 เสมอ 0 แพ้ 2 ยิงได้ 4 เสีย 9 ประตู (ผลต่าง -5) มี 3 คะแนนLOSC Lille: อันดับ 35 (รองบ๊วย) แข่ง 3 นัด ชนะ 0 เสมอ 0 แพ้ 3 ยิงได้ 4 เสีย 10 ประตู (ผลต่าง -6) มี 0 คะแนน",
       "scheduleAndRest": "Lille ลงเล่นเกมลีกเมื่อวันศุกร์ (ชนะ Lens 1-0) ได้พัก 3 วันเต็ม ส่วน Bodø/Glimt ลงเล่นสุดสัปดาห์ (ชนะ Viking 3-2) มีเวลาพักน้อยกว่าประมาณ 1 วัน",
       "pitchAndWeather": "สนาม Aspmyra Stadion ตั้งอยู่ในเขตอาร์กติกของนอร์เวย์ เป็นสังเวียนที่สร้างปัญหาให้ทีมใหญ่ในยุโรปมาอย่างต่อเนื่อง",
@@ -1041,7 +1178,8 @@ const UCL_DATA = {
               "role": "กัปตันทีม",
               "stat": "ผู้นำสถิติชนะเกมเหย้ายุโรป 6 นัดรวด",
               "value": "5M€",
-              "isStar": false
+              "isStar": false,
+              "image": "assets/players/berg.png"
             }
           ],
           "injuredPlayers": [
@@ -1088,7 +1226,8 @@ const UCL_DATA = {
               "role": "ดาวยิงตัวความหวัง",
               "stat": "ดาวซัลโวสูงสุดประจำสโมสร",
               "value": "50M€",
-              "isStar": true
+              "isStar": true,
+              "image": "assets/players/david.png"
             }
           ],
           "injuredPlayers": [
@@ -1098,7 +1237,8 @@ const UCL_DATA = {
               "status": "Out",
               "statusText": "ตัวหลัก (Out)",
               "badge": "red",
-              "detail": "บาดเจ็บกล้ามเนื้อ พลาดลงสนามหลายสัปดาห์"
+              "detail": "บาดเจ็บกล้ามเนื้อ พลาดลงสนามหลายสัปดาห์",
+              "image": "assets/players/mbappe_ethan.png"
             },
             {
               "name": "Ayase Ueda",
@@ -1106,7 +1246,8 @@ const UCL_DATA = {
               "status": "Out",
               "statusText": "ตัวหลัก (Out)",
               "badge": "red",
-              "detail": "บาดเจ็บกล้ามเนื้อต้นขา"
+              "detail": "บาดเจ็บกล้ามเนื้อต้นขา",
+              "image": "assets/players/ueda.png"
             },
             {
               "name": "Tiago Santos",
@@ -1114,10 +1255,39 @@ const UCL_DATA = {
               "status": "Out",
               "statusText": "แบ็กขวาหลัก (Out)",
               "badge": "red",
-              "detail": "บาดเจ็บเอ็นไขว้หน้าเข่า"
+              "detail": "บาดเจ็บเอ็นไขว้หน้าเข่า",
+              "image": "assets/players/santos_tiago.png"
             }
           ]
         }
+      },
+      "keyDuel": {
+        "homeStar": {
+          "name": "Patrick Berg",
+          "thaiName": "พาทริก เบิร์ก",
+          "number": 7,
+          "pos": "MF / กัปตันโบโดฯ",
+          "image": "assets/players/berg.png",
+          "formTag": "👑 หัวใจแดนกลางขั้วโลกเหนือ",
+          "stat": "วิ่งคุมพื้นที่ทั่วสนาม วางบอลยาวและยิงไกลนอกกรอบได้แม่นยำ คุ้นชินกับสนามหญ้าเทียมเป็นที่สุด",
+          "value": "5M€"
+        },
+        "awayStar": {
+          "name": "Jonathan David",
+          "thaiName": "โจนาธาน เดวิด",
+          "number": 9,
+          "pos": "FW / จรวดทางเรียบแคนาดา",
+          "image": "assets/players/david.png",
+          "formTag": "⚡ ดาวยิงสปีดจัดจ้าน",
+          "stat": "ดาวซัลโวของลีลล์ สปีดฉีกแผงหลังและจบสกอร์เยือกเย็น ยิงในลีกเอิงสม่ำเสมอ",
+          "value": "50M€"
+        }
+      },
+      "quickVerdict": {
+        "pick": "โบโด/กลิมท์ ชนะ (1) (@ 1.92) หรือ โบโด ยิงเกิน 1.5 ลูก",
+        "score": "2–1 หรือ 3–1",
+        "keyPoint": "โบโดชนะเกมเหย้ายุโรป 6 นัดรวด ชินหญ้าเทียมและอากาศขั้วโลก ส่วนลีลล์แพ้ยุโรป 5 นัดติดและขาดตัวหลักเพียบ",
+        "trapAlert": "ลีลล์มีปัญหาเรื่องสภาพความฟิตและฟอร์มครึ่งหลังที่เสียประตูเป็นประจำ ราคา 1.92 ของโบโดคือความคุ้มค่าระดับ 5 ดาว"
       }
     },
     {
@@ -1150,7 +1320,18 @@ const UCL_DATA = {
       },
       "tournamentRound": "UEFA Champions League 2026–27 รอบ League Phase (Matchday 4 of 8)",
       "matchDateTime": "วันพุธที่ 4 พฤศจิกายน 2026 เวลา 03:00 น. (ตามเวลาประเทศไทย) หรือวันอังคารที่ 3 พฤศจิกายน 2026 เวลา 21:00 น. ตามเวลาท้องถิ่นสเปน",
-      "stadium": "Riyadh Air Metropolitano (มาดริด, ประเทศสเปน)",
+      "stadium": {
+        "name": "Riyadh Air Metropolitano",
+        "thaiName": "ริยาด แอร์ เมโทรโปลิตาโน่",
+        "city": "Madrid",
+        "country": "Spain",
+        "countryFlag": "🇪🇸",
+        "capacity": "70,460 ที่นั่ง",
+        "surface": "หญ้าจริงไฮบริด (Hybrid Grass)",
+        "climate": "อากาศเย็นสบาย 15°C",
+        "atmosphere": "ป้อมปราการหินของ ดิเอโก้ ซิเมโอเน่ แฟนบอลตราหมีส่งเสียงกระหึ่ม กดดันคู่แข่งและผู้ตัดสินตลอด 90 นาที",
+        "image": "assets/stadiums/match5.jpg"
+      },
       "standings": "Atlético Madrid: อันดับ 16 แข่ง 3 นัด ชนะ 1 เสมอ 1 แพ้ 1 ยิงได้ 4 เสีย 3 ประตู (ผลต่าง +1) มี 4 คะแนน และเพิ่งขึ้นนำเป็นจ่าฝูงศึก LaLigaBayern Munich: อันดับ 14 แข่ง 3 นัด ชนะ 1 เสมอ 2 แพ้ 0 ยิงได้ 10 เสีย 5 ประตู (ผลต่าง +5) มี 5 คะแนน",
       "scheduleAndRest": "ทั้งสองทีมเพิ่งลงเล่นเกมลีกเมื่อสุดสัปดาห์ (Atlético ชนะ Levante ขึ้นจ่าฝูง LaLiga / Bayern ลงทำศึกบิ๊กแมตช์ Der Klassiker กับ Borussia Dortmund) มีเวลาพักประมาณ 2 วันเต็มใกล้เคียงกัน",
       "pitchAndWeather": "แข่งขันที่สนาม Riyadh Air Metropolitano ซึ่ง Atlético ไม่เคยแพ้ให้กับ Bayern Munich ในการพบกันที่ผ่านมาเลย",
@@ -1235,7 +1416,8 @@ const UCL_DATA = {
               "role": "ดาวยิงเบอร์หนึ่ง",
               "stat": "ดาวซัลโวประจำทีมและผู้นำเกมโต้กลับ",
               "value": "90M€",
-              "isStar": true
+              "isStar": true,
+              "image": "assets/players/alvarez.png"
             },
             {
               "name": "Antoine Griezmann",
@@ -1243,7 +1425,8 @@ const UCL_DATA = {
               "role": "เพลย์เมกเกอร์",
               "stat": "สถิติชนะในบ้านรอบแบ่งกลุ่ม 10 จาก 12 นัด",
               "value": "25M€",
-              "isStar": false
+              "isStar": false,
+              "image": "assets/players/griezmann.png"
             }
           ],
           "injuredPlayers": [
@@ -1282,7 +1465,8 @@ const UCL_DATA = {
               "role": "ดาวยิงมหากาฬ",
               "stat": "ซัลโวไปแล้ว 4 ประตูใน UCL ฤดูกาลนี้",
               "value": "100M€",
-              "isStar": true
+              "isStar": true,
+              "image": "assets/players/kane.png"
             },
             {
               "name": "Michael Olise",
@@ -1290,7 +1474,8 @@ const UCL_DATA = {
               "role": "ปีกจอมถล่มประตู",
               "stat": "ยิง 2 ประตูใน UCL และแอสซิสต์สูงสุด",
               "value": "65M€",
-              "isStar": false
+              "isStar": false,
+              "image": "assets/players/olise.png"
             }
           ],
           "injuredPlayers": [
@@ -1300,7 +1485,8 @@ const UCL_DATA = {
               "status": "Out",
               "statusText": "กัปตันมือหนึ่ง (Out)",
               "badge": "red",
-              "detail": "กระดูกเท้าหัก พักยาว"
+              "detail": "กระดูกเท้าหัก พักยาว",
+              "image": "assets/players/neuer.png"
             },
             {
               "name": "Luis Díaz",
@@ -1308,7 +1494,8 @@ const UCL_DATA = {
               "status": "Out",
               "statusText": "ตัวรุกหลัก (Out)",
               "badge": "red",
-              "detail": "มีปัญหาอาการบาดเจ็บกล้ามเนื้อ"
+              "detail": "มีปัญหาอาการบาดเจ็บกล้ามเนื้อ",
+              "image": "assets/players/luis_diaz.png"
             },
             {
               "name": "Jamal Musiala",
@@ -1316,7 +1503,8 @@ const UCL_DATA = {
               "status": "Doubtful",
               "statusText": "เจ็บเพิ่ม (Doubtful)",
               "badge": "yellow",
-              "detail": "ได้รับบาดเจ็บจากเกมลีกสุดสัปดาห์"
+              "detail": "ได้รับบาดเจ็บจากเกมลีกสุดสัปดาห์",
+              "image": "assets/players/musiala.png"
             },
             {
               "name": "Leroy Sané",
@@ -1328,6 +1516,34 @@ const UCL_DATA = {
             }
           ]
         }
+      },
+      "keyDuel": {
+        "homeStar": {
+          "name": "Julián Álvarez",
+          "thaiName": "ฮูเลียน อัลวาเรซ",
+          "number": 19,
+          "pos": "FW / สไปเดอร์แมนตราหมี",
+          "image": "assets/players/alvarez.png",
+          "formTag": "🕷️ กองหน้าพลังเพรสซิ่งสูง",
+          "stat": "วิ่งบดแนวรับคู่แข่งไม่มีหยุด ประสานงานกับ กรีซมันน์ ได้อย่างลงตัว ยิงและแอสซิสต์ในบ้านอย่างดุ",
+          "value": "90M€"
+        },
+        "awayStar": {
+          "name": "Harry Kane",
+          "thaiName": "แฮร์รี่ เคน",
+          "number": 9,
+          "pos": "FW / ดาวยิงกัปตันสิงโตคำราม",
+          "image": "assets/players/kane.png",
+          "formTag": "🎯 เครื่องจักรถล่มตาข่ายบาเยิร์น",
+          "stat": "ค่าเฉลี่ยทำประตูใน UCL เกิน 1.0 ลูกต่อนัด สถิติจุดโทษ 100% เล่นลูกกลางอากาศและดึงตัวประกบยอดเยี่ยม",
+          "value": "100M€"
+        }
+      },
+      "quickVerdict": {
+        "pick": "ทั้งสองทีมยิงได้ BTTS - Yes (@ 1.36) หรือ รอง แอตฯ มาดริด 1X",
+        "score": "2–1 หรือ 1–1",
+        "keyPoint": "แอตฯ มาดริดในบ้าน UCL ชนะ 10 จาก 12 นัด ยิงได้ 20 นัดรวด บาเยิร์นยิงในยุโรป 24 นัดรวดแต่ขาด นอยเออร์ และแนวรับเปื่อย",
+        "trapAlert": "บาเยิร์นเป็นต่อที่ราคา 2.04 ทั้งที่สะดุดเสมอมา 2 นัดติด ระวังเสร็จแท็กติกเคี่ยวระดับมาสเตอร์ของ ซิเมโอเน่"
       }
     },
     {
@@ -1360,7 +1576,18 @@ const UCL_DATA = {
       },
       "tournamentRound": "UEFA Champions League 2026–27 รอบ League Phase (Matchday 4 of 8)",
       "matchDateTime": "วันพุธที่ 4 พฤศจิกายน 2026 เวลา 03:00 น. (ตามเวลาประเทศไทย) หรือวันอังคารที่ 3 พฤศจิกายน 2026 เวลา 21:00 น. ตามเวลาท้องถิ่นสเปน",
-      "stadium": "Estadio de la Cerámica / เอล มาดริกัล (เมืองบิยาร์เรอัล, ประเทศสเปน)",
+      "stadium": {
+        "name": "Estadio de la Cerámica",
+        "thaiName": "เอสตาดิโอ เด ลา เซรามิก้า",
+        "city": "Villarreal",
+        "country": "Spain",
+        "countryFlag": "🇪🇸",
+        "capacity": "23,000 ที่นั่ง",
+        "surface": "หญ้าจริง (Natural Grass)",
+        "climate": "อากาศเย็นสบายเมดิเตอร์เรเนียน 16°C",
+        "atmosphere": "อัฒจันทร์สีเหลืองอร่ามตั้งประชิดขอบสนาม สร้างความอึดอัดให้ทีมเยือน แต่เป็นรังที่เปิดแลกหมัดสนุก",
+        "image": "assets/stadiums/match6.jpg"
+      },
       "standings": "Villarreal: อันดับ 19 แข่ง 3 นัด ชนะ 1 เสมอ 0 แพ้ 2 ยิงได้ 8 เสีย 8 ประตู (ผลต่าง 0) มี 3 คะแนนParis Saint-Germain (PSG): อันดับ 1 (จ่าฝูงและแชมป์เก่า) แข่ง 3 นัด ชนะ 3 เสมอ 0 แพ้ 0 ยิงได้ 14 เสีย 5 ประตู (ผลต่าง +9) มี 9 คะแนนเต็ม และนำโด่งเป็นจ่าฝูง Ligue 1",
       "scheduleAndRest": "PSG เพิ่งถล่ม Le Havre ในศึก Ligue 1 เมื่อสุดสัปดาห์ มีเวลาพักประมาณ 2–3 วัน",
       "pitchAndWeather": "แข่งขันที่ Estadio de la Cerámica ซึ่ง Villarreal ชนะเพียง 2 จาก 6 นัดเหย้าในทุกรายการซีซั่นนี้",
@@ -1445,7 +1672,8 @@ const UCL_DATA = {
               "role": "หัวหอกกัปตันทีม",
               "stat": "สถิติ 12 จาก 14 เกมเหย้าเกิด BTTS",
               "value": "15M€",
-              "isStar": true
+              "isStar": true,
+              "image": "assets/players/moreno.png"
             }
           ],
           "injuredPlayers": [
@@ -1492,7 +1720,8 @@ const UCL_DATA = {
               "role": "ฟูลแบ็กเบอร์หนึ่งโลก",
               "stat": "เรตติ้ง 8.09 สม่ำเสมอ นำทัพชนะ 9 นัดรวด",
               "value": "65M€",
-              "isStar": true
+              "isStar": true,
+              "image": "assets/players/hakimi.png"
             },
             {
               "name": "Désiré Doué",
@@ -1526,7 +1755,8 @@ const UCL_DATA = {
               "status": "Out",
               "statusText": "ดาวยิงหลัก (Out)",
               "badge": "red",
-              "detail": "บาดเจ็บกล้ามเนื้อแฮมสตริง"
+              "detail": "บาดเจ็บกล้ามเนื้อแฮมสตริง",
+              "image": "assets/players/dembele.png"
             },
             {
               "name": "Marquinhos",
@@ -1534,7 +1764,8 @@ const UCL_DATA = {
               "status": "Out",
               "statusText": "กัปตันทีม (Out)",
               "badge": "red",
-              "detail": "เจ็บแฮมสตริง พักรักษาตัว"
+              "detail": "เจ็บแฮมสตริง พักรักษาตัว",
+              "image": "assets/players/marquinhos.png"
             },
             {
               "name": "Nuno Mendes",
@@ -1542,7 +1773,8 @@ const UCL_DATA = {
               "status": "Out",
               "statusText": "แบ็กซ้ายตัวจริง (Out)",
               "badge": "red",
-              "detail": "กล้ามเนื้อต้นขาช้ำรุนแรง (Dead leg)"
+              "detail": "กล้ามเนื้อต้นขาช้ำรุนแรง (Dead leg)",
+              "image": "assets/players/nuno_mendes.png"
             },
             {
               "name": "Alessandro Longoni",
@@ -1554,6 +1786,34 @@ const UCL_DATA = {
             }
           ]
         }
+      },
+      "keyDuel": {
+        "homeStar": {
+          "name": "Gerard Moreno",
+          "thaiName": "เคราร์ด โมเรโน่",
+          "number": 7,
+          "pos": "FW / มันสมองเรือดำน้ำสีเหลือง",
+          "image": "assets/players/moreno.png",
+          "formTag": "🏹 กองหน้าสายเทคนิคชั้นครู",
+          "stat": "พักบอล เชื่อมเกม และจ่ายบอลคิลเลอร์พาสได้อันตราย สถิติยิงในบ้านสม่ำเสมอที่สุดของทีม",
+          "value": "15M€"
+        },
+        "awayStar": {
+          "name": "Achraf Hakimi",
+          "thaiName": "อัชราฟ ฮาคิมี่",
+          "number": 2,
+          "pos": "DF / แบ็กขวาจรวดทางเรียบ",
+          "image": "assets/players/hakimi.png",
+          "formTag": "⚡ ฟูลแบ็กพลังเกมรุกทะลุขีดจำกัด",
+          "stat": "มีส่วนร่วมกับประตูของเปแอสเชอย่างสม่ำเสมอ เติมเกมรุกสปีดจัดจ้านและยิงไกลนอกกรอบได้เฉียบคม",
+          "value": "60M€"
+        }
+      },
+      "quickVerdict": {
+        "pick": "เปแอสเช ชนะ (@ 1.65) และ ทั้งสองทีมยิงได้ BTTS (@ 1.43)",
+        "score": "1–3 หรือ 1–2",
+        "keyPoint": "เปแอสเชชนะรวด 9 นัดทุกรายการ ยิงไป 30 ประตู เรตติ้งทีมสูงสุดในยุโรป (8.09) ส่วนบียาร์เรอัลสถิติ 12 จาก 14 นัดเหย้าเกิด BTTS",
+        "trapAlert": "บียาร์เรอัลเปิดหน้าแลกในบ้านมีสิทธิ์โดนเปแอสเชสวนกลับยับเยิน ราคาเปแอสเช 1.65 น่าเชื่อถือที่สุดในค่ำคืนนี้"
       }
     },
     {
@@ -1586,7 +1846,18 @@ const UCL_DATA = {
       },
       "tournamentRound": "UEFA Champions League 2026–27 รอบ League Phase (Matchday 4 of 8)",
       "matchDateTime": "วันพุธที่ 4 พฤศจิกายน 2026 เวลา 03:00 น. (ตามเวลาประเทศไทย) หรือวันอังคารที่ 3 พฤศจิกายน 2026 เวลา 21:00 น. ตามเวลาท้องถิ่นสเปน",
-      "stadium": "Spotify Camp Nou (เมืองบาร์เซโลนา, ประเทศสเปน)",
+      "stadium": {
+        "name": "Estadi Olímpic Lluís Companys / Camp Nou",
+        "thaiName": "เอสตาดิ โอลิมปิก ยูอิส กอมปานีส์ (มองต์คูอิก)",
+        "city": "Barcelona",
+        "country": "Spain",
+        "countryFlag": "🇪🇸",
+        "capacity": "54,367 ที่นั่ง",
+        "surface": "หญ้าจริง (Natural Grass)",
+        "climate": "อากาศเย็นสดชื่น 15°C",
+        "atmosphere": "ยอดเขามองต์คูอิก แฟนบอลบาร์ซ่าเชียร์สไตล์ต่อบอลติกิตาก้า บรรยากาศเปิดกว้าง เกมรุกไหลลื่น",
+        "image": "assets/stadiums/match7.jpg"
+      },
       "standings": "FC Barcelona: อันดับ 8 แข่ง 3 นัด ชนะ 2 เสมอ 0 แพ้ 1 ยิงได้ 11 เสีย 6 ประตู (ผลต่าง +5) มี 6 คะแนนAston Villa: อันดับ 2 แข่ง 3 นัด ชนะ 3 เสมอ 0 แพ้ 0 ยิงได้ 12 เสีย 3 ประตู (ผลต่าง +9) มี 9 คะแนนเต็ม ส่วนในศึก Premier League อยู่อันดับ 9 (แข่ง 9 นัด ชนะ 3 เสมอ 3 แพ้ 3 ยิง 10 เสีย 13 มี 12 คะแนน)",
       "scheduleAndRest": "ทั้งสองทีมลงเล่นคืนวันเสาร์ที่ 31 ตุลาคม 2026 (Barcelona ถล่ม Alavés 6-1 / Aston Villa เสมอ Fulham 1-1) มีเวลาพัก 2 วันเต็มเท่ากัน",
       "pitchAndWeather": "แข่งขันที่ Spotify Camp Nou ซึ่ง Barcelona ชนะ 6 จาก 7 นัดเหย้าในทุกรายการซีซั่นนี้ (แพ้เพียง PSG นัดเดียว) และไม่เคยแพ้ทีมจากอังกฤษในบ้านมา 15 นัดติดต่อกัน (ชนะ 10 เสมอ 5)",
@@ -1671,7 +1942,8 @@ const UCL_DATA = {
               "role": "ดาวเตะปรากฏการณ์",
               "stat": "มูลค่าตลาด 220 ล้านยูโร สร้างสรรค์โอกาสสูงสุด",
               "value": "220M€",
-              "isStar": true
+              "isStar": true,
+              "image": "assets/players/yamal.png"
             },
             {
               "name": "João Cancelo",
@@ -1689,7 +1961,8 @@ const UCL_DATA = {
               "status": "Out",
               "statusText": "ตัวหลัก (Out)",
               "badge": "red",
-              "detail": "ข้อเท้าแพลงอย่างรุนแรง"
+              "detail": "ข้อเท้าแพลงอย่างรุนแรง",
+              "image": "assets/players/kounde.png"
             },
             {
               "name": "Dani Olmo",
@@ -1750,7 +2023,8 @@ const UCL_DATA = {
               "role": "ดาวยิงตัวเก่ง",
               "stat": "ยิงไป 12 ลูกจาก 3 นัดแรกของทีมใน UCL",
               "value": "60M€",
-              "isStar": false
+              "isStar": false,
+              "image": "assets/players/watkins.png"
             }
           ],
           "injuredPlayers": [
@@ -1760,7 +2034,8 @@ const UCL_DATA = {
               "status": "Out",
               "statusText": "พักยาว (Out)",
               "badge": "red",
-              "detail": "เอ็นไขว้หน้าเข่าฉีกขาด (ACL)"
+              "detail": "เอ็นไขว้หน้าเข่าฉีกขาด (ACL)",
+              "image": "assets/players/onana.png"
             },
             {
               "name": "Aaron Wan-Bissaka",
@@ -1788,6 +2063,34 @@ const UCL_DATA = {
             }
           ]
         }
+      },
+      "keyDuel": {
+        "homeStar": {
+          "name": "Lamine Yamal",
+          "thaiName": "ลามีน ยามาล",
+          "number": 19,
+          "pos": "FW / วันเดอร์คิดเบอร์ 1 ของโลก",
+          "image": "assets/players/yamal.png",
+          "formTag": "🌟 มหัศจรรย์แข้งทองบาร์เซโลน่า",
+          "stat": "เลี้ยงกินตัวสำเร็จสูงสุดในยุโรป สร้างโอกาสจะแจ้ง (Big Chances) เฉลี่ย 1.8 ครั้งต่อเกม",
+          "value": "150M€"
+        },
+        "awayStar": {
+          "name": "Ollie Watkins",
+          "thaiName": "โอลลี่ วัตกิ้นส์",
+          "number": 11,
+          "pos": "FW / ดาวยิงตัวฉกาจสิงห์ผงาด",
+          "image": "assets/players/watkins.png",
+          "formTag": "🏃 กองหน้าจอมฉีกแนวรับ",
+          "stat": "สปีดกระชากหลังขาด ยิงใน UCL ซีซั่นนี้ต่อเนื่อง พาทีมคว้าชัย 3 นัดรวดในยุโรป",
+          "value": "65M€"
+        }
+      },
+      "quickVerdict": {
+        "pick": "ทั้งสองทีมยิงได้ BTTS - Yes (@ 1.50) หรือ รอง แอสตัน วิลล่า (+1.75)",
+        "score": "3–1 หรือ 2–1",
+        "keyPoint": "บาร์ซ่าไม่คลีนชีตใน UCL มา 18 นัดติด ขาดกองหลังตัวจริง 4 คน ส่วนวิลล่าชนะรวด 3 นัดใน UCL ยิงไป 12 ลูก",
+        "trapAlert": "ราคาบาร์ซ่าต่อขาดลอย (1.23–1.28) ต่ำเกินความคุ้มค่า ไม่น่าเสี่ยงวางฝั่งเจ้าบ้าน ให้เน้นวางสกอร์ยิงทั้งสองฝั่ง"
       }
     },
     {
@@ -1820,7 +2123,18 @@ const UCL_DATA = {
       },
       "tournamentRound": "UEFA Champions League 2026–27 รอบ League Phase (Matchday 4 of 8)",
       "matchDateTime": "วันพุธที่ 4 พฤศจิกายน 2026 เวลา 03:00 น. (ตามเวลาประเทศไทย) หรือวันอังคารที่ 3 พฤศจิกายน 2026 เวลา 20:00 น. ตามเวลาท้องถิ่นสหราชอาณาจักร",
-      "stadium": "Old Trafford (เมืองแมนเชสเตอร์, สหราชอาณาจักร)",
+      "stadium": {
+        "name": "Old Trafford (The Theatre of Dreams)",
+        "thaiName": "โอลด์ แทรฟฟอร์ด (โรงละครแห่งความฝัน)",
+        "city": "Manchester",
+        "country": "England",
+        "countryFlag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+        "capacity": "74,310 ที่นั่ง",
+        "surface": "หญ้าจริงไฮบริด (Desso GrassMaster)",
+        "climate": "หนาวชื้น 8°C ฝนตกพรำตามสไตล์อังกฤษ",
+        "atmosphere": "โรงละครแห่งความฝัน ความจุสูงสุดบนเกาะอังกฤษ แม้ฟอร์มลีกวิกฤตแต่สถิติเกมยุโรปในบ้านชนะ 7 นัดรวด",
+        "image": "assets/stadiums/match8.jpg"
+      },
       "standings": "",
       "scheduleAndRest": "ทั้งสองทีมลงเล่นเมื่อวันเสาร์ที่ 31 ตุลาคม 2026 (Man Utd บุกแพ้ Chelsea 0-2 / Roma ถล่ม Udinese 5-2) มีเวลาพัก 2 วันเต็มเท่ากัน",
       "pitchAndWeather": "แข่งขันที่สนาม Old Trafford ซึ่ง Man Utd ชนะเกมเหย้าในยุโรปมา 7 นัดติดต่อกัน และยิงได้ 4+ ประตูใน 4 นัดเหย้าหลังสุดในยุโรป",
@@ -1918,7 +2232,8 @@ const UCL_DATA = {
               "role": "กัปตันทีม & เพลย์เมกเกอร์",
               "stat": "มีส่วนร่วม 5 ประตูจาก 2 นัดพบโรม่า (ยิง 2 แอสซิสต์ 3)",
               "value": "65M€",
-              "isStar": true
+              "isStar": true,
+              "image": "assets/players/bruno.png"
             }
           ],
           "injuredPlayers": [
@@ -1928,7 +2243,8 @@ const UCL_DATA = {
               "status": "Suspended",
               "statusText": "ติดโทษแบน (Suspended)",
               "badge": "red",
-              "detail": "ติดโทษแบนจากใบแดงในนัดก่อน"
+              "detail": "ติดโทษแบนจากใบแดงในนัดก่อน",
+              "image": "assets/players/yoro.png"
             },
             {
               "name": "Manuel Ugarte",
@@ -1936,7 +2252,8 @@ const UCL_DATA = {
               "status": "Out",
               "statusText": "พักยาว (Out)",
               "badge": "red",
-              "detail": "เอ็นไขว้หน้าเข่าฉีกขาด (ACL) ผ่าตัดพักยาว"
+              "detail": "เอ็นไขว้หน้าเข่าฉีกขาด (ACL) ผ่าตัดพักยาว",
+              "image": "assets/players/ugarte.png"
             },
             {
               "name": "Benjamin Šeško",
@@ -1944,7 +2261,8 @@ const UCL_DATA = {
               "status": "Out",
               "statusText": "บาดเจ็บ (Out)",
               "badge": "red",
-              "detail": "บาดเจ็บกระดูกหน้าแข้ง"
+              "detail": "บาดเจ็บกระดูกหน้าแข้ง",
+              "image": "assets/players/sesko.png"
             },
             {
               "name": "Noussair Mazraoui",
@@ -1952,7 +2270,8 @@ const UCL_DATA = {
               "status": "Out",
               "statusText": "บาดเจ็บ (Out)",
               "badge": "red",
-              "detail": "มีปัญหาอาการบาดเจ็บที่หลัง"
+              "detail": "มีปัญหาอาการบาดเจ็บที่หลัง",
+              "image": "assets/players/mazraoui.png"
             },
             {
               "name": "Luke Shaw",
@@ -1960,7 +2279,8 @@ const UCL_DATA = {
               "status": "Doubtful",
               "statusText": "รอเช็กฟิต (Doubtful)",
               "badge": "yellow",
-              "detail": "ต้องรอทดสอบความฟิตก่อนเริ่มแข่ง"
+              "detail": "ต้องรอทดสอบความฟิตก่อนเริ่มแข่ง",
+              "image": "assets/players/shaw.png"
             },
             {
               "name": "Marcus Rashford",
@@ -1968,7 +2288,8 @@ const UCL_DATA = {
               "status": "Doubtful",
               "statusText": "รอเช็กฟิต (Doubtful)",
               "badge": "yellow",
-              "detail": "ต้องรอทดสอบความฟิตก่อนเริ่มแข่ง"
+              "detail": "ต้องรอทดสอบความฟิตก่อนเริ่มแข่ง",
+              "image": "assets/players/rashford.png"
             }
           ]
         },
@@ -1982,7 +2303,8 @@ const UCL_DATA = {
               "role": "ดาวยิงฟอร์มฮอต",
               "stat": "มีส่วนร่วม 5 ประตูใน UCL (ยิง 3 แอสซิสต์ 2)",
               "value": "40M€",
-              "isStar": true
+              "isStar": true,
+              "image": "assets/players/malen.png"
             }
           ],
           "injuredPlayers": [
@@ -1992,7 +2314,8 @@ const UCL_DATA = {
               "status": "Out",
               "statusText": "ตัวหลัก (Out)",
               "badge": "red",
-              "detail": "บาดเจ็บกล้ามเนื้อน่อง"
+              "detail": "บาดเจ็บกล้ามเนื้อน่อง",
+              "image": "assets/players/dybala.png"
             },
             {
               "name": "Mile Svilar",
@@ -2000,10 +2323,39 @@ const UCL_DATA = {
               "status": "Out",
               "statusText": "มือหนึ่ง (Out)",
               "badge": "red",
-              "detail": "มีอาการบาดเจ็บกระดูกหัก"
+              "detail": "มีอาการบาดเจ็บกระดูกหัก",
+              "image": "assets/players/svilar.png"
             }
           ]
         }
+      },
+      "keyDuel": {
+        "homeStar": {
+          "name": "Bruno Fernandes",
+          "thaiName": "บรูโน่ แฟร์นันเดส",
+          "number": 8,
+          "pos": "MF / กัปตันทีมปีศาจแดง",
+          "image": "assets/players/bruno.png",
+          "formTag": "🔥 คีย์แมนผู้แบกความหวังทั้งทีม",
+          "stat": "มีส่วนร่วม 5 ประตูจาก 2 นัดที่พบ Roma ในยุโรป (ยิง 2 แอสซิสต์ 3) และ 6 จาก 8 ประตูหลังสุดใน UCL เกิดขึ้นในครึ่งแรก",
+          "value": "65M€"
+        },
+        "awayStar": {
+          "name": "Donyell Malen",
+          "thaiName": "ดอนเยลล์ มาเลน",
+          "number": 14,
+          "pos": "FW / ดาวยิงฟอร์มฮอตหมาป่าโรม่า",
+          "image": "assets/players/malen.png",
+          "formTag": "⚡ แนวรุกท็อปฟอร์มสุดขีด",
+          "stat": "มีส่วนร่วมไปแล้วถึง 5 ประตูใน UCL ซีซั่นนี้ (ยิง 3 แอสซิสต์ 2) โดยทั้ง 3 ประตูเกิดขึ้นในช่วงนาที 50–60 ทั้งหมด",
+          "value": "40M€"
+        }
+      },
+      "quickVerdict": {
+        "pick": "รอง AS Roma (X2 / +0.25) (@ 1.65) หรือ ทั้งสองทีมยิงได้ BTTS (@ 1.50)",
+        "score": "1–2 หรือ 2–2",
+        "keyPoint": "แมนฯ ยูไนเต็ด วิกฤตหนักไม่ชนะใคร 9 นัดติดต่อกัน รั้งอันดับ 17 พรีเมียร์ลีก ขาด โยโร่, อูการ์เต้, เซสโก้ ส่วนโรม่าไร้พ่าย 17 นัดติดในลีก",
+        "trapAlert": "ราคาผีแดงเป็นต่อที่ 2.30 เป็นกับดักชื่อเสียง อย่าหลงเชื่อทีมใหญ่ที่กำลังวิกฤต หันมารองโรม่าปลอดภัยกว่ามาก"
       }
     },
     {
@@ -2036,7 +2388,18 @@ const UCL_DATA = {
       },
       "tournamentRound": "UEFA Champions League 2026–27 รอบ League Phase (Matchday 4 of 8)",
       "matchDateTime": "วันพุธที่ 4 พฤศจิกายน 2026 เวลา 03:00 น. (ตามเวลาประเทศไทย) หรือวันอังคารที่ 3 พฤศจิกายน 2026 เวลา 21:00 น. ตามเวลาท้องถิ่นออสเตรีย",
-      "stadium": "Raiffeisen Arena (เมืองลินซ์, ประเทศออสเตรีย) ความจุ 19,080 ที่นั่ง",
+      "stadium": {
+        "name": "Raiffeisen Arena",
+        "thaiName": "ไรฟ์ไฟเซิน อารีน่า (ลินซ์)",
+        "city": "Linz",
+        "country": "Austria",
+        "countryFlag": "🇦🇹",
+        "capacity": "19,080 ที่นั่ง",
+        "surface": "หญ้าจริง (Natural Grass)",
+        "climate": "อากาศหนาวจัด 6°C",
+        "atmosphere": "สนามใหม่ของ LASK แฟนบอลอยู่ติดสนาม บรรยากาศเข้มข้น เร้าใจ สร้างความได้เปรียบให้เจ้าถิ่นชัดเจน",
+        "image": "assets/stadiums/match9.jpg"
+      },
       "standings": "LASK: อันดับ 24 แข่ง 3 นัด ชนะ 1 เสมอ 0 แพ้ 2 ยิงได้ 6 เสีย 9 ประตู (ผลต่าง -3) มี 3 คะแนนŠK Slovan Bratislava: อันดับ 36 (อันดับสุดท้ายของตาราง) แข่ง 3 นัด ชนะ 0 เสมอ 0 แพ้ 3 ยิงได้ 1 เสีย 13 ประตู (ผลต่าง -12 แย่ที่สุดในทัวร์นาเมนต์) มี 0 คะแนน",
       "scheduleAndRest": "ไม่มีข้อมูลวันแข่งเกมลีกสุดสัปดาห์ระบุในแหล่งข้อมูล",
       "pitchAndWeather": "แข่งขันที่สนาม Raiffeisen Arena เมืองลินซ์ ซึ่ง LASK ได้เปรียบเสียงเชียร์ในบ้าน",
@@ -2121,7 +2484,8 @@ const UCL_DATA = {
               "role": "ดาวเด่นมูลค่าสูงสุด",
               "stat": "มูลค่า 8 ล้านยูโร นำเกมรุกเปิดบ้านคว้าชัย",
               "value": "8M€",
-              "isStar": true
+              "isStar": true,
+              "image": "assets/players/usor.png"
             },
             {
               "name": "Krystof Danek",
@@ -2192,7 +2556,8 @@ const UCL_DATA = {
               "role": "ดาวรุ่งมูลค่าสูงสุด",
               "stat": "ตัวความหวังเดียวในแนวรุกของทีมบ๊วย",
               "value": "3.5M€",
-              "isStar": true
+              "isStar": true,
+              "image": "assets/players/marcelli.png"
             }
           ],
           "injuredPlayers": [
@@ -2206,6 +2571,34 @@ const UCL_DATA = {
             }
           ]
         }
+      },
+      "keyDuel": {
+        "homeStar": {
+          "name": "Robert Žulj",
+          "thaiName": "โรเบิร์ต ซุลจ์",
+          "number": 10,
+          "pos": "MF / เพลย์เมกเกอร์มันสมอง",
+          "image": "assets/players/zulj.png",
+          "formTag": "🎩 จอมทัพผู้คุมจังหวะ LASK",
+          "stat": "เรตติ้งเฉลี่ย 7.5 คุมเกมและสอดเข้ามายิงประตูได้แม่นยำ เป็นหัวใจในเกมรุกของทีมอย่างแท้จริง",
+          "value": "3M€"
+        },
+        "awayStar": {
+          "name": "David Strelec",
+          "thaiName": "ดาวิด สเตรเล็ค",
+          "number": 13,
+          "pos": "FW / ดาวยิงสโลวาน",
+          "image": "assets/players/strelec.png",
+          "formTag": "🎯 กองหน้าตัวความหวังเดียว",
+          "stat": "ดาวซัลโวของทีมในลีก สปีดและจังหวะฉกฉวยโอกาสในกรอบเขตโทษอันตราย",
+          "value": "4M€"
+        }
+      },
+      "quickVerdict": {
+        "pick": "LASK ชนะ (1) (@ 1.50) หรือ สกอร์สูง Over 2.5 (@ 1.44)",
+        "score": "3–0 หรือ 3–1",
+        "keyPoint": "สโลวาน บราติสลาวา เสียไปแล้วถึง 13 ประตูจาก 3 นัดแรกใน UCL เกมรับรั่วที่สุดในทัวร์นาเมนต์ ขณะที่ LASK เพิ่งบุกชนะสปอร์ติ้งมาได้",
+        "trapAlert": "สโลวานเล่นเกมเยือนยุโรปต้านไม่เคยไหว LASK เล่นในบ้านลุ้นยิงขาดเกิน 2 ลูกได้สบาย"
       }
     }
   ]
