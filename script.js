@@ -319,10 +319,10 @@
             <!-- Stadium & Score Pred -->
             <div class="card-context-bar">
               <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:180px;">
-                <i class="ri-map-pin-line"></i> ${typeof m.stadium === 'object' ? (m.stadium.thaiName || m.stadium.name) : (m.stadium || '').split('(')[0].trim()}
+                <i class="ri-map-pin-line"></i> ${typeof m.stadium === "object" && m.stadium ? (m.stadium.thaiName || m.stadium.name || "") : String(m.stadium || "").split("(")[0].trim()}
               </span>
               <span class="score-pred-badge">
-                <i class="ri-football-line"></i> คาด: ${m.scorePrediction.prediction.split(' ')[0]}
+                <i class="ri-football-line"></i> คาด: ${m.scorePrediction && m.scorePrediction.prediction ? m.scorePrediction.prediction.split(" ")[0] : "–"}
               </span>
             </div>
 
@@ -1058,57 +1058,58 @@ function renderMatchDetail(matchId) {
   // ==========================================================================
   // DANISH SUPERLIGA DEDICATED CATEGORY VIEW (SEPARATED FROM UCL)
   // ==========================================================================
+    // ==========================================================================
+  // DANISH SUPERLIGA DEDICATED CATEGORY VIEW (UPDATED 2 NOV 2026)
+  // ==========================================================================
   function renderDanishView() {
     const container = document.getElementById('danish-content-container');
     if (!container || typeof DANISH_SUPERLIGA_DATA === 'undefined') return;
 
     const d = DANISH_SUPERLIGA_DATA;
 
+    // 1. Matches Cards (7 Matches)
     let matchesHtml = d.matches.map(m => {
       const probHome = m.probabilities.home;
       const probDraw = m.probabilities.draw;
       const probAway = m.probabilities.away;
 
-      const picksHtml = m.bestPicks.map(p => `
-        <div class="danish-pick-tag">
-          <span style="color:var(--text-muted);"><i class="ri-check-line" style="color:var(--accent-gold);"></i> ${p.market}</span>
-          <strong style="color:var(--accent-gold);">${p.odds} (${p.confidence})</strong>
-        </div>
-      `).join('');
-
-      const homeInjHtml = m.homeInjuries.map(p => `
-        <div class="danish-inj-item">
-          <div><strong style="color:#fff;">${p.name}</strong> <span style="font-size:0.7rem;color:var(--text-dim);">(${p.pos})</span></div>
-          <span class="badge-status-out" style="font-size:0.68rem;padding:0.15rem 0.45rem;">${p.statusText}</span>
-        </div>
-      `).join('');
-
-      const awayInjHtml = m.awayInjuries.map(p => `
-        <div class="danish-inj-item">
-          <div><strong style="color:#fff;">${p.name}</strong> <span style="font-size:0.7rem;color:var(--text-dim);">(${p.pos})</span></div>
-          <span class="badge-status-out" style="font-size:0.68rem;padding:0.15rem 0.45rem;">${p.statusText}</span>
-        </div>
-      `).join('');
-
       return `
         <div class="danish-match-card">
           <div class="danish-match-header">
-            <span class="danish-badge-top" style="margin-bottom:0;font-size:0.75rem;"><i class="ri-shield-flash-line"></i> ${m.matchTitle.split('(')[1] ? m.matchTitle.split('(')[1].replace(')', '') : 'Matchday 16'}</span>
-            <div class="danish-match-time"><i class="ri-calendar-line"></i> ${m.kickoff.split(' เวลา ')[0]}</div>
+            <span class="danish-badge-top" style="margin-bottom:0;font-size:0.75rem;">
+              <i class="ri-shield-flash-line"></i> ${m.matchday}
+            </span>
+            <div class="danish-match-time">
+              <i class="ri-time-line"></i> ${m.kickoff}
+            </div>
+          </div>
+
+          <div style="font-size:1.1rem;font-weight:900;color:#fff;margin-bottom:0.75rem;">
+            ${m.matchTitle}
           </div>
 
           <div class="danish-teams-row">
             <div class="danish-team-item">
               <div class="danish-team-name">${m.homeTeam.name}</div>
-              <div class="danish-team-rank">อันดับ ${m.homeTeam.rank} | ${m.homeTeam.thaiName}</div>
-              <div style="font-size:0.75rem;color:var(--accent-ucl);margin-top:0.25rem;"><i class="ri-user-star-line"></i> ${m.coachHome}</div>
+              <div class="danish-team-rank">อันดับ ${m.homeTeam.rank} (${m.homeTeam.pts} แต้ม)</div>
+              <div style="font-size:0.75rem;color:var(--accent-ucl);margin-top:0.25rem;">
+                <i class="ri-dashboard-line"></i> แผน: ${m.homeTeam.system}
+              </div>
             </div>
             <div class="danish-vs-badge">VS</div>
             <div class="danish-team-item">
               <div class="danish-team-name">${m.awayTeam.name}</div>
-              <div class="danish-team-rank">อันดับ ${m.awayTeam.rank} | ${m.awayTeam.thaiName}</div>
-              <div style="font-size:0.75rem;color:var(--accent-ucl);margin-top:0.25rem;"><i class="ri-user-star-line"></i> ${m.coachAway}</div>
+              <div class="danish-team-rank">อันดับ ${m.awayTeam.rank} (${m.awayTeam.pts} แต้ม)</div>
+              <div style="font-size:0.75rem;color:var(--accent-ucl);margin-top:0.25rem;">
+                <i class="ri-dashboard-line"></i> แผน: ${m.awayTeam.system}
+              </div>
             </div>
+          </div>
+
+          <!-- Handicap & 1X2 Odds Banner -->
+          <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,0.04);border:1px solid var(--border-subtle);border-radius:var(--radius-sm);padding:0.45rem 0.75rem;margin-bottom:0.85rem;font-size:0.82rem;flex-wrap:wrap;gap:0.4rem;">
+            <div><span style="color:var(--text-dim);">เรตต่อรอง:</span> <strong style="color:#f87171;">${m.asianHandicap}</strong></div>
+            <div><span style="color:var(--text-dim);">ราคา 1X2:</span> <strong style="color:var(--accent-gold);">${m.odds1X2}</strong></div>
           </div>
 
           <div class="danish-pred-banner">
@@ -1116,14 +1117,17 @@ function renderMatchDetail(matchId) {
           </div>
 
           <div class="danish-picks-list">
-            ${picksHtml}
+            <div class="danish-pick-tag">
+              <span style="color:var(--text-muted);"><i class="ri-focus-3-line" style="color:var(--accent-gold);"></i> <strong>ทีเด็ดคัดกรอง:</strong> ${m.bestPick}</span>
+              <strong style="color:var(--accent-gold);">${m.confidence}</strong>
+            </div>
           </div>
 
           <div class="danish-prob-bar-wrap">
             <div class="danish-prob-labels">
-              <span>${m.homeTeam.shortName || 'เจ้าบ้าน'} ${probHome}%</span>
+              <span>${m.homeTeam.name.split(' ')[0]} ${probHome}%</span>
               <span>เสมอ ${probDraw}%</span>
-              <span>${m.awayTeam.shortName || 'ทีมเยือน'} ${probAway}%</span>
+              <span>${m.awayTeam.name.split(' ')[0]} ${probAway}%</span>
             </div>
             <div class="danish-prob-bar">
               <div class="danish-prob-home" style="width:${probHome}%;"></div>
@@ -1132,45 +1136,83 @@ function renderMatchDetail(matchId) {
             </div>
           </div>
 
-          <p style="font-size:0.83rem;color:var(--text-dim);line-height:1.5;margin-bottom:1rem;">
-            ${m.analysisText}
-          </p>
-
-          <div class="danish-injuries-box">
-            <div class="danish-injuries-title"><i class="ri-heart-pulse-line" style="color:#ef4444;"></i> รายงานตัวเจ็บ & ความพร้อม:</div>
-            ${homeInjHtml}
-            ${awayInjHtml}
+          <div style="background:rgba(0,0,0,0.25);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:0.85rem;margin-bottom:0.75rem;">
+            <div style="font-size:0.78rem;font-weight:800;color:var(--accent-ucl);margin-bottom:0.35rem;">
+              <i class="ri-sword-line"></i> แท็กติก & แผนการเล่น:
+            </div>
+            <p style="font-size:0.82rem;color:var(--text-dim);line-height:1.5;margin:0;">
+              ${m.tactics}
+            </p>
           </div>
+
+          <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.5;margin:0;">
+            <strong>บทวิเคราะห์:</strong> ${m.analysisText}
+          </p>
         </div>
       `;
     }).join('');
 
+    // 2. Standings Rows
     let standingsRows = d.standings.map(s => {
-      const zoneClass = s.rank <= 6 ? 'style="border-left:3px solid #10b981;"' : 'style="border-left:3px solid #64748b;"';
-      const formHtml = s.form.map(f => {
-        const bg = f === 'W' ? '#10b981' : (f === 'D' ? '#6b7280' : '#ef4444');
-        return `<span style="display:inline-block;width:18px;height:18px;line-height:18px;text-align:center;border-radius:3px;font-size:0.65rem;font-weight:900;color:#fff;background:${bg};margin-right:2px;">${f}</span>`;
-      }).join('');
+      const isChamp = s.rank <= 6;
+      const zoneBorder = isChamp ? 'style="border-left:3px solid #10b981;"' : 'style="border-left:3px solid #64748b;"';
+      const zoneBadge = isChamp
+        ? `<span style="font-size:0.7rem;font-weight:800;color:#10b981;background:rgba(16,185,129,0.12);padding:0.15rem 0.5rem;border-radius:var(--radius-full);">กลุ่มชิงแชมป์ (1-6)</span>`
+        : `<span style="font-size:0.7rem;font-weight:800;color:#94a3b8;background:rgba(148,163,184,0.12);padding:0.15rem 0.5rem;border-radius:var(--radius-full);">หนีตกชั้น (7-12)</span>`;
 
       return `
-        <tr ${zoneClass}>
-          <td style="font-weight:800;color:${s.rank <= 6 ? 'var(--accent-ucl)' : 'var(--text-dim)'};">${s.rank}</td>
+        <tr ${zoneBorder}>
+          <td style="font-weight:900;color:${isChamp ? 'var(--accent-ucl)' : 'var(--text-dim)'};">${s.rank}</td>
           <td><strong style="color:#fff;">${s.team}</strong></td>
-          <td>${s.mp}</td>
-          <td style="color:${s.gd > 0 ? '#10b981' : (s.gd < 0 ? '#ef4444' : '#fff')};">${s.gd > 0 ? '+' + s.gd : s.gd}</td>
-          <td><strong style="color:var(--accent-gold);">${s.pts}</strong></td>
-          <td>${formHtml}</td>
+          <td>${s.played}</td>
+          <td>${s.w}</td>
+          <td>${s.d}</td>
+          <td>${s.l}</td>
+          <td>${s.gf}</td>
+          <td>${s.ga}</td>
+          <td style="color:${s.gd.startsWith('+') ? '#10b981' : (s.gd.startsWith('-') ? '#ef4444' : '#fff')};font-weight:700;">${s.gd}</td>
+          <td><strong style="color:var(--accent-gold);font-size:1rem;">${s.pts}</strong></td>
+          <td>${zoneBadge}</td>
         </tr>
       `;
     }).join('');
 
+    // 3. Tiers Breakdown Rows
+    let tiersHtml = d.tiers.map(t => `
+      <div style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:1rem;margin-bottom:0.75rem;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;flex-wrap:wrap;gap:0.4rem;">
+          <strong style="color:var(--accent-gold);font-size:0.95rem;">${t.tier}: ${t.teams}</strong>
+          <span style="font-size:0.75rem;color:var(--accent-ucl);background:rgba(0,240,255,0.1);padding:0.15rem 0.5rem;border-radius:var(--radius-full);">แผน: ${t.system}</span>
+        </div>
+        <p style="font-size:0.83rem;color:var(--text-dim);line-height:1.5;margin-bottom:0.35rem;">
+          ${t.style}
+        </p>
+        <div style="font-size:0.78rem;color:var(--text-muted);">
+          แนวโน้มสกอร์: <strong style="color:#fff;">${t.scoreTrend}</strong>
+        </div>
+      </div>
+    `).join('');
+
+    // 4. Key Tactical Insights
+    let insightsHtml = d.keyTacticalNotes.map(n => `
+      <div style="background:rgba(255,255,255,0.03);border-left:3px solid #ef4444;border-radius:0 var(--radius-md) var(--radius-md) 0;padding:0.85rem 1rem;margin-bottom:0.75rem;">
+        <strong style="color:#fff;font-size:0.9rem;display:block;margin-bottom:0.25rem;">
+          <i class="ri-lightbulb-line" style="color:var(--accent-gold);"></i> ${n.title}
+        </strong>
+        <p style="font-size:0.82rem;color:var(--text-dim);line-height:1.5;margin:0;">
+          ${n.desc}
+        </p>
+      </div>
+    `).join('');
+
+    // 5. Top Scorers Rows
     let scorersHtml = d.topScorers.map((sc, idx) => `
       <div style="display:flex;align-items:center;justify-content:space-between;padding:0.6rem 0;border-bottom:1px solid rgba(255,255,255,0.05);">
         <div style="display:flex;align-items:center;gap:0.75rem;">
           <span style="font-size:0.9rem;font-weight:900;color:${idx === 0 ? 'var(--accent-gold)' : 'var(--text-muted)'};width:20px;">#${idx+1}</span>
           <div>
             <div style="font-weight:800;color:#fff;font-size:0.9rem;">${sc.name}</div>
-            <div style="font-size:0.75rem;color:var(--text-dim);">${sc.team}</div>
+            <div style="font-size:0.75rem;color:var(--text-dim);">${sc.team} (${sc.matches} นัด)</div>
           </div>
         </div>
         <div style="text-align:right;">
@@ -1185,60 +1227,71 @@ function renderMatchDetail(matchId) {
         <!-- Danish Hero -->
         <div class="danish-hero">
           <div class="danish-badge-top">
-            <span>🇩🇰</span> 3F SUPERLIGA DENMARK (เดนิช ซูเปอร์ลีกา)
+            <span>🇩🇰</span> DANISH SUPERLIGA (3F SUPERLIGA 2026–27)
           </div>
-          <h1 class="danish-hero-title">ศูนย์ข้อมูลเดนิช ซูเปอร์ลีกา 2024/25–2026/27</h1>
+          <h1 class="danish-hero-title">รายงานวิเคราะห์ฟุตบอลเดนิช ซูเปอร์ลีกา</h1>
           <p class="danish-hero-desc">
-            หมวดหมู่แยกเฉพาะสำหรับแฟนบอลแดนโคนม รวบรวมโปรแกรมบิ๊กแมตช์ สถิติวิเคราะห์เชิงลึก ราคาต่อรอง สกอร์คาดการณ์เอไอ ตารางคะแนน 12 สโมสร และรายงานอาการบาดเจ็บล่าสุด
+            ${d.overview}
           </p>
+
+          <!-- 4 League Key Metrics -->
           <div class="danish-quick-stats">
             <div class="danish-stat-pill">
-              <span>สัปดาห์แข่งขัน</span>
-              <strong>Matchday 16</strong>
+              <span>ประตูรวมเฉลี่ย</span>
+              <strong style="color:var(--accent-gold);">${d.leagueStats.avgGoals}</strong>
             </div>
             <div class="danish-stat-pill">
-              <span>ทีมจ่าฝูง</span>
-              <strong style="color:var(--accent-ucl);">FC Midtjylland (30 แต้ม)</strong>
+              <span>อัตราสกอร์สูง Over 2.5</span>
+              <strong style="color:#10b981;">${d.leagueStats.over25Rate}</strong>
             </div>
             <div class="danish-stat-pill">
-              <span>รองจ่าฝูง</span>
-              <strong style="color:#fff;">FC Copenhagen (29 แต้ม)</strong>
+              <span>ยิงสองฝั่ง (BTTS)</span>
+              <strong style="color:var(--accent-ucl);">${d.leagueStats.bttsRate}</strong>
             </div>
             <div class="danish-stat-pill">
-              <span>ดาวซัลโวลีก</span>
-              <strong style="color:var(--accent-gold);">Patrick Mortensen (10 ประตู)</strong>
+              <span>เตะมุมเฉลี่ยต่อเกม</span>
+              <strong style="color:#fff;">${d.leagueStats.avgCorners}</strong>
             </div>
           </div>
-          <div style="margin-top:1.5rem;">
+
+          <!-- Recent Results Banner -->
+          <div style="background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-md);padding:0.75rem 1rem;margin-top:1.25rem;font-size:0.82rem;color:var(--text-dim);">
+            <strong style="color:#fff;"><i class="ri-history-line"></i> ผลการแข่งขันนัดที่ 13:</strong> ${d.recentResults}
+          </div>
+
+          <div style="margin-top:1.5rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
             <button onclick="switchLeagueCategory('ucl')" class="btn-hero-primary" style="padding:0.6rem 1.4rem;font-size:0.88rem;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);cursor:pointer;">
               <i class="ri-arrow-left-line"></i> สลับกลับไปหน้า UEFA Champions League (9 คู่)
             </button>
+            <a href="hub.html" class="btn-hero-primary" style="padding:0.6rem 1.4rem;font-size:0.88rem;background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.3);color:var(--accent-gold);cursor:pointer;text-decoration:none;">
+              <i class="ri-flashlight-line"></i> เปิดดู Live Multi-Hub
+            </a>
           </div>
         </div>
 
-        <!-- Section: Matches -->
-        <div style="margin-bottom:1.5rem;display:flex;align-items:center;justify-content:space-between;">
+        <!-- Section 1: Matches Program & Odds -->
+        <div style="margin-bottom:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;">
           <div>
-            <h2 style="font-size:1.5rem;font-weight:900;color:#fff;">⚽ โปรแกรมบิ๊กแมตช์ & วิเคราะห์ผลแข่งขันสัปดาห์นี้</h2>
-            <p style="font-size:0.85rem;color:var(--text-muted);">คัดกรอง 5 คู่สำคัญ พร้อมทีเด็ดเอไอ และรายงานความพร้อมตัวเจ็บ</p>
+            <h2 style="font-size:1.5rem;font-weight:900;color:#fff;">⚽ โปรแกรมการแข่งขัน (เวลาไทย GMT+7) & ราคาต่อรอง (7 คู่)</h2>
+            <p style="font-size:0.85rem;color:var(--text-muted);">นัดที่ 13 (ตกค้าง) และนัดที่ 14 พร้อมราคา 1X2, แฮนดิแคป และแผนการเล่น</p>
           </div>
-          <span class="league-tab-badge badge-red" style="font-size:0.8rem;padding:0.3rem 0.75rem;">5 คู่เด่น</span>
+          <span class="league-tab-badge badge-red" style="font-size:0.82rem;padding:0.35rem 0.85rem;">7 แมตช์วิเคราะห์</span>
         </div>
 
         <div class="danish-matches-grid">
           ${matchesHtml}
         </div>
 
-        <!-- Section: Standings & Scorers -->
+        <!-- Section 2: Standings Table & Scorers -->
         <div class="danish-standings-grid">
           <!-- Standings -->
           <div class="standings-wrap" style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:1.4rem;">
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:0.5rem;">
               <div style="display:flex;align-items:center;gap:0.5rem;">
                 <i class="ri-trophy-line" style="color:#ef4444;font-size:1.2rem;"></i>
-                <h3 style="font-size:1.15rem;font-weight:800;color:#fff;">ตารางคะแนนเดนิช ซูเปอร์ลีกา (3F Superliga)</h3>
+                <h3 style="font-size:1.15rem;font-weight:800;color:#fff;">ตารางคะแนน Danish Superliga 2026–27</h3>
               </div>
-              <span style="font-size:0.75rem;color:var(--text-dim);"><span style="color:#10b981;">●</span> 1-6 เพลย์ออฟชิงแชมป์</span>
+              <span style="font-size:0.75rem;color:var(--text-dim);">อัปเดต 2 พ.ย. 2026</span>
             </div>
             <div style="overflow-x:auto;">
               <table class="standings-table" style="width:100%;font-size:0.85rem;">
@@ -1247,9 +1300,14 @@ function renderMatchDetail(matchId) {
                     <th>#</th>
                     <th>สโมสร</th>
                     <th>แข่ง</th>
-                    <th>+/-</th>
+                    <th>ชนะ</th>
+                    <th>เสมอ</th>
+                    <th>แพ้</th>
+                    <th>ได้</th>
+                    <th>เสีย</th>
+                    <th>ต่าง</th>
                     <th>แต้ม</th>
-                    <th>5 นัดหลัง</th>
+                    <th>โซน</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -1263,10 +1321,35 @@ function renderMatchDetail(matchId) {
           <div class="standings-wrap" style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:1.4rem;">
             <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem;">
               <i class="ri-medal-fill" style="color:var(--accent-gold);font-size:1.2rem;"></i>
-              <h3 style="font-size:1.15rem;font-weight:800;color:#fff;">ผู้นำดาวซัลโว (Top Scorers)</h3>
+              <h3 style="font-size:1.15rem;font-weight:800;color:#fff;">ดาวซัลโวเดนิช ซูเปอร์ลีกา</h3>
             </div>
             <div>
               ${scorersHtml}
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: Tier Breakdown & Tactical Insights -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(360px, 1fr));gap:2rem;margin-bottom:3rem;">
+          <!-- Tiers -->
+          <div class="standings-wrap" style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:1.4rem;">
+            <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem;">
+              <i class="ri-node-tree" style="color:var(--accent-ucl);font-size:1.2rem;"></i>
+              <h3 style="font-size:1.15rem;font-weight:800;color:#fff;">โครงสร้างกลุ่มสโมสร & สไตล์การเล่น (Tier 1–4)</h3>
+            </div>
+            <div>
+              ${tiersHtml}
+            </div>
+          </div>
+
+          <!-- Tactical Insights -->
+          <div class="standings-wrap" style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:1.4rem;">
+            <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem;">
+              <i class="ri-compass-3-line" style="color:#ef4444;font-size:1.2rem;"></i>
+              <h3 style="font-size:1.15rem;font-weight:800;color:#fff;">ข้อสังเกตสำคัญ & สล็อตเวลาเตะ (GMT+7)</h3>
+            </div>
+            <div>
+              ${insightsHtml}
             </div>
           </div>
         </div>
@@ -1274,7 +1357,6 @@ function renderMatchDetail(matchId) {
     `;
   }
 
-  // Global League Switcher Function
   window.switchLeagueCategory = function(cat) {
     if (cat === 'superliga') {
       window.location.hash = '#superliga';

@@ -2929,638 +2929,501 @@ if (typeof module !== "undefined" && module.exports) {
   module.exports = { UCL_DATA, UCL_SVGS };
 }
 
-/* 🇩🇰 DANISH SUPERLIGA (3F SUPERLIGA) - SEPARATE LEAGUE CATEGORY */
+/* 🇩🇰 DANISH SUPERLIGA (3F SUPERLIGA 2026–27) - OFFICIAL DATASET (UPDATED 2 NOV 2026) */
 const DANISH_SUPERLIGA_DATA = {
-  "leagueName": "Danish Superliga (3F Superliga)",
+  "leagueName": "Danish Superliga (3F Superliga 2026–27)",
   "country": "Denmark",
-  "season": "2024/25 - 2026/27",
-  "currentMatchday": "Matchday 16 of 32",
-  "description": "ลีกสูงสุดของประเทศเดนมาร์ก ข้อมูลตารางคะแนน สถิติ วิเคราะห์ความพร้อม และทีเด็ดเอไอแยกหมวดหมู่พิเศษ",
+  "season": "2026–27",
+  "updatedDate": "2 พฤศจิกายน 2026",
+  "matchday": "นัดที่ 13–14 (Regular Season)",
+  "overview": "ศึกฟุตบอล Danish Superliga (3F Superliga) ฤดูกาล 2026–27 แบ่งการแข่งขันออกเป็น 12 ทีม โดยในฤดูกาลปกติ (Regular Season) จะแข่งพบกันหมดรวม 22 นัด ก่อนจะตัดแบ่งตารางคะแนนออกเป็น 2 กลุ่ม คือ กลุ่มชิงแชมป์ (Championship Round: อันดับ 1–6) และ กลุ่มหนีตกชั้น (Relegation Round: อันดับ 7–12) ทำให้โครงสร้างแผนการเล่นและเป้าหมายของแต่ละสโมสรมีความชัดเจนตั้งแต่ช่วงกลางฤดูกาล",
+  "recentResults": "สรุปผลการแข่งขันนัดที่ 13 ล่าสุด: Lyngby 2–1 Randers, Viborg 1–0 AC Horsens, Odense BK 4–1 Silkeborg IF, FC Nordsjælland 2–3 FC Midtjylland และ Brøndby IF 2–0 AGF Aarhus (เหลือคู่ตกค้าง 1 คู่ระหว่าง Sønderjyske พบ FC Copenhagen)",
+  "leagueStats": {
+    "avgGoals": "3.07 ประตู/นัด (จาก 73 นัด)",
+    "over25Rate": "58%",
+    "bttsRate": "63%",
+    "avgCorners": "10.04 ครั้ง/นัด"
+  },
   "standings": [
     {
       "rank": 1,
       "team": "FC Midtjylland",
       "shortName": "Midtjylland",
-      "mp": 15,
+      "played": 13,
       "w": 9,
-      "d": 3,
-      "l": 3,
-      "gf": 29,
-      "ga": 18,
-      "gd": 11,
-      "pts": 30,
-      "form": [
-        "W",
-        "W",
-        "L",
-        "W",
-        "D"
-      ],
+      "d": 4,
+      "l": 0,
+      "gf": 27,
+      "ga": 15,
+      "gd": "+12",
+      "pts": 31,
+      "zone": "กลุ่มชิงแชมป์ (อันดับ 1–6)",
       "status": "championship"
     },
     {
       "rank": 2,
       "team": "FC Copenhagen",
       "shortName": "Copenhagen",
-      "mp": 15,
+      "played": 12,
       "w": 8,
-      "d": 5,
+      "d": 2,
       "l": 2,
-      "gf": 28,
-      "ga": 16,
-      "gd": 12,
-      "pts": 29,
-      "form": [
-        "W",
-        "D",
-        "W",
-        "W",
-        "D"
-      ],
+      "gf": 26,
+      "ga": 12,
+      "gd": "+14",
+      "pts": 26,
+      "zone": "กลุ่มชิงแชมป์ (อันดับ 1–6)",
       "status": "championship"
     },
     {
       "rank": 3,
-      "team": "AGF Aarhus",
-      "shortName": "AGF",
-      "mp": 15,
+      "team": "Viborg FF",
+      "shortName": "Viborg",
+      "played": 13,
       "w": 7,
-      "d": 6,
-      "l": 2,
-      "gf": 30,
-      "ga": 17,
-      "gd": 13,
-      "pts": 27,
-      "form": [
-        "D",
-        "W",
-        "W",
-        "D",
-        "W"
-      ],
+      "d": 2,
+      "l": 4,
+      "gf": 20,
+      "ga": 12,
+      "gd": "+8",
+      "pts": 23,
+      "zone": "กลุ่มชิงแชมป์ (อันดับ 1–6)",
       "status": "championship"
     },
     {
       "rank": 4,
       "team": "Brøndby IF",
       "shortName": "Brøndby",
-      "mp": 15,
+      "played": 13,
       "w": 7,
-      "d": 4,
-      "l": 4,
-      "gf": 31,
-      "ga": 21,
-      "gd": 10,
-      "pts": 25,
-      "form": [
-        "W",
-        "L",
-        "W",
-        "D",
-        "W"
-      ],
+      "d": 1,
+      "l": 5,
+      "gf": 23,
+      "ga": 20,
+      "gd": "+3",
+      "pts": 22,
+      "zone": "กลุ่มชิงแชมป์ (อันดับ 1–6)",
       "status": "championship"
     },
     {
       "rank": 5,
-      "team": "Randers FC",
-      "shortName": "Randers",
-      "mp": 15,
-      "w": 6,
-      "d": 6,
+      "team": "FC Nordsjælland",
+      "shortName": "Nordsjælland",
+      "played": 13,
+      "w": 5,
+      "d": 5,
       "l": 3,
-      "gf": 26,
-      "ga": 19,
-      "gd": 7,
-      "pts": 24,
-      "form": [
-        "W",
-        "W",
-        "D",
-        "W",
-        "D"
-      ],
+      "gf": 20,
+      "ga": 17,
+      "gd": "+3",
+      "pts": 20,
+      "zone": "กลุ่มชิงแชมป์ (อันดับ 1–6)",
       "status": "championship"
     },
     {
       "rank": 6,
-      "team": "Silkeborg IF",
-      "shortName": "Silkeborg",
-      "mp": 15,
-      "w": 6,
+      "team": "Odense BK (OB)",
+      "shortName": "Odense",
+      "played": 13,
+      "w": 4,
       "d": 5,
       "l": 4,
-      "gf": 29,
-      "ga": 23,
-      "gd": 6,
-      "pts": 23,
-      "form": [
-        "D",
-        "D",
-        "D",
-        "W",
-        "L"
-      ],
+      "gf": 15,
+      "ga": 17,
+      "gd": "-2",
+      "pts": 17,
+      "zone": "กลุ่มชิงแชมป์ (อันดับ 1–6)",
       "status": "championship"
     },
     {
       "rank": 7,
-      "team": "FC Nordsjælland",
-      "shortName": "Nordsjælland",
-      "mp": 15,
-      "w": 6,
+      "team": "AC Horsens",
+      "shortName": "Horsens",
+      "played": 13,
+      "w": 4,
       "d": 4,
       "l": 5,
-      "gf": 29,
-      "ga": 28,
-      "gd": 1,
-      "pts": 22,
-      "form": [
-        "L",
-        "W",
-        "D",
-        "L",
-        "W"
-      ],
-      "status": "qualifying"
+      "gf": 23,
+      "ga": 21,
+      "gd": "+2",
+      "pts": 16,
+      "zone": "กลุ่มหนีตกชั้น (อันดับ 7–12)",
+      "status": "relegation"
     },
     {
       "rank": 8,
-      "team": "Viborg FF",
-      "shortName": "Viborg",
-      "mp": 15,
-      "w": 5,
-      "d": 5,
+      "team": "AGF Aarhus",
+      "shortName": "AGF",
+      "played": 13,
+      "w": 2,
+      "d": 6,
       "l": 5,
-      "gf": 27,
-      "ga": 27,
-      "gd": 0,
-      "pts": 20,
-      "form": [
-        "W",
-        "L",
-        "D",
-        "W",
-        "L"
-      ],
-      "status": "qualifying"
+      "gf": 17,
+      "ga": 21,
+      "gd": "-4",
+      "pts": 12,
+      "zone": "กลุ่มหนีตกชั้น (อันดับ 7–12)",
+      "status": "relegation"
     },
     {
       "rank": 9,
-      "team": "Aalborg BK (AaB)",
-      "shortName": "Aalborg",
-      "mp": 15,
-      "w": 4,
-      "d": 4,
-      "l": 7,
-      "gf": 18,
-      "ga": 31,
-      "gd": -13,
-      "pts": 16,
-      "form": [
-        "L",
-        "D",
-        "L",
-        "D",
-        "L"
-      ],
-      "status": "qualifying"
+      "team": "Silkeborg IF",
+      "shortName": "Silkeborg",
+      "played": 13,
+      "w": 2,
+      "d": 6,
+      "l": 5,
+      "gf": 17,
+      "ga": 24,
+      "gd": "-7",
+      "pts": 12,
+      "zone": "กลุ่มหนีตกชั้น (อันดับ 7–12)",
+      "status": "relegation"
     },
     {
       "rank": 10,
-      "team": "Sønderjyske",
-      "shortName": "Sønderjyske",
-      "mp": 15,
+      "team": "Randers FC",
+      "shortName": "Randers",
+      "played": 13,
       "w": 3,
-      "d": 3,
-      "l": 9,
-      "gf": 19,
-      "ga": 35,
-      "gd": -16,
-      "pts": 12,
-      "form": [
-        "L",
-        "L",
-        "W",
-        "L",
-        "L"
-      ],
+      "d": 2,
+      "l": 8,
+      "gf": 13,
+      "ga": 21,
+      "gd": "-8",
+      "pts": 11,
+      "zone": "กลุ่มหนีตกชั้น (อันดับ 7–12)",
       "status": "relegation"
     },
     {
       "rank": 11,
-      "team": "Lyngby Boldklub",
+      "team": "Lyngby BK",
       "shortName": "Lyngby",
-      "mp": 15,
-      "w": 1,
-      "d": 7,
-      "l": 7,
-      "gf": 11,
-      "ga": 21,
-      "gd": -10,
-      "pts": 10,
-      "form": [
-        "D",
-        "D",
-        "L",
-        "D",
-        "L"
-      ],
+      "played": 13,
+      "w": 2,
+      "d": 5,
+      "l": 6,
+      "gf": 19,
+      "ga": 28,
+      "gd": "-9",
+      "pts": 11,
+      "zone": "กลุ่มหนีตกชั้น (อันดับ 7–12)",
       "status": "relegation"
     },
     {
       "rank": 12,
-      "team": "Vejle Boldklub",
-      "shortName": "Vejle",
-      "mp": 15,
-      "w": 1,
-      "d": 3,
-      "l": 11,
-      "gf": 16,
-      "ga": 36,
-      "gd": -20,
-      "pts": 6,
-      "form": [
-        "D",
-        "W",
-        "L",
-        "L",
-        "L"
-      ],
+      "team": "Sønderjyske",
+      "shortName": "Sønderjyske",
+      "played": 12,
+      "w": 2,
+      "d": 2,
+      "l": 8,
+      "gf": 17,
+      "ga": 29,
+      "gd": "-12",
+      "pts": 8,
+      "zone": "กลุ่มหนีตกชั้น (อันดับ 7–12)",
       "status": "relegation"
-    }
-  ],
-  "topScorers": [
-    {
-      "name": "Patrick Mortensen",
-      "team": "AGF Aarhus",
-      "goals": 10,
-      "assists": 2,
-      "matches": 15
-    },
-    {
-      "name": "Mathias Kvistgaarden",
-      "team": "Brøndby IF",
-      "goals": 10,
-      "assists": 4,
-      "matches": 14
-    },
-    {
-      "name": "Franculino Djú",
-      "team": "FC Midtjylland",
-      "goals": 9,
-      "assists": 3,
-      "matches": 15
-    },
-    {
-      "name": "Simen Nordli",
-      "team": "Randers FC",
-      "goals": 8,
-      "assists": 5,
-      "matches": 15
-    },
-    {
-      "name": "Tonni Adamsen",
-      "team": "Silkeborg IF",
-      "goals": 8,
-      "assists": 2,
-      "matches": 15
-    },
-    {
-      "name": "Yuito Suzuki",
-      "team": "Brøndby IF",
-      "goals": 6,
-      "assists": 4,
-      "matches": 13
     }
   ],
   "matches": [
     {
       "id": 101,
-      "matchTitle": "FC Copenhagen พบ Brøndby IF (Copenhagen Derby)",
-      "kickoff": "วันอาทิตย์ที่ 8 พฤศจิกายน 2026 เวลา 20:00 น. (ตามเวลาประเทศไทย)",
-      "stadium": "Parken Stadium (โคเปนเฮเกน, ความจุ 38,065 ที่นั่ง)",
+      "matchday": "นัดที่ 13 (นัดตกค้าง)",
+      "matchTitle": "Sønderjyske (12) vs FC Copenhagen (2)",
+      "kickoff": "คืนจันทร์ 2 พ.ย. (เช้ามืด 3 พ.ย. 2026) เวลา 01:00 น.",
       "homeTeam": {
-        "id": "copenhagen",
-        "name": "FC Copenhagen",
-        "thaiName": "เอฟซี โคเปนเฮเกน",
-        "rank": 2
+        "name": "Sønderjyske",
+        "rank": 12,
+        "pts": 8,
+        "system": "3-4-2-1"
       },
       "awayTeam": {
-        "id": "brondby",
-        "name": "Brøndby IF",
-        "thaiName": "บรอนด์บี้ ไอเอฟ",
-        "rank": 4
+        "name": "FC Copenhagen",
+        "rank": 2,
+        "pts": 26,
+        "system": "4-2-3-1"
       },
-      "coachHome": "Jacob Neestrup",
-      "coachAway": "Jesper Sørensen",
-      "predictedScore": "2–1 หรือ 1–1",
-      "bestPicks": [
-        {
-          "market": "Over 2.5 ประตู",
-          "odds": "@ 1.68",
-          "confidence": "85%"
-        },
-        {
-          "market": "Both Teams To Score (BTTS - Yes)",
-          "odds": "@ 1.62",
-          "confidence": "82%"
-        }
-      ],
+      "odds1X2": "7.20 / 5.04 / 1.47",
+      "asianHandicap": "โคเปนเฮเกน ต่อ 1 - 1.25",
+      "predictedScore": "1 – 3 หรือ 0 – 2",
+      "bestPick": "โคเปนเฮเกน ชนะ (2) / ลุ้นสกอร์สูง Over 2.5",
+      "confidence": "85%",
       "probabilities": {
-        "home": 46,
-        "draw": 28,
-        "away": 26
+        "home": 14,
+        "draw": 30,
+        "away": 56
       },
-      "analysisText": "ดาร์บี้แมตช์ที่ดุเดือดที่สุดในสแกนดิเนเวีย 'New Firm Derby' โคเปนเฮเกนไร้พ่ายในบ้าน 7 นัดติด เกมรุกเฉียบขาดจากการนำทัพของ Viktor Claesson และ Mohamed Elyounoussi ด้านบรอนด์บี้กำลังมั่นใจ ยิงได้ 31 ลูกมากที่สุดในลีกผ่าน Mathias Kvistgaarden และ Yuito Suzuki สถิติพบกัน 5 นัดหลังสุดเกิดสกอร์สูงและทั้งสองทีมยิงได้ถึง 4 นัด",
-      "homeInjuries": [
-        {
-          "name": "Roony Bardghji",
-          "pos": "FW",
-          "status": "Out",
-          "statusText": "พักฟื้น (Out)",
-          "detail": "ฟื้นฟูสภาพร่างกายหลังผ่าตัดเอ็นไขว้หน้าเข่า (ACL)"
-        },
-        {
-          "name": "Birger Meling",
-          "pos": "DF",
-          "status": "Out",
-          "statusText": "บาดเจ็บ (Out)",
-          "detail": "บาดเจ็บกล้ามเนื้อแฮมสตริง"
-        },
-        {
-          "name": "Nicolai Boilesen",
-          "pos": "DF",
-          "status": "Out",
-          "statusText": "บาดเจ็บ (Out)",
-          "detail": "มีปัญหาการบาดเจ็บหัวเข่าเรื้อรัง"
-        }
-      ],
-      "awayInjuries": [
-        {
-          "name": "Nicolai Vallys",
-          "pos": "MF",
-          "status": "Doubtful",
-          "statusText": "รอเช็กฟิต (Doubtful)",
-          "detail": "บาดเจ็บกล้ามเนื้อต้นขา รอทดสอบความฟิต"
-        },
-        {
-          "name": "Kevin Mensah",
-          "pos": "DF",
-          "status": "Out",
-          "statusText": "บาดเจ็บ (Out)",
-          "detail": "บาดเจ็บหัวเข่า พักรักษาตัว"
-        }
-      ]
+      "tactics": "Sønderjyske มาในระบบ 3-4-2-1 เน้นแพ็กแนวรับลึกและใช้ Sefer Emini กับ Mohamed Cherif Haidara สวนกลับ ส่วน FC Copenhagen ใช้แผนเก่ง 4-2-3-1 โดยมี Mohamed Elyounoussi (7 ประตู) ประสานงาน Andreas Cornelius และ Robert Silva",
+      "analysisText": "เจ้าบ้านจมบ๊วยอันดับ 12 มี 8 แต้ม เสีย 29 ประตูมากที่สุดในลีก นัดล่าสุดบุกแพ้ Horsens 1-5 ด้านโคเปนเฮเกนมี 26 แต้ม หากชนะจะขยับเป็น 29 แต้ม จี้จ่าฝูง Midtjylland เหลือ 2 แต้ม เจอกันนัดแรกโคเปนเฮเกนชนะ 3-1 ครองบอล 59% ยิง 23 ครั้ง โอกาสชนะ 55.74% และ Over 2.5 ถึง 69.68%"
     },
     {
       "id": 102,
-      "matchTitle": "FC Midtjylland พบ AGF Aarhus (ศึกชิงจ่าฝูงลีก)",
-      "kickoff": "วันจันทร์ที่ 9 พฤศจิกายน 2026 เวลา 01:00 น. (ตามเวลาประเทศไทย)",
-      "stadium": "MCH Arena (เฮอร์นิ่ง, ความจุ 11,432 ที่นั่ง)",
+      "matchday": "นัดที่ 14",
+      "matchTitle": "Silkeborg IF (9) vs Lyngby BK (11)",
+      "kickoff": "คืนศุกร์ 6 พ.ย. (เช้ามืด 7 พ.ย. 2026) เวลา 01:00 น.",
       "homeTeam": {
-        "id": "fcm",
-        "name": "FC Midtjylland",
-        "thaiName": "เอฟซี มิดทิลแลนด์",
-        "rank": 1
+        "name": "Silkeborg IF",
+        "rank": 9,
+        "pts": 12,
+        "system": "4-3-2-1"
       },
       "awayTeam": {
-        "id": "agf",
-        "name": "AGF Aarhus",
-        "thaiName": "เอจีเอฟ อาร์ฮุส",
-        "rank": 3
+        "name": "Lyngby BK",
+        "rank": 11,
+        "pts": 11,
+        "system": "4-2-3-1"
       },
-      "coachHome": "Thomas Thomasberg",
-      "coachAway": "Uwe Rösler",
-      "predictedScore": "2–0 หรือ 2–1",
-      "bestPicks": [
-        {
-          "market": "FC Midtjylland ชนะ (1)",
-          "odds": "@ 1.75",
-          "confidence": "84%"
-        },
-        {
-          "market": "Midtjylland Over 1.5 ประตู",
-          "odds": "@ 1.72",
-          "confidence": "80%"
-        }
-      ],
+      "odds1X2": "2.50 / 3.92 / 2.70",
+      "asianHandicap": "ซิลเคบอร์ก ต่อ 0/0.5 (ปป.)",
+      "predictedScore": "2 – 2 หรือ 2 – 1",
+      "bestPick": "ยิงทั้งสองฝั่ง (BTTS - Yes) หรือ สกอร์สูง Over 2.5",
+      "confidence": "82%",
       "probabilities": {
-        "home": 54,
-        "draw": 26,
-        "away": 20
+        "home": 38,
+        "draw": 28,
+        "away": 34
       },
-      "analysisText": "การโคจรมาพบกันของสองทีมหัวตาราง มิดทิลแลนด์จ่าฝูงฟอร์มใน MCH Arena ดุดันมาก ชนะ 6 จาก 7 นัดเหย้า Franculino Djú ฟอร์มฮอตยิงไป 9 ประตู ทางฝั่ง AGF ของ Uwe Rösler แม้จะเหนียวแน่นและมี Patrick Mortensen นำดาวซัลโว 10 ประตู แต่เกมเยือนเจอมิดทิลแลนด์ 4 นัดหลังแพ้ไปถึง 3 นัด",
-      "homeInjuries": [
-        {
-          "name": "Marrony",
-          "pos": "FW",
-          "status": "Out",
-          "statusText": "พักยาว (Out)",
-          "detail": "ผ่าตัดเอ็นหัวเข่า พักฟื้นระยะยาว"
-        },
-        {
-          "name": "Paulinho",
-          "pos": "DF",
-          "status": "Suspended",
-          "statusText": "ติดโทษแบน (Suspended)",
-          "detail": "สะสมใบเหลืองครบโควตา พักแข้ง 1 นัด"
-        }
-      ],
-      "awayInjuries": [
-        {
-          "name": "Michael Akoto",
-          "pos": "DF",
-          "status": "Out",
-          "statusText": "บาดเจ็บ (Out)",
-          "detail": "บาดเจ็บข้อเท้าจากการซ้อม"
-        },
-        {
-          "name": "Kevin Yakob",
-          "pos": "MF",
-          "status": "Out",
-          "statusText": "พักยาว (Out)",
-          "detail": "ผ่าตัดเอ็นไขว้หน้าเข่า อยู่ระหว่างกายภาพ"
-        }
-      ]
+      "tactics": "Silkeborg ได้เปรียบจากการเล่นบนสนามหญ้าเทียมในบ้าน ระบบ 4-3-2-1 ต่อบอลสั้นเจาะตรงกลาง ส่วน Lyngby เล่นเกมรุกเปิดหน้าแลกแต่แนวรับเช็กไลน์ล้ำหน้าพลาดบ่อย",
+      "analysisText": "ศึกชิงแต้มหนีโซนท้ายตาราง Silkeborg เพิ่งบุกแพ้ Odense 1-4 เสมอในบ้านมา 4 นัดติด ส่วน Lyngby เพิ่งชนะ Randers 2-1 แต่เกมเยือนแพ้ 5 จาก 6 นัด จุดเด่นคือ Lyngby มีประตูรวมเกิน 1.5 ลูกครบ 100% ทั้ง 13 นัด และเตะมุมเฉลี่ย 8.9-9.6 ครั้งต่อเกม"
     },
     {
       "id": 103,
-      "matchTitle": "FC Nordsjælland พบ Silkeborg IF (ศึกบอลสายเกมรุก)",
-      "kickoff": "วันอาทิตย์ที่ 8 พฤศจิกายน 2026 เวลา 22:00 น. (ตามเวลาประเทศไทย)",
-      "stadium": "Right to Dream Park (ฟารุม, ความจุ 10,300 ที่นั่ง)",
+      "matchday": "นัดที่ 14",
+      "matchTitle": "Odense BK (6) vs Viborg FF (3)",
+      "kickoff": "คืนเสาร์ 7 พ.ย. (เที่ยงคืนเข้า 8 พ.ย. 2026) เวลา 00:00 น.",
       "homeTeam": {
-        "id": "fcn",
-        "name": "FC Nordsjælland",
-        "thaiName": "เอฟซี นอร์ดเยลแลนด์",
-        "rank": 7
+        "name": "Odense BK (OB)",
+        "rank": 6,
+        "pts": 17,
+        "system": "3-4-2-1"
       },
       "awayTeam": {
-        "id": "silkeborg",
-        "name": "Silkeborg IF",
-        "thaiName": "ซิลเคบอร์ก",
-        "rank": 6
+        "name": "Viborg FF",
+        "rank": 3,
+        "pts": 23,
+        "system": "4-3-3"
       },
-      "coachHome": "Jens Fønsskov Olsen",
-      "coachAway": "Kent Nielsen",
-      "predictedScore": "2–2 หรือ 3–2",
-      "bestPicks": [
-        {
-          "market": "Over 2.5 ประตู",
-          "odds": "@ 1.55",
-          "confidence": "88%"
-        },
-        {
-          "market": "Both Teams To Score (BTTS - Yes)",
-          "odds": "@ 1.50",
-          "confidence": "86%"
-        }
-      ],
+      "odds1X2": "2.66 / 3.78 / 2.46",
+      "asianHandicap": "วีบอร์ก ต่อ 0/0.5 (ปป.)",
+      "predictedScore": "1 – 1 หรือ 0 – 1",
+      "bestPick": "รอง Odense BK หรือ สกอร์ต่ำ Under 2.5 (เกมตึงเน้นรัดกุม)",
+      "confidence": "78%",
       "probabilities": {
-        "home": 42,
-        "draw": 27,
-        "away": 31
+        "home": 33,
+        "draw": 33,
+        "away": 34
       },
-      "analysisText": "สองทีมที่เล่นบอลเปิดหน้าแลกมากที่สุดในเดนมาร์ก นอร์ดเยลแลนด์ยิง 29 เสีย 28 ประตู ส่วนซิลเคบอร์กยิง 29 เสีย 23 ประตู สนามหญ้าเทียมของ Right to Dream Park เอื้อต่อการต่อบอลเร็ว การเจอกัน 6 นัดหลังสุด สกอร์รวมเกิน 2.5 ประตูทุกนัด!",
-      "homeInjuries": [
-        {
-          "name": "Diallo Sanoussy",
-          "pos": "FW",
-          "status": "Out",
-          "statusText": "บาดเจ็บ (Out)",
-          "detail": "บาดเจ็บกล้ามเนื้อต้นขา"
-        },
-        {
-          "name": "Kian Hansen",
-          "pos": "DF",
-          "status": "Doubtful",
-          "statusText": "รอเช็กฟิต (Doubtful)",
-          "detail": "ปัญหากล้ามเนื้อน่อง"
-        }
-      ],
-      "awayInjuries": [
-        {
-          "name": "Alexander Busch",
-          "pos": "DF",
-          "status": "Out",
-          "statusText": "บาดเจ็บ (Out)",
-          "detail": "มีปัญหาการบาดเจ็บกระดูกขา"
-        }
-      ]
+      "tactics": "Viborg FF มีวินัยเกมรับเหนียวแน่นที่สุดในลีกเทียบเท่าโคเปนเฮเกน (เสียเพียง 12 ประตูจาก 13 นัด) จบสกอร์คมจาก Dorian Hanza (6 ประตู) ส่วน Odense อาศัยลูกสวนกลับ",
+      "analysisText": "Odense BK กำลังมั่นใจหลังถล่ม Silkeborg 4-1 รับมือม้ามืดอย่าง Viborg FF ที่เฉือน Horsens 1-0 ราคาเปิดสูสีให้ทีมเยือนบุกต่อเล็กน้อย รูปเกมมีแนวโน้มอึดอัดในครึ่งแรก โอกาสเสมอหรือเฉือน 1 ลูกสูง"
     },
     {
       "id": 104,
-      "matchTitle": "Randers FC พบ Viborg FF",
-      "kickoff": "วันอาทิตย์ที่ 8 พฤศจิกายน 2026 เวลา 20:00 น. (ตามเวลาประเทศไทย)",
-      "stadium": "Cepheus Park Randers (แรนเดอร์ส, ความจุ 10,300 ที่นั่ง)",
+      "matchday": "นัดที่ 14 (บิ๊กแมตช์ New Firm Derby)",
+      "matchTitle": "FC Copenhagen (2) vs Brøndby IF (4)",
+      "kickoff": "วันอาทิตย์ที่ 8 พ.ย. 2026 เวลา 18:00 น.",
       "homeTeam": {
-        "id": "randers",
-        "name": "Randers FC",
-        "thaiName": "แรนเดอร์ส เอฟซี",
-        "rank": 5
+        "name": "FC Copenhagen",
+        "rank": 2,
+        "pts": 26,
+        "system": "4-2-3-1"
       },
       "awayTeam": {
-        "id": "viborg",
-        "name": "Viborg FF",
-        "thaiName": "วีบอร์ก",
-        "rank": 8
+        "name": "Brøndby IF",
+        "rank": 4,
+        "pts": 22,
+        "system": "4-2-3-1"
       },
-      "coachHome": "Rasmus Bertelsen",
-      "coachAway": "Jakob Poulsen",
-      "predictedScore": "2–1 หรือ 1–1",
-      "bestPicks": [
-        {
-          "market": "Double Chance 1X (แรนเดอร์ส ไม่แพ้)",
-          "odds": "@ 1.30",
-          "confidence": "85%"
-        },
-        {
-          "market": "Randers FC ชนะ (1)",
-          "odds": "@ 2.05",
-          "confidence": "70%"
-        }
-      ],
+      "odds1X2": "1.70 / 4.10 / 4.22",
+      "asianHandicap": "โคเปนเฮเกน ต่อ 0.5/1",
+      "predictedScore": "2 – 1 หรือ 3 – 1",
+      "bestPick": "โคเปนเฮเกน ชนะ (1) / ยิงทั้งสองฝั่ง (BTTS - Yes)",
+      "confidence": "86%",
       "probabilities": {
-        "home": 48,
-        "draw": 27,
-        "away": 25
+        "home": 57,
+        "draw": 23,
+        "away": 20
       },
-      "analysisText": "แรนเดอร์ส ฟอร์มกำลังขึ้นหม้อ ไม่แพ้ใครมา 5 นัดติด Simen Nordli ยิง 8 จ่าย 5 เป็นแกนหลักขับเคลื่อนเกม วีบอร์กผลงานนอกบ้านยังเอาแน่เอานอนไม่ได้ เสียประตูนอกบ้านเฉลี่ย 1.8 ลูกต่อนัด",
-      "homeInjuries": [
-        {
-          "name": "Edgar Babayan",
-          "pos": "FW",
-          "status": "Out",
-          "statusText": "บาดเจ็บ (Out)",
-          "detail": "บาดเจ็บกล้ามเนื้อแฮมสตริง"
-        }
-      ],
-      "awayInjuries": [
-        {
-          "name": "Zan Zaletel",
-          "pos": "DF",
-          "status": "Out",
-          "statusText": "บาดเจ็บ (Out)",
-          "detail": "ผ่าตัดข้อเท้า พักฟื้น"
-        }
-      ]
+      "tactics": "ดวล 4-2-3-1 ชนกันโดยตรง โคเปนเฮเกนเน้นครองบอลและโจมตีริมเส้นสองฝั่ง ส่วน Brøndby เน้นบีบเพรสซิ่งสูงและโจมตีพื้นที่หลังฟูลแบ็ก",
+      "analysisText": "ดาร์บี้แมตช์แห่งเดนมาร์ก นัดแรกเจอกันโคเปนเฮเกนบุกชนะ 1-0 จาก Cornelius นาที 79 สถิติเจอกัน 24 นัดหลัง โคเปนเฮเกนชนะ 13 เสมอ 4 บรอนด์บี้ชนะ 7 เฉลี่ย 2.9 ประตู/เกม และ BTTS สูงถึง 71% โอกาสชนะในบ้าน 56-58% ใบเหลืองเฉลี่ยเกิน 4.5 ใบ"
     },
     {
       "id": 105,
-      "matchTitle": "Aalborg BK พบ Vejle Boldklub",
-      "kickoff": "วันอาทิตย์ที่ 8 พฤศจิกายน 2026 เวลา 22:00 น. (ตามเวลาประเทศไทย)",
-      "stadium": "Aalborg Portland Park (อัลบอร์ก, ความจุ 13,997 ที่นั่ง)",
+      "matchday": "นัดที่ 14",
+      "matchTitle": "AGF Aarhus (8) vs AC Horsens (7)",
+      "kickoff": "วันอาทิตย์ที่ 8 พ.ย. 2026 เวลา 20:00 น.",
       "homeTeam": {
-        "id": "aab",
-        "name": "Aalborg BK",
-        "thaiName": "อัลบอร์ก บีเค",
-        "rank": 9
+        "name": "AGF Aarhus",
+        "rank": 8,
+        "pts": 12,
+        "system": "3-4-2-1"
       },
       "awayTeam": {
-        "id": "vejle",
-        "name": "Vejle Boldklub",
-        "thaiName": "ไวเล บอลด์คลับ",
-        "rank": 12
+        "name": "AC Horsens",
+        "rank": 7,
+        "pts": 16,
+        "system": "4-2-3-1"
       },
-      "coachHome": "Menno van Dam",
-      "coachAway": "Mihai Teja",
-      "predictedScore": "2–0 หรือ 2–1",
-      "bestPicks": [
-        {
-          "market": "Aalborg BK ชนะ (1)",
-          "odds": "@ 1.85",
-          "confidence": "80%"
-        },
-        {
-          "market": "Under 3.5 ประตู",
-          "odds": "@ 1.40",
-          "confidence": "82%"
-        }
-      ],
+      "odds1X2": "1.60 / 4.39 / 5.40",
+      "asianHandicap": "เอจีเอฟ อาร์ฮุส ต่อ 0.5/1 ถึง 1 ลูก",
+      "predictedScore": "1 – 1 หรือ 2 – 1",
+      "bestPick": "รอง AC Horsens (+1.0) / บอลรองมีลุ้นบุกแชร์แต้ม",
+      "confidence": "76%",
       "probabilities": {
-        "home": 51,
-        "draw": 26,
-        "away": 23
+        "home": 47,
+        "draw": 28,
+        "away": 25
       },
-      "analysisText": "ศึกหนีโซนท้ายตาราง ไวเล จมบ๊วยแพ้ไปถึง 11 นัดจาก 15 เกม เสียไปถึง 36 ลูก (แย่ที่สุดในลีก) อัลบอร์ก แม้ฟอร์มจะแกว่งแต่การได้เล่นในบ้านต่อหน้าแฟนบอลเกือบหมื่นสี่ และการเจอทีมบ๊วย ถือเป็นโอกาสทองในการเก็บ 3 แต้มเต็ม",
-      "homeInjuries": [
-        {
-          "name": "Sebastian Otoa",
-          "pos": "DF",
-          "status": "Doubtful",
-          "statusText": "รอเช็กฟิต (Doubtful)",
-          "detail": "มีอาการตึงกล้ามเนื้อต้นขา"
-        }
-      ],
-      "awayInjuries": [
-        {
-          "name": "Thomas Gundelund",
-          "pos": "DF",
-          "status": "Out",
-          "statusText": "บาดเจ็บ (Out)",
-          "detail": "บาดเจ็บกล้ามเนื้อฉีกขาด"
-        }
-      ]
+      "tactics": "AGF ใช้ระบบ 3-4-2-1 เน้นพละกำลังและลูกกลางอากาศแต่มีปัญหาการจบสกอร์ ขณะที่ AC Horsens เกมรุกดุดันอันดับ 3 ของลีก (ยิง 23 ประตูจาก 13 นัด)",
+      "analysisText": "AGF ชนะแค่ 2 นัดและเสมอถึง 6 เกมจาก 13 นัด เพิ่งบุกแพ้ Brøndby 0-2 เรตเปิดต่อค่อนข้างแรงเมื่อเทียบกับฟอร์มที่หนักเสมอ สวนทางกับ Horsens ที่เกมสวนกลับอันตราย บอลรองน่าสนใจ"
+    },
+    {
+      "id": 106,
+      "matchday": "นัดที่ 14",
+      "matchTitle": "Randers FC (10) vs FC Nordsjælland (5)",
+      "kickoff": "วันอาทิตย์ที่ 8 พ.ย. 2026 เวลา 22:00 น.",
+      "homeTeam": {
+        "name": "Randers FC",
+        "rank": 10,
+        "pts": 11,
+        "system": "4-2-3-1"
+      },
+      "awayTeam": {
+        "name": "FC Nordsjælland",
+        "rank": 5,
+        "pts": 20,
+        "system": "3-4-3"
+      },
+      "odds1X2": "2.50 / 3.50 / 2.60",
+      "asianHandicap": "ราคาเสมอ (0.0)",
+      "predictedScore": "1 – 2 หรือ 2 – 2",
+      "bestPick": "ถือหาง FC Nordsjælland (เสมอคืนทุน) / สกอร์สูง Over 1.5",
+      "confidence": "82%",
+      "probabilities": {
+        "home": 34,
+        "draw": 28,
+        "away": 38
+      },
+      "tactics": "Randers ใช้ 4-2-3-1 ยิงเฉลี่ย 1.1 ลูก (อันดับ 11) แต่เข้าปะทะ Tackles สูงสุดเป็นอันดับ 1 ที่ 19.2 ครั้ง/นัดเพื่อตัดจังหวะ ส่วน Nordsjælland ใช้ 3-4-3 จ่ายบอลเฉลี่ยสูงสุดในลีก (584.6 ครั้ง/นัด) และหาจังหวะยิงสูงสุด (17.3 ครั้ง/นัด)",
+      "analysisText": "Randers ฟอร์มตกไม่ชนะใคร 5 นัดหลัง (เสมอ 1 แพ้ 4) ด้าน Nordsjælland เพิ่งพ่ายจ่าฝูง Midtjylland 2-3 อย่างสนุก เจอกันนัดแรก Nordsjælland ชนะ 1-0 สถิติสกอร์รวมเกิน 1.5 ประตู 10 นัดหลังสูง 100% เต็ม เรตเสมอเชียร์ Nordsjælland"
+    },
+    {
+      "id": 107,
+      "matchday": "นัดที่ 14",
+      "matchTitle": "FC Midtjylland (1) vs Sønderjyske (12)",
+      "kickoff": "คืนวันอาทิตย์ที่ 8 พ.ย. (เที่ยงคืนเข้า 9 พ.ย. 2026) เวลา 00:00 น.",
+      "homeTeam": {
+        "name": "FC Midtjylland",
+        "rank": 1,
+        "pts": 31,
+        "system": "4-4-2"
+      },
+      "awayTeam": {
+        "name": "Sønderjyske",
+        "rank": 12,
+        "pts": 8,
+        "system": "3-4-2-1"
+      },
+      "odds1X2": "1.34 / 5.26 / 7.14",
+      "asianHandicap": "มิดทิลแลนด์ ต่อ 1.25 - 1.5",
+      "predictedScore": "3 – 0 หรือ 3 – 1",
+      "bestPick": "มิดทิลแลนด์ ต่อ 1.25 / สกอร์สูง Over 2.5",
+      "confidence": "88%",
+      "probabilities": {
+        "home": 72,
+        "draw": 18,
+        "away": 10
+      },
+      "tactics": "Midtjylland ระบบ 4-4-2 มีแนวรุกอันตรายรอบด้าน ทั้ง Franculino Djú, Cho Gue-sung และ Friday Etim (6 ประตู) ผสานทีเด็ดลูกตั้งเตะและลูกทุ่มไกลที่สร้างค่า xG สูงสุดในลีก",
+      "analysisText": "จ่าฝูง Midtjylland (31 แต้ม) เป็นทีมเดียวที่ไร้พ่าย (ชนะ 9 เสมอ 4) เพิ่งบุกชนะ Nordsjælland 3-2 รับมือบ๊วย Sønderjyske ที่เสียประตูมากที่สุดในลีก เจอกันนัดแรกมิดทิลแลนด์ชนะ 3-2 ค่า xG นัดนี้สูงถึง 2.73-2.91 โอกาส Over 2.5 สูงถึง 75%"
+    }
+  ],
+  "tiers": [
+    {
+      "tier": "กลุ่มลุ้นแชมป์ (Tier 1)",
+      "teams": "FC Copenhagen, FC Midtjylland",
+      "system": "4-2-3-1 / 4-3-3 / 4-4-2",
+      "style": "Copenhagen ครองบอล >58% เกมเหย้าชนะ >70%; Midtjylland ค่า xG จากลูกตั้งเตะและลูกทุ่มไกลสูงสุดในลีก Transition รวดเร็ว",
+      "scoreTrend": "สูง (Over 2.5 ประตู)"
+    },
+    {
+      "tier": "กลุ่มท็อปโฟร์ (Tier 2)",
+      "teams": "Viborg FF, Brøndby IF",
+      "system": "4-3-3 / 4-2-3-1 / 3-4-2-1",
+      "style": "Viborg เกมรับเหนียวเสียแค่ 12 ลูก; Brøndby เพรสซิ่งแดนบนดุดันและวิงแบ็กเติมสูง",
+      "scoreTrend": "สูงเมื่อเล่นในบ้าน"
+    },
+    {
+      "tier": "กลุ่มท็อปซิกซ์ (Tier 2)",
+      "teams": "FC Nordsjælland",
+      "system": "3-4-3 / 4-3-3",
+      "style": "จ่ายบอลเฉลี่ยสูงสุดในลีก (584.6 ครั้ง/นัด), ยิงเฉลี่ย 17.3 ครั้ง/นัด, ถนัดสนามหญ้าเทียม",
+      "scoreTrend": "สูงในบ้าน / ต่ำนอกบ้าน"
+    },
+    {
+      "tier": "กลุ่มกลางตาราง (Tier 3)",
+      "teams": "Odense BK, AC Horsens, AGF Aarhus",
+      "system": "3-4-2-1 / 4-2-3-1",
+      "style": "Horsens เกมรุกดุดันยิง 23 ประตู; AGF เน้นพละกำลังและลูกกลางอากาศแต่หนักเสมอ (6 นัด)",
+      "scoreTrend": "เลือกตามคู่แข่ง"
+    },
+    {
+      "tier": "กลุ่มหนีตกชั้น (Tier 4)",
+      "teams": "Silkeborg, Randers, Lyngby, Sønderjyske",
+      "system": "4-2-3-1 / 4-3-2-1 / 3-4-2-1",
+      "style": "Randers เข้าปะทะสูงสุด (19.2 ครั้ง/นัด) แต่ยิงน้อย; Sønderjyske และ Lyngby เกมรับเสียประตูง่าย",
+      "scoreTrend": "Over 2.5 เมื่อเจอทีมใหญ่"
+    }
+  ],
+  "keyTacticalNotes": [
+    {
+      "title": "ปัจจัยสนามหญ้าเทียม (Artificial Turf Advantage)",
+      "desc": "สโมสร FC Nordsjælland และ Silkeborg IF ใช้สนามหญ้าเทียมเป็นสนามเหย้า ทำให้จังหวะบอลเดินทางเร็วกว่าปกติและเอื้อต่อการต่อบอลจังหวะเดียว (One-touch football) ส่งผลให้สถิติในบ้านแข็งแกร่งกว่าเกมเยือนอย่างชัดเจน"
+    },
+    {
+      "title": "ประสิทธิภาพลูกตั้งเตะของ FC Midtjylland",
+      "desc": "มิดทิลแลนด์เป็นสโมสรที่ให้ความสำคัญกับ Data Analytics และลูกนิ่ง (เตะมุม, ฟรีคิก และลูกทุ่มไกล) สูงที่สุดในสแกนดิเนเวีย ทำให้สามารถเจาะแนวรับทีมที่ตั้งรับลึก (Low Block) ได้อย่างสม่ำเสมอ"
+    },
+    {
+      "title": "สล็อตเวลาแข่งขันมาตรฐาน (GMT+7 เวลาไทย)",
+      "desc": "คู่เปิดหัวคืนวันศุกร์ 01:00 น., คู่วันอาทิตย์ช่วงค่ำ 18:00 น. / 20:00 น. / 22:00 น., คู่บิ๊กแมตช์คืนวันอาทิตย์ 00:00 น. และคู่ปิดท้ายสัปดาห์คืนวันจันทร์ 01:00 น."
+    }
+  ],
+  "topScorers": [
+    {
+      "name": "Mohamed Elyounoussi",
+      "team": "FC Copenhagen",
+      "goals": 7,
+      "assists": 4,
+      "matches": 12
+    },
+    {
+      "name": "Friday Etim",
+      "team": "FC Midtjylland",
+      "goals": 6,
+      "assists": 2,
+      "matches": 13
+    },
+    {
+      "name": "Dorian Hanza",
+      "team": "Viborg FF",
+      "goals": 6,
+      "assists": 3,
+      "matches": 13
+    },
+    {
+      "name": "Franculino Djú",
+      "team": "FC Midtjylland",
+      "goals": 5,
+      "assists": 3,
+      "matches": 13
+    },
+    {
+      "name": "Andreas Cornelius",
+      "team": "FC Copenhagen",
+      "goals": 5,
+      "assists": 2,
+      "matches": 11
     }
   ]
 };
