@@ -2266,3 +2266,70 @@ button {
     font-size: 1.2rem;
   }
 }
+
+
+/* Dedicated Prediction Banner Fix */
+.detail-score-prediction-banner {
+  background: rgba(251, 191, 36, 0.12);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  color: var(--accent-gold);
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius-full);
+  font-size: 1rem;
+  font-weight: 800;
+  text-align: center;
+  margin: 1rem auto 1.5rem;
+  max-width: 540px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.detail-team-box {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.detail-team-name {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.25;
+  word-break: break-word;
+}
+
+@media (max-width: 768px) {
+  .detail-arena {
+    gap: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .detail-team-crest {
+    width: 58px !important;
+    height: 58px !important;
+    margin-bottom: 0.35rem !important;
+  }
+  .detail-team-name {
+    font-size: 0.95rem !important;
+    line-height: 1.2 !important;
+  }
+  .detail-team-league {
+    font-size: 0.7rem !important;
+  }
+  .detail-vs-badge {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 0.85rem !important;
+  }
+  .detail-score-prediction-banner {
+    font-size: 0.85rem !important;
+    padding: 0.45rem 0.85rem !important;
+    margin: 0.75rem 0 1.2rem !important;
+    border-radius: var(--radius-sm) !important;
+  }
+}

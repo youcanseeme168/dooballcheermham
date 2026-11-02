@@ -732,23 +732,25 @@ function renderMatchDetail(matchId) {
             <div class="detail-team-box">
               <div class="detail-team-crest">${getTeamLogo(m.homeTeam.id, m.homeTeam.name)}</div>
               <div class="detail-team-name">${m.homeTeam.name}</div>
-              <div class="detail-team-league">${m.homeTeam.thaiName} (${m.homeTeam.country}) • ${m.homeTeam.league}</div>
+              <div class="detail-team-league">${m.homeTeam.thaiName} (${m.homeTeam.country})</div>
             </div>
 
-            <!-- VS & Prediction Center -->
+            <!-- VS Center -->
             <div class="detail-vs-center">
               <div class="detail-vs-badge">VS</div>
-              <div class="detail-score-pred">
-                <i class="ri-football-line"></i> คาดการณ์: ${m.scorePrediction.prediction}
-              </div>
             </div>
 
             <!-- Away Team Box -->
             <div class="detail-team-box">
               <div class="detail-team-crest">${getTeamLogo(m.awayTeam.id, m.awayTeam.name)}</div>
               <div class="detail-team-name">${m.awayTeam.name}</div>
-              <div class="detail-team-league">${m.awayTeam.thaiName} (${m.awayTeam.country}) • ${m.awayTeam.league}</div>
+              <div class="detail-team-league">${m.awayTeam.thaiName} (${m.awayTeam.country})</div>
             </div>
+          </div>
+
+          <!-- Dedicated Full-Width Prediction Banner (Zero Mobile Clipping) -->
+          <div class="detail-score-prediction-banner">
+            <i class="ri-football-line" style="color:var(--accent-gold);"></i> สกอร์คาดการณ์: <strong>${m.scorePrediction.prediction}</strong>
           </div>
 
           <div class="detail-hero-meta-grid">
