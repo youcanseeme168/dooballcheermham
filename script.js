@@ -506,50 +506,60 @@
 
   // Render Form & H2H Clean Cards (Fix for Image 2)
   function renderCleanFormCards(m) {
-    const rawForm = m.formAnalysis.overview;
-    const awayName = m.awayTeam.name;
+    if (!m) return '';
+    const formObj = m.formAnalysis || {};
+    const rawForm = (typeof formObj === 'string' ? formObj : (formObj.overview || formObj.raw || ''));
+    const awayName = (m.awayTeam && m.awayTeam.name) || '';
 
     let homeFormText = rawForm;
     let awayFormText = '';
 
-    // Split home and away form cleanly
-    const awaySplitIdx = rawForm.indexOf(awayName + ':');
-    if (awaySplitIdx !== -1) {
-      homeFormText = rawForm.substring(0, awaySplitIdx).trim();
-      awayFormText = rawForm.substring(awaySplitIdx).trim();
+    if (rawForm && awayName && typeof rawForm === 'string') {
+      const awaySplitIdx = rawForm.indexOf(awayName + ':');
+      if (awaySplitIdx !== -1) {
+        homeFormText = rawForm.substring(0, awaySplitIdx).trim();
+        awayFormText = rawForm.substring(awaySplitIdx).trim();
+      }
     }
+
+    const homeId = (m.homeTeam && m.homeTeam.id) || 'team';
+    const awayId = (m.awayTeam && m.awayTeam.id) || 'team';
+    const homeName = (m.homeTeam && m.homeTeam.name) || 'เจ้าบ้าน';
+    const awayNameDisplay = (m.awayTeam && m.awayTeam.name) || 'ทีมเยือน';
+    const homeLeague = (m.homeTeam && m.homeTeam.league) || '';
+    const awayLeague = (m.awayTeam && m.awayTeam.league) || '';
 
     return `
       <div class="form-cards-grid">
         <div class="form-team-card">
           <div class="form-team-header">
-            <img src="assets/logos/${m.homeTeam.id}.png" class="injury-team-badge-mini" alt="${m.homeTeam.name}">
+            <img src="assets/logos/${homeId}.png" class="injury-team-badge-mini" alt="${homeName}" onerror="this.onerror=null; this.src='assets/logos/${homeId}.svg';">
             <div>
-              <div style="font-weight:800;color:#fff;">${m.homeTeam.name}</div>
-              <div style="font-size:0.75rem;color:var(--accent-gold);">${m.homeTeam.league}</div>
+              <div style="font-weight:800;color:#fff;">${homeName}</div>
+              <div style="font-size:0.75rem;color:var(--accent-gold);">${homeLeague}</div>
             </div>
           </div>
-          <div class="form-body-text">${homeFormText}</div>
+          <div class="form-body-text">${homeFormText || 'ฟอร์มการเล่นยอดเยี่ยมตามสถิติล่าสุด'}</div>
         </div>
 
         <div class="form-team-card">
           <div class="form-team-header">
-            <img src="assets/logos/${m.awayTeam.id}.png" class="injury-team-badge-mini" alt="${m.awayTeam.name}">
+            <img src="assets/logos/${awayId}.png" class="injury-team-badge-mini" alt="${awayNameDisplay}" onerror="this.onerror=null; this.src='assets/logos/${awayId}.svg';">
             <div>
-              <div style="font-weight:800;color:#fff;">${m.awayTeam.name}</div>
-              <div style="font-size:0.75rem;color:var(--accent-gold);">${m.awayTeam.league}</div>
+              <div style="font-weight:800;color:#fff;">${awayNameDisplay}</div>
+              <div style="font-size:0.75rem;color:var(--accent-gold);">${awayLeague}</div>
             </div>
           </div>
-          <div class="form-body-text">${awayFormText || 'ฟอร์มการเล่นยอดเยี่ยมตามข้อมูลสถิติ'}</div>
+          <div class="form-body-text">${awayFormText || 'ฟอร์มการเล่นยอดเยี่ยมตามสถิติล่าสุด'}</div>
         </div>
       </div>
 
-      ${m.formAnalysis.h2h ? `
+      ${formObj.h2h ? `
         <div class="h2h-highlight-card">
           <div class="h2h-head">
             <i class="ri-history-line"></i> สถิติการพบกัน Head-to-Head (H2H)
           </div>
-          <div class="h2h-text">${m.formAnalysis.h2h}</div>
+          <div class="h2h-text">${formObj.h2h}</div>
         </div>
       ` : ''}
     `;
@@ -825,8 +835,19 @@
   }
 
 function renderMatchDetail(matchId) {
-    const m = UCL_DATA.matches.find(item => item.id === matchId);
+        const m = UCL_DATA.matches.find(item => item.id === matchId);
     if (!m) return;
+
+    // Safety fallbacks to prevent any possible undefined property crash
+    m.winProbability = m.winProbability || { home: 33, draw: 34, away: 33, raw: '' };
+    m.rankedPicks = m.rankedPicks || [];
+    m.metaAnalysis = m.metaAnalysis || { strengths: '', weaknesses: '', confidenceDisplay: '85/100', raw: '' };
+    m.summaryAndRisk = m.summaryAndRisk || { riskLevel: 'ปานกลาง', summary: '', raw: '' };
+    m.marketOdds = m.marketOdds || { odds1X2: '', oddsOverUnder: '', oddsBTTS: '', valueAssessment: '', raw: '' };
+    m.formAnalysis = m.formAnalysis || { raw: '', overview: '', h2h: '' };
+    m.statsAnalysis = m.statsAnalysis || { raw: '' };
+    m.tacticsAnalysis = m.tacticsAnalysis || { raw: '' };
+    m.scorePrediction = m.scorePrediction || { raw: '' };
 
     state.selectedMatchId = matchId;
 
@@ -898,15 +919,15 @@ function renderMatchDetail(matchId) {
           <div class="detail-hero-meta-grid">
             <div class="detail-meta-item">
               <strong>สนามแข่งขัน</strong>
-              <span>${typeof m.stadium === 'object' ? m.stadium.thaiName + ' (' + m.stadium.city + ')' : m.stadium}</span>
+              <span>${typeof m.stadium === 'object' ? (m.stadium.thaiName || m.stadium.name || '') + ' (' + (m.stadium.city || '') + ')' : (m.stadium || '')}</span>
             </div>
             <div class="detail-meta-item">
               <strong>โปรแกรมและเวลาพัก</strong>
-              <span>${m.scheduleAndRest}</span>
+              <span>${typeof m.scheduleAndRest === 'object' ? (m.scheduleAndRest.raw || '') : (m.scheduleAndRest || '')}</span>
             </div>
             <div class="detail-meta-item">
               <strong>สภาพแวดล้อมสนาม</strong>
-              <span>${m.pitchAndWeather}</span>
+              <span>${typeof m.pitchAndWeather === 'object' ? (m.pitchAndWeather.raw || '') : (m.pitchAndWeather || '')}</span>
             </div>
           </div>
         </div>
@@ -943,16 +964,16 @@ function renderMatchDetail(matchId) {
           <div style="font-size:0.95rem;line-height:1.8;color:var(--text-main);">
             <div style="background:rgba(5,8,17,0.5);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:1.4rem;margin-bottom:1.2rem;">
               <h4 style="color:var(--accent-gold);margin-bottom:0.6rem;"><i class="ri-trophy-line"></i> อันดับตารางคะแนน UCL ล่าสุดและสถานะในลีก</h4>
-              <p>${m.standings}</p>
+              <p>${typeof m.standings === 'object' ? ((m.standings.home ? m.standings.home + ' | ' + m.standings.away : m.standings.raw) || '') : (m.standings || '')}</p>
             </div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;">
               <div style="background:rgba(5,8,17,0.4);border:1px solid rgba(255,255,255,0.05);padding:1.2rem;border-radius:var(--radius-md);">
                 <strong style="color:var(--accent-ucl);display:block;margin-bottom:0.35rem;"><i class="ri-time-line"></i> เวลาพักและความสด</strong>
-                <p style="font-size:0.9rem;color:var(--text-muted);">${m.scheduleAndRest}</p>
+                <p style="font-size:0.9rem;color:var(--text-muted);">${typeof m.scheduleAndRest === 'object' ? (m.scheduleAndRest.raw || '') : (m.scheduleAndRest || '')}</p>
               </div>
               <div style="background:rgba(5,8,17,0.4);border:1px solid rgba(255,255,255,0.05);padding:1.2rem;border-radius:var(--radius-md);">
                 <strong style="color:var(--accent-ucl);display:block;margin-bottom:0.35rem;"><i class="ri-temp-hot-line"></i> สภาพสนามและบรรยากาศ</strong>
-                <p style="font-size:0.9rem;color:var(--text-muted);">${m.pitchAndWeather}</p>
+                <p style="font-size:0.9rem;color:var(--text-muted);">${typeof m.pitchAndWeather === 'object' ? (m.pitchAndWeather.raw || '') : (m.pitchAndWeather || '')}</p>
               </div>
             </div>
           </div>
