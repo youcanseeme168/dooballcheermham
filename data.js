@@ -17,7 +17,12 @@ const UCL_DATA = {
         ],
         "prob1X2": "20% / 26% / 54%",
         "confidence": "87 / 100",
-        "riskLevel": "ปานกลาง"
+        "riskLevel": "ปานกลาง",
+        "risk": "ปานกลาง",
+        "bestPicks": [
+          "1. Liverpool ชนะ (2) (@ 1.50)",
+          "2. Double Chance X2 & Under 3.5 (@ 1.68)"
+        ]
       },
       {
         "id": 2,
@@ -30,7 +35,12 @@ const UCL_DATA = {
         ],
         "prob1X2": "12% / 20% / 68%",
         "confidence": "90 / 100",
-        "riskLevel": "ค่อนข้างต่ำ"
+        "riskLevel": "ค่อนข้างต่ำ",
+        "risk": "ค่อนข้างต่ำ",
+        "bestPicks": [
+          "1. Real Madrid ชนะ (2) (@ 1.30)",
+          "2. Real Madrid -1.0/1.5 แฮนดิแคป (@ 1.70)"
+        ]
       },
       {
         "id": 3,
@@ -43,7 +53,12 @@ const UCL_DATA = {
         ],
         "prob1X2": "53% / 27% / 20%",
         "confidence": "85 / 100",
-        "riskLevel": "ปานกลาง"
+        "riskLevel": "ปานกลาง",
+        "risk": "ปานกลาง",
+        "bestPicks": [
+          "1. RC Lens ชนะ (1) (@ 1.75)",
+          "2. Double Chance 1X & Under 3.5 (@ 1.55)"
+        ]
       },
       {
         "id": 4,
@@ -56,7 +71,12 @@ const UCL_DATA = {
         ],
         "prob1X2": "55% / 24% / 21%",
         "confidence": "86 / 100",
-        "riskLevel": "ปานกลาง"
+        "riskLevel": "ปานกลาง",
+        "risk": "ปานกลาง",
+        "bestPicks": [
+          "1. Dortmund ชนะ (1) (@ 1.72)",
+          "2. Over 2.5 ประตู (@ 1.62)"
+        ]
       },
       {
         "id": 5,
@@ -69,7 +89,12 @@ const UCL_DATA = {
         ],
         "prob1X2": "22% / 25% / 53%",
         "confidence": "86 / 100",
-        "riskLevel": "ปานกลาง"
+        "riskLevel": "ปานกลาง",
+        "risk": "ปานกลาง",
+        "bestPicks": [
+          "1. Man City ชนะ (2) (@ 1.65)",
+          "2. Over 2.5 ประตู (@ 1.55)"
+        ]
       },
       {
         "id": 6,
@@ -82,7 +107,12 @@ const UCL_DATA = {
         ],
         "prob1X2": "38% / 32% / 30%",
         "confidence": "84 / 100",
-        "riskLevel": "ปานกลาง"
+        "riskLevel": "ปานกลาง",
+        "risk": "ปานกลาง",
+        "bestPicks": [
+          "1. Double Chance 1X (Porto ชนะหรือเสมอ) (@ 1.45)",
+          "2. Under 2.5 ประตู (@ 1.80)"
+        ]
       },
       {
         "id": 7,
@@ -95,7 +125,12 @@ const UCL_DATA = {
         ],
         "prob1X2": "58% / 23% / 19%",
         "confidence": "87 / 100",
-        "riskLevel": "ค่อนข้างต่ำ"
+        "riskLevel": "ค่อนข้างต่ำ",
+        "risk": "ค่อนข้างต่ำ",
+        "bestPicks": [
+          "1. PSV Eindhoven ชนะ (1) (@ 1.62)",
+          "2. Over 2.5 ประตู (@ 1.55)"
+        ]
       },
       {
         "id": 8,
@@ -108,7 +143,12 @@ const UCL_DATA = {
         ],
         "prob1X2": "15% / 25% / 60%",
         "confidence": "89 / 100",
-        "riskLevel": "ค่อนข้างต่ำ"
+        "riskLevel": "ค่อนข้างต่ำ",
+        "risk": "ค่อนข้างต่ำ",
+        "bestPicks": [
+          "1. Arsenal ชนะ (2) (@ 1.48)",
+          "2. Arsenal -1.0 แฮนดิแคป (@ 1.78)"
+        ]
       },
       {
         "id": 9,
@@ -121,7 +161,12 @@ const UCL_DATA = {
         ],
         "prob1X2": "62% / 22% / 16%",
         "confidence": "88 / 100",
-        "riskLevel": "ค่อนข้างต่ำ"
+        "riskLevel": "ค่อนข้างต่ำ",
+        "risk": "ค่อนข้างต่ำ",
+        "bestPicks": [
+          "1. Viking FK ชนะ (1) (@ 1.58)",
+          "2. Viking FK Over 1.5 Team Goals (@ 1.62)"
+        ]
       }
     ]
   },
@@ -138,7 +183,8 @@ const UCL_DATA = {
         "shortName": "FEN",
         "logo": "assets/logos/fenerbahce.png",
         "country": "ตุรกี",
-        "league": "ซูเปอร์ลีก ตุรกี"
+        "league": "ซูเปอร์ลีก ตุรกี",
+        "id": "fenerbahce"
       },
       "awayTeam": {
         "name": "Liverpool",
@@ -146,7 +192,8 @@ const UCL_DATA = {
         "shortName": "LIV",
         "logo": "assets/logos/liverpool.png",
         "country": "อังกฤษ",
-        "league": "พรีเมียร์ลีก อังกฤษ"
+        "league": "พรีเมียร์ลีก อังกฤษ",
+        "id": "liverpool"
       },
       "tournamentRound": "League Phase (Matchday 4 of 8)",
       "matchDateTime": "วันพฤหัสบดีที่ 5 พฤศจิกายน 2026 • 00:45 น.",
@@ -351,7 +398,8 @@ const UCL_DATA = {
         "shortName": "AEK",
         "logo": "assets/logos/aek.png",
         "country": "กรีซ",
-        "league": "ซูเปอร์ลีก กรีซ"
+        "league": "ซูเปอร์ลีก กรีซ",
+        "id": "aek"
       },
       "awayTeam": {
         "name": "Real Madrid",
@@ -359,7 +407,8 @@ const UCL_DATA = {
         "shortName": "RMA",
         "logo": "assets/logos/realmadrid.png",
         "country": "สเปน",
-        "league": "ลาลีกา สเปน"
+        "league": "ลาลีกา สเปน",
+        "id": "realmadrid"
       },
       "tournamentRound": "League Phase (Matchday 4 of 8)",
       "matchDateTime": "วันพฤหัสบดีที่ 5 พฤศจิกายน 2026 • 00:45 น.",
@@ -564,7 +613,8 @@ const UCL_DATA = {
         "shortName": "RCL",
         "logo": "assets/logos/lens.png",
         "country": "ฝรั่งเศส",
-        "league": "ลีกเอิง ฝรั่งเศส"
+        "league": "ลีกเอิง ฝรั่งเศส",
+        "id": "lens"
       },
       "awayTeam": {
         "name": "Como 1907",
@@ -572,7 +622,8 @@ const UCL_DATA = {
         "shortName": "COM",
         "logo": "assets/logos/como.png",
         "country": "อิตาลี",
-        "league": "เซเรียอา อิตาลี"
+        "league": "เซเรียอา อิตาลี",
+        "id": "como"
       },
       "tournamentRound": "League Phase (Matchday 4 of 8)",
       "matchDateTime": "วันพฤหัสบดีที่ 5 พฤศจิกายน 2026 • 03:00 น.",
@@ -769,7 +820,8 @@ const UCL_DATA = {
         "shortName": "BVB",
         "logo": "assets/logos/dortmund.png",
         "country": "เยอรมนี",
-        "league": "บุนเดสลีกา เยอรมนี"
+        "league": "บุนเดสลีกา เยอรมนี",
+        "id": "dortmund"
       },
       "awayTeam": {
         "name": "Real Betis",
@@ -777,7 +829,8 @@ const UCL_DATA = {
         "shortName": "BET",
         "logo": "assets/logos/betis.png",
         "country": "สเปน",
-        "league": "ลาลีกา สเปน"
+        "league": "ลาลีกา สเปน",
+        "id": "betis"
       },
       "tournamentRound": "League Phase (Matchday 4 of 8)",
       "matchDateTime": "วันพฤหัสบดีที่ 5 พฤศจิกายน 2026 • 03:00 น.",
@@ -974,7 +1027,8 @@ const UCL_DATA = {
         "shortName": "RBL",
         "logo": "assets/logos/leipzig.png",
         "country": "เยอรมนี",
-        "league": "บุนเดสลีกา เยอรมนี"
+        "league": "บุนเดสลีกา เยอรมนี",
+        "id": "leipzig"
       },
       "awayTeam": {
         "name": "Manchester City",
@@ -982,7 +1036,8 @@ const UCL_DATA = {
         "shortName": "MCI",
         "logo": "assets/logos/mancity.png",
         "country": "อังกฤษ",
-        "league": "พรีเมียร์ลีก อังกฤษ"
+        "league": "พรีเมียร์ลีก อังกฤษ",
+        "id": "mancity"
       },
       "tournamentRound": "League Phase (Matchday 4 of 8)",
       "matchDateTime": "วันพฤหัสบดีที่ 5 พฤศจิกายน 2026 • 03:00 น.",
@@ -1195,7 +1250,8 @@ const UCL_DATA = {
         "shortName": "FCP",
         "logo": "assets/logos/porto.png",
         "country": "โปรตุเกส",
-        "league": "ปรีไมราลีกา โปรตุเกส"
+        "league": "ปรีไมราลีกา โปรตุเกส",
+        "id": "porto"
       },
       "awayTeam": {
         "name": "SSC Napoli",
@@ -1203,7 +1259,8 @@ const UCL_DATA = {
         "shortName": "NAP",
         "logo": "assets/logos/napoli.png",
         "country": "อิตาลี",
-        "league": "เซเรียอา อิตาลี"
+        "league": "เซเรียอา อิตาลี",
+        "id": "napoli"
       },
       "tournamentRound": "League Phase (Matchday 4 of 8)",
       "matchDateTime": "วันพฤหัสบดีที่ 5 พฤศจิกายน 2026 • 03:00 น.",
@@ -1400,7 +1457,8 @@ const UCL_DATA = {
         "shortName": "PSV",
         "logo": "assets/logos/psv.png",
         "country": "เนเธอร์แลนด์",
-        "league": "เอเรดิวิซี่ เนเธอร์แลนด์"
+        "league": "เอเรดิวิซี่ เนเธอร์แลนด์",
+        "id": "psv"
       },
       "awayTeam": {
         "name": "Club Brugge",
@@ -1408,7 +1466,8 @@ const UCL_DATA = {
         "shortName": "BRU",
         "logo": "assets/logos/brugge.png",
         "country": "เบลเยียม",
-        "league": "โปรลีก เบลเยียม"
+        "league": "โปรลีก เบลเยียม",
+        "id": "brugge"
       },
       "tournamentRound": "League Phase (Matchday 4 of 8)",
       "matchDateTime": "วันพฤหัสบดีที่ 5 พฤศจิกายน 2026 • 03:00 น.",
@@ -1605,7 +1664,8 @@ const UCL_DATA = {
         "shortName": "SLA",
         "logo": "assets/logos/slaviapraha.png",
         "country": "เช็กเกีย",
-        "league": "เช็ก เฟิสต์ลีก"
+        "league": "เช็ก เฟิสต์ลีก",
+        "id": "slaviapraha"
       },
       "awayTeam": {
         "name": "Arsenal",
@@ -1613,7 +1673,8 @@ const UCL_DATA = {
         "shortName": "ARS",
         "logo": "assets/logos/arsenal.png",
         "country": "อังกฤษ",
-        "league": "พรีเมียร์ลีก อังกฤษ"
+        "league": "พรีเมียร์ลีก อังกฤษ",
+        "id": "arsenal"
       },
       "tournamentRound": "League Phase (Matchday 4 of 8)",
       "matchDateTime": "วันพฤหัสบดีที่ 5 พฤศจิกายน 2026 • 03:00 น.",
@@ -1818,7 +1879,8 @@ const UCL_DATA = {
         "shortName": "VIK",
         "logo": "assets/logos/viking.png",
         "country": "นอร์เวย์",
-        "league": "เอลีทซีเรียน นอร์เวย์"
+        "league": "เอลีทซีเรียน นอร์เวย์",
+        "id": "viking"
       },
       "awayTeam": {
         "name": "Sabah FK",
@@ -1826,7 +1888,8 @@ const UCL_DATA = {
         "shortName": "SAB",
         "logo": "assets/logos/sabah.png",
         "country": "อาเซอร์ไบจาน",
-        "league": "พรีเมียร์ลีก อาเซอร์ไบจาน"
+        "league": "พรีเมียร์ลีก อาเซอร์ไบจาน",
+        "id": "sabah"
       },
       "tournamentRound": "League Phase (Matchday 4 of 8)",
       "matchDateTime": "วันพฤหัสบดีที่ 5 พฤศจิกายน 2026 • 03:00 น.",

@@ -22,7 +22,11 @@
 
   // Helper to render official logo image with SVG fallback
   function getTeamLogo(teamId, teamName) {
-    return `<img src="assets/logos/${teamId}.png" alt="${teamName || teamId}" class="team-logo-img" onerror="this.onerror=null; this.src='assets/logos/${teamId}.svg';">`;
+    let id = teamId;
+    if (!id && teamName) {
+      id = teamName.toLowerCase().replace(/[^a-z0-9]/g, '');
+    }
+    return `<img src="assets/logos/${id}.png" alt="${teamName || id}" class="team-logo-img" onerror="this.onerror=null; this.src='assets/logos/${id}.svg';">`;
   }
 
   // DOM Elements
@@ -82,19 +86,19 @@
   function renderOverviewContent() {
     const ov = UCL_DATA.overview;
 
-    // Supported
+        // Supported / Confidence
     const supEl = document.getElementById('ranking-supported');
     if (supEl) {
       supEl.innerHTML = `
         <div class="ranking-item">
-          <span class="ranking-item-badge badge-rank-1">อันดับ 1 • ความน่าเชื่อถือ 88/100</span>
-          <div style="font-weight:700;color:#fff;margin-bottom:0.25rem;">Villarreal พบ PSG</div>
-          <p>มีข้อมูลครบถ้วนตั้งแต่สถิติชนะรวด 9 นัด (ยิง 30 ประตู) ของ PSG, สถิติ 12 จาก 14 เกมเหย้าของ Villarreal ที่เกิด BTTS + Over 2.5, รายชื่อผู้เล่นบาดเจ็บครบทั้งสองฝั่ง และราคาต่อรองครบทุกตลาดหลัก</p>
+          <span class="ranking-item-badge badge-rank-1">อันดับ 1 • ความน่าเชื่อถือ 90/100</span>
+          <div style="font-weight:700;color:#fff;margin-bottom:0.25rem;">AEK Athens พบ Real Madrid</div>
+          <p>เรอัล มาดริด เหนือกว่าทุกมิติ ขุมกำลังเวิลด์คลาส เอ็มบัปเป้, วินิซิอุส, เบลลิงแฮม แม้ขาดการ์บาฆาล แต่เจ้าถิ่นเออีเคที่เปิดหน้าแลกจะโดนสวนกลับพังยับ</p>
         </div>
         <div class="ranking-item">
-          <span class="ranking-item-badge badge-rank-2">อันดับ 2 • ความน่าเชื่อถือ 87/100 & 86/100</span>
-          <div style="font-weight:700;color:#fff;margin-bottom:0.25rem;">Barcelona พบ Aston Villa & Atlético Madrid พบ Bayern Munich</div>
-          <p>ข้อมูลสถิติ 18 นัดหลังสุดใน UCL ของบาร์ซา และสถิติเกมเหย้าที่แข็งแกร่งของตราหมี รองรับทิศทางการวิเคราะห์ได้อย่างแน่นหนา</p>
+          <span class="ranking-item-badge badge-rank-2">อันดับ 2 • ความน่าเชื่อถือ 89/100 & 88/100</span>
+          <div style="font-weight:700;color:#fff;margin-bottom:0.25rem;">Slavia Praha พบ Arsenal & Viking FK พบ Sabah FK</div>
+          <p>อาร์เซน่อลคลีนชีต 3 นัดรวด เสีย 0 ประตูใน UCL สลาเวียไร้โกล์มือหนึ่ง ขณะที่ไวกิ้งได้เปรียบสนามหญ้าเทียม ลมหนาว 5 องศา และทีมเยือนล้าเดินทาง 4,500 กม.</p>
         </div>
       `;
     }
@@ -105,18 +109,18 @@
       advEl.innerHTML = `
         <div class="ranking-item">
           <span class="ranking-item-badge badge-rank-1">อันดับ 1 • ราคาคุ้มค่าที่สุด</span>
-          <div style="font-weight:700;color:#fff;margin-bottom:0.25rem;">Bodø/Glimt พบ LOSC Lille — เจ้าบ้านชนะ (@ 1.92)</div>
-          <p>เจ้าบ้านชนะเกมเหย้ายุโรป 6 นัดรวด ขณะที่ Lille แพ้รวด 3 นัดใน UCL (เสีย 10 ลูก) แพ้เกมยุโรป 5 นัดติด เสียประตูครึ่งหลัง 7 ลูกรวด และขาดตัวหลักทั้ง Mbappé, Ueda, Santos</p>
+          <div style="font-weight:700;color:#fff;margin-bottom:0.25rem;">AEK Athens พบ Real Madrid — เรอัล มาดริด ชนะ (@ 1.30) / ต่อ -1.0/1.5 (@ 1.70)</div>
+          <p>ชั้นบอลต่างกันมาก มาดริดต้องการ 3 แต้มการันตีหัวตาราง คลาสบอลและสปีดเกมรุกฉีกแนวรับกรีซแน่นอน</p>
         </div>
         <div class="ranking-item">
           <span class="ranking-item-badge badge-rank-2">อันดับ 2</span>
-          <div style="font-weight:700;color:#fff;margin-bottom:0.25rem;">LASK พบ Slovan Bratislava — LASK ชนะ (@ 1.50)</div>
-          <p>LASK เพิ่งบุกชนะ Sporting 3-2 เปิดบ้านรับทีมบ๊วยที่เสียถึง 13 ประตูและยิงได้เพียงลูกเดียวจาก 3 นัด</p>
+          <div style="font-weight:700;color:#fff;margin-bottom:0.25rem;">Slavia Praha พบ Arsenal — อาร์เซน่อล ชนะ (@ 1.48) / ต่อ -1.0 (@ 1.78)</div>
+          <p>ปืนใหญ่เน้นผลการแข่งขัน แนวรับ กาเบรียล & ซาลิบา แกร่งทั่วแผ่น พร้อมบุกเชือดเก็บ 3 แต้ม</p>
         </div>
         <div class="ranking-item">
           <span class="ranking-item-badge badge-rank-3">อันดับ 3</span>
-          <div style="font-weight:700;color:#fff;margin-bottom:0.25rem;">Villarreal พบ PSG — PSG ชนะ (@ 1.65)</div>
-          <p>PSG ชนะรวด 9 นัดในทุกรายการและมีเรตติ้งเฉลี่ยสูงสุด 8.09</p>
+          <div style="font-weight:700;color:#fff;margin-bottom:0.25rem;">Viking FK พบ Sabah FK — ไวกิ้ง เอฟเค ชนะ (@ 1.58)</div>
+          <p>สถิติในบ้านบนหญ้าเทียมชนะ 8 จาก 10 นัด ทีมเยือนจากอาเซอร์ไบจานปรับตัวไม่ทันแน่นอน</p>
         </div>
       `;
     }
@@ -127,40 +131,40 @@
       ouEl.innerHTML = `
         <div class="ranking-item">
           <span class="ranking-item-badge badge-rank-1">อันดับ 1</span>
-          <div style="font-weight:700;color:#fff;margin-bottom:0.25rem;">Galatasaray พบ VfB Stuttgart — Over 2.5 (@ 1.43)</div>
-          <p>6 จาก 7 นัดยุโรปหลังสุดของกาลาตาซารายจบเกิน 2.5 ประตู และทั้งคู่เพิ่งยิง 4 ประตูในเกมลีกสุดสัปดาห์</p>
+          <div style="font-weight:700;color:#fff;margin-bottom:0.25rem;">Borussia Dortmund พบ Real Betis — Over 2.5 (@ 1.62)</div>
+          <p>เสือเหลืองในบ้านเปิดหน้าแลกดุดัน กีราสซี่ ยิงคมกริบ เบติสมี โล เซลโซ่ และ วิตอร์ โรเก้ สวนกลับอันตราย</p>
         </div>
         <div class="ranking-item">
           <span class="ranking-item-badge badge-rank-2">อันดับ 2</span>
-          <div style="font-weight:700;color:#fff;margin-bottom:0.25rem;">Feyenoord พบ Inter — Over 2.5 (@ 1.41)</div>
-          <p>9 จาก 13 นัดหลังสุดของ Feyenoord มีสกอร์รวมเกิน 3.5 ประตู และทั้งคู่ขาดกองหลังตัวหลักหลายราย</p>
+          <div style="font-weight:700;color:#fff;margin-bottom:0.25rem;">RB Leipzig พบ Man City — Over 2.5 (@ 1.55)</div>
+          <p>ไลป์ซิกหลังชนฝาต้องบุกสู้ ฮาแลนด์เยือนถิ่นเก่าพร้อมยิง สถิติพบกัน 4 นัดหลังยิงรวมกัน 18 ประตู</p>
         </div>
         <div class="ranking-item">
           <span class="ranking-item-badge badge-rank-3">อันดับ 3</span>
-          <div style="font-weight:700;color:#fff;margin-bottom:0.25rem;">LASK พบ Slovan Bratislava — Over 2.5 (@ 1.44)</div>
-          <p>ทั้งสองทีมเสียประตูรวมกันถึง 22 ลูกจาก 3 นัดแรกใน UCL</p>
+          <div style="font-weight:700;color:#fff;margin-bottom:0.25rem;">PSV Eindhoven พบ Club Brugge — Over 2.5 (@ 1.55)</div>
+          <p>พีเอสวียิงในบ้านเฉลี่ย 3.4 ลูกต่อเกม สไตล์บอลบุกเพรสซิ่งสูงของ ปีเตอร์ บอสซ์ การันตีสกอร์</p>
         </div>
       `;
     }
 
-    // BTTS
+    // BTTS / Value Special
     const bttsEl = document.getElementById('ranking-btts');
     if (bttsEl) {
       bttsEl.innerHTML = `
         <div class="ranking-item">
           <span class="ranking-item-badge badge-rank-1">อันดับ 1</span>
-          <div style="font-weight:700;color:#fff;margin-bottom:0.25rem;">Barcelona พบ Aston Villa — BTTS Yes (@ 1.50)</div>
-          <p>Barcelona ไม่คลีนชีตใน UCL มา 18 นัดติด (เฉลี่ยประตูรวม 5.06 ลูก/นัด) ขาดกองหลัง 4 ราย ขณะที่วิลลายิงไป 12 ลูกจาก 3 นัดแรก</p>
+          <div style="font-weight:700;color:#fff;margin-bottom:0.25rem;">Fenerbahçe พบ Liverpool — ลิเวอร์พูล ชนะ (@ 1.50) / X2 & Under 3.5 (@ 1.68)</div>
+          <p>มูรินโญ่จะเล่นเกมรัดกุม ขณะที่ สล็อต เน้นโครงสร้างเกมรับที่เหนียวแน่น ลิเวอร์พูลบุกเบียดชนะได้</p>
         </div>
         <div class="ranking-item">
           <span class="ranking-item-badge badge-rank-2">อันดับ 2</span>
-          <div style="font-weight:700;color:#fff;margin-bottom:0.25rem;">Villarreal พบ PSG — BTTS Yes (@ 1.43)</div>
-          <p>12 จาก 14 นัดเหย้าของ Villarreal เกิด BTTS และ PSG เสียประตูเกมเยือน 7 จาก 8 นัดหลังสุดพร้อมขาด Marquinhos กับ Mendes</p>
+          <div style="font-weight:700;color:#fff;margin-bottom:0.25rem;">RC Lens พบ Como 1907 — ล็องส์ ชนะ (@ 1.75)</div>
+          <p>ความเคี่ยวของ วิล สติล และประสบการณ์เวทียุโรปเหนือกว่าน้องใหม่โคโม่ของ เชส ฟาเบรกาส ชัดเจน</p>
         </div>
         <div class="ranking-item">
           <span class="ranking-item-badge badge-rank-3">อันดับ 3</span>
-          <div style="font-weight:700;color:#fff;margin-bottom:0.25rem;">Atlético Madrid พบ Bayern Munich — BTTS Yes (@ 1.36)</div>
-          <p>Atlético ยิงในบ้าน UCL 20 นัดรวด, Bayern ยิงใน UCL 24 นัดรวด และ 9 นัดเยือนหลังสุดใน UCL ของเสือใต้เกิด BTTS 100%</p>
+          <div style="font-weight:700;color:#fff;margin-bottom:0.25rem;">FC Porto พบ SSC Napoli — ปอร์โต้ 1X (@ 1.45) & Under 2.5 (@ 1.80)</div>
+          <p>รังมังกรของปอร์โต้เหนียวแน่นสุดๆ คอนเต้มาเยือนเพื่อรัดกุม เกมตึงเปรี๊ยะชิงจังหวะสกอร์ต่ำ</p>
         </div>
       `;
     }
@@ -239,16 +243,17 @@
       else if (confScore >= 84) confColor = '#00f0ff';
       else confColor = '#f59e0b';
 
-      // Risk badge styling
+            // Risk badge styling (bulletproof safe check)
       let riskHtml = '';
-      if (r.risk.includes('ต่ำ')) {
+      const riskVal = (r.risk || r.riskLevel || '').toString();
+      if (riskVal.includes('ต่ำ')) {
         riskHtml = `
           <div class="summary-risk-badge risk-low">
             <i class="ri-shield-check-fill"></i>
             <span>เสี่ยงต่ำ</span>
           </div>
         `;
-      } else if (r.risk.includes('สูง')) {
+      } else if (riskVal.includes('สูง')) {
         riskHtml = `
           <div class="summary-risk-badge risk-high">
             <i class="ri-alert-fill"></i>
@@ -258,17 +263,19 @@
       } else {
         riskHtml = `
           <div class="summary-risk-badge risk-med">
-            <i class="ri-scales-3-line"></i>
-            <span>ปานกลาง</span>
+            <i class="ri-shield-line"></i>
+            <span>เสี่ยงปานกลาง</span>
           </div>
         `;
       }
-      if (r.risk.includes('BTTS')) {
+
+      if (riskVal.includes('BTTS')) {
         riskHtml += `<div class="risk-sub-note">เฉพาะ BTTS</div>`;
       }
 
-      // Format Picks list into sleek chips
-      const picksHtml = (r.bestPicks || []).map(p => {
+      // Format Picks list into sleek chips (supports bestPicks or marketPicks)
+      const rawPicks = r.bestPicks || r.marketPicks || [];
+      const picksHtml = rawPicks.map(p => {
         const parsed = formatPickItem(p);
         return `
           <div class="summary-pick-chip">
@@ -1983,7 +1990,7 @@ function renderMatchDetail(matchId) {
 
     // Target Kickoff: Wednesday 4 Nov 2026 00:45:00 GMT+7
     // Year 2026, Month 10 (November is 10), Day 4, 00:45:00
-    const targetKickoffGMT7 = new Date(Date.UTC(2026, 10, 3, 17, 45, 0)); // 17:45 UTC = 00:45 GMT+7
+    const targetKickoffGMT7 = new Date(Date.UTC(2026, 10, 4, 17, 45, 0)); // 17:45 UTC = 00:45 GMT+7 (5 Nov) // 17:45 UTC = 00:45 GMT+7
 
     let diffMs;
     if (simulatedHoursRemaining !== null) {
