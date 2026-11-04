@@ -385,7 +385,8 @@
       if (state.activeFilter === '0045' && m.kickoffSlot !== '00:45') return false;
       if (state.activeFilter === '0300' && m.kickoffSlot !== '03:00') return false;
       if (state.activeFilter === 'high-conf' && m.metaAnalysis.confidenceScore < 85) return false;
-      if (state.activeFilter === 'low-risk' && !m.summaryAndRisk.riskLevel.includes('ต่ำ')) return false;
+      const rLvl = (m.summaryAndRisk && (m.summaryAndRisk.riskLevel || m.summaryAndRisk.level || '')) || '';
+      if (state.activeFilter === 'low-risk' && !rLvl.includes('ต่ำ')) return false;
 
       // Filter by search query
       if (state.searchQuery.trim() !== '') {
@@ -425,9 +426,10 @@
       const topPick = m.rankedPicks && m.rankedPicks.length > 0 ? m.rankedPicks[0] : null;
 
       let riskBadgeClass = 'badge-gray';
-      if (m.summaryAndRisk.riskLevel.includes('ต่ำ')) riskBadgeClass = 'badge-green';
-      else if (m.summaryAndRisk.riskLevel.includes('ปานกลาง')) riskBadgeClass = 'badge-gold';
-      else if (m.summaryAndRisk.riskLevel.includes('สูง')) riskBadgeClass = 'badge-red';
+      const mRisk = (m.summaryAndRisk && (m.summaryAndRisk.riskLevel || m.summaryAndRisk.level || '')) || '';
+      if (mRisk.includes('ต่ำ')) riskBadgeClass = 'badge-green';
+      else if (mRisk.includes('ปานกลาง')) riskBadgeClass = 'badge-gold';
+      else if (mRisk.includes('สูง')) riskBadgeClass = 'badge-red';
 
       return `
         <div class="match-card" data-match-id="${m.id}">
@@ -855,9 +857,10 @@ function renderMatchDetail(matchId) {
     const nextId = matchId < 9 ? matchId + 1 : 1;
 
     let riskBadgeClass = 'badge-gray';
-    if (m.summaryAndRisk.riskLevel.includes('ต่ำ')) riskBadgeClass = 'badge-green';
-    else if (m.summaryAndRisk.riskLevel.includes('ปานกลาง')) riskBadgeClass = 'badge-gold';
-    else if (m.summaryAndRisk.riskLevel.includes('สูง')) riskBadgeClass = 'badge-red';
+    const detailRisk = (m.summaryAndRisk && (m.summaryAndRisk.riskLevel || m.summaryAndRisk.level || '')) || '';
+    if (detailRisk.includes('ต่ำ')) riskBadgeClass = 'badge-green';
+    else if (detailRisk.includes('ปานกลาง')) riskBadgeClass = 'badge-gold';
+    else if (detailRisk.includes('สูง')) riskBadgeClass = 'badge-red';
 
     detailView.innerHTML = `
       <div class="container">

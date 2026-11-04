@@ -12,14 +12,14 @@ const UCL_DATA = {
         "time": "00:45",
         "predictedScore": "0-2 / 1-3",
         "marketPicks": [
-          "1. Real Madrid ชนะ (2) (@ 1.30)",
-          "2. Real Madrid -1.0/1.5 (@ 1.70)"
+          "1. Real Madrid ชนะ (2) (@ 1.27)",
+          "2. Real Madrid -1.25 แฮนดิแคป (@ 1.70)"
         ],
         "bestPicks": [
-          "1. Real Madrid ชนะ (2) (@ 1.30)",
-          "2. Real Madrid -1.0/1.5 (@ 1.70)"
+          "1. Real Madrid ชนะ (2) (@ 1.27)",
+          "2. Real Madrid -1.25 แฮนดิแคป (@ 1.70)"
         ],
-        "prob1X2": "12% / 20% / 68%",
+        "prob1X2": "8% / 15% / 77%",
         "confidence": "90 / 100",
         "confidenceScore": 90,
         "risk": "เสี่ยงต่ำ",
@@ -29,16 +29,16 @@ const UCL_DATA = {
         "id": 2,
         "match": "Fenerbahçe vs Liverpool",
         "time": "00:45",
-        "predictedScore": "1-2 / 1-1",
+        "predictedScore": "1-2 / 0-2",
         "marketPicks": [
-          "1. Liverpool ชนะ (2) (@ 1.50)",
-          "2. Double Chance X2 & Under 3.5 (@ 1.68)"
+          "1. Liverpool ชนะ (2) (@ 1.46)",
+          "2. Under 3.5 ประตู (@ 1.65)"
         ],
         "bestPicks": [
-          "1. Liverpool ชนะ (2) (@ 1.50)",
-          "2. Double Chance X2 & Under 3.5 (@ 1.68)"
+          "1. Liverpool ชนะ (2) (@ 1.46)",
+          "2. Under 3.5 ประตู (@ 1.65)"
         ],
-        "prob1X2": "20% / 26% / 54%",
+        "prob1X2": "15% / 21% / 64%",
         "confidence": "87 / 100",
         "confidenceScore": 87,
         "risk": "เสี่ยงปานกลาง",
@@ -50,14 +50,14 @@ const UCL_DATA = {
         "time": "03:00",
         "predictedScore": "2-1 / 3-1",
         "marketPicks": [
-          "1. Dortmund ชนะ (1) (@ 1.72)",
-          "2. Over 2.5 ประตู (@ 1.62)"
+          "1. Dortmund ชนะ (1) (@ 1.75)",
+          "2. Over 2.5 ประตู (@ 1.54)"
         ],
         "bestPicks": [
-          "1. Dortmund ชนะ (1) (@ 1.72)",
-          "2. Over 2.5 ประตู (@ 1.62)"
+          "1. Dortmund ชนะ (1) (@ 1.75)",
+          "2. Over 2.5 ประตู (@ 1.54)"
         ],
-        "prob1X2": "55% / 24% / 21%",
+        "prob1X2": "54% / 24% / 22%",
         "confidence": "86 / 100",
         "confidenceScore": 86,
         "risk": "เสี่ยงปานกลาง",
@@ -69,14 +69,14 @@ const UCL_DATA = {
         "time": "03:00",
         "predictedScore": "1-1 / 2-1",
         "marketPicks": [
-          "1. Double Chance 1X (Porto ชนะหรือเสมอ) (@ 1.45)",
-          "2. Under 2.5 ประตู (@ 1.80)"
+          "1. Porto ชนะ (1) (@ 1.91)",
+          "2. Double Chance 1X (@ 1.28)"
         ],
         "bestPicks": [
-          "1. Double Chance 1X (Porto ชนะหรือเสมอ) (@ 1.45)",
-          "2. Under 2.5 ประตู (@ 1.80)"
+          "1. Porto ชนะ (1) (@ 1.91)",
+          "2. Double Chance 1X (@ 1.28)"
         ],
-        "prob1X2": "38% / 32% / 30%",
+        "prob1X2": "49% / 27% / 24%",
         "confidence": "85 / 100",
         "confidenceScore": 85,
         "risk": "เสี่ยงปานกลาง",
@@ -86,16 +86,16 @@ const UCL_DATA = {
         "id": 5,
         "match": "PSV Eindhoven vs Club Brugge",
         "time": "03:00",
-        "predictedScore": "3-1 / 2-1",
+        "predictedScore": "2-1 / 3-1",
         "marketPicks": [
-          "1. PSV Eindhoven ชนะ (1) (@ 1.62)",
-          "2. Over 2.5 ประตู (@ 1.55)"
+          "1. PSV ชนะ (1) (@ 1.97)",
+          "2. Over 2.5 ประตู (@ 1.58)"
         ],
         "bestPicks": [
-          "1. PSV Eindhoven ชนะ (1) (@ 1.62)",
-          "2. Over 2.5 ประตู (@ 1.55)"
+          "1. PSV ชนะ (1) (@ 1.97)",
+          "2. Over 2.5 ประตู (@ 1.58)"
         ],
-        "prob1X2": "58% / 23% / 19%",
+        "prob1X2": "48% / 26% / 26%",
         "confidence": "87 / 100",
         "confidenceScore": 87,
         "risk": "เสี่ยงต่ำ",
@@ -107,14 +107,14 @@ const UCL_DATA = {
         "time": "03:00",
         "predictedScore": "1-2 / 1-3",
         "marketPicks": [
-          "1. Man City ชนะ (2) (@ 1.65)",
+          "1. Man City ชนะ (2) (@ 1.58)",
           "2. Over 2.5 ประตู (@ 1.55)"
         ],
         "bestPicks": [
-          "1. Man City ชนะ (2) (@ 1.65)",
+          "1. Man City ชนะ (2) (@ 1.58)",
           "2. Over 2.5 ประตู (@ 1.55)"
         ],
-        "prob1X2": "22% / 25% / 53%",
+        "prob1X2": "17% / 22% / 61%",
         "confidence": "86 / 100",
         "confidenceScore": 86,
         "risk": "เสี่ยงปานกลาง",
@@ -124,16 +124,16 @@ const UCL_DATA = {
         "id": 7,
         "match": "Lens vs Como",
         "time": "03:00",
-        "predictedScore": "1-2 / 2-1",
+        "predictedScore": "1-2 / 0-1",
         "marketPicks": [
-          "1. Como ชนะหรือเสมอ (X2) (@ 1.52)",
-          "2. Over 2.5 ประตู (@ 1.70)"
+          "1. Como ชนะ (2) (@ 2.07)",
+          "2. Como ชนะหรือเสมอ (X2) (@ 1.34)"
         ],
         "bestPicks": [
-          "1. Como ชนะหรือเสมอ (X2) (@ 1.52)",
-          "2. Over 2.5 ประตู (@ 1.70)"
+          "1. Como ชนะ (2) (@ 2.07)",
+          "2. Como ชนะหรือเสมอ (X2) (@ 1.34)"
         ],
-        "prob1X2": "40% / 28% / 32%",
+        "prob1X2": "28% / 26% / 46%",
         "confidence": "85 / 100",
         "confidenceScore": 85,
         "risk": "เสี่ยงปานกลาง",
@@ -145,14 +145,14 @@ const UCL_DATA = {
         "time": "03:00",
         "predictedScore": "0-2 / 0-3",
         "marketPicks": [
-          "1. Arsenal ชนะ (2) (@ 1.48)",
-          "2. Arsenal -1.0 แฮนดิแคป (@ 1.78)"
+          "1. Arsenal ชนะ (2) (@ 1.27)",
+          "2. Arsenal -1.25 แฮนดิแคป (@ 1.72)"
         ],
         "bestPicks": [
-          "1. Arsenal ชนะ (2) (@ 1.48)",
-          "2. Arsenal -1.0 แฮนดิแคป (@ 1.78)"
+          "1. Arsenal ชนะ (2) (@ 1.27)",
+          "2. Arsenal -1.25 แฮนดิแคป (@ 1.72)"
         ],
-        "prob1X2": "15% / 25% / 60%",
+        "prob1X2": "9% / 16% / 75%",
         "confidence": "89 / 100",
         "confidenceScore": 89,
         "risk": "เสี่ยงต่ำ",
@@ -162,16 +162,16 @@ const UCL_DATA = {
         "id": 9,
         "match": "Viking vs Sabah",
         "time": "03:00",
-        "predictedScore": "2-1 / 3-1",
+        "predictedScore": "2-0 / 3-1",
         "marketPicks": [
-          "1. Viking FK ชนะ (1) (@ 1.62)",
-          "2. Over 2.5 ประตู (@ 1.65)"
+          "1. Viking ชนะ (1) (@ 1.45)",
+          "2. Viking -1.0 แฮนดิแคป (@ 1.75)"
         ],
         "bestPicks": [
-          "1. Viking FK ชนะ (1) (@ 1.62)",
-          "2. Over 2.5 ประตู (@ 1.65)"
+          "1. Viking ชนะ (1) (@ 1.45)",
+          "2. Viking -1.0 แฮนดิแคป (@ 1.75)"
         ],
-        "prob1X2": "58% / 22% / 20%",
+        "prob1X2": "65% / 21% / 14%",
         "confidence": "86 / 100",
         "confidenceScore": 86,
         "risk": "เสี่ยงปานกลาง",
@@ -193,7 +193,8 @@ const UCL_DATA = {
         "id": "aek",
         "logo": "assets/logos/aek.png",
         "country": "กรีซ",
-        "league": "ซูเปอร์ลีก กรีซ"
+        "league": "ซูเปอร์ลีก กรีซ",
+        "manager": "Marko Nikolić (มาร์โก นิโคลิช)"
       },
       "awayTeam": {
         "name": "Real Madrid",
@@ -202,7 +203,8 @@ const UCL_DATA = {
         "id": "realmadrid",
         "logo": "assets/logos/realmadrid.png",
         "country": "สเปน",
-        "league": "ลาลีกา สเปน"
+        "league": "ลาลีกา สเปน",
+        "manager": "José Mourinho (โชเซ่ มูรินโญ่)"
       },
       "tournamentRound": "League Phase (Matchday 4 of 8)",
       "matchDateTime": "วันพฤหัสบดีที่ 5 พฤศจิกายน 2026 • 00:45 น.",
@@ -240,7 +242,7 @@ const UCL_DATA = {
       },
       "squadRoster": {
         "home": {
-          "coach": "Matías Almeyda (มาติอัส อัลเมย์ด้า)",
+          "coach": "Marko Nikolić (มาร์โก นิโคลิช)",
           "coachStatus": "คุมทัพวางแท็กติกเพรสซิ่งแดนบน",
           "keyPlayers": [
             {
@@ -293,10 +295,36 @@ const UCL_DATA = {
               "badge": "yellow",
               "detail": "มีอาการบาดเจ็บรบกวนเล็กน้อย"
             }
+          ],
+          "injuries": [
+            {
+              "name": "Thomas Strakosha",
+              "pos": "GK",
+              "status": "บาดเจ็บ (Out)",
+              "desc": "มีอาการบาดเจ็บกล้ามเนื้อ พลาดลงสนาม"
+            },
+            {
+              "name": "Harold Moukoudi",
+              "pos": "DF",
+              "status": "บาดเจ็บ (Out)",
+              "desc": "บาดเจ็บข้อเท้า"
+            },
+            {
+              "name": "Petros Mantalos",
+              "pos": "MF",
+              "status": "บาดเจ็บ (Out)",
+              "desc": "กล้ามเนื้อฉีกขาด"
+            },
+            {
+              "name": "Jens Jønsson",
+              "pos": "MF",
+              "status": "รอเช็กฟิต (Doubtful)",
+              "desc": "เพิ่งกลับมาซ้อม"
+            }
           ]
         },
         "away": {
-          "coach": "Carlo Ancelotti (คาร์โล อันเชล็อตติ)",
+          "coach": "José Mourinho (โชเซ่ มูรินโญ่)",
           "coachStatus": "กุนซือมากประสบการณ์นำทัพล่าแชมป์",
           "keyPlayers": [
             {
@@ -365,6 +393,26 @@ const UCL_DATA = {
               "badge": "gray",
               "detail": "โรเตชันพักผ่อนกล้ามเนื้อ"
             }
+          ],
+          "injuries": [
+            {
+              "name": "David Alaba",
+              "pos": "DF",
+              "status": "พักยาว (Out)",
+              "desc": "ฟื้นฟูหลังผ่าตัดเอ็นเข่า"
+            },
+            {
+              "name": "Dani Carvajal",
+              "pos": "DF",
+              "status": "พักยาว (Out)",
+              "desc": "ผ่าตัดเอ็นไขว้หน้าเข่า ACL"
+            },
+            {
+              "name": "Thibaut Courtois",
+              "pos": "GK",
+              "status": "รอเช็กฟิต (Doubtful)",
+              "desc": "ปัญหากล้ามเนื้อต้นขา"
+            }
           ]
         }
       },
@@ -372,21 +420,22 @@ const UCL_DATA = {
         "raw": "AEK เล่นในบ้านจะเปิดเกมรุกและวิ่งเพรสซิ่งตั้งแต่แดนบน แต่การเปิดพื้นที่ด้านหลังจะกลายเป็นช่องโหว่ให้ เอ็มบัปเป้ และ วินิซิอุส สปรินต์ฉีกหนีแนวรับ จุดตัดสินเกมคือความสามารถของแนวรุก Madrid ในการเจาะแนวรับเจ้าถิ่นที่เล่นอย่างรัดกุม"
       },
       "marketOdds": {
-        "odds1X2": "AEK 9.50 / เสมอ 5.60 / Madrid 1.30",
-        "oddsOverUnder": "Over 2.5 (@ 1.60) / Under 2.5 (@ 2.30)",
-        "oddsBTTS": "Yes (@ 1.85) / No (@ 1.95)",
-        "valueAssessment": "เรอัล มาดริด ต่อ 1.30 ถือเป็นราคาที่ปลอดภัยสูง เหมาะสำหรับการต่อแฮนดิแคป -1.0/1.5 ที่ราคา 1.70",
-        "raw": "เรอัล มาดริด บุกมาต่อขาดลอยที่ 1.30 อัตราเสมอ 5.60 เออีเค ชนะ 9.50 แฮนดิแคป มาดริด -1.0/1.5 อยู่ที่ 1.70"
+        "homeWin": 10.5,
+        "draw": 6.2,
+        "awayWin": 1.27,
+        "mainPick": "1. Real Madrid ชนะ (2) (@ 1.27)",
+        "valuePick": "2. Real Madrid -1.25 แฮนดิแคป (@ 1.70)"
       },
       "winProbability": {
-        "home": 12,
-        "draw": 20,
-        "away": 68,
-        "raw": "โอกาส เรอัล มาดริด บุกคว้าชัย 68% เสมอ 20% และ เออีเค พลิกล็อกชนะ 12%"
+        "raw": "8% / 15% / 77%",
+        "home": 8,
+        "draw": 15,
+        "away": 77
       },
       "overUnderBttsAnalysis": "แนวรุกมาดริดคมกริบแต่สถิติเยือนกรีซมักยิงไม่ขาด การลุ้นสกอร์ Over 2.5 หรือ มาดริดยิงเกิน 1.5 ลูกมีความเป็นไปได้สูง",
       "scorePrediction": {
-        "raw": "สกอร์คาดการณ์: AEK Athens 0-2 หรือ 1-3 Real Madrid คุณภาพแนวรุกราชันชุดขาวจะตัดสินเกมได้เด็ดขาด"
+        "predicted": "0-2 / 1-3",
+        "mostLikely": "0-2"
       },
       "bestPicks": {
         "raw": "ทีเด็ดคัดกรอง: 1. Real Madrid ชนะ (2) (@ 1.30) | 2. Real Madrid -1.0/1.5 แฮนดิแคป (@ 1.70)"
@@ -448,7 +497,8 @@ const UCL_DATA = {
         "id": "fenerbahce",
         "logo": "assets/logos/fenerbahce.png",
         "country": "ตุรกี",
-        "league": "ซูเปอร์ลีก ตุรกี"
+        "league": "ซูเปอร์ลีก ตุรกี",
+        "manager": "Dirk Kuyt (เดิร์ก เคาท์ - รักษาการ)"
       },
       "awayTeam": {
         "name": "Liverpool",
@@ -457,7 +507,8 @@ const UCL_DATA = {
         "id": "liverpool",
         "logo": "assets/logos/liverpool.png",
         "country": "อังกฤษ",
-        "league": "พรีเมียร์ลีก อังกฤษ"
+        "league": "พรีเมียร์ลีก อังกฤษ",
+        "manager": "Andoni Iraola (อันโดนี่ อิราโอล่า)"
       },
       "tournamentRound": "League Phase (Matchday 4 of 8)",
       "matchDateTime": "วันพฤหัสบดีที่ 5 พฤศจิกายน 2026 • 00:45 น.",
@@ -477,7 +528,7 @@ const UCL_DATA = {
         "away": "อันดับลีกเฟส UCL: 9 แต้มเต็ม (แข่ง 3 ชนะ 3 แพ้ 0 ฟอร์ม WWW ชนะรวด)"
       },
       "scheduleAndRest": {
-        "raw": "เฟเนร์บาห์เช่ได้พัก 4 วันในบ้าน ขณะที่ลิเวอร์พูลเดินทางไกลมายังตุรกีหลังเกมหนักพรีเมียร์ลีก"
+        "raw": "เวลาพักของ Fenerbahçe และ Liverpool ก่อนเกมมีความต่างกันเพียงประมาณ 1 วันเท่านั้น ไม่ใช่ความต่างหลายวันตามข่าวลือ"
       },
       "pitchAndWeather": {
         "raw": "สนามซูครู ซาราโคกลู บรรยากาศกดดันสูง บอลวิ่งเร็ว เข้าทางเกมสวนกลับของเจ้าถิ่นและการเคาะบอลแม่นยำของลิเวอร์พูล"
@@ -495,40 +546,28 @@ const UCL_DATA = {
       },
       "squadRoster": {
         "home": {
-          "coach": "José Mourinho (โจเซ่ มูรินโญ่)",
-          "coachStatus": "กุนซือจอมแท็กติกวางหมากรัดกุม",
+          "coach": "Dirk Kuyt (เดิร์ก เคาท์ - รักษาการ)",
+          "coachStatus": "กุนซือรักษาการ (Interim Manager - Dirk Kuyt)",
           "keyPlayers": [
             {
-              "name": "Romelu Lukaku",
-              "pos": "FW",
-              "role": "กองหน้าร่างยักษ์ตัวเป้า",
-              "stat": "พักบอลและชงบอลในเขตโทษ",
-              "value": "28M€",
-              "isStar": true
-            },
-            {
-              "name": "N'Golo Kanté",
-              "pos": "MF",
-              "role": "มิดฟิลด์ตัวตัดเกมจอมเก๋า",
-              "stat": "แย่งบอลสำเร็จเฉลี่ย 4.2 ครั้ง/เกม",
-              "value": "9M€",
-              "isStar": true
-            },
-            {
-              "name": "Mattéo Guendouzi",
-              "pos": "MF",
-              "role": "ห้องเครื่องพลังไดนาโม",
-              "stat": "ผ่านบอลแม่นยำ 88%",
-              "value": "25M€",
-              "isStar": false
-            },
-            {
               "name": "Ederson",
+              "pos": "GK",
+              "desc": "ผู้รักษาประตูมือ 1 ประจำทีม เซฟจังหวะสำคัญ (GK ไม่ใช่มิดฟิลด์)"
+            },
+            {
+              "name": "Edin Džeko",
+              "pos": "FW",
+              "desc": "ศูนย์หน้าตัวเป้าจอมเก๋า"
+            },
+            {
+              "name": "Dušan Tadić",
               "pos": "MF",
-              "role": "มิดฟิลด์บราซิลเลียนคุมจังหวะ",
-              "stat": "ตัดเกมและออกบอลยาวแม่นยำ",
-              "value": "30M€",
-              "isStar": false
+              "desc": "เพลย์เมกเกอร์ตัวสร้างสรรค์เกม"
+            },
+            {
+              "name": "Fred",
+              "pos": "MF",
+              "desc": "มิดฟิลด์ตัดเกมและขับเคลื่อนแดนกลาง"
             }
           ],
           "injuredPlayers": [
@@ -556,11 +595,31 @@ const UCL_DATA = {
               "badge": "red",
               "detail": "สภาพความฟิตไม่สมบูรณ์"
             }
+          ],
+          "injuries": [
+            {
+              "name": "Mert Hakan Yandaş",
+              "pos": "MF",
+              "status": "บาดเจ็บ (Out)",
+              "desc": "บาดเจ็บกล้ามเนื้อ"
+            },
+            {
+              "name": "Jayden Oosterwolde",
+              "pos": "DF",
+              "status": "พักยาว (Out)",
+              "desc": "ผ่าตัดเอ็นไขว้หน้าเข่า ACL"
+            },
+            {
+              "name": "Cengiz Ünder",
+              "pos": "FW",
+              "status": "รอเช็กฟิต (Doubtful)",
+              "desc": "มีอาการตึงกล้ามเนื้อ"
+            }
           ]
         },
         "away": {
-          "coach": "Arne Slot (อาร์เน่ สล็อต)",
-          "coachStatus": "นำทัพชนะรวดในยุโรป 3 นัดติด",
+          "coach": "Andoni Iraola (อันโดนี่ อิราโอล่า)",
+          "coachStatus": "กุนซือหลัก (Head Coach - Andoni Iraola)",
           "keyPlayers": [
             {
               "name": "Florian Wirtz",
@@ -636,6 +695,26 @@ const UCL_DATA = {
               "badge": "red",
               "detail": "มีปัญหาความฟิตกล้ามเนื้อ"
             }
+          ],
+          "injuries": [
+            {
+              "name": "Alisson Becker",
+              "pos": "GK",
+              "status": "บาดเจ็บ (Out)",
+              "desc": "กล้ามเนื้อแฮมสตริงต้นขาฉีก"
+            },
+            {
+              "name": "Harvey Elliott",
+              "pos": "MF",
+              "status": "บาดเจ็บ (Out)",
+              "desc": "กระดูกเท้าแตก อยู่ในช่วงฟื้นฟู"
+            },
+            {
+              "name": "Federico Chiesa",
+              "pos": "FW",
+              "status": "รอเช็กฟิต (Doubtful)",
+              "desc": "รอประเมินความฟิตก่อนแข่ง"
+            }
           ]
         }
       },
@@ -643,21 +722,22 @@ const UCL_DATA = {
         "raw": "จุดตัดสินเกมคือ ลิเวอร์พูล ต้องรับมือแรงกดดันจากแฟนบอลเจ้าบ้านและเกมเข้าปะทะดุดันของ ก็องเต้ และ ลูกากู ให้ได้ สล็อต จะสั่งให้ เวียร์ตซ์ และ แม็ค อัลลิสเตอร์ ดึงจังหวะช้าลง ไม่เปิดแลก เพื่อหาจังหวะแทงทะลุช่องให้ อิซัค เล่นงานแนวรับเฟเนร์บาห์เช่"
       },
       "marketOdds": {
-        "odds1X2": "Fenerbahçe 5.20 / เสมอ 4.20 / Liverpool 1.50",
-        "oddsOverUnder": "Over 2.5 (@ 1.70) / Under 2.5 (@ 2.15)",
-        "oddsBTTS": "Yes (@ 1.75) / No (@ 2.05)",
-        "valueAssessment": "ลิเวอร์พูล ชนะที่ราคา 1.50 ถือว่ามีมูลค่า แต่การเล่นพ่วงดับเบิ้ลชานซ์ X2 ร่วมกับ Under 3.5 ช่วยลดความเสี่ยงจากสถิติเยือนตุรกีได้ดีเยี่ยม",
-        "raw": "ราคาเปิด ลิเวอร์พูล ต่อ 0.5/1 ลูก ที่ 1.50 เสมอ 4.20 เฟเนร์บาห์เช่ ชนะ 5.20"
+        "homeWin": 6.2,
+        "draw": 4.6,
+        "awayWin": 1.46,
+        "mainPick": "1. Liverpool ชนะ (2) (@ 1.46)",
+        "valuePick": "2. Under 3.5 ประตู (@ 1.65)"
       },
       "winProbability": {
-        "home": 20,
-        "draw": 26,
-        "away": 54,
-        "raw": "โอกาส ลิเวอร์พูล ชนะ 54% เสมอ 26% และ เฟเนร์บาห์เช่ ชนะ 20%"
+        "raw": "15% / 21% / 64%",
+        "home": 15,
+        "draw": 21,
+        "away": 64
       },
       "overUnderBttsAnalysis": "สถิติลิเวอร์พูลเยือนตุรกี 3 นัดหลังแพ้ 0-1 ทั้งหมด บ่งบอกว่าเจ้าถิ่นเน้นรับเหนียวแน่น โอกาสเกิดสกอร์ต่ำ Under 3.0 มีสูง",
       "scorePrediction": {
-        "raw": "สกอร์คาดการณ์: Fenerbahçe 1-2 หรือ 1-1 Liverpool คุณภาพของเวียร์ตซ์และอิซัคจะพาทีมเบียดคว้าชัยได้"
+        "predicted": "1-2 / 0-2",
+        "mostLikely": "1-2"
       },
       "bestPicks": {
         "raw": "ทีเด็ดคัดกรอง: 1. Liverpool ชนะ (2) (@ 1.50) | 2. Double Chance X2 & Under 3.5 (@ 1.68)"
@@ -719,7 +799,8 @@ const UCL_DATA = {
         "id": "dortmund",
         "logo": "assets/logos/dortmund.png",
         "country": "เยอรมนี",
-        "league": "บุนเดสลีกา เยอรมนี"
+        "league": "บุนเดสลีกา เยอรมนี",
+        "manager": "Niko Kovač (นิโก้ โควัช)"
       },
       "awayTeam": {
         "name": "Real Betis",
@@ -728,7 +809,8 @@ const UCL_DATA = {
         "id": "betis",
         "logo": "assets/logos/betis.png",
         "country": "สเปน",
-        "league": "ลาลีกา สเปน"
+        "league": "ลาลีกา สเปน",
+        "manager": "Manuel Pellegrini (มานูเอล เปเยกรินี่)"
       },
       "tournamentRound": "League Phase (Matchday 4 of 8)",
       "matchDateTime": "วันพฤหัสบดีที่ 5 พฤศจิกายน 2026 • 03:00 น.",
@@ -766,7 +848,7 @@ const UCL_DATA = {
       },
       "squadRoster": {
         "home": {
-          "coach": "Nuri Şahin (นูริ ซาฮิน)",
+          "coach": "Niko Kovač (นิโก้ โควัช)",
           "coachStatus": "เน้นเกมรุกดุดันในรังเหย้า",
           "keyPlayers": [
             {
@@ -874,21 +956,22 @@ const UCL_DATA = {
         "raw": "จุดตัดสินเกมคือ การดวลกันระหว่างเกมรุกของ Betis ที่กำลังมั่นใจ กับการเล่นในบ้านของ Dortmund ที่มีสถิติรับมือทีมสเปนยอดเยี่ยม ทั้งสองทีมมีสไตล์เกมรุกเปิดหน้าแลก มีโอกาสเกิดสกอร์สูงอย่างยิ่ง"
       },
       "marketOdds": {
-        "odds1X2": "Dortmund 1.72 / เสมอ 3.90 / Betis 4.50",
-        "oddsOverUnder": "Over 2.5 (@ 1.62) / Under 2.5 (@ 2.25)",
-        "oddsBTTS": "Yes (@ 1.55) / No (@ 2.35)",
-        "valueAssessment": "ดอร์ทมุนด์ในรังซิกนัล อิดูน่า พาร์ค มีความได้เปรียบสูงมาก และอัตราสกอร์สูง Over 2.5 ที่ 1.62 สอดคล้องกับสถิติยิงแหลกของทั้งสองฝั่ง",
-        "raw": "ดอร์ทมุนด์ ต่อ 0.5/1 ลูก ที่ 1.72 เสมอ 3.90 เบติส ชนะ 4.50 ราคา Over 2.5 เปิดที่ 1.62"
+        "homeWin": 1.75,
+        "draw": 3.9,
+        "awayWin": 4.3,
+        "mainPick": "1. Dortmund ชนะ (1) (@ 1.75)",
+        "valuePick": "2. Over 2.5 ประตู (@ 1.54)"
       },
       "winProbability": {
-        "home": 55,
+        "raw": "54% / 24% / 22%",
+        "home": 54,
         "draw": 24,
-        "away": 21,
-        "raw": "โอกาส ดอร์ทมุนด์ ชนะ 55% เสมอ 24% และ เบติส ชนะ 21%"
+        "away": 22
       },
       "overUnderBttsAnalysis": "เบติสยิงและเสียประตูใน UCL ทุกนัด (ชนะ 3-2, 3-2, 1-0) ส่วนเสือเหลืองในบ้านเปิดหน้าบุกแหลก โอกาสสกอร์รวมเกิน 2.5 สูงลิ่ว",
       "scorePrediction": {
-        "raw": "สกอร์คาดการณ์: Borussia Dortmund 2-1 หรือ 3-1 Real Betis เสียงเชียร์ Yellow Wall จะนำชัยให้เสือเหลือง"
+        "predicted": "2-1 / 3-1",
+        "mostLikely": "2-1"
       },
       "bestPicks": {
         "raw": "ทีเด็ดคัดกรอง: 1. Dortmund ชนะ (1) (@ 1.72) | 2. สกอร์รวม Over 2.5 ประตู (@ 1.62)"
@@ -950,7 +1033,8 @@ const UCL_DATA = {
         "id": "porto",
         "logo": "assets/logos/porto.png",
         "country": "โปรตุเกส",
-        "league": "ปรีไมราลีกา โปรตุเกส"
+        "league": "ปรีไมราลีกา โปรตุเกส",
+        "manager": "Francesco Farioli (ฟรานเชสโก้ ฟาริโอลี่)"
       },
       "awayTeam": {
         "name": "Napoli",
@@ -959,7 +1043,8 @@ const UCL_DATA = {
         "id": "napoli",
         "logo": "assets/logos/napoli.png",
         "country": "อิตาลี",
-        "league": "เซเรียอา อิตาลี"
+        "league": "เซเรียอา อิตาลี",
+        "manager": "Massimiliano Allegri (มัสซิมิเลียโน่ อัลเลกรี)"
       },
       "tournamentRound": "League Phase (Matchday 4 of 8)",
       "matchDateTime": "วันพฤหัสบดีที่ 5 พฤศจิกายน 2026 • 03:00 น.",
@@ -997,7 +1082,7 @@ const UCL_DATA = {
       },
       "squadRoster": {
         "home": {
-          "coach": "Vítor Bruno (วิตอร์ บรูโน่)",
+          "coach": "Francesco Farioli (ฟรานเชสโก้ ฟาริโอลี่)",
           "coachStatus": "จัดทัพสู้ตายเพื่อแต้มแรกใน UCL",
           "keyPlayers": [
             {
@@ -1053,7 +1138,7 @@ const UCL_DATA = {
           ]
         },
         "away": {
-          "coach": "Antonio Conte (อันโตนิโอ คอนเต้)",
+          "coach": "Massimiliano Allegri (มัสซิมิเลียโน่ อัลเลกรี)",
           "coachStatus": "กุนซือจอมเขี้ยววางแท็กติกรับมือปัญหาตัวเจ็บ",
           "keyPlayers": [
             {
@@ -1137,21 +1222,22 @@ const UCL_DATA = {
         "raw": "จุดตัดสินเกมคือ ความพร้อมของ Napoli ในแดนกลาง โดยเฉพาะการมีหรือไม่มี De Bruyne หากเดอ บรอยน์ ไม่ฟิตเต็มร้อย แดนกลางนาโปลีจะมีปัญหาการสร้างสรรค์เกมทันที ขณะที่ปอร์โต้ในบ้านสถิติรับมือทีมอิตาลีแน่นมาก"
       },
       "marketOdds": {
-        "odds1X2": "Porto 2.50 / เสมอ 3.30 / Napoli 2.80",
-        "oddsOverUnder": "Over 2.5 (@ 2.05) / Under 2.5 (@ 1.80)",
-        "oddsBTTS": "Yes (@ 1.80) / No (@ 1.95)",
-        "valueAssessment": "ปอร์โต้ ชนะหรือเสมอ (1X) ที่ราคา 1.45 มีมูลค่าสูงมากเมื่อเทียบกับปัญหานักเตะบาดเจ็บระนาวของนาโปลีและสถิติเยือนยุโรปที่ไม่ชนะใครมา 7 นัดติด",
-        "raw": "ราคาเปิด เสมอไหนเสมอกัน ปอร์โต้ 2.50 เสมอ 3.30 นาโปลี 2.80 ราคา Under 2.5 อยู่ที่ 1.80"
+        "homeWin": 1.91,
+        "draw": 3.5,
+        "awayWin": 3.9,
+        "mainPick": "1. Porto ชนะ (1) (@ 1.91)",
+        "valuePick": "2. Double Chance 1X (@ 1.28)"
       },
       "winProbability": {
-        "home": 38,
-        "draw": 32,
-        "away": 30,
-        "raw": "โอกาส ปอร์โต้ ชนะ 38% เสมอ 32% และ นาโปลี ชนะ 30%"
+        "raw": "49% / 27% / 24%",
+        "home": 49,
+        "draw": 27,
+        "away": 24
       },
       "overUnderBttsAnalysis": "เกมชิงจังหวะระหว่างสองทีมเขี้ยว นาโปลีขาดตัวรุกหลายรายเน้นรับแน่น ส่วนปอร์โต้ไม่กล้าเปิดหน้าแลก มีโอกาสจบสกอร์ต่ำ Under 2.5 สูง",
       "scorePrediction": {
-        "raw": "สกอร์คาดการณ์: FC Porto 1-1 หรือ 2-1 SSC Napoli ปอร์โต้มีโอกาสมีแต้มแรกในรังมังกร"
+        "predicted": "1-1 / 2-1",
+        "mostLikely": "1-1"
       },
       "bestPicks": {
         "raw": "ทีเด็ดคัดกรอง: 1. Double Chance 1X (Porto ชนะหรือเสมอ) (@ 1.45) | 2. สกอร์รวม Under 2.5 ประตู (@ 1.80)"
@@ -1213,7 +1299,8 @@ const UCL_DATA = {
         "id": "psv",
         "logo": "assets/logos/psv.png",
         "country": "เนเธอร์แลนด์",
-        "league": "เอเรดิวิซี่ เนเธอร์แลนด์"
+        "league": "เอเรดิวิซี่ เนเธอร์แลนด์",
+        "manager": "Peter Bosz (ปีเตอร์ บอสซ์)"
       },
       "awayTeam": {
         "name": "Club Brugge",
@@ -1222,7 +1309,8 @@ const UCL_DATA = {
         "id": "brugge",
         "logo": "assets/logos/brugge.png",
         "country": "เบลเยียม",
-        "league": "โปรลีก เบลเยียม"
+        "league": "โปรลีก เบลเยียม",
+        "manager": "Ivan Leko (อิวาน เลโก้)"
       },
       "tournamentRound": "League Phase (Matchday 4 of 8)",
       "matchDateTime": "วันพฤหัสบดีที่ 5 พฤศจิกายน 2026 • 03:00 น.",
@@ -1324,7 +1412,7 @@ const UCL_DATA = {
           ]
         },
         "away": {
-          "coach": "Nicky Hayen (นิคกี้ ฮาเยน)",
+          "coach": "Ivan Leko (อิวาน เลโก้)",
           "coachStatus": "คุมทีมทำผลงานเซอร์ไพรส์คว้า 6 แต้ม",
           "keyPlayers": [
             {
@@ -1376,21 +1464,22 @@ const UCL_DATA = {
         "raw": "จุดตัดสินเกมคือ การรับมือเกมรุก PSV ของแนวรับ Club Brugge ที่ขาด Ordóñez เจ้าถิ่นจะเปิดเกมบุกใส่ทันทีโดยอาศัยลูกเปิดของ เปริซิช และการสอดของ กุส ทิล"
       },
       "marketOdds": {
-        "odds1X2": "PSV 1.62 / เสมอ 4.00 / Brugge 5.20",
-        "oddsOverUnder": "Over 2.5 (@ 1.55) / Under 2.5 (@ 2.40)",
-        "oddsBTTS": "Yes (@ 1.60) / No (@ 2.25)",
-        "valueAssessment": "พีเอสวี มีความเฉียบขาดในบ้านสูง สถิติยิงในบ้าน 21 นัดติดเป็นหลักฐาน ราคา 1.62 ถือว่าคุ้มค่าน่าลงทุน",
-        "raw": "พีเอสวี ต่อ 0.5/1 ลูก ที่ 1.62 เสมอ 4.00 คลับ บรูช ชนะ 5.20 ราคา Over 2.5 เปิดที่ 1.55"
+        "homeWin": 1.97,
+        "draw": 3.75,
+        "awayWin": 3.55,
+        "mainPick": "1. PSV ชนะ (1) (@ 1.97)",
+        "valuePick": "2. Over 2.5 ประตู (@ 1.58)"
       },
       "winProbability": {
-        "home": 58,
-        "draw": 23,
-        "away": 19,
-        "raw": "โอกาส พีเอสวี ชนะ 58% เสมอ 23% และ คลับ บรูช ชนะ 19%"
+        "raw": "48% / 26% / 26%",
+        "home": 48,
+        "draw": 26,
+        "away": 26
       },
       "overUnderBttsAnalysis": "พีเอสวียิงในบ้านยุโรป 21 นัดติด บรูชเองก็ยิงได้ 2 จาก 3 นัด สกอร์สูง Over 2.5 สดใสมาก",
       "scorePrediction": {
-        "raw": "สกอร์คาดการณ์: PSV Eindhoven 3-1 หรือ 2-1 Club Brugge เกมรุกเจ้าถิ่นจะบดคว้าชัยได้ตามเป้า"
+        "predicted": "2-1 / 3-1",
+        "mostLikely": "2-1"
       },
       "bestPicks": {
         "raw": "ทีเด็ดคัดกรอง: 1. PSV Eindhoven ชนะ (1) (@ 1.62) | 2. สกอร์รวม Over 2.5 ประตู (@ 1.55)"
@@ -1452,7 +1541,8 @@ const UCL_DATA = {
         "id": "leipzig",
         "logo": "assets/logos/leipzig.png",
         "country": "เยอรมนี",
-        "league": "บุนเดสลีกา เยอรมนี"
+        "league": "บุนเดสลีกา เยอรมนี",
+        "manager": "Martín Demichelis (มาร์ติน เดมิเคลิส)"
       },
       "awayTeam": {
         "name": "Manchester City",
@@ -1461,7 +1551,8 @@ const UCL_DATA = {
         "id": "mancity",
         "logo": "assets/logos/mancity.png",
         "country": "อังกฤษ",
-        "league": "พรีเมียร์ลีก อังกฤษ"
+        "league": "พรีเมียร์ลีก อังกฤษ",
+        "manager": "Enzo Maresca (เอนโซ มาเรสก้า)"
       },
       "tournamentRound": "League Phase (Matchday 4 of 8)",
       "matchDateTime": "วันพฤหัสบดีที่ 5 พฤศจิกายน 2026 • 03:00 น.",
@@ -1499,7 +1590,7 @@ const UCL_DATA = {
       },
       "squadRoster": {
         "home": {
-          "coach": "Marco Rose (มาร์โค โรเซ่อ)",
+          "coach": "Martín Demichelis (มาร์ติน เดมิเคลิส)",
           "coachStatus": "วางแท็กติกเน้นสวนกลับเร็วสู้ซิตี้",
           "keyPlayers": [
             {
@@ -1555,7 +1646,7 @@ const UCL_DATA = {
           ]
         },
         "away": {
-          "coach": "Pep Guardiola (เป๊ป กวาร์ดิโอล่า)",
+          "coach": "Enzo Maresca (เอนโซ มาเรสก้า)",
           "coachStatus": "คุมทัพเรือใบสีฟ้าล่าชัยชนะต่อเนื่อง",
           "keyPlayers": [
             {
@@ -1600,6 +1691,32 @@ const UCL_DATA = {
               "badge": "red",
               "detail": "มีอาการบาดเจ็บกล้ามเนื้อ พลาดลงสนาม"
             }
+          ],
+          "injuries": [
+            {
+              "name": "Rodri",
+              "pos": "MF",
+              "status": "พักยาวทั้งฤดูกาล (Out)",
+              "desc": "ผ่าตัดเอ็นไขว้หน้าเข่า (ACL)"
+            },
+            {
+              "name": "Nathan Aké",
+              "pos": "DF",
+              "status": "รอเช็กฟิต / Out (Doubtful)",
+              "desc": "สถานะไม่ตรงกัน มีรายงานทั้ง Out และ Doubtful ต้องรอเช็กความฟิตขั้นสุดท้าย"
+            },
+            {
+              "name": "Kyle Walker",
+              "pos": "DF",
+              "status": "บาดเจ็บ (Out)",
+              "desc": "เจ็บเข่าจากการซ้อม"
+            },
+            {
+              "name": "Kevin De Bruyne",
+              "pos": "MF",
+              "status": "รอเช็กฟิต (Doubtful)",
+              "desc": "เพิ่งกลับมาซ้อมร่วมกับทีม"
+            }
           ]
         }
       },
@@ -1607,21 +1724,22 @@ const UCL_DATA = {
         "raw": "จุดตัดสินเกมคือ การรับมือ Haaland ของแนวรับ Leipzig และพื้นที่ด้านหลังแนวรับเมื่อ City เปลี่ยนจากรับเป็นรุก หากไลป์ซิกดันสูงจะโดน โฟเด้น แทงบอลให้ ฮาแลนด์ และ โดกู หลุดไปสังหาร"
       },
       "marketOdds": {
-        "odds1X2": "Leipzig 4.80 / เสมอ 4.20 / Man City 1.65",
-        "oddsOverUnder": "Over 2.5 (@ 1.55) / Under 2.5 (@ 2.45)",
-        "oddsBTTS": "Yes (@ 1.55) / No (@ 2.35)",
-        "valueAssessment": "แมนฯ ซิตี้ มีสถิติข่มไลป์ซิกมิดด้าม และฮาแลนด์ยิงไลป์ซิกเป็นว่าเล่น ราคาต่อ 1.65 ถือว่าคุ้มค่ามาก",
-        "raw": "แมนฯ ซิตี้ ต่อ 0.5/1 ลูก ที่ 1.65 เสมอ 4.20 ไลป์ซิก ชนะ 4.80 ราคา Over 2.5 อยู่ที่ 1.55"
+        "homeWin": 5.4,
+        "draw": 4.35,
+        "awayWin": 1.58,
+        "mainPick": "1. Man City ชนะ (2) (@ 1.58)",
+        "valuePick": "2. Over 2.5 ประตู (@ 1.55)"
       },
       "winProbability": {
-        "home": 22,
-        "draw": 25,
-        "away": 53,
-        "raw": "โอกาส แมนฯ ซิตี้ ชนะ 53% เสมอ 25% และ ไลป์ซิก ชนะ 22%"
+        "raw": "17% / 22% / 61%",
+        "home": 17,
+        "draw": 22,
+        "away": 61
       },
       "overUnderBttsAnalysis": "คู่นี้เจอกันยิงกระจายตลอด 6 นัดยิงรวมกันเกือบ 25 ประตู ฮาแลนด์ยิงทีมเก่าประจำ สกอร์สูง Over 2.5 สดใส",
       "scorePrediction": {
-        "raw": "สกอร์คาดการณ์: RB Leipzig 1-2 หรือ 1-3 Manchester City ฮาแลนด์จะยิงประตูพาทีมคว้าชัย"
+        "predicted": "1-2 / 1-3",
+        "mostLikely": "1-2"
       },
       "bestPicks": {
         "raw": "ทีเด็ดคัดกรอง: 1. Man City ชนะ (2) (@ 1.65) | 2. สกอร์รวม Over 2.5 ประตู (@ 1.55)"
@@ -1683,7 +1801,8 @@ const UCL_DATA = {
         "id": "lens",
         "logo": "assets/logos/lens.png",
         "country": "ฝรั่งเศส",
-        "league": "ลีกเอิง ฝรั่งเศส"
+        "league": "ลีกเอิง ฝรั่งเศส",
+        "manager": "Yannick Cahuzac (ยานนิค คาฮูซัค)"
       },
       "awayTeam": {
         "name": "Como",
@@ -1692,7 +1811,8 @@ const UCL_DATA = {
         "id": "como",
         "logo": "assets/logos/como.png",
         "country": "อิตาลี",
-        "league": "เซเรียอา อิตาลี"
+        "league": "เซเรียอา อิตาลี",
+        "manager": "Cesc Fàbregas (เชส ฟาเบรกาส)"
       },
       "tournamentRound": "League Phase (Matchday 4 of 8)",
       "matchDateTime": "วันพฤหัสบดีที่ 5 พฤศจิกายน 2026 • 03:00 น.",
@@ -1730,7 +1850,7 @@ const UCL_DATA = {
       },
       "squadRoster": {
         "home": {
-          "coach": "Will Still (วิล สติล)",
+          "coach": "Yannick Cahuzac (ยานนิค คาฮูซัค)",
           "coachStatus": "กุนซือหนุ่มไฟแรงสั่งเพรสซิ่งบดขยี้",
           "keyPlayers": [
             {
@@ -1862,21 +1982,22 @@ const UCL_DATA = {
         "raw": "จุดตัดสินเกมคือ Lens ต้องหยุดการเข้าทำเร็วของ Como และป้องกันไม่ให้เสียประตูตั้งแต่ครึ่งแรก โคโมชอบเริ่มเกมเร็วและยิงครึ่งแรกได้ทุกนัด ส่วนล็องส์ต้องหวังพึ่งการสร้างโอกาสของ ฟลอริย็อง โตแว็ง"
       },
       "marketOdds": {
-        "odds1X2": "Lens 2.15 / เสมอ 3.40 / Como 3.20",
-        "oddsOverUnder": "Over 2.5 (@ 1.70) / Under 2.5 (@ 2.10)",
-        "oddsBTTS": "Yes (@ 1.62) / No (@ 2.20)",
-        "valueAssessment": "โคโม ฟอร์มใน UCL ร้อนแรงกว่า ชนะ 2 จาก 3 นัด การถือหาง โคโม ชนะหรือเสมอ (X2) ที่ราคา 1.52 หรือ Over 2.5 ที่ 1.70 มีมูลค่าสูง",
-        "raw": "ล็องส์ ต่อเสมอควบครึ่ง ที่ 2.15 เสมอ 3.40 โคโม ชนะ 3.20 ราคา Over 2.5 อยู่ที่ 1.70"
+        "homeWin": 3.35,
+        "draw": 3.65,
+        "awayWin": 2.07,
+        "mainPick": "1. Como ชนะ (2) (@ 2.07)",
+        "valuePick": "2. Como ชนะหรือเสมอ (X2) (@ 1.34)"
       },
       "winProbability": {
-        "home": 40,
-        "draw": 28,
-        "away": 32,
-        "raw": "โอกาส ล็องส์ ชนะ 40% เสมอ 28% และ โคโม ชนะ 32%"
+        "raw": "28% / 26% / 46%",
+        "home": 28,
+        "draw": 26,
+        "away": 46
       },
       "overUnderBttsAnalysis": "โคโมยิงครึ่งแรกได้ทุกนัดใน UCL ดูกาสยิง 3 นัดติด ส่วนโตแว็งสร้างโอกาสยิงสูงสุดในรายการ สกอร์มีโอกาสเปิดแลกกันสนุก",
       "scorePrediction": {
-        "raw": "สกอร์คาดการณ์: Lens 1-2 หรือ 2-1 Como บอลเปิดหน้าแลก มีโอกาสออกได้ทั้งสองหน้า"
+        "predicted": "1-2 / 0-1",
+        "mostLikely": "1-2"
       },
       "bestPicks": {
         "raw": "ทีเด็ดคัดกรอง: 1. Como ชนะหรือเสมอ (X2) (@ 1.52) | 2. สกอร์รวม Over 2.5 ประตู (@ 1.70)"
@@ -1938,7 +2059,8 @@ const UCL_DATA = {
         "id": "slaviapraha",
         "logo": "assets/logos/slaviapraha.png",
         "country": "เช็กเกีย",
-        "league": "เช็ก เฟิสต์ลีก"
+        "league": "เช็ก เฟิสต์ลีก",
+        "manager": "Jindřich Trpišovský (ยินดริช เตอร์ปิชอฟสกี้)"
       },
       "awayTeam": {
         "name": "Arsenal",
@@ -1947,7 +2069,8 @@ const UCL_DATA = {
         "id": "arsenal",
         "logo": "assets/logos/arsenal.png",
         "country": "อังกฤษ",
-        "league": "พรีเมียร์ลีก อังกฤษ"
+        "league": "พรีเมียร์ลีก อังกฤษ",
+        "manager": "Mikel Arteta (มิเกล อาร์เตต้า)"
       },
       "tournamentRound": "League Phase (Matchday 4 of 8)",
       "matchDateTime": "วันพฤหัสบดีที่ 5 พฤศจิกายน 2026 • 03:00 น.",
@@ -2125,21 +2248,22 @@ const UCL_DATA = {
         "raw": "จุดตัดสินเกมคือ การควบคุมแดนกลางของ Arsenal และการป้องกันเกมสวนกลับของ Slavia แม้จะขาด ซาก้า แต่อาร์เซนอลมี โอเดการ์ด และ ไรซ์ คอยคุมจังหวะ และทีเด็ดจากลูกเตะมุมของ กาเบรียล จะเป็นอาวุธเจาะแนวรับเจ้าถิ่น"
       },
       "marketOdds": {
-        "odds1X2": "Slavia 6.50 / เสมอ 4.50 / Arsenal 1.48",
-        "oddsOverUnder": "Over 2.5 (@ 1.75) / Under 2.5 (@ 2.05)",
-        "oddsBTTS": "Yes (@ 1.95) / No (@ 1.85)",
-        "valueAssessment": "อาร์เซนอล ต่อ 1.48 ถือเป็นราคาที่เชื่อถือได้สูงสุดในค่ำคืนนี้ สถิติไร้พ่าย 18 นัดใน UCL และสลาเวียไม่ชนะ 18 นัดติด ยืนยันความเหนือชั้น",
-        "raw": "อาร์เซนอล บุกมาต่อ 1.0 ลูก ที่ 1.48 เสมอ 4.50 สลาเวีย ชนะ 6.50 แฮนดิแคป -1.0 อยู่ที่ 1.78"
+        "homeWin": 10.0,
+        "draw": 5.9,
+        "awayWin": 1.27,
+        "mainPick": "1. Arsenal ชนะ (2) (@ 1.27)",
+        "valuePick": "2. Arsenal -1.25 แฮนดิแคป (@ 1.72)"
       },
       "winProbability": {
-        "home": 15,
-        "draw": 25,
-        "away": 60,
-        "raw": "โอกาส อาร์เซนอล ชนะ 60% เสมอ 25% และ สลาเวีย ชนะ 15%"
+        "raw": "9% / 16% / 75%",
+        "home": 9,
+        "draw": 16,
+        "away": 75
       },
       "overUnderBttsAnalysis": "สลาเวียไม่เคยยิงอาร์เซนอลได้ในบ้าน 3 นัดติด และอาร์เซนอลเกมรับเหนียวแน่น โอกาสอาร์เซนอลชนะแบบคลีนชีต 2-0 หรือ 3-0 สูงมาก",
       "scorePrediction": {
-        "raw": "สกอร์คาดการณ์: Slavia Prague 0-2 หรือ 0-3 Arsenal ปืนใหญ่จะบุกคว้าชัยคลีนชีต"
+        "predicted": "0-2 / 0-3",
+        "mostLikely": "0-2"
       },
       "bestPicks": {
         "raw": "ทีเด็ดคัดกรอง: 1. Arsenal ชนะ (2) (@ 1.48) | 2. Arsenal -1.0 แฮนดิแคป (@ 1.78)"
@@ -2201,7 +2325,8 @@ const UCL_DATA = {
         "id": "viking",
         "logo": "assets/logos/viking.png",
         "country": "นอร์เวย์",
-        "league": "เอลีทซีเรียน นอร์เวย์"
+        "league": "เอลีทซีเรียน นอร์เวย์",
+        "manager": "Bjarte Lunde Aarsheim & Morten Jensen (บยาร์เต้ ลุนเด้ อาร์สไฮม์ & มอร์เทน เยนเซ่น)"
       },
       "awayTeam": {
         "name": "Sabah",
@@ -2210,7 +2335,8 @@ const UCL_DATA = {
         "id": "sabah",
         "logo": "assets/logos/sabah.png",
         "country": "อาเซอร์ไบจาน",
-        "league": "พรีเมียร์ลีก อาเซอร์ไบจาน"
+        "league": "พรีเมียร์ลีก อาเซอร์ไบจาน",
+        "manager": "Valdas Dambrauskas (วัลเดาส์ ดัมเบราสคาส)"
       },
       "tournamentRound": "League Phase (Matchday 4 of 8)",
       "matchDateTime": "วันพฤหัสบดีที่ 5 พฤศจิกายน 2026 • 03:00 น.",
@@ -2248,7 +2374,7 @@ const UCL_DATA = {
       },
       "squadRoster": {
         "home": {
-          "coach": "Bjarte Lunde Aarsheim (บยาร์เต้ ลุนเด้ อาร์สไฮม์)",
+          "coach": "Bjarte Lunde Aarsheim & Morten Jensen (บยาร์เต้ ลุนเด้ อาร์สไฮม์ & มอร์เทน เยนเซ่น)",
           "coachStatus": "นำทัพเปิดเกมบุกดุดันบนสนามหญ้าเทียม",
           "keyPlayers": [
             {
@@ -2317,10 +2443,30 @@ const UCL_DATA = {
               "badge": "red",
               "detail": "มีปัญหาความฟิตกล้ามเนื้อ"
             }
+          ],
+          "injuries": [
+            {
+              "name": "Zlatko Tripić",
+              "pos": "FW",
+              "status": "บาดเจ็บ (Out)",
+              "desc": "กล้ามเนื้อต้นขาฉีก"
+            },
+            {
+              "name": "Nicholas D'Agostino",
+              "pos": "FW",
+              "status": "บาดเจ็บ (Out)",
+              "desc": "เจ็บเข่า"
+            },
+            {
+              "name": "Kojo Oppong",
+              "pos": "DF",
+              "status": "รอเช็กฟิต / Out (Doubtful)",
+              "desc": "สถานะไม่ตรงกัน มีรายงานทั้ง Out และ Doubtful ต้องรอประเมินก่อนเกม"
+            }
           ]
         },
         "away": {
-          "coach": "Krunoslav Rendulić (ครูโนสลาฟ เรนดูลิช)",
+          "coach": "Valdas Dambrauskas (วัลเดาส์ ดัมเบราสคาส)",
           "coachStatus": "วางแท็กติกเน้นความรัดกุมหลังเดินทางไกล",
           "keyPlayers": [
             {
@@ -2364,21 +2510,22 @@ const UCL_DATA = {
         "raw": "จุดตัดสินเกมคือ การควบคุมเกมรับของ Sabah เมื่อต้องเล่นเป็นทีมเยือนบนสนามหญ้าเทียม ไวกิ้งจะใช้ความคุ้นเคยกับสปีดบอลบนหญ้าเทียมและลมหนาวเปิดเกมรุกเข้าใส่ ซาบาห์ที่ล้าจากการเดินทางไกล 4,500 กม. จะต้านทานลำบาก"
       },
       "marketOdds": {
-        "odds1X2": "Viking 1.62 / เสมอ 4.10 / Sabah 5.00",
-        "oddsOverUnder": "Over 2.5 (@ 1.65) / Under 2.5 (@ 2.20)",
-        "oddsBTTS": "Yes (@ 1.70) / No (@ 2.10)",
-        "valueAssessment": "ไวกิ้ง ต่อ 0.5/1 ลูก ที่ราคา 1.62 และ Over 2.5 ที่ 1.65 ถือว่ามีมูลค่าสูงมากตามสถิติที่ไม่มีผลเสมอและยิงประตูกระจาย",
-        "raw": "ไวกิ้ง ต่อ 0.5/1 ลูก ที่ 1.62 เสมอ 4.10 ซาบาห์ ชนะ 5.00 ราคา Over 2.5 อยู่ที่ 1.65"
+        "homeWin": 1.45,
+        "draw": 4.55,
+        "awayWin": 6.6,
+        "mainPick": "1. Viking ชนะ (1) (@ 1.45)",
+        "valuePick": "2. Viking -1.0 แฮนดิแคป (@ 1.75)"
       },
       "winProbability": {
-        "home": 58,
-        "draw": 22,
-        "away": 20,
-        "raw": "โอกาส ไวกิ้ง ชนะ 58% เสมอ 22% และ ซาบาห์ ชนะ 20%"
+        "raw": "65% / 21% / 14%",
+        "home": 65,
+        "draw": 21,
+        "away": 14
       },
       "overUnderBttsAnalysis": "7 นัดเหย้ายุโรปหลังสุดของ Viking สกอร์รวมเกิน 2.5 ทุกเกม และ 25 เกมยุโรปของ Sabah ไม่มี 0-0 สกอร์สูง Over 2.5 สดใส",
       "scorePrediction": {
-        "raw": "สกอร์คาดการณ์: Viking 2-1 หรือ 3-1 Sabah เจ้าถิ่นอาศัยความได้เปรียบเรื่องสนามบดคว้า 3 แต้ม"
+        "predicted": "2-0 / 3-1",
+        "mostLikely": "2-0"
       },
       "bestPicks": {
         "raw": "ทีเด็ดคัดกรอง: 1. Viking FK ชนะ (1) (@ 1.62) | 2. สกอร์รวม Over 2.5 ประตู (@ 1.65)"
@@ -3005,10 +3152,10 @@ const ALL_STANDINGS_DATA = {
           "gd": "+17",
           "pts": 19,
           "form": [
+            "D",
             "W",
             "W",
-            "W",
-            "W",
+            "D",
             "W"
           ],
           "zone": "ucl"
@@ -3028,8 +3175,8 @@ const ALL_STANDINGS_DATA = {
           "form": [
             "L",
             "W",
+            "D",
             "W",
-            "L",
             "W"
           ],
           "zone": "ucl"
@@ -3047,10 +3194,10 @@ const ALL_STANDINGS_DATA = {
           "gd": "+2",
           "pts": 15,
           "form": [
-            "W",
-            "L",
             "D",
+            "L",
             "W",
+            "D",
             "L"
           ],
           "zone": "uel"
@@ -3089,13 +3236,12 @@ const ALL_STANDINGS_DATA = {
           "gd": "+1",
           "pts": 12,
           "form": [
-            "L",
+            "D",
             "L",
             "D",
-            "W",
+            "D",
             "W"
-          ],
-          "zone": "mid"
+          ]
         },
         {
           "rank": 8,
@@ -3112,11 +3258,10 @@ const ALL_STANDINGS_DATA = {
           "form": [
             "L",
             "D",
-            "D",
+            "W",
             "D",
             "W"
-          ],
-          "zone": "mid"
+          ]
         },
         {
           "rank": 9,
@@ -3131,13 +3276,12 @@ const ALL_STANDINGS_DATA = {
           "gd": "-3",
           "pts": 12,
           "form": [
-            "W",
             "D",
+            "W",
             "D",
             "W",
             "D"
-          ],
-          "zone": "mid"
+          ]
         },
         {
           "rank": 10,
@@ -3153,12 +3297,11 @@ const ALL_STANDINGS_DATA = {
           "pts": 11,
           "form": [
             "D",
+            "D",
             "L",
             "D",
-            "D",
-            "D"
-          ],
-          "zone": "mid"
+            "L"
+          ]
         },
         {
           "rank": 11,
@@ -3178,13 +3321,12 @@ const ALL_STANDINGS_DATA = {
             "D",
             "D",
             "L"
-          ],
-          "zone": "mid"
+          ]
         },
         {
           "rank": 12,
           "team": "Newcastle",
-          "thaiName": "นิวคาสเซิล ยูไนเต็ด",
+          "thaiName": "นิวคาสเซิ่ล",
           "played": 8,
           "w": 3,
           "d": 2,
@@ -3195,12 +3337,11 @@ const ALL_STANDINGS_DATA = {
           "pts": 11,
           "form": [
             "D",
+            "W",
             "L",
             "D",
-            "L",
             "W"
-          ],
-          "zone": "mid"
+          ]
         },
         {
           "rank": 13,
@@ -3216,12 +3357,11 @@ const ALL_STANDINGS_DATA = {
           "pts": 11,
           "form": [
             "D",
+            "W",
             "L",
             "W",
-            "W",
             "D"
-          ],
-          "zone": "mid"
+          ]
         },
         {
           "rank": 14,
@@ -3236,18 +3376,17 @@ const ALL_STANDINGS_DATA = {
           "gd": "-1",
           "pts": 10,
           "form": [
+            "W",
             "D",
             "D",
             "W",
-            "L",
             "D"
-          ],
-          "zone": "mid"
+          ]
         },
         {
           "rank": 15,
           "team": "West Ham",
-          "thaiName": "เวสต์แฮม ยูไนเต็ด",
+          "thaiName": "เวสต์แฮม",
           "played": 9,
           "w": 2,
           "d": 3,
@@ -3261,9 +3400,8 @@ const ALL_STANDINGS_DATA = {
             "D",
             "W",
             "L",
-            "L"
-          ],
-          "zone": "mid"
+            "W"
+          ]
         },
         {
           "rank": 16,
@@ -3281,10 +3419,9 @@ const ALL_STANDINGS_DATA = {
             "D",
             "L",
             "W",
-            "L",
+            "W",
             "L"
-          ],
-          "zone": "mid"
+          ]
         },
         {
           "rank": 17,
@@ -3302,19 +3439,18 @@ const ALL_STANDINGS_DATA = {
             "D",
             "L",
             "L",
-            "D",
+            "L",
             "W"
-          ],
-          "zone": "mid"
+          ]
         },
         {
           "rank": 18,
           "team": "Man Utd",
           "thaiName": "แมนเชสเตอร์ ยูไนเต็ด",
           "played": 9,
-          "w": 1,
-          "d": 4,
-          "l": 4,
+          "w": 2,
+          "d": 1,
+          "l": 6,
           "gf": 8,
           "ga": 14,
           "gd": "-6",
@@ -3323,7 +3459,7 @@ const ALL_STANDINGS_DATA = {
             "D",
             "L",
             "D",
-            "L",
+            "W",
             "L"
           ],
           "zone": "relegation"
@@ -3344,8 +3480,8 @@ const ALL_STANDINGS_DATA = {
             "L",
             "L",
             "L",
-            "D",
-            "L"
+            "L",
+            "D"
           ],
           "zone": "relegation"
         },
@@ -3355,12 +3491,12 @@ const ALL_STANDINGS_DATA = {
           "thaiName": "เซาแธมป์ตัน",
           "played": 9,
           "w": 0,
-          "d": 2,
-          "l": 7,
+          "d": 1,
+          "l": 8,
           "gf": 6,
-          "ga": 20,
-          "gd": "-14",
-          "pts": 2,
+          "ga": 19,
+          "gd": "-13",
+          "pts": 1,
           "form": [
             "D",
             "L",
@@ -3451,7 +3587,7 @@ const ALL_STANDINGS_DATA = {
           "pts": 28,
           "form": [
             "W",
-            "W",
+            "D",
             "W",
             "W",
             "W"
@@ -3495,7 +3631,7 @@ const ALL_STANDINGS_DATA = {
             "W",
             "W",
             "L",
-            "W",
+            "D",
             "W"
           ],
           "zone": "ucl"
@@ -3515,8 +3651,8 @@ const ALL_STANDINGS_DATA = {
           "form": [
             "W",
             "W",
-            "D",
             "W",
+            "D",
             "L"
           ],
           "zone": "uel"
@@ -3536,7 +3672,7 @@ const ALL_STANDINGS_DATA = {
           "form": [
             "D",
             "D",
-            "W",
+            "L",
             "D",
             "L"
           ],
@@ -3557,11 +3693,10 @@ const ALL_STANDINGS_DATA = {
           "form": [
             "D",
             "D",
-            "D",
+            "L",
             "D",
             "W"
-          ],
-          "zone": "mid"
+          ]
         },
         {
           "rank": 8,
@@ -3577,12 +3712,11 @@ const ALL_STANDINGS_DATA = {
           "pts": 12,
           "form": [
             "D",
-            "D",
             "L",
             "D",
+            "L",
             "L"
-          ],
-          "zone": "mid"
+          ]
         },
         {
           "rank": 9,
@@ -3599,11 +3733,10 @@ const ALL_STANDINGS_DATA = {
           "form": [
             "D",
             "D",
-            "W",
             "D",
+            "W",
             "W"
-          ],
-          "zone": "mid"
+          ]
         },
         {
           "rank": 10,
@@ -3618,13 +3751,12 @@ const ALL_STANDINGS_DATA = {
           "gd": "-2",
           "pts": 12,
           "form": [
-            "W",
+            "D",
             "L",
-            "L",
+            "D",
             "L",
             "L"
-          ],
-          "zone": "mid"
+          ]
         },
         {
           "rank": 11,
@@ -3641,16 +3773,15 @@ const ALL_STANDINGS_DATA = {
           "form": [
             "D",
             "D",
-            "D",
+            "L",
             "D",
             "W"
-          ],
-          "zone": "mid"
+          ]
         },
         {
           "rank": 12,
           "team": "Getafe",
-          "thaiName": "เกตาเฟ่",
+          "thaiName": "เคตาเฟ่",
           "played": 11,
           "w": 3,
           "d": 3,
@@ -3661,12 +3792,11 @@ const ALL_STANDINGS_DATA = {
           "pts": 12,
           "form": [
             "D",
-            "W",
             "L",
+            "D",
             "L",
             "W"
-          ],
-          "zone": "mid"
+          ]
         },
         {
           "rank": 13,
@@ -3683,11 +3813,10 @@ const ALL_STANDINGS_DATA = {
           "form": [
             "D",
             "D",
+            "L",
             "D",
-            "D",
-            "D"
-          ],
-          "zone": "mid"
+            "L"
+          ]
         },
         {
           "rank": 14,
@@ -3702,139 +3831,12 @@ const ALL_STANDINGS_DATA = {
           "gd": "-1",
           "pts": 11,
           "form": [
-            "L",
-            "D",
-            "L",
-            "L",
-            "L"
-          ],
-          "zone": "mid"
-        },
-        {
-          "rank": 15,
-          "team": "Osasuna",
-          "thaiName": "โอซาซูน่า",
-          "played": 11,
-          "w": 2,
-          "d": 5,
-          "l": 4,
-          "gf": 11,
-          "ga": 15,
-          "gd": "-4",
-          "pts": 11,
-          "form": [
-            "D",
-            "D",
-            "L",
-            "D",
-            "L"
-          ],
-          "zone": "mid"
-        },
-        {
-          "rank": 16,
-          "team": "Mallorca",
-          "thaiName": "มายอร์ก้า",
-          "played": 11,
-          "w": 2,
-          "d": 4,
-          "l": 5,
-          "gf": 9,
-          "ga": 14,
-          "gd": "-5",
-          "pts": 10,
-          "form": [
-            "D",
-            "L",
             "W",
-            "L",
-            "D"
-          ],
-          "zone": "mid"
-        },
-        {
-          "rank": 17,
-          "team": "Leganés",
-          "thaiName": "เลกาเนส",
-          "played": 11,
-          "w": 2,
-          "d": 3,
-          "l": 6,
-          "gf": 8,
-          "ga": 15,
-          "gd": "-7",
-          "pts": 9,
-          "form": [
-            "L",
             "D",
-            "L",
-            "L",
-            "W"
-          ],
-          "zone": "mid"
-        },
-        {
-          "rank": 18,
-          "team": "Las Palmas",
-          "thaiName": "ลาส ปัลมาส",
-          "played": 11,
-          "w": 2,
-          "d": 2,
-          "l": 7,
-          "gf": 10,
-          "ga": 20,
-          "gd": "-10",
-          "pts": 8,
-          "form": [
-            "L",
-            "L",
-            "W",
-            "L",
-            "L"
-          ],
-          "zone": "relegation"
-        },
-        {
-          "rank": 19,
-          "team": "Real Valladolid",
-          "thaiName": "เรอัล บายาโดลิด",
-          "played": 11,
-          "w": 1,
-          "d": 3,
-          "l": 7,
-          "gf": 7,
-          "ga": 22,
-          "gd": "-15",
-          "pts": 6,
-          "form": [
-            "L",
-            "D",
-            "L",
-            "L",
-            "D"
-          ],
-          "zone": "relegation"
-        },
-        {
-          "rank": 20,
-          "team": "Valencia",
-          "thaiName": "บาเลนเซีย",
-          "played": 11,
-          "w": 1,
-          "d": 2,
-          "l": 8,
-          "gf": 6,
-          "ga": 21,
-          "gd": "-15",
-          "pts": 5,
-          "form": [
-            "L",
-            "L",
             "L",
             "D",
             "L"
-          ],
-          "zone": "relegation"
+          ]
         }
       ],
       "topScorers": [
