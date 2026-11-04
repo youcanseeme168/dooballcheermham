@@ -1,0 +1,12 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Crown on top -->
+  <path d="M30 22 L35 32 L50 24 L65 32 L70 22 L65 38 L35 38 Z" fill="#e5a823" stroke="#00529f" stroke-width="1.5"/>
+  <circle cx="50" cy="18" r="3" fill="#e5a823"/>
+  <!-- Shield/Circle -->
+  <circle cx="50" cy="58" r="34" fill="#ffffff" stroke="#e5a823" stroke-width="3"/>
+  <!-- Purple diagonal slash -->
+  <path d="M26 40 L74 76 L70 82 L22 46 Z" fill="#5c2d91"/>
+  <!-- Monogram MFC -->
+  <circle cx="50" cy="58" r="24" fill="none" stroke="#e5a823" stroke-width="2.5"/>
+  <text x="50" y="64" font-family="Arial, sans-serif" font-weight="900" font-size="14" fill="#00529f" text-anchor="middle">RMCF</text>
+</svg>

@@ -1,0 +1,6 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <path d="M50 8 C72 8 82 18 82 50 C82 78 50 94 50 94 C50 94 18 78 18 50 C18 18 28 8 50 8 Z" fill="#c8102e" stroke="#00b2a9" stroke-width="3"/>
+  <!-- Liverbird silhouette -->
+  <path d="M50 25 C53 25 56 28 56 32 C56 36 53 38 51 40 C57 42 62 48 60 56 C58 64 52 68 50 72 C48 68 42 64 40 56 C38 48 43 42 49 40 C47 38 44 36 44 32 C44 28 47 25 50 25 Z" fill="#f6eb61"/>
+  <text x="50" y="85" font-family="Arial, sans-serif" font-weight="900" font-size="9" fill="#ffffff" text-anchor="middle">L.F.C.</text>
+</svg>

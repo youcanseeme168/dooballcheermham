@@ -1,0 +1,6 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" fill="#ffe600" stroke="#000000" stroke-width="4"/>
+  <circle cx="50" cy="50" r="41" fill="#ffe600"/>
+  <text x="50" y="46" font-family="Arial, sans-serif" font-weight="900" font-size="20" fill="#000000" text-anchor="middle">BVB</text>
+  <text x="50" y="68" font-family="Arial, sans-serif" font-weight="900" font-size="16" fill="#000000" text-anchor="middle">09</text>
+</svg>

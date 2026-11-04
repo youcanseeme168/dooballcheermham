@@ -193,13 +193,19 @@
     if (!pickStr) return { title: '', odds: '' };
     let clean = pickStr.replace(/^\d+\.\s*/, '').trim();
     let odds = '';
-    const atMatch = clean.match(/\((@?\s*[\d\.\+\/\-]+)\)/);
+    const atMatch = clean.match(/\((@\s*[\d\.]+)\)/);
     if (atMatch) {
-      odds = atMatch[1].replace('@', '').trim();
+      odds = atMatch[1].trim();
       clean = clean.replace(atMatch[0], '').trim();
     } else if (clean.includes('(เชิงวิเคราะห์)')) {
       odds = 'วิเคราะห์';
       clean = clean.replace('(เชิงวิเคราะห์)', '').trim();
+    } else {
+      const endParen = clean.match(/\(([\d\.\+\/\-]+)\)$/);
+      if (endParen) {
+        odds = endParen[1].trim();
+        clean = clean.replace(endParen[0], '').trim();
+      }
     }
     return { title: clean, odds };
   }

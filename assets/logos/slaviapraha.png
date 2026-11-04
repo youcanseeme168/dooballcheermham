@@ -1,0 +1,9 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" fill="#ffffff" stroke="#d71920" stroke-width="4"/>
+  <!-- Red right half -->
+  <path d="M50 4 A46 46 0 0 1 50 96 Z" fill="#d71920"/>
+  <!-- 5-point Star on left half -->
+  <polygon points="32,32 35,42 45,42 37,48 40,58 32,52 24,58 27,48 19,42 29,42" fill="#d71920"/>
+  <text x="70" y="56" font-family="Arial, sans-serif" font-weight="900" font-size="14" fill="#ffffff" text-anchor="middle">SK</text>
+  <text x="50" y="86" font-family="Arial, sans-serif" font-weight="bold" font-size="8" fill="#d71920" text-anchor="middle">SLAVIA</text>
+</svg>

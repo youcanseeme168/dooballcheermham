@@ -1,0 +1,9 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <path d="M50 8 C75 8 84 18 84 52 C84 78 50 94 50 94 C50 94 16 78 16 52 C16 18 25 8 50 8 Z" fill="#ffffff" stroke="#dd0741" stroke-width="3"/>
+  <!-- Red Bull sun and bulls motif -->
+  <circle cx="50" cy="46" r="14" fill="#f7ab00"/>
+  <path d="M36 46 C36 40 44 38 48 42 L42 46 Z" fill="#dd0741"/>
+  <path d="M64 46 C64 40 56 38 52 42 L58 46 Z" fill="#dd0741"/>
+  <text x="50" y="74" font-family="Arial, sans-serif" font-weight="900" font-size="13" fill="#001e4a" text-anchor="middle">RBL</text>
+  <text x="50" y="85" font-family="Arial, sans-serif" font-weight="bold" font-size="7" fill="#dd0741" text-anchor="middle">LEIPZIG</text>
+</svg>

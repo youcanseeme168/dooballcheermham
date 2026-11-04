@@ -1,0 +1,9 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <path d="M50 8 C75 8 84 18 84 52 C84 78 50 94 50 94 C50 94 16 78 16 52 C16 18 25 8 50 8 Z" fill="#003893" stroke="#ffffff" stroke-width="3"/>
+  <path d="M50 14 C70 14 78 22 78 52 C78 74 50 88 50 88 C50 88 22 74 22 52 C22 22 30 14 50 14 Z" fill="#003893"/>
+  <!-- White cross -->
+  <rect x="46" y="24" width="8" height="42" fill="#ffffff"/>
+  <rect x="30" y="38" width="40" height="8" fill="#ffffff"/>
+  <text x="50" y="80" font-family="Arial, sans-serif" font-weight="900" font-size="11" fill="#ffffff" text-anchor="middle">COMO</text>
+  <text x="50" y="90" font-family="Arial, sans-serif" font-weight="bold" font-size="7" fill="#88b5ec" text-anchor="middle">1907</text>
+</svg>

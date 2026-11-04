@@ -1,0 +1,9 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <path d="M50 8 C75 8 84 18 84 52 C84 78 50 94 50 94 C50 94 16 78 16 52 C16 18 25 8 50 8 Z" fill="#db0007" stroke="#9c824a" stroke-width="3.5"/>
+  <path d="M50 14 C70 14 78 22 78 52 C78 74 50 88 50 88 C50 88 22 74 22 52 C22 22 30 14 50 14 Z" fill="#db0007"/>
+  <!-- Golden Cannon -->
+  <ellipse cx="40" cy="54" rx="10" ry="10" fill="#9c824a" stroke="#023474" stroke-width="1.5"/>
+  <rect x="36" y="44" width="34" height="8" rx="3" fill="#9c824a"/>
+  <polygon points="68,42 76,40 76,56 68,54" fill="#9c824a"/>
+  <text x="50" y="32" font-family="Arial, sans-serif" font-weight="900" font-size="10" fill="#ffffff" text-anchor="middle">ARSENAL</text>
+</svg>
