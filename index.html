@@ -83,6 +83,11 @@
           <span class="league-tab-label">UEFA Champions League</span>
           <span class="league-tab-badge">9 คู่บิ๊กแมตช์</span>
         </button>
+        <button id="cat-btn-audit" class="league-tab-btn" onclick="switchLeagueCategory('audit')">
+          <span class="league-tab-icon">🎯</span>
+          <span class="league-tab-label">สรุปผลจริง & ความผิดพลาด (AI Audit)</span>
+          <span class="league-tab-badge" style="background:#10b981;color:#fff;">แม่น 77.8% (จบแล้ว)</span>
+        </button>
         <button id="cat-btn-superliga" class="league-tab-btn" onclick="switchLeagueCategory('superliga')">
           <span class="league-tab-icon">🇩🇰</span>
           <span class="league-tab-label">Danish Superliga</span>
@@ -150,6 +155,27 @@
         <button class="sim-btn" onclick="simulateCountdown(4, this)" title="จำลองเหลือ 4 ชม. (แดง)">4 ชม. (แดง)</button>
         <button class="sim-btn" onclick="simulateCountdown(0, this)" title="จำลองเริ่มเตะแล้ว (เขียว)">เตะสด (เขียว)</button>
       </div>
+    </div>
+
+    <!-- Post-Match Audit Alert Banner -->
+    <div class="audit-summary-alert-banner" onclick="switchLeagueCategory('audit')" style="background:linear-gradient(135deg, rgba(16,185,129,0.14) 0%, rgba(5,8,17,0.92) 50%, rgba(251,191,36,0.12) 100%);border:1px solid rgba(16,185,129,0.45);box-shadow:0 0 30px rgba(16,185,129,0.18);border-radius:var(--radius-lg);padding:1.15rem 1.4rem;margin:1.5rem 0 2rem 0;cursor:pointer;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;transition:all 0.25s;" onmouseover="this.style.borderColor='#10b981';this.style.boxShadow='0 0 40px rgba(16,185,129,0.3)'" onmouseout="this.style.borderColor='rgba(16,185,129,0.45)';this.style.boxShadow='0 0 30px rgba(16,185,129,0.18)'">
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <div style="width:48px;height:48px;border-radius:12px;background:rgba(16,185,129,0.2);border:1px solid #10b981;display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:#10b981;flex-shrink:0;">
+          🎯
+        </div>
+        <div>
+          <div style="display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap;margin-bottom:0.25rem;">
+            <span style="font-size:0.75rem;font-weight:800;color:#10b981;background:rgba(16,185,129,0.18);padding:0.15rem 0.6rem;border-radius:var(--radius-full);border:1px solid rgba(16,185,129,0.4);">จบการแข่งขันแล้วครบทั้ง 9 คู่</span>
+            <span style="font-size:0.75rem;color:var(--text-dim);">อ้างอิงผลจริงทางการ UEFA.com (MD4)</span>
+          </div>
+          <div style="font-size:1.05rem;font-weight:800;color:#fff;">
+            ตรวจสอบผลจริง & รายงานข้อผิดพลาด AI: ทายถูก <span style="color:#10b981;">77.8% (7/9 คู่)</span> • สกอร์ตรงเป๊ะ <span style="color:#fbbf24;">2 คู่ (Dortmund, Brugge)</span> • กำไรจำลอง <span style="color:#34d399;">+48.89%</span>
+          </div>
+        </div>
+      </div>
+      <button class="btn-hero-primary" style="padding:0.55rem 1.25rem;font-size:0.85rem;background:#10b981;color:#000;font-weight:800;border:none;border-radius:var(--radius-full);cursor:pointer;display:flex;align-items:center;gap:0.4rem;box-shadow:0 0 15px rgba(16,185,129,0.4);">
+        ดูวิเคราะห์ข้อผิดพลาด & สิ่งที่เกิดขึ้นจริง <i class="ri-arrow-right-line"></i>
+      </button>
     </div>
 
 <h1 class="hero-title">
@@ -378,6 +404,11 @@
   <!-- All Leagues & Cups Standings Dedicated View -->
   <main id="standings-view" style="display:none;">
     <div id="standings-content-container"></div>
+  </main>
+
+  <!-- Post-Match Learning & Prediction Audit Dedicated View -->
+  <main id="audit-view" style="display:none;">
+    <div id="audit-content-container"></div>
   </main>
 
   <!-- Scripts -->

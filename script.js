@@ -1850,11 +1850,263 @@ function renderMatchDetail(matchId) {
     `;
   }
 
+  
+  window.filterAuditMatches = function(f) {
+    state.activeAuditFilter = f;
+    renderAuditView();
+  };
+
+  function renderAuditView() {
+    const container = document.getElementById('audit-content-container');
+    if (!container) return;
+
+    if (typeof POST_MATCH_AUDIT_DATA === 'undefined') {
+      container.innerHTML = '<div style="padding:4rem;text-align:center;color:#fff;">กำลังโหลดข้อมูล Post-Match Audit...</div>';
+      return;
+    }
+
+    const d = POST_MATCH_AUDIT_DATA;
+    const filter = state.activeAuditFilter || 'all';
+
+    const filteredMatches = d.matches.filter(m => {
+      if (filter === 'exact') return m.exactScoreHit;
+      if (filter === 'correct') return m.status === 'correct' || m.status === 'exact';
+      if (filter === 'wrong') return m.status === 'wrong';
+      if (filter === 'outlier') return m.matchId === 'UCL-2026-MD4-07';
+      return true;
+    });
+
+    const kpiCardsHtml = d.kpiSummary.map(k => `
+      <div style="background:var(--bg-card);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-lg);padding:1.4rem;box-shadow:0 8px 25px rgba(0,0,0,0.4);border-top:3px solid ${k.color};transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform=''">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.6rem;">
+          <span style="font-size:0.85rem;color:var(--text-dim);font-weight:600;">${k.label}</span>
+          <i class="${k.icon}" style="color:${k.color};font-size:1.3rem;"></i>
+        </div>
+        <div style="font-size:2.2rem;font-weight:900;color:${k.color};line-height:1;margin-bottom:0.4rem;">${k.value}</div>
+        <div style="font-size:0.78rem;color:var(--text-muted);">${k.sub}</div>
+      </div>
+    `).join('');
+
+    const filterTabs = [
+      { key: 'all', label: `ทั้งหมด (${d.matches.length} คู่)` },
+      { key: 'exact', label: `สกอร์ตรงเป๊ะ 🎯 (${d.matches.filter(m=>m.exactScoreHit).length} คู่)` },
+      { key: 'correct', label: `ทายผล 1X2 ถูก ✅ (${d.matches.filter(m=>m.status==='correct'||m.status==='exact').length} คู่)` },
+      { key: 'wrong', label: `ทายผลผิด ⚠️ (${d.matches.filter(m=>m.status==='wrong').length} คู่)` },
+      { key: 'outlier', label: `คู่หลุดโลก Outlier ⚡ (1 คู่)` }
+    ];
+
+    const filterPillsHtml = filterTabs.map(t => {
+      const active = t.key === filter;
+      const border = active ? 'border-color:var(--accent-gold);background:rgba(251,191,36,0.18);color:var(--accent-gold);font-weight:800;' : 'background:rgba(255,255,255,0.05);color:var(--text-dim);border-color:transparent;';
+      return `
+        <button onclick="window.filterAuditMatches('${t.key}')" class="tab-btn" style="padding:0.5rem 1.1rem;border-radius:var(--radius-full);border:1px solid;font-size:0.85rem;cursor:pointer;white-space:nowrap;transition:all 0.2s;${border}">
+          ${t.label}
+        </button>
+      `;
+    }).join('');
+
+    const matchCardsHtml = filteredMatches.map(m => {
+      const isExact = m.exactScoreHit;
+      const isWrong = m.status === 'wrong';
+      const borderColor = isExact ? '#fbbf24' : (isWrong ? '#ef4444' : '#10b981');
+      const badgeClass = isExact ? 'badge-gold' : (isWrong ? 'badge-red' : 'badge-green');
+      const icon = isExact ? 'ri-crosshair-2-line' : (isWrong ? 'ri-close-circle-line' : 'ri-checkbox-circle-line');
+
+      return `
+        <div style="background:var(--bg-card);border:1px solid rgba(255,255,255,0.08);border-left:4px solid ${borderColor};border-radius:var(--radius-lg);padding:1.4rem;box-shadow:0 8px 24px rgba(0,0,0,0.35);margin-bottom:1.25rem;">
+          <!-- Top Row -->
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;margin-bottom:1rem;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:0.8rem;">
+            <div style="display:flex;align-items:center;gap:0.6rem;">
+              <span style="font-size:0.75rem;font-weight:800;color:var(--accent-gold);background:rgba(251,191,36,0.12);padding:0.2rem 0.55rem;border-radius:var(--radius-sm);">${m.matchId}</span>
+              <h3 style="font-size:1.15rem;font-weight:800;color:#fff;margin:0;">${m.match}</h3>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.5rem;">
+              <span class="badge ${badgeClass}" style="font-size:0.82rem;padding:0.3rem 0.75rem;font-weight:800;">
+                <i class="${icon}"></i> ${m.statusLabel}
+              </span>
+              <span style="font-size:0.78rem;font-weight:700;color:${m.betResult.startsWith('+') ? '#10b981' : '#ef4444'};background:rgba(0,0,0,0.3);padding:0.25rem 0.6rem;border-radius:var(--radius-sm);border:1px solid rgba(255,255,255,0.08);">
+                ผลเดิมพันจำลอง: ${m.betResult}
+              </span>
+            </div>
+          </div>
+
+          <!-- Score Comparison Center Stage -->
+          <div style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1.5rem;background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.05);border-radius:var(--radius-md);padding:1.2rem;margin-bottom:1.2rem;">
+            <!-- Home Team -->
+            <div style="display:flex;align-items:center;gap:0.8rem;">
+              <img src="${m.homeLogo}" alt="${m.homeTeam}" style="width:40px;height:40px;object-fit:contain;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.6));">
+              <div>
+                <div style="font-weight:800;color:#fff;font-size:1rem;">${m.homeTeam}</div>
+                <div style="font-size:0.75rem;color:var(--text-dim);">เจ้าบ้าน</div>
+              </div>
+            </div>
+
+            <!-- Scores Box -->
+            <div style="text-align:center;">
+              <div style="display:flex;align-items:center;gap:1rem;justify-content:center;">
+                <div style="text-align:center;">
+                  <div style="font-size:0.7rem;color:var(--text-dim);font-weight:700;margin-bottom:0.2rem;">ทำนายไว้เดิม</div>
+                  <div style="font-size:1.35rem;font-weight:800;color:var(--accent-gold);background:rgba(251,191,36,0.12);padding:0.2rem 0.8rem;border-radius:var(--radius-sm);border:1px solid rgba(251,191,36,0.3);">${m.predictedScore}</div>
+                </div>
+                <div style="font-size:1.1rem;color:var(--text-muted);font-weight:700;">VS</div>
+                <div style="text-align:center;">
+                  <div style="font-size:0.7rem;color:#10b981;font-weight:800;margin-bottom:0.2rem;">ผลการแข่งจริง (FT)</div>
+                  <div style="font-size:1.5rem;font-weight:900;color:#fff;background:${isExact ? 'rgba(251,191,36,0.25)' : 'rgba(16,185,129,0.25)'};padding:0.2rem 0.9rem;border-radius:var(--radius-sm);border:2px solid ${isExact ? '#fbbf24' : '#10b981'};box-shadow:0 0 15px ${isExact ? 'rgba(251,191,36,0.3)' : 'rgba(16,185,129,0.3)'};">${m.actualScore}</div>
+                </div>
+              </div>
+              <div style="font-size:0.75rem;color:var(--text-muted);margin-top:0.4rem;">
+                คลาดเคลื่อนประตูรวม: <strong style="color:#fff;">${m.errorGoals}</strong>
+              </div>
+            </div>
+
+            <!-- Away Team -->
+            <div style="display:flex;align-items:center;gap:0.8rem;justify-content:flex-end;text-align:right;">
+              <div>
+                <div style="font-weight:800;color:#fff;font-size:1rem;">${m.awayTeam}</div>
+                <div style="font-size:0.75rem;color:var(--text-dim);">ทีมเยือน</div>
+              </div>
+              <img src="${m.awayLogo}" alt="${m.awayTeam}" style="width:40px;height:40px;object-fit:contain;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.6));">
+            </div>
+          </div>
+
+          <!-- Analysis & Root Cause Cards -->
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:1rem;font-size:0.85rem;line-height:1.6;">
+            <!-- Root Cause / สิ่งที่เกิดขึ้นจริง -->
+            <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius-md);padding:0.9rem 1rem;">
+              <strong style="color:${isWrong ? '#ef4444' : (isExact ? '#fbbf24' : '#10b981')};display:flex;align-items:center;gap:0.4rem;margin-bottom:0.35rem;">
+                <i class="ri-search-eye-line"></i> สิ่งที่เกิดขึ้นจริง & สาเหตุ (Root Cause):
+              </strong>
+              <p style="color:var(--text-main);margin:0;">${m.rootCause}</p>
+            </div>
+
+            <!-- Lesson Learned -->
+            <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius-md);padding:0.9rem 1rem;">
+              <strong style="color:var(--accent-cyan);display:flex;align-items:center;gap:0.4rem;margin-bottom:0.35rem;">
+                <i class="ri-lightbulb-flash-line"></i> บทเรียนเพื่อปรับปรุงโมเดล (Lesson Learned):
+              </strong>
+              <p style="color:var(--text-main);margin:0;">${m.lesson}</p>
+            </div>
+          </div>
+
+          <!-- Bottom Footer Info -->
+          <div style="margin-top:0.8rem;font-size:0.76rem;color:var(--text-dim);display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;padding-top:0.6rem;border-top:1px solid rgba(255,255,255,0.04);">
+            <span>ราคาตลาดก่อนแข่ง: <strong>${m.preMatchOdds}</strong></span>
+            <span>ทำนายผู้ชนะ: <strong>${m.predictedWinner}</strong> | ผู้ชนะจริง: <strong style="color:#fff;">${m.actualWinner}</strong></span>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    const lessonsHtml = d.lessonsLearned.map(l => `
+      <div style="background:var(--bg-card);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-md);padding:1.2rem;">
+        <h4 style="font-size:0.98rem;font-weight:800;color:var(--accent-gold);margin-bottom:0.4rem;">${l.title}</h4>
+        <p style="font-size:0.86rem;color:var(--text-muted);line-height:1.6;margin:0;">${l.desc}</p>
+      </div>
+    `).join('');
+
+    const rulesHtml = d.rulesForNextMatch.map(r => `
+      <div style="display:flex;align-items:flex-start;gap:0.6rem;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.25);border-radius:var(--radius-md);padding:0.9rem 1.1rem;">
+        <i class="ri-checkbox-circle-fill" style="color:#10b981;font-size:1.1rem;margin-top:0.1rem;flex-shrink:0;"></i>
+        <span style="font-size:0.88rem;color:#fff;font-weight:600;line-height:1.5;">${r}</span>
+      </div>
+    `).join('');
+
+    container.innerHTML = `
+      <div class="container" style="padding-top:2.5rem;padding-bottom:5rem;">
+        <!-- Top Hero Navigation -->
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:2rem;">
+          <button class="btn-back" onclick="switchLeagueCategory('ucl')" style="display:flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#fff;padding:0.6rem 1.2rem;border-radius:var(--radius-full);cursor:pointer;font-size:0.85rem;font-weight:700;">
+            <i class="ri-arrow-left-line"></i> กลับสู่หน้าวิเคราะห์ UCL
+          </button>
+          <div style="display:flex;gap:0.75rem;">
+            <a href="learning_database.json" download="learning_database.json" style="text-decoration:none;display:flex;align-items:center;gap:0.4rem;background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.3);color:var(--accent-gold);padding:0.55rem 1.1rem;border-radius:var(--radius-full);font-size:0.82rem;font-weight:700;">
+              <i class="ri-download-2-line"></i> โหลด JSON ฐานข้อมูล
+            </a>
+            <a href="learning_database.csv" download="learning_database.csv" style="text-decoration:none;display:flex;align-items:center;gap:0.4rem;background:rgba(0,240,255,0.12);border:1px solid rgba(0,240,255,0.3);color:var(--accent-cyan);padding:0.55rem 1.1rem;border-radius:var(--radius-full);font-size:0.82rem;font-weight:700;">
+              <i class="ri-file-excel-line"></i> โหลด CSV
+            </a>
+          </div>
+        </div>
+
+        <!-- Section Title & Intro -->
+        <div style="background:var(--bg-card);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-lg);padding:2rem;margin-bottom:2rem;position:relative;overflow:hidden;">
+          <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.6rem;">
+            <span class="badge badge-green" style="font-size:0.78rem;font-weight:800;padding:0.25rem 0.75rem;">
+              <i class="ri-shield-check-line"></i> POST-MATCH VERIFICATION & CONTINUOUS LEARNING
+            </span>
+            <span style="font-size:0.8rem;color:var(--text-dim);">${d.matchday} • วันที่ตรวจสอบ: ${d.auditDate}</span>
+          </div>
+          <h1 style="font-size:1.85rem;font-weight:900;color:#fff;margin-bottom:0.7rem;line-height:1.3;">
+            ระบบประเมินผลหลังการแข่งขัน & <span class="highlight-gold">บันทึกข้อผิดพลาดจริง (AI Audit)</span>
+          </h1>
+          <p style="font-size:0.95rem;color:var(--text-muted);line-height:1.7;max-width:880px;margin:0;">
+            ระบบตรวจสอบความถูกต้องแบบโปร่งใส 100% เปรียบเทียบผลที่ AI ทำนายไว้เดิมกับผลการแข่งขันจริงที่เกิดขึ้นจาก UEFA วิเคราะห์เจาะลึก Root Cause สาเหตุที่ทำนายผิด สรุปดัชนีความแม่นยำ พร้อมบันทึกกฎเหล็กเพื่อปรับปรุงคุณภาพการทำนายอย่างเป็นรูปธรรม
+          </p>
+        </div>
+
+        <!-- 6 KPI Scorecards Grid -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));gap:1.2rem;margin-bottom:2.5rem;">
+          ${kpiCardsHtml}
+        </div>
+
+        <!-- Match Filter Tabs -->
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem;">
+          <div>
+            <h2 style="font-size:1.4rem;font-weight:900;color:#fff;">กระดานเปรียบเทียบผลจริงรายคู่ (9 Matches Audit Board)</h2>
+            <p style="font-size:0.84rem;color:var(--text-muted);">คลิกเลือกดูตามผลลัพธ์เพื่อตรวจสอบจุดที่ทำนายแม่นยำและจุดที่เกิดข้อผิดพลาด</p>
+          </div>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+            ${filterPillsHtml}
+          </div>
+        </div>
+
+        <!-- Match Cards Stream -->
+        <div style="margin-bottom:3.5rem;">
+          ${matchCardsHtml}
+        </div>
+
+        <!-- Continuous Learning: 4 Key Lessons -->
+        <div style="margin-bottom:3rem;">
+          <div style="margin-bottom:1.2rem;">
+            <h3 style="font-size:1.35rem;font-weight:900;color:#fff;">4 บทเรียนหลักที่ได้จากการแข่งขัน (Root Cause Takeaways)</h3>
+            <p style="font-size:0.84rem;color:var(--text-muted);">ข้อสรุปเชิงโครงสร้างจากผลการแข่งขันจริง เพื่อนำไปปรับปรุงตรรกะของอัลกอริทึม</p>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(270px, 1fr));gap:1.2rem;">
+            ${lessonsHtml}
+          </div>
+        </div>
+
+        <!-- Rules for Next Matchday (Anti-Overfitting Directive) -->
+        <div style="background:var(--bg-card);border:1px solid rgba(16,185,129,0.3);border-radius:var(--radius-lg);padding:1.8rem;margin-bottom:3rem;box-shadow:0 0 30px rgba(16,185,129,0.08);">
+          <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.7rem;">
+            <i class="ri-shield-star-line" style="color:#10b981;font-size:1.4rem;"></i>
+            <h3 style="font-size:1.25rem;font-weight:900;color:#fff;margin:0;">กฎเหล็ก 4 ข้อสำหรับวิเคราะห์การแข่งขันรอบถัดไป (Next Analysis Rules)</h3>
+          </div>
+          <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1.2rem;">
+            ภายใต้มาตรการ Anti-Overfitting Protocol: ห้ามปรับโมเดลตามเกมผิดปกติเพียงนัดเดียว และต้องบังคับใช้กฎเหล่านี้ใน Matchday 5 เป็นต้นไป
+          </p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:0.85rem;">
+            ${rulesHtml}
+          </div>
+        </div>
+
+        <!-- Bottom Return Button -->
+        <div style="text-align:center;padding:2rem 0;">
+          <button onclick="switchLeagueCategory('ucl')" class="btn-hero-primary" style="padding:0.75rem 2.2rem;font-size:0.95rem;background:linear-gradient(135deg, #10b981 0%, #059669 100%);color:#000;font-weight:800;border:none;border-radius:var(--radius-full);cursor:pointer;box-shadow:0 0 25px rgba(16,185,129,0.4);">
+            <i class="ri-arrow-left-line"></i> กลับสู่หน้าหลักการแข่งขัน
+          </button>
+        </div>
+      </div>
+    `;
+  }
+
   window.switchLeagueCategory = function(cat) {
     if (cat === 'superliga') {
       window.location.hash = '#superliga';
     } else if (cat === 'standings') {
       window.location.hash = '#standings';
+    } else if (cat === 'audit') {
+      window.location.hash = '#audit';
     } else {
       window.location.hash = '#overview';
     }
@@ -1866,8 +2118,32 @@ function renderMatchDetail(matchId) {
     const catBtnUcl = document.getElementById('cat-btn-ucl');
     const catBtnSuperliga = document.getElementById('cat-btn-superliga');
     const catBtnStandings = document.getElementById('cat-btn-standings');
+    const catBtnAudit = document.getElementById('cat-btn-audit');
     const danishView = document.getElementById('danish-view');
     const standingsView = document.getElementById('standings-view');
+    const auditView = document.getElementById('audit-view');
+
+    // Route: Post-Match Audit View
+    if (hash === '#audit' || hash.startsWith('#audit')) {
+      state.currentView = 'audit';
+      overviewView.style.display = 'none';
+      detailView.style.display = 'none';
+      if (danishView) danishView.style.display = 'none';
+      if (standingsView) standingsView.style.display = 'none';
+      if (auditView) {
+        auditView.style.display = 'block';
+        renderAuditView();
+      }
+      if (catBtnUcl) catBtnUcl.classList.remove('active');
+      if (catBtnSuperliga) catBtnSuperliga.classList.remove('active');
+      if (catBtnStandings) catBtnStandings.classList.remove('active');
+      if (catBtnAudit) catBtnAudit.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (auditView) auditView.style.display = 'none';
+    if (catBtnAudit) catBtnAudit.classList.remove('active');
 
         // Route: Standings Category View (All Leagues & Cups)
     if (hash === '#standings' || hash.startsWith('#standings')) {
