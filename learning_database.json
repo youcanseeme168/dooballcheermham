@@ -1,0 +1,297 @@
+{
+  "meta": {
+    "system": "FOOTBALL AI LEARNING SYSTEM",
+    "dataset": "UCL-2026-MD4",
+    "totalMatches": 9
+  },
+  "records": [
+    {
+      "matchId": "UCL-2026-MD4-01",
+      "matchDate": "2026-11-05",
+      "league": "UEFA Champions League (League Phase Matchday 4)",
+      "homeTeam": "AEK Athens",
+      "awayTeam": "Real Madrid",
+      "predictedScore": "1-3",
+      "predicted1X2": "2",
+      "actualScore": "2-3",
+      "actual1X2": "2",
+      "prob1X2": {
+        "home": 0.08,
+        "draw": 0.15,
+        "away": 0.77
+      },
+      "oddsBefore": {
+        "home": 10.5,
+        "draw": 6.2,
+        "away": 1.27
+      },
+      "predictedOU": "Over 2.5",
+      "actualOU": "Over 2.5 (5 goals)",
+      "predictedBTTS": "Yes",
+      "actualBTTS": "Yes",
+      "accuracy1X2": "Correct",
+      "exactScore": "Wrong",
+      "goalTotalError": 1,
+      "rootCause": "None (Directional hit; AEK scored 1 goal more than expected due to set-piece push)",
+      "lessonsLearned": "Greek away venues create high friction; Real Madrid won but defense conceded 2 goals",
+      "modelVersion": "v1.4.0-UCL",
+      "updatedDate": "2026-11-05"
+    },
+    {
+      "matchId": "UCL-2026-MD4-02",
+      "matchDate": "2026-11-05",
+      "league": "UEFA Champions League (League Phase Matchday 4)",
+      "homeTeam": "Fenerbahçe",
+      "awayTeam": "Liverpool",
+      "predictedScore": "1-3",
+      "predicted1X2": "2",
+      "actualScore": "3-2",
+      "actual1X2": "1",
+      "prob1X2": {
+        "home": 0.15,
+        "draw": 0.21,
+        "away": 0.64
+      },
+      "oddsBefore": {
+        "home": 6.2,
+        "draw": 4.6,
+        "away": 1.46
+      },
+      "predictedOU": "Under 3.5",
+      "actualOU": "Over 3.5 (5 goals)",
+      "predictedBTTS": "Yes",
+      "actualBTTS": "Yes",
+      "accuracy1X2": "Wrong",
+      "exactScore": "Wrong",
+      "goalTotalError": 1,
+      "rootCause": "C (Tactical Mismatch) + D (Home Advantage Error) + B (Injury Impact on GK)",
+      "lessonsLearned": "Interim manager bounce (Dirk Kuyt) + Istanbul hostile home advantage severely underestimated. Absence of Alisson Becker caused Liverpool defensive collapse.",
+      "modelVersion": "v1.4.0-UCL",
+      "updatedDate": "2026-11-05"
+    },
+    {
+      "matchId": "UCL-2026-MD4-03",
+      "matchDate": "2026-11-05",
+      "league": "UEFA Champions League (League Phase Matchday 4)",
+      "homeTeam": "Borussia Dortmund",
+      "awayTeam": "Real Betis",
+      "predictedScore": "2-1",
+      "predicted1X2": "1",
+      "actualScore": "2-1",
+      "actual1X2": "1",
+      "prob1X2": {
+        "home": 0.54,
+        "draw": 0.24,
+        "away": 0.22
+      },
+      "oddsBefore": {
+        "home": 1.75,
+        "draw": 3.9,
+        "away": 4.3
+      },
+      "predictedOU": "Over 2.5",
+      "actualOU": "Over 2.5 (3 goals)",
+      "predictedBTTS": "Yes",
+      "actualBTTS": "Yes",
+      "accuracy1X2": "Correct",
+      "exactScore": "Correct (Exact Score Hit)",
+      "goalTotalError": 0,
+      "rootCause": "None (Benchmark Prediction)",
+      "lessonsLearned": "Signal Iduna Park home aggression model + Betis transition vulnerability accurately calibrated.",
+      "modelVersion": "v1.4.0-UCL",
+      "updatedDate": "2026-11-05"
+    },
+    {
+      "matchId": "UCL-2026-MD4-04",
+      "matchDate": "2026-11-05",
+      "league": "UEFA Champions League (League Phase Matchday 4)",
+      "homeTeam": "FC Porto",
+      "awayTeam": "SSC Napoli",
+      "predictedScore": "2-1",
+      "predicted1X2": "1",
+      "actualScore": "4-1",
+      "actual1X2": "1",
+      "prob1X2": {
+        "home": 0.49,
+        "draw": 0.27,
+        "away": 0.24
+      },
+      "oddsBefore": {
+        "home": 1.91,
+        "draw": 3.5,
+        "away": 3.9
+      },
+      "predictedOU": "Over 2.5",
+      "actualOU": "Over 2.5 (5 goals)",
+      "predictedBTTS": "Yes",
+      "actualBTTS": "Yes",
+      "accuracy1X2": "Correct",
+      "exactScore": "Wrong",
+      "goalTotalError": 2,
+      "rootCause": "E (Offensive Performance Underestimated) + F (Napoli Defensive Collapse)",
+      "lessonsLearned": "Porto under Francesco Farioli transitions much faster against high Italian press. Dragão atmosphere amplified margin.",
+      "modelVersion": "v1.4.0-UCL",
+      "updatedDate": "2026-11-05"
+    },
+    {
+      "matchId": "UCL-2026-MD4-05",
+      "matchDate": "2026-11-05",
+      "league": "UEFA Champions League (League Phase Matchday 4)",
+      "homeTeam": "PSV Eindhoven",
+      "awayTeam": "Club Brugge",
+      "predictedScore": "1-2",
+      "predicted1X2": "2",
+      "actualScore": "1-2",
+      "actual1X2": "2",
+      "prob1X2": {
+        "home": 0.48,
+        "draw": 0.26,
+        "away": 0.26
+      },
+      "oddsBefore": {
+        "home": 1.97,
+        "draw": 3.75,
+        "away": 3.55
+      },
+      "predictedOU": "Over 2.5",
+      "actualOU": "Over 2.5 (3 goals)",
+      "predictedBTTS": "Yes",
+      "actualBTTS": "Yes",
+      "accuracy1X2": "Correct",
+      "exactScore": "Correct (Exact Score Hit)",
+      "goalTotalError": 0,
+      "rootCause": "None (Upset Prediction Benchmark)",
+      "lessonsLearned": "Ivan Leko's Club Brugge counter-attack exploited PSV's missing central midfielders (Veerman, Schouten). High-value underdog hit @ 3.55.",
+      "modelVersion": "v1.4.0-UCL",
+      "updatedDate": "2026-11-05"
+    },
+    {
+      "matchId": "UCL-2026-MD4-06",
+      "matchDate": "2026-11-05",
+      "league": "UEFA Champions League (League Phase Matchday 4)",
+      "homeTeam": "RB Leipzig",
+      "awayTeam": "Manchester City",
+      "predictedScore": "2-4",
+      "predicted1X2": "2",
+      "actualScore": "2-3",
+      "actual1X2": "2",
+      "prob1X2": {
+        "home": 0.17,
+        "draw": 0.22,
+        "away": 0.61
+      },
+      "oddsBefore": {
+        "home": 5.4,
+        "draw": 4.35,
+        "away": 1.58
+      },
+      "predictedOU": "Over 2.5",
+      "actualOU": "Over 2.5 (5 goals)",
+      "predictedBTTS": "Yes",
+      "actualBTTS": "Yes",
+      "accuracy1X2": "Correct",
+      "exactScore": "Wrong",
+      "goalTotalError": 1,
+      "rootCause": "None (Solid Read - 1 goal margin error)",
+      "lessonsLearned": "City controlled the contest as predicted; Leipzig's direct counters consistently generate 1-2 goals against City high line.",
+      "modelVersion": "v1.4.0-UCL",
+      "updatedDate": "2026-11-05"
+    },
+    {
+      "matchId": "UCL-2026-MD4-07",
+      "matchDate": "2026-11-05",
+      "league": "UEFA Champions League (League Phase Matchday 4)",
+      "homeTeam": "RC Lens",
+      "awayTeam": "Como 1907",
+      "predictedScore": "1-2",
+      "predicted1X2": "2",
+      "actualScore": "1-9",
+      "actual1X2": "2",
+      "prob1X2": {
+        "home": 0.28,
+        "draw": 0.26,
+        "away": 0.46
+      },
+      "oddsBefore": {
+        "home": 3.35,
+        "draw": 3.65,
+        "away": 2.07
+      },
+      "predictedOU": "Over 2.5",
+      "actualOU": "Over 2.5 (10 goals)",
+      "predictedBTTS": "Yes",
+      "actualBTTS": "Yes",
+      "accuracy1X2": "Correct",
+      "exactScore": "Wrong",
+      "goalTotalError": 7,
+      "rootCause": "H (Unexpected Event / Statistical Outlier)",
+      "lessonsLearned": "Freak blowout result (1-9). Directional winner hit (@ 2.07), but extreme goal volume indicates in-game red card/complete defensive capitulation. Outlier must be isolated under Anti-Overfitting protocol.",
+      "modelVersion": "v1.4.0-UCL",
+      "updatedDate": "2026-11-05"
+    },
+    {
+      "matchId": "UCL-2026-MD4-08",
+      "matchDate": "2026-11-05",
+      "league": "UEFA Champions League (League Phase Matchday 4)",
+      "homeTeam": "Slavia Prague",
+      "awayTeam": "Arsenal FC",
+      "predictedScore": "0-2",
+      "predicted1X2": "2",
+      "actualScore": "1-2",
+      "actual1X2": "2",
+      "prob1X2": {
+        "home": 0.09,
+        "draw": 0.16,
+        "away": 0.75
+      },
+      "oddsBefore": {
+        "home": 10.0,
+        "draw": 5.9,
+        "away": 1.27
+      },
+      "predictedOU": "Under 2.5",
+      "actualOU": "Over 2.5 (3 goals)",
+      "predictedBTTS": "No",
+      "actualBTTS": "Yes",
+      "accuracy1X2": "Correct",
+      "exactScore": "Wrong",
+      "goalTotalError": 1,
+      "rootCause": "Defensive Clean Sheet Bias",
+      "lessonsLearned": "Arsenal controlled possession and won, but conceding late set-piece in Prague broke the clean-sheet / Under 2.5 projection.",
+      "modelVersion": "v1.4.0-UCL",
+      "updatedDate": "2026-11-05"
+    },
+    {
+      "matchId": "UCL-2026-MD4-09",
+      "matchDate": "2026-11-05",
+      "league": "UEFA Champions League (League Phase Matchday 4)",
+      "homeTeam": "Viking FK",
+      "awayTeam": "Sabah FK",
+      "predictedScore": "2-2",
+      "predicted1X2": "X",
+      "actualScore": "4-1",
+      "actual1X2": "1",
+      "prob1X2": {
+        "home": 0.65,
+        "draw": 0.21,
+        "away": 0.14
+      },
+      "oddsBefore": {
+        "home": 1.45,
+        "draw": 4.55,
+        "away": 6.6
+      },
+      "predictedOU": "Over 2.5",
+      "actualOU": "Over 2.5 (5 goals)",
+      "predictedBTTS": "Yes",
+      "actualBTTS": "Yes",
+      "accuracy1X2": "Wrong",
+      "exactScore": "Wrong",
+      "goalTotalError": 1,
+      "rootCause": "D (Home Advantage & Pitch Error) + Model Discrepancy (Predicted Draw despite Model 65% Home Win)",
+      "lessonsLearned": "Model probability had Viking at 65% home win, but score forecast erroneously forced 2-2 draw. Artificial turf (kunstgress) in Stavanger gave Viking massive physical dominance over Azerbaijani visitors.",
+      "modelVersion": "v1.4.0-UCL",
+      "updatedDate": "2026-11-05"
+    }
+  ]
+}
