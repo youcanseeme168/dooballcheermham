@@ -7481,3 +7481,956 @@ const POST_MATCH_AUDIT_DATA = {
     "กฎที่ 4: Outlier Quarantine – ห้ามปรับน้ำหนัก Over/Under ตามเกมที่จบด้วยใบแดงหรือสกอร์ห่างเกิน 5 ลูก"
   ]
 };
+
+/* 🏆 UEFA EUROPA LEAGUE 2026-27 MATCHDAY 4 DATA (17 MATCHES) */
+const UEL_DATA = {
+  "tournament": "UEFA Europa League 2026–27",
+  "thaiName": "ยูฟ่า ยูโรป้า ลีก ฤดูกาล 2026–27",
+  "matchday": "รอบ League Phase (Matchday 4 of 8) - ครบ 17 คู่เต็ม",
+  "date": "คืนวันพฤหัสบดีที่ 5 ต่อเช้าวันศุกร์ที่ 6 พฤศจิกายน 2026",
+  "updatedTime": "20:24 น. (5 พ.ย. 2026 เวลาไทย GMT+7)",
+  "firstKickoff": "00:45 น. (ศุกร์ 6 พ.ย.)",
+  "totalMatches": 17,
+  "curatedLowRisk": [
+    {
+      "rank": 1,
+      "matchId": 10,
+      "match": "Bayer Leverkusen vs Marseille",
+      "time": "03:00 น.",
+      "pick": "Bayer Leverkusen ชนะ (1) (@ 1.45)",
+      "score": "2-0",
+      "risk": "เสี่ยงต่ำ-ปานกลาง (คัดเกรด A+)",
+      "badge": "badge-green",
+      "reasons": "เลเวอร์คูเซ่นชนะรวด 3 นัด คลีนชีต 100% (8-0) ไม่เสียสักประตู vs มาร์กเซยแพ้รวด 3 นัด ยิงได้แค่ลูกเดียว ฟอร์มห่างชั้นที่สุดในรอบนี้"
+    },
+    {
+      "rank": 2,
+      "matchId": 16,
+      "match": "Benfica vs Lech Poznan",
+      "time": "03:00 น.",
+      "pick": "Benfica ชนะ / เบนฟิก้า -1.5 (@ 1.70)",
+      "score": "3-0",
+      "risk": "เสี่ยงต่ำ-ปานกลาง (คัดเกรด A+)",
+      "badge": "badge-green",
+      "reasons": "เบนฟิก้ายิง 10 ประตูสูงสุดใน UEL (Pavlidis ฟอร์มร้อนแรง) vs เลช พอซนาน เสีย 9 ประตู และตัวเจ็บระนาวถึง 6 คน"
+    },
+    {
+      "rank": 3,
+      "matchId": 2,
+      "match": "Sparta Praha vs Bournemouth",
+      "time": "00:45 น.",
+      "pick": "Bournemouth ชนะ (2) (@ 1.50)",
+      "score": "0-2",
+      "risk": "เสี่ยงปานกลาง (คัดเกรด A)",
+      "badge": "badge-gold",
+      "reasons": "บอร์นมัธของ Marco Rose ชนะ 6 นัดรวดทุกรายการแบบคลีนชีต UEL เสียแค่ลูกเดียว ส่วนสปาร์ต้า ปราก ขาดตัวหลัก 4 คน"
+    },
+    {
+      "rank": 4,
+      "matchId": 15,
+      "match": "Sturm Graz vs Celje",
+      "time": "03:00 น.",
+      "pick": "Sturm Graz ชนะ (1) (@ 1.58)",
+      "score": "2-0",
+      "risk": "เสี่ยงปานกลาง (คัดเกรด A)",
+      "badge": "badge-gold",
+      "reasons": "สตวร์ม กราซ เกมรับในรัง Merkur Arena เหนียวแน่น เพิ่งเชือดมาร์กเซย 1-0 ส่วนเซลเย่เสีย 7 ประตูจาก 3 นัด"
+    },
+    {
+      "rank": 5,
+      "matchId": 17,
+      "match": "Sunderland vs Dinamo Zagreb",
+      "time": "03:00 น.",
+      "pick": "Sunderland ชนะ (1) (@ 1.52)",
+      "score": "2-1",
+      "risk": "เสี่ยงปานกลาง (คัดเกรด A)",
+      "badge": "badge-gold",
+      "reasons": "ซันเดอร์แลนด์สร้างโอกาสยิง 67 ครั้งสูงสุดอันดับต้นๆ ของยุโรป ไร้พ่ายในบ้าน ดินาโมขาดเซ็นเตอร์แบ็ก Scott McKenna"
+    }
+  ],
+  "matches": [
+    {
+      "id": 1,
+      "matchNumber": 1,
+      "matchTitle": "AC Milan vs Ferencváros",
+      "kickoffSlot": "00:45",
+      "stadium": "Stadio Giuseppe Meazza (San Siro), Milan, Italy",
+      "homeTeam": {
+        "name": "AC Milan",
+        "thaiName": "เอซี มิลาน",
+        "country": "อิตาลี",
+        "manager": "Ruben Amorim"
+      },
+      "awayTeam": {
+        "name": "Ferencváros",
+        "thaiName": "เฟเรนซ์วารอส",
+        "country": "ฮังการี",
+        "manager": "ยังไม่ยืนยัน"
+      },
+      "uelStats": {
+        "homePts": 3,
+        "homeForm": "L-W-L",
+        "homeGf": 4,
+        "homeGa": 5,
+        "awayPts": 9,
+        "awayForm": "W-W-W",
+        "awayGf": 9,
+        "awayGa": 3
+      },
+      "marketOdds": {
+        "homeWin": 1.39,
+        "draw": 5.5,
+        "awayWin": 9.1,
+        "over25": 1.57,
+        "mainPick": "AC Milan ชนะ (@ 1.39)",
+        "valuePick": "Over 2.5 ประตู (@ 1.57)"
+      },
+      "predictedScore": "2-1 (หรือ 1-2)",
+      "mostLikelyScore": "2-1",
+      "winProbability": {
+        "home": 62,
+        "draw": 22,
+        "away": 16
+      },
+      "riskLevel": "เสี่ยงสูง",
+      "isCuratedLowRisk": false,
+      "teamNews": {
+        "home": "ขาดผู้เล่นเพียบ: Fikayo Tomori, Ruben Loftus-Cheek, Alexis Saelemaekers, Matteo Gabbia, Terracciano, Chukwueze, Pavlovic เจ็บ; Mike Maignan ติดโทษแบน คาดว่า Gonçalo Ramos และ Adrien Rabiot จะลงตัวจริง",
+        "away": "Botka, Bence Nagy, Otvos, Pappoe, Szecsi ไม่พร้อม; Kovacevic ต้องประเมินความฟิต"
+      },
+      "tactics": "มิลานต้องหมุนเวียนนักเตะเยอะมาก ประตูสำรองและแนวรับที่ขาดตัวหลักคือจุดเสี่ยง ขณะที่ Ferencváros ชนะรวด 3 นัด จังหวะสวนกลับเร็วและ Kristoffer Zachariassen (3 ประตู 1 แอสซิสต์) อันตรายมาก",
+      "verdict": "มิลานได้เปรียบความเป็นเจ้าบ้านแต่ตัวเจ็บเพียบ เจอทีมฟอร์มฮอต ชนะได้แต่เหนื่อย สกอร์คาด 2-1 เสี่ยงสูง"
+    },
+    {
+      "id": 2,
+      "matchNumber": 2,
+      "matchTitle": "Sparta Praha vs Bournemouth",
+      "kickoffSlot": "00:45",
+      "stadium": "epet ARENA / Letná Stadium, Prague, Czechia",
+      "homeTeam": {
+        "name": "Sparta Praha",
+        "thaiName": "สปาร์ต้า ปราก",
+        "country": "เช็ก",
+        "manager": "ยังไม่ยืนยัน"
+      },
+      "awayTeam": {
+        "name": "Bournemouth",
+        "thaiName": "บอร์นมัธ",
+        "country": "อังกฤษ",
+        "manager": "Marco Rose"
+      },
+      "uelStats": {
+        "homePts": 4,
+        "homeForm": "W-D-L",
+        "homeGf": 5,
+        "homeGa": 3,
+        "awayPts": 9,
+        "awayForm": "W-W-W",
+        "awayGf": 8,
+        "awayGa": 1
+      },
+      "marketOdds": {
+        "homeWin": 6.5,
+        "draw": 4.33,
+        "awayWin": 1.5,
+        "mainPick": "Bournemouth ชนะ (2) (@ 1.50)",
+        "valuePick": "Bournemouth -0.75 แฮนดิแคป (@ 1.72)"
+      },
+      "predictedScore": "0-2",
+      "mostLikelyScore": "0-2",
+      "winProbability": {
+        "home": 14,
+        "draw": 22,
+        "away": 64
+      },
+      "riskLevel": "เสี่ยงปานกลาง",
+      "isCuratedLowRisk": true,
+      "curatedReason": "บอร์นมัธชนะ 6 นัดรวดทุกรายการและคลีนชีต 100% ในช่วงหลัง เกมรับ UEL เสียแค่ลูกเดียว ส่วนสปาร์ต้าขาดตัวหลัก 4 ราย",
+      "teamNews": {
+        "home": "Matej Rynes, Adam Karabec, Magnus Kofod Andersen, Emmanuel Uchenna ไม่พร้อม; John Mercado รอเช็กฟิต",
+        "away": "Alex Toth, Alex Scott, Juanlu Sánchez, Julian Araujo, Veljko Milosavljevic ไม่พร้อม; Kroupi ไม่อยู่ในสควอด"
+      },
+      "tactics": "Bournemouth ของ Marco Rose เล่นรัดกุม คุมระยะห่างระหว่างไลน์ได้เนียนกริบ ไม่จำเป็นต้องเปิดหน้าแลก สปาร์ต้าเจาะเกมรับทีมเยือนที่เสียแค่ 1 ลูกใน 3 นัดลำบากมาก",
+      "verdict": "บอร์นมัธมาตรฐานลีกผู้ดีเหนือกว่าชัดเจน ฟอร์มชนะรวด สกอร์คาดบุกชนะ 0-2 ความเสี่ยงปานกลาง"
+    },
+    {
+      "id": 3,
+      "matchNumber": 3,
+      "matchTitle": "Crystal Palace vs Hoffenheim",
+      "kickoffSlot": "00:45",
+      "stadium": "Selhurst Park, London, England",
+      "homeTeam": {
+        "name": "Crystal Palace",
+        "thaiName": "คริสตัล พาเลซ",
+        "country": "อังกฤษ",
+        "manager": "Pierre Sage"
+      },
+      "awayTeam": {
+        "name": "Hoffenheim",
+        "thaiName": "ฮอฟเฟนไฮม์",
+        "country": "เยอรมนี",
+        "manager": "Christian Ilzer"
+      },
+      "uelStats": {
+        "homePts": 4,
+        "homeForm": "W-L-D",
+        "homeGf": 8,
+        "homeGa": 5,
+        "awayPts": 3,
+        "awayForm": "L-L-W",
+        "awayGf": 5,
+        "awayGa": 5
+      },
+      "marketOdds": {
+        "homeWin": 1.85,
+        "draw": 3.8,
+        "awayWin": 3.9,
+        "mainPick": "Over 2.5 ประตู (@ 1.62)",
+        "valuePick": "Palace ชนะ (@ 1.85)"
+      },
+      "predictedScore": "2-1",
+      "mostLikelyScore": "2-1",
+      "winProbability": {
+        "home": 48,
+        "draw": 26,
+        "away": 26
+      },
+      "riskLevel": "เสี่ยงสูง",
+      "isCuratedLowRisk": false,
+      "teamNews": {
+        "home": "Chadi Riad, Takehiro Tomiyasu เจ็บ (Out); Ismaïla Sarr รอเช็กฟิต; Quinten Timber, Strand Larsen พร้อมลง",
+        "away": "ขาดแนวรับเพียบ: Valentin Gendrey, Robin Hranac, Albian Hajdari, Patrick Wimmer, Nathan De Cat, Bambase Conte, Adam Hložek เจ็บ; Vladimir Coufal เช็กฟิต"
+      },
+      "tactics": "Yeremy Pino ยิงมา 3 เกมติดใน UEL นำดาวซัลโว พาเลซเปิดเกมรุกริมเส้นเข้าทำแผงหลังฮอฟเฟนไฮม์ที่ขาดเซ็นเตอร์หลักหลายคน แต่เกมรับพาเลซเองก็เสียถึง 5 ลูก",
+      "verdict": "เปิดหน้าแลกกันสนุก ประตูรวมมีสิทธิ์ทะลุ 2.5 Palace เบียดชนะ 2-1 เสี่ยงสูง"
+    },
+    {
+      "id": 4,
+      "matchNumber": 4,
+      "matchTitle": "Lillestrøm vs Viktoria Plzeň",
+      "kickoffSlot": "00:45",
+      "stadium": "Åråsen Stadion, Lillestrøm, Norway",
+      "homeTeam": {
+        "name": "Lillestrøm",
+        "thaiName": "ลีลล์สตรอม",
+        "country": "นอร์เวย์",
+        "manager": "Hans Erik Ødegaard"
+      },
+      "awayTeam": {
+        "name": "Viktoria Plzeň",
+        "thaiName": "วิคตอเรีย พิลเซ่น",
+        "country": "เช็ก",
+        "manager": "ยังไม่ยืนยัน"
+      },
+      "uelStats": {
+        "homePts": 1,
+        "homeForm": "L-D-L",
+        "homeGf": 2,
+        "homeGa": 9,
+        "awayPts": 0,
+        "awayForm": "L-L-L",
+        "awayGf": 2,
+        "awayGa": 7
+      },
+      "marketOdds": {
+        "homeWin": 3.05,
+        "draw": 4.1,
+        "awayWin": 2.32,
+        "over25": 1.61,
+        "under25": 2.6,
+        "mainPick": "Under 3.0 ประตู (@ 1.70)",
+        "valuePick": "เสมอ (X) (@ 4.10)"
+      },
+      "predictedScore": "1-1",
+      "mostLikelyScore": "1-1",
+      "winProbability": {
+        "home": 30,
+        "draw": 28,
+        "away": 42
+      },
+      "riskLevel": "เสี่ยงสูง",
+      "isCuratedLowRisk": false,
+      "teamNews": {
+        "home": "เพิ่งชนะ Start 1-0 ในลีกเรียกความมั่นใจ แต่เกมยุโรปเสียไป 9 ประตู",
+        "away": "Jan Paluska และ Václav Jemelka มีรายงานบาดเจ็บ"
+      },
+      "tactics": "ทั้งคู่ยิงได้แค่ทีมละ 2 ประตูใน 3 นัดแรก Lillestrøm ต้องเน้นอุดหลังเสีย 6 ลูกให้โซเซียดาด พิลเซ่นหวังพึ่ง Christophe Kabongo จบสกอร์",
+      "verdict": "บอลฟอร์มแย่เจอกันเอง ทรงบอลอึดอัด โอกาสเสมอ 1-1 สูงมาก เสี่ยงสูง"
+    },
+    {
+      "id": 5,
+      "matchNumber": 5,
+      "matchTitle": "N.E.C. Nijmegen vs Omonia Nicosia",
+      "kickoffSlot": "00:45",
+      "stadium": "Goffertstadion, Nijmegen, Netherlands",
+      "homeTeam": {
+        "name": "N.E.C. Nijmegen",
+        "thaiName": "เอ็นอีซี ไนเมเก้น",
+        "country": "เนเธอร์แลนด์",
+        "manager": "Dick Schreuder"
+      },
+      "awayTeam": {
+        "name": "Omonia Nicosia",
+        "thaiName": "โอโมเนีย นิโคเซีย",
+        "country": "ไซปรัส",
+        "manager": "Henning Berg"
+      },
+      "uelStats": {
+        "homePts": 4,
+        "homeForm": "L-D-W",
+        "homeGf": 5,
+        "homeGa": 8,
+        "awayPts": 6,
+        "awayForm": "W-W-L",
+        "awayGf": 5,
+        "awayGa": 4
+      },
+      "marketOdds": {
+        "homeWin": 1.85,
+        "draw": 4.18,
+        "awayWin": 4.3,
+        "mainPick": "Omonia +0.75 แฮนดิแคป (@ 1.82)",
+        "valuePick": "BTTS - Yes (@ 1.68)"
+      },
+      "predictedScore": "1-1",
+      "mostLikelyScore": "1-1",
+      "winProbability": {
+        "home": 46,
+        "draw": 27,
+        "away": 27
+      },
+      "riskLevel": "เสี่ยงสูง",
+      "isCuratedLowRisk": false,
+      "teamNews": {
+        "home": "Dušan Tadić, Philippe Sandler, Bram Nuytinck, Emre Mor, Dennis Geiger ไม่พร้อม",
+        "away": "Loïc Négo, Carel Eiting ไม่พร้อม; Fotis Kitsos รอเช็กฟิต"
+      },
+      "tactics": "NEC พึ่ง Tjaronn Chery ยิงไป 3 ประตู แต่แนวรับเสียถึง 8 ลูก Omonia กระจายตัวยิงได้หลายคนและมีแต้มนำเจ้าถิ่น",
+      "verdict": "NEC เป็นต่อเพราะสนาม แต่สภาพทีมแหว่ง Omonia มีลุ้นบุกมาแบ่งแต้ม 1-1 เสี่ยงสูง"
+    },
+    {
+      "id": 6,
+      "matchNumber": 6,
+      "matchTitle": "Levski Sofia vs Jagiellonia Białystok",
+      "kickoffSlot": "00:45",
+      "stadium": "Vasil Levski National Stadium, Sofia, Bulgaria (สนามทดแทน)",
+      "homeTeam": {
+        "name": "Levski Sofia",
+        "thaiName": "เลฟสกี้ โซเฟีย",
+        "country": "บัลแกเรีย",
+        "manager": "Julio Velázquez"
+      },
+      "awayTeam": {
+        "name": "Jagiellonia Białystok",
+        "thaiName": "ยาเกียลโลเนีย เบียลีสตอค",
+        "country": "โปแลนด์",
+        "manager": "Adrian Siemieniec"
+      },
+      "uelStats": {
+        "homePts": 4,
+        "homeForm": "L-D-W",
+        "homeGf": 3,
+        "homeGa": 3,
+        "awayPts": 3,
+        "awayForm": "L-W-L",
+        "awayGf": 4,
+        "awayGa": 6
+      },
+      "marketOdds": {
+        "homeWin": 2.07,
+        "draw": 3.75,
+        "awayWin": 3.79,
+        "btts": 1.7,
+        "over25": 1.83,
+        "mainPick": "BTTS - Yes (@ 1.70)",
+        "valuePick": "เสมอ (X) (@ 3.75)"
+      },
+      "predictedScore": "2-2 (หรือ 1-1)",
+      "mostLikelyScore": "2-2",
+      "winProbability": {
+        "home": 42,
+        "draw": 28,
+        "away": 30
+      },
+      "riskLevel": "เสี่ยงสูง",
+      "isCuratedLowRisk": false,
+      "teamNews": {
+        "home": "Asen Mitkov, Radoslav Kirilov ไม่พร้อม; มี Reinaldo เป็นตัวชูโรง (2 ประตู 1 แอสซิสต์)",
+        "away": "Norbert Wojtuszek ไม่พร้อม; Jesus Imaz และ Nik Prelec กำลังฟอร์มคม"
+      },
+      "tactics": "Levski ต้องเล่นสนามแห่งชาติไม่ใช่รังเหย้าเดิม ความคุ้นเคยลดลง Jagiellonia กำลังมั่นใจชนะ 3 นัดติดทุกรายการ มีสิทธิ์แลกหมัด",
+      "verdict": "สูสีมาก มีโอกาสยิงกันทั้งสองฝั่ง สกอร์คาด 2-2 เสี่ยงสูง"
+    },
+    {
+      "id": 7,
+      "matchNumber": 7,
+      "matchTitle": "Real Sociedad vs Lyon",
+      "kickoffSlot": "00:45",
+      "stadium": "Reale Arena (Anoeta), San Sebastián, Spain",
+      "homeTeam": {
+        "name": "Real Sociedad",
+        "thaiName": "เรอัล โซเซียดาด",
+        "country": "สเปน",
+        "manager": "Pellegrino Matarazzo"
+      },
+      "awayTeam": {
+        "name": "Lyon",
+        "thaiName": "โอลิมปิก ลียง",
+        "country": "ฝรั่งเศส",
+        "manager": "Paulo Fonseca"
+      },
+      "uelStats": {
+        "homePts": 4,
+        "homeForm": "L-D-W",
+        "homeGf": 8,
+        "homeGa": 3,
+        "awayPts": 6,
+        "awayForm": "W-W-L",
+        "awayGf": 5,
+        "awayGa": 6
+      },
+      "marketOdds": {
+        "homeWin": 2.15,
+        "draw": 3.6,
+        "awayWin": 3.2,
+        "mainPick": "Sociedad ชนะ (1) (@ 2.15)",
+        "valuePick": "Over 2.5 ประตู (@ 1.75)"
+      },
+      "predictedScore": "2-1",
+      "mostLikelyScore": "2-1",
+      "winProbability": {
+        "home": 44,
+        "draw": 27,
+        "away": 29
+      },
+      "riskLevel": "เสี่ยงสูง",
+      "isCuratedLowRisk": false,
+      "teamNews": {
+        "home": "Yangel Herrera ไม่พร้อม; Mamadou Sarr, Unai Marrero เช็กฟิต; Ibai Basurco โดนแบน; Job Ochieng เจ็บ",
+        "away": "Corentin Tolisso Out, Abner Vinícius Out, Moussa Niakhaté Doubtful"
+      },
+      "tactics": "บิ๊กแมตช์ของรอบนี้ โซเซียดาดเพิ่งถล่ม 6-0 แต่ลียงของ Fonseca มีเกมรุกคม ทั้งคู่มีปัญหาตัวขาดในแนวรับ เกมเปิดกว้าง",
+      "verdict": "โซเซียดาดได้เปรียบเสียงเชียร์ในบ้าน เบียดชนะ 2-1 เสี่ยงสูง"
+    },
+    {
+      "id": 8,
+      "matchNumber": 8,
+      "matchTitle": "Anderlecht vs Red Bull Salzburg",
+      "kickoffSlot": "00:45",
+      "stadium": "Lotto Park, Brussels, Belgium",
+      "homeTeam": {
+        "name": "Anderlecht",
+        "thaiName": "อันเดอร์เลชท์",
+        "country": "เบลเยียม",
+        "manager": "ไม่ระบุ"
+      },
+      "awayTeam": {
+        "name": "Red Bull Salzburg",
+        "thaiName": "เร้ดบูลล์ ซัลซ์บวร์ก",
+        "country": "ออสเตรีย",
+        "manager": "ไม่ระบุ"
+      },
+      "uelStats": {
+        "homePts": 3,
+        "homeForm": "L-L-W",
+        "homeGf": 4,
+        "homeGa": 3,
+        "awayPts": 4,
+        "awayForm": "W-L-D",
+        "awayGf": 3,
+        "awayGa": 6
+      },
+      "marketOdds": {
+        "homeWin": 2.08,
+        "draw": 3.9,
+        "awayWin": 3.8,
+        "over25": 1.64,
+        "mainPick": "Over 2.5 ประตู (@ 1.64)",
+        "valuePick": "เสมอ (X) (@ 3.90)"
+      },
+      "predictedScore": "2-2 (หรือ 2-1)",
+      "mostLikelyScore": "2-2",
+      "winProbability": {
+        "home": 44,
+        "draw": 26,
+        "away": 30
+      },
+      "riskLevel": "เสี่ยงสูง",
+      "isCuratedLowRisk": false,
+      "teamNews": {
+        "home": "Kilian Sardella, Ilay Camara, Lucas Hey ไม่พร้อม; Marten Winkler เช็กฟิต",
+        "away": "ขาดตัวเยอะมาก: Dominik Schmid, Mellberg, Veratschnig, Omoregie, Kitano, Boma เจ็บ; Redzic, Lindström เช็กฟิต"
+      },
+      "tactics": "ทั้งคู่กำลังแย่งพื้นที่เพลย์ออฟ ซัลซ์บวร์กแนวรับรั่วโดนรัวไป 6 ลูก ส่วนอันเดอร์เลชท์เล่นในบ้านเกมรุกจัดจ้าน",
+      "verdict": "เกมเปิดแลกหมัด สกอร์สูงค่อนข้างเด่น คาดเสมอเดือด 2-2 เสี่ยงสูง"
+    },
+    {
+      "id": 9,
+      "matchNumber": 9,
+      "matchTitle": "AZ Alkmaar vs Juventus",
+      "kickoffSlot": "03:00",
+      "stadium": "AFAS Stadion, Alkmaar, Netherlands",
+      "homeTeam": {
+        "name": "AZ Alkmaar",
+        "thaiName": "อาแซด อัลค์มาร์",
+        "country": "เนเธอร์แลนด์",
+        "manager": "ยังไม่ยืนยัน"
+      },
+      "awayTeam": {
+        "name": "Juventus",
+        "thaiName": "ยูเวนตุส",
+        "country": "อิตาลี",
+        "manager": "Luciano Spalletti"
+      },
+      "uelStats": {
+        "homePts": 6,
+        "homeForm": "L-W-W",
+        "homeGf": 6,
+        "homeGa": 2,
+        "awayPts": 7,
+        "awayForm": "W-W-D",
+        "awayGf": 9,
+        "awayGa": 3
+      },
+      "marketOdds": {
+        "homeWin": 3.4,
+        "draw": 3.6,
+        "awayWin": 2.1,
+        "mainPick": "Juventus ชนะหรือเสมอ (X2) (@ 1.35)",
+        "valuePick": "Juventus ชนะ (@ 2.10)"
+      },
+      "predictedScore": "1-2",
+      "mostLikelyScore": "1-2",
+      "winProbability": {
+        "home": 27,
+        "draw": 27,
+        "away": 46
+      },
+      "riskLevel": "เสี่ยงสูง",
+      "isCuratedLowRisk": false,
+      "teamNews": {
+        "home": "สถิติในบ้านยุโรปสุดโหด ไร้พ่าย 17 นัดติด (ชนะ 14 เสมอ 3)",
+        "away": "ยูเวนตุสของ Spalletti ยิงไป 9 ประตูจาก 3 นัด ไร้พ่ายในรายการ"
+      },
+      "tactics": "AZ จะใช้สนามเหย้าบีบพื้นที่ แต่ยูเวนตุสมีผู้เล่นจบสกอร์คมกริบหลายราย หากยูเวนตุสครองแดนกลางได้ มีสิทธิ์เฉือนชนะ",
+      "verdict": "AZ ในบ้านเหนียวระดับหินผา ยูเว่เหนือกว่าเรื่องเกรดผู้เล่น คาดบุกชนะ 1-2 เสี่ยงสูง"
+    },
+    {
+      "id": 10,
+      "matchNumber": 10,
+      "matchTitle": "Bayer Leverkusen vs Marseille",
+      "kickoffSlot": "03:00",
+      "stadium": "BayArena, Leverkusen, Germany",
+      "homeTeam": {
+        "name": "Bayer Leverkusen",
+        "thaiName": "ไบเออร์ เลเวอร์คูเซ่น",
+        "country": "เยอรมนี",
+        "manager": "ยังไม่ยืนยัน"
+      },
+      "awayTeam": {
+        "name": "Marseille",
+        "thaiName": "โอลิมปิก มาร์กเซย",
+        "country": "ฝรั่งเศส",
+        "manager": "ยังไม่ยืนยัน"
+      },
+      "uelStats": {
+        "homePts": 9,
+        "homeForm": "W-W-W",
+        "homeGf": 8,
+        "homeGa": 0,
+        "awayPts": 0,
+        "awayForm": "L-L-L",
+        "awayGf": 1,
+        "awayGa": 6
+      },
+      "marketOdds": {
+        "homeWin": 1.45,
+        "draw": 5.41,
+        "awayWin": 7.0,
+        "over25": 1.5,
+        "mainPick": "Bayer Leverkusen ชนะ (1) (@ 1.45)",
+        "valuePick": "Leverkusen -1.25 แฮนดิแคป (@ 1.85)"
+      },
+      "predictedScore": "2-0",
+      "mostLikelyScore": "2-0",
+      "winProbability": {
+        "home": 70,
+        "draw": 18,
+        "away": 12
+      },
+      "riskLevel": "เสี่ยงต่ำ-ปานกลาง",
+      "isCuratedLowRisk": true,
+      "curatedReason": "เลเวอร์คูเซ่นชนะ 3 นัดรวด คลีนชีต 100% (8-0) เป็นทีมเดียวที่ไม่เสียประตูในทัวร์นาเมนต์ ขณะที่มาร์กเซยแพ้รวด 3 นัด ยิงได้แค่ลูกเดียว",
+      "teamNews": {
+        "home": "Facundo Medina มีลุ้นลงเจอทีมเก่าหลังย้ายมาจากมาร์กเซยช่วงซัมเมอร์ แดนกลางและแนวรับสมบูรณ์แบบ",
+        "away": "มาร์กเซยผลงานยุโรปดิ่งเหว แพ้รวด 3 นัด ขวัญกำลังใจถดถอย"
+      },
+      "tactics": "ห้างยาจะครองบอลขึงบดสูง บังคับให้มาร์กเซยเสียบอลในแดนตัวเอง เกมรับเจ้าถิ่นที่ยังไม่เสียแม้แต่ประตูเดียวจะตัดโอกาสสวนกลับของทีมเยือนได้หมดจด",
+      "verdict": "ความห่างชั้นของฟอร์มชัดเจนที่สุดในรอบนี้ เลเวอร์คูเซ่นเปิดรังทุบ 2-0 ความเสี่ยงค่อนข้างต่ำ (Low Risk)"
+    },
+    {
+      "id": 11,
+      "matchNumber": 11,
+      "matchTitle": "Celtic vs Beşiktaş",
+      "kickoffSlot": "03:00",
+      "stadium": "Celtic Park, Glasgow, Scotland",
+      "homeTeam": {
+        "name": "Celtic",
+        "thaiName": "เซลติก",
+        "country": "สกอตแลนด์",
+        "manager": "Martin O’Neill"
+      },
+      "awayTeam": {
+        "name": "Beşiktaş",
+        "thaiName": "เบซิคตัส",
+        "country": "ตุรกี",
+        "manager": "ยังไม่ยืนยัน"
+      },
+      "uelStats": {
+        "homePts": 0,
+        "homeForm": "L-L-L",
+        "homeGf": 3,
+        "homeGa": 9,
+        "awayPts": 7,
+        "awayForm": "W-W-D",
+        "awayGf": 9,
+        "awayGa": 5
+      },
+      "marketOdds": {
+        "homeWin": 3.15,
+        "draw": 4.0,
+        "awayWin": 2.28,
+        "over25": 1.67,
+        "mainPick": "Beşiktaş ชนะ (2) (@ 2.28)",
+        "valuePick": "BTTS - Yes (@ 1.60)"
+      },
+      "predictedScore": "1-2",
+      "mostLikelyScore": "1-2",
+      "winProbability": {
+        "home": 29,
+        "draw": 24,
+        "away": 47
+      },
+      "riskLevel": "เสี่ยงสูง",
+      "isCuratedLowRisk": false,
+      "teamNews": {
+        "home": "Alistair Johnston Out; Kieran Tierney, Yang Hyun-jun, Oliver Sørensen เช็กฟิต",
+        "away": "เบซิคตัสไร้พ่าย ยิงไป 9 ประตู กำลังมั่นใจเต็มเปี่ยม"
+      },
+      "tactics": "เซลติกยิงได้ใน 4 จาก 5 นัดหลัง แต่เสียประตูเละเทะ (9 ลูก) เบซิคตัสสวนกลับคม สกอร์มีโอกาสเปิดแลกทั้งสองฝั่ง",
+      "verdict": "เบซิคตัสขุมกำลังและฟอร์มดีกว่า แต่เซลติกพาร์คมีมนต์ขลัง คาดทีมเยือนเบียด 1-2 เสี่ยงสูง"
+    },
+    {
+      "id": 12,
+      "matchNumber": 12,
+      "matchTitle": "Hapoel Be’er Sheva vs OFI Crete",
+      "kickoffSlot": "03:00",
+      "stadium": "Superbet Arena – Giulești, Bucharest, Romania (สนามกลาง)",
+      "homeTeam": {
+        "name": "Hapoel Be’er Sheva",
+        "thaiName": "ฮาโปเอล เบียร์ เชว่า",
+        "country": "อิสราเอล",
+        "manager": "Ran Kozuch"
+      },
+      "awayTeam": {
+        "name": "OFI Crete",
+        "thaiName": "โอเอฟไอ ครีต",
+        "country": "กรีซ",
+        "manager": "Christos Kontis"
+      },
+      "uelStats": {
+        "homePts": 1,
+        "homeForm": "D-L-L",
+        "homeGf": 1,
+        "homeGa": 6,
+        "awayPts": 3,
+        "awayForm": "W-L-L",
+        "awayGf": 3,
+        "awayGa": 4
+      },
+      "marketOdds": {
+        "homeWin": 2.18,
+        "draw": 3.7,
+        "awayWin": 3.5,
+        "under35": 1.52,
+        "mainPick": "Under 2.5 ประตู (@ 1.85)",
+        "valuePick": "เสมอ (X) (@ 3.70)"
+      },
+      "predictedScore": "1-1",
+      "mostLikelyScore": "1-1",
+      "winProbability": {
+        "home": 42,
+        "draw": 29,
+        "away": 29
+      },
+      "riskLevel": "เสี่ยงสูง",
+      "isCuratedLowRisk": false,
+      "teamNews": {
+        "home": "Lucas Ventura Out; Eliel Peretz Doubtful; Dan Biton กำลังฟื้นตัว เล่นสนามกลางในโรมาเนีย",
+        "away": "Lagoudakis, Kenourgiakis มีปัญหา; Koutsoupias, Chnaris ไม่พร้อม"
+      },
+      "tactics": "การเล่นสนามกลางทำให้ฮาโปเอลไร้ความได้เปรียบ ทั้งสองทีมยิงประตูน้อยในยุโรป รูปเกมน่าจะระวังตัวแจ",
+      "verdict": "เกมตึงเปรี๊ยะ ประตูน่าจะน้อย จบเสมอ 1-1 เสี่ยงสูง"
+    },
+    {
+      "id": 13,
+      "matchNumber": 13,
+      "matchTitle": "Celta Vigo vs Union Saint-Gilloise",
+      "kickoffSlot": "03:00",
+      "stadium": "Abanca-Balaídos, Vigo, Spain",
+      "homeTeam": {
+        "name": "Celta Vigo",
+        "thaiName": "เซลต้า บีโก้",
+        "country": "สเปน",
+        "manager": "Claudio Giráldez"
+      },
+      "awayTeam": {
+        "name": "Union Saint-Gilloise",
+        "thaiName": "ยูเนียน แซงต์-ชิลลัวส์",
+        "country": "เบลเยียม",
+        "manager": "ยังไม่ยืนยัน"
+      },
+      "uelStats": {
+        "homePts": 3,
+        "homeForm": "L-L-W",
+        "homeGf": 3,
+        "homeGa": 4,
+        "awayPts": 7,
+        "awayForm": "W-D-W",
+        "awayGf": 8,
+        "awayGa": 1
+      },
+      "marketOdds": {
+        "homeWin": 2.25,
+        "draw": 3.5,
+        "awayWin": 3.1,
+        "mainPick": "Union SG ชนะหรือเสมอ (X2) (@ 1.62)",
+        "valuePick": "Under 2.5 ประตู (@ 1.80)"
+      },
+      "predictedScore": "1-1",
+      "mostLikelyScore": "1-1",
+      "winProbability": {
+        "home": 38,
+        "draw": 30,
+        "away": 32
+      },
+      "riskLevel": "เสี่ยงสูง",
+      "isCuratedLowRisk": false,
+      "teamNews": {
+        "home": "Carl Starfelt, Miguel Román, Álvaro Núñez, Borja Iglesias ไม่พร้อม",
+        "away": "ตัวเจ็บเยอะ: Kevin Mac Allister, Leysen, Kricfalusi, Schoofs, Biondic, Hurtevent"
+      },
+      "tactics": "Union SG ฟอร์มโหด เสียแค่ 1 ประตูใน 3 นัด Guilherme Smith และ Mofokeng คมกริบ Celta ขาด Borja Iglesias ตัวเป้า",
+      "verdict": "Union SG สมดุลเกมรับดีกว่า แต่เล่นนอกบ้าน คาดแบ่งแต้ม 1-1 เสี่ยงสูง"
+    },
+    {
+      "id": 14,
+      "matchNumber": 14,
+      "matchTitle": "Torreense vs Ararat-Armenia",
+      "kickoffSlot": "03:00",
+      "stadium": "Estádio Dr. Magalhães Pessoa, Leiria, Portugal (สนามกลาง)",
+      "homeTeam": {
+        "name": "Torreense",
+        "thaiName": "ตอร์เรเอนเซ่",
+        "country": "โปรตุเกส",
+        "manager": "João Nuno"
+      },
+      "awayTeam": {
+        "name": "Ararat-Armenia",
+        "thaiName": "อารารัต-อาร์เมเนีย",
+        "country": "อาร์เมเนีย",
+        "manager": "ยังไม่ยืนยัน"
+      },
+      "uelStats": {
+        "homePts": 3,
+        "homeForm": "W-L-L",
+        "homeGf": 4,
+        "homeGa": 7,
+        "awayPts": 0,
+        "awayForm": "L-L-L",
+        "awayGf": 2,
+        "awayGa": 11
+      },
+      "marketOdds": {
+        "homeWin": 1.8,
+        "draw": 4.0,
+        "awayWin": 4.66,
+        "mainPick": "Torreense ชนะ (1) (@ 1.80)",
+        "valuePick": "Torreense -0.75 (@ 2.05)"
+      },
+      "predictedScore": "2-0",
+      "mostLikelyScore": "2-0",
+      "winProbability": {
+        "home": 53,
+        "draw": 25,
+        "away": 22
+      },
+      "riskLevel": "เสี่ยงสูง",
+      "isCuratedLowRisk": false,
+      "teamNews": {
+        "home": "สโมสรจากดิวิชั่นสองโปรตุเกสสร้างประวัติศาสตร์ ขาด Adama Baradji",
+        "away": "เสีย 11 ประตูใน 3 นัด รั่วที่สุดในทัวร์นาเมนต์ Paul Ayongo ไม่มีสิทธิ์ลง"
+      },
+      "tactics": "Ararat เสียประตูเป็นว่าเล่น Torreense เล่นในโปรตุเกสได้เปรียบสภาพแวดล้อมชัดเจน",
+      "verdict": "เจ้าบ้านเหนือกว่าแนวรับคู่แข่งที่รั่ว สกอร์คาดชนะ 2-0 แต่ข้อมูลทีมเล็กทำให้เสี่ยงสูง"
+    },
+    {
+      "id": 15,
+      "matchNumber": 15,
+      "matchTitle": "Sturm Graz vs Celje",
+      "kickoffSlot": "03:00",
+      "stadium": "Merkur Arena, Graz, Austria",
+      "homeTeam": {
+        "name": "Sturm Graz",
+        "thaiName": "สตวร์ม กราซ",
+        "country": "ออสเตรีย",
+        "manager": "Fabio Ingolitsch"
+      },
+      "awayTeam": {
+        "name": "Celje",
+        "thaiName": "เซลเย่",
+        "country": "สโลวีเนีย",
+        "manager": "ยังไม่ยืนยัน"
+      },
+      "uelStats": {
+        "homePts": 4,
+        "homeForm": "D-L-W",
+        "homeGf": 1,
+        "homeGa": 3,
+        "awayPts": 1,
+        "awayForm": "L-L-D",
+        "awayGf": 2,
+        "awayGa": 7
+      },
+      "marketOdds": {
+        "homeWin": 1.58,
+        "draw": 4.6,
+        "awayWin": 5.75,
+        "under35": 1.57,
+        "mainPick": "Sturm Graz ชนะ (1) (@ 1.58)",
+        "valuePick": "Sturm Graz ชนะ & Under 3.5 (@ 2.30)"
+      },
+      "predictedScore": "2-0",
+      "mostLikelyScore": "2-0",
+      "winProbability": {
+        "home": 60,
+        "draw": 23,
+        "away": 17
+      },
+      "riskLevel": "เสี่ยงปานกลาง",
+      "isCuratedLowRisk": true,
+      "curatedReason": "สตวร์ม กราซ ในรัง Merkur Arena เหนียวแน่น เพิ่งเชือดมาร์กเซย 1-0 ส่วนเซลเย่เสีย 7 ประตูจาก 3 นัดในยุโรป",
+      "teamNews": {
+        "home": "Oumar Diakité อาจสตาร์ตแทน Beganovic; Balbo และ Vallci พร้อมคุมแผงหลัง",
+        "away": "Kvesic และ Kučys กำลังยิงในลีก แต่เกมยุโรปเกรดบอลเป็นรอง"
+      },
+      "tactics": "Sturm Graz คุมจังหวะและดันวิงแบ็กโจมตี เซลเย่แนวรับมีช่องโหว่เยอะเวลาโดนเพรสซิ่งสูง",
+      "verdict": "สตวร์ม กราซ ประสบการณ์และเกมรับแกร่งกว่า สกอร์คาด 2-0 ความเสี่ยงปานกลาง"
+    },
+    {
+      "id": 16,
+      "matchNumber": 16,
+      "matchTitle": "Benfica vs Lech Poznan",
+      "kickoffSlot": "03:00",
+      "stadium": "Estádio da Luz, Lisbon, Portugal",
+      "homeTeam": {
+        "name": "Benfica",
+        "thaiName": "เบนฟิก้า",
+        "country": "โปรตุเกส",
+        "manager": "Marco Silva"
+      },
+      "awayTeam": {
+        "name": "Lech Poznan",
+        "thaiName": "เลช พอซนาน",
+        "country": "โปแลนด์",
+        "manager": "Niels Frederiksen"
+      },
+      "uelStats": {
+        "homePts": 9,
+        "homeForm": "W-W-W",
+        "homeGf": 10,
+        "homeGa": 2,
+        "awayPts": 1,
+        "awayForm": "L-D-L",
+        "awayGf": 1,
+        "awayGa": 9
+      },
+      "marketOdds": {
+        "homeWin": 1.25,
+        "draw": 6.5,
+        "awayWin": 11.0,
+        "mainPick": "Benfica -1.5 แฮนดิแคป (@ 1.70)",
+        "valuePick": "Over 2.5 ประตู (@ 1.52)"
+      },
+      "predictedScore": "3-0 (หรือ 3-1)",
+      "mostLikelyScore": "3-0",
+      "winProbability": {
+        "home": 76,
+        "draw": 16,
+        "away": 8
+      },
+      "riskLevel": "เสี่ยงต่ำ-ปานกลาง",
+      "isCuratedLowRisk": true,
+      "curatedReason": "เบนฟิก้าเกมรุกอันดับ 1 ในทัวร์นาเมนต์ ยิง 10 ประตู ชนะรวด 3 นัด Vangelis Pavlidis ยิงทุกนัด ขณะที่เลช พอซนาน ตัวเจ็บระนาวและเสียไป 9 ประตู",
+      "teamNews": {
+        "home": "Leandro Barreiro Out; Barrenechea Doubtful; Dodi Lukebakio และ Rafa Silva พร้อมประจำการ Pavlidis ยิง 4 นัดติด",
+        "away": "ตัวเจ็บเพียบ: Ali Gholizadeh (ACL), João Moutinho (เท้า), Alex Douglas (ข้อเท้า); Mońka, Mikael Ishak, Sayyadmanesh ยังไม่สมบูรณ์"
+      },
+      "tactics": "Benfica จะเปิดฉากโหมบุกเข้าใส่ตั้งแต่นาทีแรก เลช พอซนาน ขาดตัวขับเคลื่อนเกมรุกแทบยกชุด หากเสียประตูเร็วเกมจะขาดลอย",
+      "verdict": "เบนฟิก้าเหนือกว่าทุกกระบวนท่า ยิงกระจาย สกอร์คาด 3-0 หรือ 3-1 ความเสี่ยงค่อนข้างต่ำ (Low Risk)"
+    },
+    {
+      "id": 17,
+      "matchNumber": 17,
+      "matchTitle": "Sunderland vs GNK Dinamo Zagreb",
+      "kickoffSlot": "03:00",
+      "stadium": "Stadium of Light, Sunderland, England",
+      "homeTeam": {
+        "name": "Sunderland",
+        "thaiName": "ซันเดอร์แลนด์",
+        "country": "อังกฤษ",
+        "manager": "Régis Le Bris"
+      },
+      "awayTeam": {
+        "name": "GNK Dinamo Zagreb",
+        "thaiName": "ดินาโม ซาเกร็บ",
+        "country": "โครเอเชีย",
+        "manager": "สถานะชั่วคราว"
+      },
+      "uelStats": {
+        "homePts": 7,
+        "homeForm": "W-W-D",
+        "homeGf": 4,
+        "homeGa": 2,
+        "awayPts": 4,
+        "awayForm": "D-W-L",
+        "awayGf": 3,
+        "awayGa": 4
+      },
+      "marketOdds": {
+        "homeWin": 1.52,
+        "draw": 4.82,
+        "awayWin": 6.95,
+        "over25": 1.7,
+        "mainPick": "Sunderland ชนะ (1) (@ 1.52)",
+        "valuePick": "Sunderland ชนะ & Over 1.5 (@ 1.82)"
+      },
+      "predictedScore": "2-1",
+      "mostLikelyScore": "2-1",
+      "winProbability": {
+        "home": 62,
+        "draw": 22,
+        "away": 16
+      },
+      "riskLevel": "เสี่ยงปานกลาง",
+      "isCuratedLowRisk": true,
+      "curatedReason": "ซันเดอร์แลนด์ไร้พ่ายในยุโรป สร้างโอกาสยิง 67 ครั้งสูงเป็นอันดับต้นๆ ของ UEL ส่วนดินาโมขาดเซ็นเตอร์ตัวหลัก Scott McKenna",
+      "teamNews": {
+        "home": "Habib Diarra, Romaine Mundle, Dan Ballard ไม่พร้อม; Mukiele เช็กฟิต; Talbi พร้อมลง",
+        "away": "Scott McKenna เซ็นเตอร์แบ็กตัวหลักเจ็บหลังชวดลง; Dion Drena Beljo กองหน้าตัวอันตราย (17 ประตูจาก 18 นัด)"
+      },
+      "tactics": "Sunderland จะเดินหน้ากดดันและยิงไกลจำนวนมาก แต่ต้องระวัง Beljo ในจังหวะสวนกลับ ดินาโมเกมเยือนยุโรปสถิติไม่ดี",
+      "verdict": "ซันเดอร์แลนด์ในบ้านมักคึกคักเป็นพิเศษ เบียดชนะ 2-1 ความเสี่ยงปานกลาง"
+    }
+  ]
+};

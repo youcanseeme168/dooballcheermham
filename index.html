@@ -78,10 +78,15 @@
     <div class="container league-switcher-inner">
       <div class="league-switcher-title"><i class="ri-apps-2-line"></i> หมวดหมู่การแข่งขัน:</div>
       <div class="league-switcher-buttons">
-        <button id="cat-btn-ucl" class="league-tab-btn active" onclick="switchLeagueCategory('ucl')">
+        <button id="cat-btn-uel" class="league-tab-btn active" onclick="switchLeagueCategory('uel')">
           <span class="league-tab-icon">🏆</span>
+          <span class="league-tab-label">UEFA Europa League</span>
+          <span class="league-tab-badge" style="background:linear-gradient(135deg, #10b981 0%, #059669 100%);color:#fff;font-weight:800;">คืนนี้ 17 คู่เต็ม!</span>
+        </button>
+        <button id="cat-btn-ucl" class="league-tab-btn" onclick="switchLeagueCategory('ucl')">
+          <span class="league-tab-icon">⭐</span>
           <span class="league-tab-label">UEFA Champions League</span>
-          <span class="league-tab-badge">9 คู่บิ๊กแมตช์</span>
+          <span class="league-tab-badge">9 คู่บิ๊กแมตช์ (จบแล้ว)</span>
         </button>
         <button id="cat-btn-audit" class="league-tab-btn" onclick="switchLeagueCategory('audit')">
           <span class="league-tab-icon">🎯</span>
@@ -134,16 +139,16 @@
 
       <div class="countdown-clock-item" style="flex-grow:1;min-width:240px;">
         <div class="countdown-label">
-          <i class="ri-football-line" style="color:var(--accent-gold);"></i> เตะคู่แรก: คืนพุธ 4 พ.ย. (เช้ามืดพฤหัสบดี 5 พ.ย.) 00:45 น. (UCL League Phase)
+          <i class="ri-football-line" style="color:var(--accent-gold);"></i> เตะคู่แรก: คืนนี้ (พฤหัสบดี 5 พ.ย. เข้าเช้ามืด 6 พ.ย.) 00:45 น. (UEL League Phase - 8 คู่พร้อมกัน)
         </div>
         <div style="display:flex;align-items:baseline;gap:0.75rem;flex-wrap:wrap;">
           <div id="countdown-timer-digits" class="countdown-digits">คำนวณเวลา...</div>
-          <span id="countdown-status-pill" class="countdown-pill-badge badge-cyan">
-            <span class="pill-dot"></span> <span id="countdown-status-text">ปกติ (> 12 ชม.)</span>
+          <span id="countdown-status-pill" class="countdown-pill-badge badge-red">
+            <span class="pill-dot"></span> <span id="countdown-status-text">⚠️ ใกล้เตะแล้ว! (เหลือเวลา ~4.3 ชม.)</span>
           </span>
         </div>
         <div style="font-size:0.75rem;color:var(--text-muted);">
-          คู่เปิดสนาม: <strong>AEK Athens พบ Real Madrid</strong> & <strong>Fenerbahçe พบ Liverpool</strong>
+          คู่เปิดสนาม 8 คู่: <strong>AC Milan พบ Ferencváros</strong>, <strong>Sparta Praha พบ Bournemouth</strong>, <strong>Crystal Palace พบ Hoffenheim</strong> ฯลฯ
         </div>
       </div>
 
@@ -404,6 +409,11 @@
   <!-- All Leagues & Cups Standings Dedicated View -->
   <main id="standings-view" style="display:none;">
     <div id="standings-content-container"></div>
+  </main>
+
+  <!-- UEFA Europa League Dedicated View -->
+  <main id="uel-view" style="display:block;">
+    <div id="uel-content-container"></div>
   </main>
 
   <!-- Post-Match Learning & Prediction Audit Dedicated View -->

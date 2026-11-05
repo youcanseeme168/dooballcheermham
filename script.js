@@ -2100,28 +2100,384 @@ function renderMatchDetail(matchId) {
     `;
   }
 
+  
+  window.filterUelMatches = function(filter) {
+    state.activeUelFilter = filter;
+    renderUelView();
+  };
+
+  window.searchUelMatches = function(q) {
+    state.uelSearchQuery = q;
+    renderUelView();
+  };
+
+  function renderUelView() {
+    const container = document.getElementById('uel-content-container');
+    if (!container) return;
+
+    if (typeof UEL_DATA === 'undefined') {
+      container.innerHTML = '<div style="padding:4rem;text-align:center;color:#fff;">กำลังโหลดข้อมูล UEFA Europa League...</div>';
+      return;
+    }
+
+    const d = UEL_DATA;
+    const filter = state.activeUelFilter || 'all';
+    const q = (state.uelSearchQuery || '').toLowerCase().trim();
+
+    // 1. Curated Low-Risk Showcase Cards
+    const curatedCardsHtml = d.curatedLowRisk.map(c => `
+      <div style="background:var(--bg-card);border:1px solid rgba(16,185,129,0.35);border-top:4px solid #10b981;border-radius:var(--radius-lg);padding:1.3rem;box-shadow:0 8px 24px rgba(0,0,0,0.4);position:relative;overflow:hidden;transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform=''">
+        <div style="position:absolute;right:-15px;top:-15px;width:70px;height:70px;background:rgba(16,185,129,0.1);border-radius:50%;display:flex;align-items:flex-end;justify-content:flex-start;padding:12px;font-size:1.4rem;">
+          ⭐
+        </div>
+        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem;">
+          <span style="font-size:0.75rem;font-weight:900;color:#000;background:#10b981;padding:0.15rem 0.6rem;border-radius:var(--radius-full);">อันดับ ${c.rank}</span>
+          <span class="badge ${c.badge}" style="font-size:0.72rem;padding:0.2rem 0.5rem;font-weight:800;">${c.risk}</span>
+          <span style="font-size:0.75rem;color:var(--text-dim);margin-left:auto;"><i class="ri-time-line"></i> ${c.time}</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:900;color:#fff;margin-bottom:0.4rem;">${c.match}</h3>
+        <div style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.25);border-radius:var(--radius-sm);padding:0.65rem 0.8rem;margin-bottom:0.7rem;">
+          <div style="font-size:0.72rem;color:#10b981;font-weight:800;text-transform:uppercase;margin-bottom:0.2rem;">ตัวเลือกแนะนำความเสี่ยงต่ำ:</div>
+          <div style="font-size:0.95rem;font-weight:900;color:#fff;">${c.pick}</div>
+        </div>
+        <div style="font-size:0.8rem;color:var(--text-muted);line-height:1.5;margin-bottom:0.6rem;">
+          <strong>สกอร์คาดการณ์:</strong> <span style="color:var(--accent-gold);font-weight:800;">${c.score}</span>
+        </div>
+        <div style="font-size:0.8rem;color:var(--text-dim);line-height:1.4;background:rgba(0,0,0,0.25);border-radius:var(--radius-sm);padding:0.5rem 0.7rem;">
+          <i class="ri-shield-check-line" style="color:#10b981;"></i> ${c.reasons}
+        </div>
+      </div>
+    `).join('');
+
+    // 2. Filter matches
+    const filteredMatches = d.matches.filter(m => {
+      if (filter === 'low-risk' && !m.isCuratedLowRisk) return false;
+      if (filter === '0045' && m.kickoffSlot !== '00:45') return false;
+      if (filter === '0300' && m.kickoffSlot !== '03:00') return false;
+
+      if (q !== '') {
+        const title = m.matchTitle.toLowerCase();
+        const home = m.homeTeam.name.toLowerCase() + ' ' + (m.homeTeam.thaiName || '').toLowerCase();
+        const away = m.awayTeam.name.toLowerCase() + ' ' + (m.awayTeam.thaiName || '').toLowerCase();
+        const std = (m.stadium || '').toLowerCase();
+        if (!title.includes(q) && !home.includes(q) && !away.includes(q) && !std.includes(q)) {
+          return false;
+        }
+      }
+      return true;
+    });
+
+    // 3. Summary Table Rows (All 17 matches)
+    const summaryRowsHtml = d.matches.map(m => {
+      const riskClass = m.riskLevel.includes('ต่ำ') ? 'badge-green' : (m.riskLevel.includes('ปานกลาง') ? 'badge-gold' : 'badge-red');
+      const star = m.isCuratedLowRisk ? '<span style="color:#fbbf24;font-size:0.9rem;" title="คู่เด่นความเสี่ยงต่ำ">⭐</span> ' : '';
+      return `
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background=''">
+          <td style="padding:0.75rem 0.6rem;text-align:center;font-weight:800;color:var(--accent-gold);">${m.kickoffSlot} น.</td>
+          <td style="padding:0.75rem 0.8rem;">
+            <div style="font-weight:800;color:#fff;font-size:0.95rem;">
+              ${star}${m.matchTitle}
+            </div>
+            <div style="font-size:0.75rem;color:var(--text-dim);">${m.homeTeam.thaiName} พบ ${m.awayTeam.thaiName}</div>
+          </td>
+          <td style="padding:0.75rem 0.6rem;text-align:center;">
+            <span style="font-weight:700;color:#fff;">${m.uelStats.homePts}</span> <span style="color:var(--text-dim);">-</span> <span style="font-weight:700;color:#fff;">${m.uelStats.awayPts}</span>
+          </td>
+          <td style="padding:0.75rem 0.6rem;text-align:center;font-size:0.8rem;color:var(--text-muted);">
+            <span>${m.uelStats.homeForm}</span> <span style="color:var(--text-dim);">vs</span> <span>${m.uelStats.awayForm}</span>
+          </td>
+          <td style="padding:0.75rem 0.6rem;text-align:center;">
+            <span style="font-weight:800;color:var(--accent-gold);background:rgba(251,191,36,0.1);padding:0.2rem 0.6rem;border-radius:var(--radius-sm);">${m.predictedScore}</span>
+          </td>
+          <td style="padding:0.75rem 0.8rem;font-size:0.85rem;color:#fff;">
+            <strong>${m.marketOdds.mainPick || '-'}</strong>
+          </td>
+          <td style="padding:0.75rem 0.6rem;text-align:center;">
+            <span class="badge ${riskClass}" style="font-size:0.72rem;padding:0.2rem 0.6rem;font-weight:800;">${m.riskLevel}</span>
+          </td>
+        </tr>
+      `;
+    }).join('');
+
+    // 4. Match Cards Stream (Filtered)
+    const matchCardsHtml = filteredMatches.map(m => {
+      const riskClass = m.riskLevel.includes('ต่ำ') ? 'badge-green' : (m.riskLevel.includes('ปานกลาง') ? 'badge-gold' : 'badge-red');
+      const starPill = m.isCuratedLowRisk ? `
+        <span style="background:rgba(251,191,36,0.15);border:1px solid rgba(251,191,36,0.4);color:var(--accent-gold);font-size:0.72rem;font-weight:800;padding:0.2rem 0.6rem;border-radius:var(--radius-full);display:flex;align-items:center;gap:0.3rem;">
+          ⭐ คู่เด่นความเสี่ยงต่ำ
+        </span>
+      ` : '';
+
+      return `
+        <div style="background:var(--bg-card);border:1px solid rgba(255,255,255,0.08);border-left:4px solid ${m.isCuratedLowRisk ? '#10b981' : 'rgba(255,255,255,0.2)'};border-radius:var(--radius-lg);padding:1.4rem;box-shadow:0 8px 25px rgba(0,0,0,0.35);margin-bottom:1.4rem;">
+          <!-- Card Header -->
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.6rem;margin-bottom:1rem;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:0.75rem;">
+            <div style="display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap;">
+              <span style="font-size:0.75rem;font-weight:900;color:var(--accent-gold);background:rgba(251,191,36,0.12);padding:0.2rem 0.6rem;border-radius:var(--radius-sm);">คู่ที่ ${m.matchNumber}</span>
+              <h3 style="font-size:1.2rem;font-weight:900;color:#fff;margin:0;">${m.matchTitle}</h3>
+              ${starPill}
+            </div>
+            <div style="display:flex;align-items:center;gap:0.6rem;">
+              <span style="font-size:0.8rem;color:var(--text-dim);"><i class="ri-time-line"></i> ${m.kickoffSlot} น.</span>
+              <span class="badge ${riskClass}" style="font-size:0.76rem;padding:0.25rem 0.65rem;font-weight:800;">${m.riskLevel}</span>
+            </div>
+          </div>
+
+          <!-- Stadium & Managers Line -->
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.8rem;font-size:0.8rem;color:var(--text-muted);background:rgba(0,0,0,0.25);border-radius:var(--radius-sm);padding:0.6rem 0.9rem;margin-bottom:1rem;">
+            <div><i class="ri-map-pin-line" style="color:var(--accent-gold);"></i> ${m.stadium}</div>
+            <div style="display:flex;gap:1.2rem;">
+              <span>กุนซือ ${m.homeTeam.name}: <strong style="color:#fff;">${m.homeTeam.manager}</strong></span>
+              <span>กุนซือ ${m.awayTeam.name}: <strong style="color:#fff;">${m.awayTeam.manager}</strong></span>
+            </div>
+          </div>
+
+          <!-- Stats & Predicted Score Stage -->
+          <div style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1.2rem;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-radius:var(--radius-md);padding:1.1rem;margin-bottom:1.1rem;">
+            <!-- Home Team -->
+            <div>
+              <div style="font-size:1.05rem;font-weight:900;color:#fff;">${m.homeTeam.name}</div>
+              <div style="font-size:0.75rem;color:var(--text-dim);">${m.homeTeam.thaiName} (${m.homeTeam.country})</div>
+              <div style="font-size:0.8rem;color:var(--accent-gold);margin-top:0.3rem;">
+                แต้ม: <strong>${m.uelStats.homePts}</strong> | ประตู: <strong>${m.uelStats.homeGf}-${m.uelStats.homeGa}</strong> | ฟอร์ม: <strong>${m.uelStats.homeForm}</strong>
+              </div>
+            </div>
+
+            <!-- Score Box -->
+            <div style="text-align:center;">
+              <div style="font-size:0.7rem;color:var(--text-dim);font-weight:700;margin-bottom:0.2rem;">สกอร์คาดการณ์</div>
+              <div style="font-size:1.5rem;font-weight:900;color:var(--accent-gold);background:rgba(251,191,36,0.12);padding:0.25rem 0.9rem;border-radius:var(--radius-sm);border:1px solid rgba(251,191,36,0.3);box-shadow:0 0 15px rgba(251,191,36,0.2);">
+                ${m.predictedScore}
+              </div>
+              <div style="font-size:0.72rem;color:var(--text-muted);margin-top:0.3rem;">ความน่าจะเป็น: ${m.winProbability.home}% / ${m.winProbability.draw}% / ${m.winProbability.away}%</div>
+            </div>
+
+            <!-- Away Team -->
+            <div style="text-align:right;">
+              <div style="font-size:1.05rem;font-weight:900;color:#fff;">${m.awayTeam.name}</div>
+              <div style="font-size:0.75rem;color:var(--text-dim);">${m.awayTeam.thaiName} (${m.awayTeam.country})</div>
+              <div style="font-size:0.8rem;color:var(--accent-cyan);margin-top:0.3rem;">
+                แต้ม: <strong>${m.uelStats.awayPts}</strong> | ประตู: <strong>${m.uelStats.awayGf}-${m.uelStats.awayGa}</strong> | ฟอร์ม: <strong>${m.uelStats.awayForm}</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team News & Tactical Breakdown -->
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:0.9rem;font-size:0.84rem;line-height:1.6;margin-bottom:1rem;">
+            <div style="background:rgba(0,0,0,0.2);border:1px solid rgba(255,255,255,0.05);border-radius:var(--radius-md);padding:0.85rem 1rem;">
+              <strong style="color:#ef4444;display:flex;align-items:center;gap:0.4rem;margin-bottom:0.3rem;">
+                <i class="ri-user-unfollow-line"></i> ข่าวความพร้อม & ผู้เล่นบาดเจ็บ:
+              </strong>
+              <div style="margin-bottom:0.3rem;"><strong>${m.homeTeam.name}:</strong> ${m.teamNews.home}</div>
+              <div><strong>${m.awayTeam.name}:</strong> ${m.teamNews.away}</div>
+            </div>
+
+            <div style="background:rgba(0,0,0,0.2);border:1px solid rgba(255,255,255,0.05);border-radius:var(--radius-md);padding:0.85rem 1rem;">
+              <strong style="color:var(--accent-cyan);display:flex;align-items:center;gap:0.4rem;margin-bottom:0.3rem;">
+                <i class="ri-football-line"></i> รูปเกม & แท็กติกสำคัญ:
+              </strong>
+              <p style="margin:0;color:var(--text-main);">${m.tactics}</p>
+            </div>
+          </div>
+
+          <!-- Bottom Market Odds & Recommendation -->
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.8rem;background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2);border-radius:var(--radius-md);padding:0.8rem 1.1rem;">
+            <div>
+              <span style="font-size:0.75rem;color:var(--text-dim);">ราคาตลาดอ้างอิง:</span>
+              <span style="font-size:0.85rem;color:#fff;font-weight:700;margin-left:0.4rem;">
+                ${m.homeTeam.name} ${m.marketOdds.homeWin || '-'} | เสมอ ${m.marketOdds.draw || '-'} | ${m.awayTeam.name} ${m.marketOdds.awayWin || '-'}
+              </span>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.6rem;">
+              <span style="font-size:0.75rem;color:var(--text-dim);">ตัวเลือกแนะนำ:</span>
+              <strong style="font-size:0.92rem;color:#10b981;">${m.marketOdds.mainPick}</strong>
+              ${m.marketOdds.valuePick ? `<span style="font-size:0.82rem;color:var(--accent-gold);background:rgba(251,191,36,0.1);padding:0.15rem 0.5rem;border-radius:var(--radius-sm);">${m.marketOdds.valuePick}</span>` : ''}
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    const filterPillsHtml = [
+      { key: 'all', label: `ทั้งหมด (17 คู่)` },
+      { key: 'low-risk', label: `⭐ คัดคู่ความเสี่ยงต่ำ (${d.curatedLowRisk.length} คู่)` },
+      { key: '0045', label: `สล็อต 00:45 น. (8 คู่)` },
+      { key: '0300', label: `สล็อต 03:00 น. (9 คู่)` }
+    ].map(t => {
+      const active = t.key === filter;
+      const border = active ? 'border-color:#10b981;background:rgba(16,185,129,0.2);color:#10b981;font-weight:800;' : 'background:rgba(255,255,255,0.05);color:var(--text-dim);border-color:transparent;';
+      return `
+        <button onclick="window.filterUelMatches('${t.key}')" class="tab-btn" style="padding:0.5rem 1.1rem;border-radius:var(--radius-full);border:1px solid;font-size:0.85rem;cursor:pointer;white-space:nowrap;transition:all 0.2s;${border}">
+          ${t.label}
+        </button>
+      `;
+    }).join('');
+
+    container.innerHTML = `
+      <div class="container" style="padding-top:2.5rem;padding-bottom:5rem;">
+        <!-- Header Banner -->
+        <div style="background:var(--bg-card);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-lg);padding:2rem;margin-bottom:2.2rem;position:relative;overflow:hidden;">
+          <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.6rem;flex-wrap:wrap;">
+            <span class="badge badge-green" style="font-size:0.78rem;font-weight:900;padding:0.25rem 0.75rem;background:#10b981;color:#000;">
+              <i class="ri-fire-fill"></i> MATCHDAY 4 • LEAGUE PHASE (17 คู่วันนี้)
+            </span>
+            <span style="font-size:0.8rem;color:var(--text-dim);">${d.date} • ข้อมูล ณ ${d.updatedTime}</span>
+          </div>
+          <h1 style="font-size:2rem;font-weight:900;color:#fff;margin-bottom:0.7rem;line-height:1.3;">
+            UEFA Europa League <span class="highlight-gold">Matchday 4 of 8</span> (ครบ 17 คู่)
+          </h1>
+          <p style="font-size:0.95rem;color:var(--text-muted);line-height:1.7;max-width:860px;margin:0;">
+            รายงานบทวิเคราะห์เชิงลึก ข้อมูลคะแนน 3 นัดแรก ฟอร์มการเล่น สภาพความพร้อมผู้เล่นบาดเจ็บ และการประเมินราคาต่อรอง คืนวันพฤหัสบดีที่ 5 เข้าสู่เช้ามืดวันศุกร์ที่ 6 พฤศจิกายน 2026 พร้อมคัดพิเศษ 5 คู่เด่นความเสี่ยงต่ำ-ปานกลาง
+          </p>
+        </div>
+
+        <!-- Section 1: Curated Low-Risk Showcase (Highlight 5 Matches) -->
+        <div style="margin-bottom:3rem;">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.8rem;margin-bottom:1.3rem;">
+            <div>
+              <div style="display:flex;align-items:center;gap:0.5rem;">
+                <span style="font-size:1.3rem;">⭐</span>
+                <h2 style="font-size:1.45rem;font-weight:900;color:#fff;margin:0;">5 คู่คัดพิเศษ ความเสี่ยงต่ำ-ปานกลาง (Curated Low-Risk Picks)</h2>
+              </div>
+              <p style="font-size:0.85rem;color:var(--text-muted);margin-top:0.25rem;">คัดกรองจากทีมที่ฟอร์ม 3 นัดแรกขาดลอย คลีนชีต 100% หรือคู่แข่งแนวรับพังทลาย</p>
+            </div>
+            <span class="badge badge-green" style="font-size:0.8rem;padding:0.35rem 0.85rem;font-weight:800;">คัดเกรด A / A+</span>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:1.2rem;">
+            ${curatedCardsHtml}
+          </div>
+        </div>
+
+        <!-- Section 2: Master Summary Table -->
+        <div style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:1.4rem;margin-bottom:3rem;box-shadow:0 8px 25px rgba(0,0,0,0.35);">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.8rem;margin-bottom:1.1rem;">
+            <div style="display:flex;align-items:center;gap:0.6rem;">
+              <i class="ri-table-line" style="color:var(--accent-gold);font-size:1.3rem;"></i>
+              <h3 style="font-size:1.2rem;font-weight:900;color:#fff;margin:0;">ตารางสรุปโปรแกรมและมุมมองก่อนแข่งทั้ง 17 คู่</h3>
+            </div>
+            <span style="font-size:0.78rem;color:var(--text-dim);">อ้างอิงตารางแข่งและผลจริง Matchday 1–3 จาก UEFA</span>
+          </div>
+
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;font-size:0.86rem;white-space:nowrap;">
+              <thead>
+                <tr style="border-bottom:1px solid rgba(255,255,255,0.1);color:var(--text-dim);font-size:0.78rem;text-transform:uppercase;">
+                  <th style="padding:0.7rem 0.6rem;text-align:center;">เวลา</th>
+                  <th style="padding:0.7rem 0.8rem;text-align:left;">คู่แข่งขัน</th>
+                  <th style="padding:0.7rem 0.6rem;text-align:center;">คะแนน</th>
+                  <th style="padding:0.7rem 0.6rem;text-align:center;">ฟอร์ม UEL 3 นัด</th>
+                  <th style="padding:0.7rem 0.6rem;text-align:center;">สกอร์คาด</th>
+                  <th style="padding:0.7rem 0.8rem;text-align:left;">มุมมอง / ตัวเลือกแนะนำ</th>
+                  <th style="padding:0.7rem 0.6rem;text-align:center;">ระดับเสี่ยง</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${summaryRowsHtml}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Section 3: Filter & Match Cards Stream -->
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem;">
+          <div>
+            <h2 style="font-size:1.45rem;font-weight:900;color:#fff;margin:0;">กระดานบทวิเคราะห์เจาะลึกรายคู่ (${filteredMatches.length} คู่)</h2>
+            <p style="font-size:0.84rem;color:var(--text-muted);margin-top:0.25rem;">อ่านบทวิเคราะห์ สภาพความพร้อมนักเตะ และแท็กติกก่อนเกม</p>
+          </div>
+
+          <div style="display:flex;gap:0.8rem;align-items:center;flex-wrap:wrap;">
+            <!-- Search -->
+            <div style="position:relative;width:240px;">
+              <i class="ri-search-line" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text-dim);"></i>
+              <input type="text" placeholder="ค้นหาทีมใน UEL..." oninput="window.searchUelMatches(this.value)" value="${state.uelSearchQuery || ''}" style="width:100%;padding:0.45rem 0.8rem 0.45rem 2.2rem;border-radius:var(--radius-full);background:rgba(0,0,0,0.3);border:1px solid var(--border-light);color:#fff;font-size:0.85rem;outline:none;">
+            </div>
+
+            <!-- Filter tabs -->
+            <div style="display:flex;gap:0.4rem;flex-wrap:wrap;">
+              ${filterPillsHtml}
+            </div>
+          </div>
+        </div>
+
+        <!-- Stream of Cards -->
+        <div>
+          ${matchCardsHtml}
+        </div>
+      </div>
+    `;
+  }
+
   window.switchLeagueCategory = function(cat) {
-    if (cat === 'superliga') {
+    if (cat === 'uel') {
+      window.location.hash = '#uel';
+    } else if (cat === 'ucl') {
+      window.location.hash = '#ucl';
+    } else if (cat === 'audit') {
+      window.location.hash = '#audit';
+    } else if (cat === 'superliga') {
       window.location.hash = '#superliga';
     } else if (cat === 'standings') {
       window.location.hash = '#standings';
-    } else if (cat === 'audit') {
-      window.location.hash = '#audit';
     } else {
-      window.location.hash = '#overview';
+      window.location.hash = '#uel';
     }
   };
 
   function handleRouting() {
     const hash = window.location.hash || '#overview';
 
+    const catBtnUel = document.getElementById('cat-btn-uel');
     const catBtnUcl = document.getElementById('cat-btn-ucl');
     const catBtnSuperliga = document.getElementById('cat-btn-superliga');
     const catBtnStandings = document.getElementById('cat-btn-standings');
     const catBtnAudit = document.getElementById('cat-btn-audit');
+    const uelView = document.getElementById('uel-view');
     const danishView = document.getElementById('danish-view');
     const standingsView = document.getElementById('standings-view');
     const auditView = document.getElementById('audit-view');
+
+    // Route: UEFA Europa League (17 Matches Tonight)
+    if (hash === '#uel' || hash === '' || hash === '#overview') {
+      state.currentView = 'uel';
+      if (overviewView) overviewView.style.display = 'none';
+      if (detailView) detailView.style.display = 'none';
+      if (danishView) danishView.style.display = 'none';
+      if (standingsView) standingsView.style.display = 'none';
+      if (auditView) auditView.style.display = 'none';
+      if (uelView) {
+        uelView.style.display = 'block';
+        renderUelView();
+      }
+      if (catBtnUel) catBtnUel.classList.add('active');
+      if (catBtnUcl) catBtnUcl.classList.remove('active');
+      if (catBtnSuperliga) catBtnSuperliga.classList.remove('active');
+      if (catBtnStandings) catBtnStandings.classList.remove('active');
+      if (catBtnAudit) catBtnAudit.classList.remove('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (uelView) uelView.style.display = 'none';
+    if (catBtnUel) catBtnUel.classList.remove('active');
+
+    // Route: UEFA Champions League (9 Matches)
+    if (hash === '#ucl') {
+      state.currentView = 'ucl';
+      if (overviewView) overviewView.style.display = 'block';
+      if (detailView) detailView.style.display = 'none';
+      if (danishView) danishView.style.display = 'none';
+      if (standingsView) standingsView.style.display = 'none';
+      if (auditView) auditView.style.display = 'none';
+      if (uelView) uelView.style.display = 'none';
+      if (catBtnUcl) catBtnUcl.classList.add('active');
+      if (catBtnUel) catBtnUel.classList.remove('active');
+      if (catBtnSuperliga) catBtnSuperliga.classList.remove('active');
+      if (catBtnStandings) catBtnStandings.classList.remove('active');
+      if (catBtnAudit) catBtnAudit.classList.remove('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
 
     // Route: Post-Match Audit View
     if (hash === '#audit' || hash.startsWith('#audit')) {
@@ -2290,7 +2646,7 @@ function renderMatchDetail(matchId) {
 
     // Target Kickoff: Wednesday 4 Nov 2026 00:45:00 GMT+7
     // Year 2026, Month 10 (November is 10), Day 4, 00:45:00
-    const targetKickoffGMT7 = new Date(Date.UTC(2026, 10, 4, 17, 45, 0)); // 17:45 UTC = 00:45 GMT+7 (5 Nov) // 17:45 UTC = 00:45 GMT+7
+    const targetKickoffGMT7 = new Date(Date.UTC(2026, 10, 5, 17, 45, 0)); // 5 Nov 17:45 UTC = 6 Nov 00:45 GMT+7 (UEL Matchday 4)
 
     let diffMs;
     if (simulatedHoursRemaining !== null) {
